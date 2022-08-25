@@ -1,6 +1,6 @@
 # *Venedica*, nový translit
 
-[ve <u>ne</u> di t͡sa]
+[ve <ins>ne</ins> di t͡sa]
 
 *A project of a consistent transliteration system of the Cyrillic script*
 
