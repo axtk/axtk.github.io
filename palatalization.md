@@ -1,6 +1,6 @@
 <sup>2018-09</sup>
 
-# A living hint to palatalization in medieval Latin
+# From *cantare* to *chanter*
 
 The palatalization of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and /tʃ/ is an established fact (as in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian), and the generally accepted view of these transformations is the following:
 
