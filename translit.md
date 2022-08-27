@@ -149,7 +149,7 @@ This transliteration system:
 | с | **s** ||
 | т | **t** ||
 | ќ | **ć** ||
-|   | **ci** ||
+|   | **ci** | before vowels |
 | у | **u** ||
 | ф | **f** ||
 | х | **h** ||
