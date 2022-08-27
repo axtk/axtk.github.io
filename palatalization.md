@@ -7,7 +7,7 @@ The transition of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and 
 /k/ > /kʲ/ > /tʲ/ > /ts/ > /s/ &mdash; in Lat. *centum* > Fr. *cent*,<br>
 /k/ > /tʃ/ > /ʃ/ &mdash; in Lat. *centum* > It. *cento* and Lat. *cantare* > Fr. *chanter*.
 
-Since phonetic transformations usually progress over time gradually, at any given time a shift in articulation is subtle and is only adopted by some speakers, with others most likely perceiving it as unquestionably comprehensible. Therefore, a complete sound chain fully representing its natural course should be a sequence of allophones, with any two neighboring sounds in the chain being allophones of the same phoneme.
+Since phonetic transformations usually progress over time gradually, at any given time a shift in articulation is subtle and is only adopted by some speakers, with others most likely perceiving it as unquestionably comprehensible. Therefore, in a complete sound chain fully representing the natural course of a phonetic transformation any two neighboring sounds should be close enough to be allophones of the same phoneme.
 
 If the first sound chain above is complete, it implies that at some point in time speakers of Vulgar Latin treated /kʲ/ and /tʲ/ as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation which would only take place in certain phonetic environments (see, for instance, Elcock *The Romance languages*, [p. 53](https://github.com/axtk/w/blob/main/_res/palatalization.png?raw=true)).
 
