@@ -225,3 +225,15 @@ The acute accent above consonants represents soft consonants not followed by a v
 ### *í*, *ý*
 
 These characters stand for the long vowels in the Czech and Slovak orthographies: *dobrý den*, *Letní stadion*, *Průmyslový palác*. In the East Slavic languages, these long vowels represent [ij] (*ий*) and [ɨj] (*ый*) respectively (resulting in the same rendering of *dobrý* for Rus. *добрый* and Ukr. *добрий*). The plain *i* next to other vowels represents the *short i*: it is either the palatalization marker (as in *R**i**azań*) or the [j] sound (as in *Alta**i***). The *long i* is also a way to convey the full [i] sound next to other vowels (which is less frequently encountered in the East Slavic languages, as in *Tro**í**ck*, in contrast to *tro**i**ka*).
+
+### Underline as a stress mark
+
+The acute accent _́  is often used as a stress mark over vowels, which would conflict with the diacritic marks above certain characters. On the other hand, there is in fact a better alternative: the underline.
+
+The underline as a stress mark
+- is also immediately perceived as an emphasis mark;
+- doesn't conflict with most diacritics;
+- can be used to put a stress on a vowel sound represented by more than one letter (*Vanc<ins>ou</ins>ver*, *Montr<ins>eu</ins>x*) or on a whole stressed syllable;
+- fits for stressed syllabic consonants (like in the Czech river name *V<ins>l</ins>tava*);
+- fits for most writing systems, including consonantal abjads (like Arabic and Hebrew);
+- and being part of the markup doesn't introduce and extra character into the text.
