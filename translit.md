@@ -20,6 +20,7 @@ This transliteration system:
   - [Bulgarian](#bulgarian)
   - [Macedonian](#macedonian)
   - [Russian](#russian)
+  - [Serbian](#serbian)
   - [Ukrainian](#ukrainian)
 - [Background](#background)
 
@@ -158,8 +159,7 @@ This transliteration system:
 | џ | **dž** ||
 | ш | **š** ||
 
-- *ѓ* and *ќ* are transliterated as *d́* (or *di* before vowels) and *ć* (or *ci* before vowels) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *radžianie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*);
-- *d́*, *ĺ*, *ń*, *ć* are used word-finally, before consonants, and before *i*.
+- Cyr. *ѓ* and *ќ* are transliterated as *d́* (or *di* before vowels) and *ć* (or *ci* before vowels) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*).
 
 ### Russian
 
@@ -226,6 +226,46 @@ This transliteration system:
 
 - Cyr. *іи* &rarr; Lat. *ii*: a long *í* is redundant here;
 - Cyr. *ѣ* &rarr; Lat. *iě*: due to the probable historical pronunciation being close to [ie], and its cursive form resembling the ligature of *іь* (with the Old Russian vowel *ь* represented as *ě*); this form also combines the two major phonetic realizations: as [i] in the southwest of the East Slavic dialect continuum and [ʲe] elsewhere.
+
+### Serbian
+
+| *Cyr* | *Lat* ||
+|:----:|:----:|---|
+| а | **a** ||
+| б | **b** ||
+| в | **v** ||
+| г | **g** ||
+| д | **d** ||
+| ђ | **d́ž** ||
+| е | **e** ||
+| ж | **ž** ||
+| з | **z** ||
+| и | **i** ||
+|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *иј* |
+| ј | **j** ||
+|   | **i** | short *i*, for Cyr. *ј* after a vowel and not followed by a vowel |
+| к | **k** ||
+| л | **l** ||
+| љ | **ĺ** ||
+|   | **li** | before vowels, except *i* |
+| м | **m** ||
+| н | **n** ||
+| њ | **ń** ||
+|   | **ni** | before vowels, except *i* |
+| о | **o** ||
+| п | **p** ||
+| р | **r** ||
+| с | **s** ||
+| т | **t** ||
+| ћ | **ć** ||
+|   | **ci** | before vowels, except *i* |
+| у | **u** ||
+| ф | **f** ||
+| х | **h** ||
+| ц | **c** ||
+| ч | **č** ||
+| џ | **dž** ||
+| ш | **š** ||
 
 ### Ukrainian
 
