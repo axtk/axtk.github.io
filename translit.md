@@ -17,6 +17,7 @@ This transliteration system:
 
 - Varieties (in the alphabetical order):
   - [Belarusian](#belarusian)
+  - [Bulgarian](#bulgarian)
   - [Russian](#russian)
   - [Ukrainian](#ukrainian)
 - [Background](#background)
@@ -72,6 +73,47 @@ This transliteration system:
 | ' || omitted |
 
 - *ja*, *je*, *jo*, *ju* are used word-initially, after vowels, after *ь* and *'*.
+
+### Bulgarian
+
+| *Cyr* | *Lat* ||
+|:----:|:----:|---|
+| а | **a** ||
+| б | **b** ||
+| в | **v** ||
+| г | **g** ||
+| д | **d** ||
+| е | **e** ||
+| ж | **ž** ||
+| з | **z** ||
+| и | **i** ||
+|   | **í** | long *i*, for [i] before or after a vowel and for *ій* |
+| й | **j** ||
+|   | **i** | short *i*, *й* after a vowel and not followed by a vowel |
+| к | **k** ||
+| л | **l** ||
+| м | **m** ||
+| н | **n** ||
+| о | **o** ||
+| п | **p** ||
+| р | **r** ||
+| с | **s** ||
+| т | **t** ||
+| у | **u** ||
+| ф | **f** ||
+| х | **h** ||
+| ц | **c** ||
+| ч | **č** ||
+| ш | **š** ||
+| щ | **ŝ** ||
+| ъ | **ǒ** ||
+| ь | **i** | rarely used, only in *ьо* &rarr; *io* |
+| ю | **ju** ||
+|   | **iu** | after consonants |
+| я | **ja** ||
+|   | **ia** | after consonants |
+
+- *ja*, *je*, *jo*, *ju* are used word-initially and after vowels.
 
 ### Russian
 
