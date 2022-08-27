@@ -62,7 +62,7 @@ This transliteration system:
 | ш | **š** ||
 | ы | **y** ||
 |   | **ý** | long *y*, for *ый* |
-| ь | _́ | transformed into an acute _́  above the preceding consonant, except *č*, *š*, *ž* |
+| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
 |   || omitted after *č*, *š*, *ž* |
 | э | **e** ||
 | ю | **ju** ||
@@ -110,7 +110,7 @@ This transliteration system:
 | ш | **š** || Kašira |
 | щ | **ŝ** || Blagoveŝensk |
 | ъ || omitted | Sjanovo |
-| ь | _́ | transformed into an acute _́  above the preceding consonant, except *č*, *š*, *ž* | Riazań, Tveŕ, Perḿ, Viaźma |
+| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* | Riazań, Tveŕ, Perḿ, Viaźma |
 |   || omitted after *č*, *š*, *ž* | Povolžje, Medvežjegorsk |
 | ы | **y** || Syzrań, Čeboksary |
 |   | **ý** | long *y*, for *ый* | Dolgoprudný |
@@ -122,7 +122,7 @@ This transliteration system:
 
 - *ja*, *je*, *jo*, *ju* are used word-initially, after vowels, after *ь* and *ъ*;
 - Cyr. *ии* &rarr; Lat. *ii*: a long *í* is redundant here;
-- Cyr. *ьо* &rarr; Lat. an acute above the preceding consonant + *jo*: due to its pronunciation as *ьё*.
+- Cyr. *ьо* &rarr; Lat. an acute over the preceding consonant + *jo*: due to its pronunciation as *ьё*.
 
 #### Pre-reform spelling (before 1917)
 
@@ -176,13 +176,13 @@ This transliteration system:
 | ч | **č** ||
 | ш | **š** ||
 | щ | **ŝ** ||
-| ь | _́ | transformed into an acute _́  above the preceding consonant, except *č*, *š*, *ž* |
+| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
 |   || omitted after *č*, *š*, *ž* |
 | ю | **ju** ||
 |   | **iu** | after consonants |
 | я | **ja** ||
 |   | **ia** | after consonants |
-| ʼ | _́ | transformed into an acute _́  above the preceding consonant, except *č*, *š*, *ž* |
+| ʼ | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
 |   || omitted after *č*, *š*, *ž* |
 
 - *ja*, *je*, *ju* are used word-initially, after vowels, after *ь* and *ʼ*;
@@ -228,7 +228,7 @@ These characters stand for the long vowels in the Czech and Slovak orthographies
 
 ### Underline as a stress mark
 
-The acute accent _́  is often used as a stress mark over vowels, which would conflict with the diacritic marks above certain characters. On the other hand, there is in fact a better alternative: the underline.
+The acute accent _́  is often used as a stress mark over vowels, which would conflict with the diacritic marks on certain characters. On the other hand, there is in fact a better alternative: the underline.
 
 The underline as a stress mark
 - is also immediately perceived as an emphasis mark;
