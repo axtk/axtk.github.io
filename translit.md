@@ -132,7 +132,7 @@ This transliteration system:
 | з | **z** ||
 | ѕ | **dz** ||
 | и | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *іј* |
+|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *иј* |
 | ј | **j** ||
 |   | **i** | short *i*, for Cyr. *ј* after a vowel and not followed by a vowel |
 | к | **k** ||
