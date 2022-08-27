@@ -126,7 +126,7 @@ This transliteration system:
 | г | **g** ||
 | д | **d** ||
 | ѓ | **d́** ||
-|   | **di** | before vowels |
+|   | **di** | before vowels, except *i* |
 | е | **e** ||
 | ж | **ž** ||
 | з | **z** ||
@@ -138,18 +138,18 @@ This transliteration system:
 | к | **k** ||
 | л | **l** ||
 | љ | **ĺ** ||
-|   | **li** | before vowels |
+|   | **li** | before vowels, except *i* |
 | м | **m** ||
 | н | **n** ||
 | њ | **ń** ||
-|   | **ni** | before vowels |
+|   | **ni** | before vowels, except *i* |
 | о | **o** ||
 | п | **p** ||
 | р | **r** ||
 | с | **s** ||
 | т | **t** ||
 | ќ | **ć** ||
-|   | **ci** | before vowels |
+|   | **ci** | before vowels, except *i* |
 | у | **u** ||
 | ф | **f** ||
 | х | **h** ||
@@ -158,7 +158,8 @@ This transliteration system:
 | џ | **dž** ||
 | ш | **š** ||
 
-- *ѓ* and *ќ* are transliterated as *d́* (or *di* before vowels) and *ć* (or *ci* before vowels) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *radžianie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*).
+- *ѓ* and *ќ* are transliterated as *d́* (or *di* before vowels) and *ć* (or *ci* before vowels) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *radžianie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*);
+- *d́*, *ĺ*, *ń*, *ć* are used word-finally, before consonants, and before *i*.
 
 ### Russian
 
