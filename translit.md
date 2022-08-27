@@ -210,7 +210,8 @@ This transliteration system:
 
 - *ja*, *je*, *jo*, *ju* are used word-initially, after vowels, after *ь* and *ъ*;
 - Cyr. *ии* &rarr; Lat. *ii*: a long *í* is redundant here;
-- Cyr. *ьо* &rarr; Lat. an acute over the preceding consonant + *jo*: due to its pronunciation as *ьё*.
+- Cyr. *ьо* &rarr; Lat. an acute over the preceding consonant + *jo*: due to its pronunciation as *ьё*;
+- Cyr. *йе*, *йё*, *йю*, *йя* (in rare loanwords) &rarr; Lat. *je*, *jo*, *ju*, *ja* (*j* is not duplicated).
 
 #### Pre-reform spelling (before 1917)
 
