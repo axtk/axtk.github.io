@@ -231,7 +231,7 @@ These characters stand for the long vowels in the Czech and Slovak orthographies
 The acute accent _́  is often used as a stress mark over vowels, which would conflict with the diacritic marks on certain characters. On the other hand, there is a better alternative to the acute as a stress mark: the underline.
 
 The underline as a stress mark
-- is also immediately perceived as an emphasis mark;
+- is immediately perceived as an emphasis mark;
 - doesn't conflict with most diacritics;
 - can be used to put a stress on a vowel sound represented by more than one letter (*Vanc<ins>ou</ins>ver*, *Montr<ins>eu</ins>x*) or on a whole stressed syllable;
 - fits for stressed syllabic consonants (like in the Czech river name *V<ins>l</ins>tava*);
