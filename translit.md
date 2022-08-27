@@ -18,6 +18,7 @@ This transliteration system:
 - Varieties (in the alphabetical order):
   - [Belarusian](#belarusian)
   - [Bulgarian](#bulgarian)
+  - [Macedonian](#macedonian)
   - [Russian](#russian)
   - [Ukrainian](#ukrainian)
 - [Background](#background)
@@ -114,6 +115,48 @@ This transliteration system:
 |   | **ia** | after consonants |
 
 - *ja*, *je*, *jo*, *ju* are used word-initially and after vowels.
+
+### Macedonian
+
+| *Cyr* | *Lat* ||
+|:----:|:----:|---|
+| а | **a** ||
+| б | **b** ||
+| в | **v** ||
+| г | **g** ||
+| д | **d** ||
+| ѓ | **d́** ||
+|   | **di** | before vowels |
+| е | **e** ||
+| ж | **ž** ||
+| з | **z** ||
+| ѕ | **dz** ||
+| и | **i** ||
+|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *іј* |
+| ј | **j** ||
+|   | **i** | short *i*, for Cyr. *ј* after a vowel and not followed by a vowel |
+| к | **k** ||
+| л | **l** ||
+| љ | **ĺ** ||
+|   | **li** | before vowels |
+| м | **m** ||
+| н | **n** ||
+| њ | **ń** ||
+|   | **ni** | before vowels |
+| о | **o** ||
+| п | **p** ||
+| р | **r** ||
+| с | **s** ||
+| т | **t** ||
+| ќ | **ć** ||
+|   | **ci** ||
+| у | **u** ||
+| ф | **f** ||
+| х | **h** ||
+| ц | **c** ||
+| ч | **č** ||
+| џ | **dž** ||
+| ш | **š** ||
 
 ### Russian
 
