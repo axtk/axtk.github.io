@@ -114,7 +114,7 @@ This transliteration system:
 | я | **ja** ||
 |   | **ia** | after consonants |
 
-- *ja*, *je*, *jo*, *ju* are used word-initially and after vowels.
+- *ja*, *ju* are used word-initially and after vowels.
 
 ### Macedonian
 
