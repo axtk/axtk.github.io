@@ -2,7 +2,7 @@
 
 # From *cantare* to *chanter*
 
-The palatalization of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and /tʃ/ is an established fact (as in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian), and the generally accepted view of these transformations is the following:
+The transition of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and /tʃ/ is an established fact, as seen, for instance, in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian. The generally accepted view of these transformations is the following:
 
 /k/ > /kʲ/ > /tʲ/ > /ts/ > /s/ &mdash; in Lat. *centum* > Fr. *cent*,<br>
 /k/ > /tʃ/ > /ʃ/ &mdash; in Lat. *centum* > It. *cento* and Lat. *cantare* > Fr. *chanter*.
