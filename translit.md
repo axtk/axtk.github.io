@@ -159,7 +159,7 @@ This transliteration system:
 | џ | **dž** ||
 | ш | **š** ||
 
-- Cyr. *ѓ* and *ќ* are transliterated as *d́* (or *di* before vowels) and *ć* (or *ci* before vowels) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*).
+- Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*).
 
 ### Russian
 
