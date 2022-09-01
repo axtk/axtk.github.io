@@ -160,7 +160,7 @@ This transliteration system:
 | џ | **dž** ||
 | ш | **š** ||
 
-- Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bul. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bul. *noŝ*, Rus. *noč*).
+- Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bulg. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bulg. *noŝ*, Rus. *noč*).
 
 ### Russian
 
@@ -342,7 +342,7 @@ These characters stand for *ч* [tʃ], *ш* [ʃ], and *ж* [ʐ] respectively. Th
 
 ### *ŝ*
 
-This character stands for *щ* [Rus. ɕ; Ukr. ʃt͡ʃ; Bul. ʃt] and resembles *š* standing for *ш* [ʃ] both phonetically and graphically.
+This character stands for *щ* [Rus. ɕ; Ukr. ʃt͡ʃ; Bulg. ʃt] and resembles *š* standing for *ш* [ʃ] both phonetically and graphically.
 
 ### *j*
 
@@ -366,4 +366,4 @@ The acute accent above consonants represents soft consonants not followed by a v
 
 ### *í*, *ý*
 
-These characters stand for the long vowels in the Czech and Slovak orthographies: *dobrý den*, *Letní stadion*, *Průmyslový palác*. In the East Slavic languages, these long vowels represent [ij] (*ий*) and [ɨj] (*ый*) respectively (resulting in the same rendering of *dobrý* for Rus. *добрый* and Ukr. *добрий*). The plain *i* next to other vowels represents the *short i*: it is either the palatalization marker (as in *R**i**azań*) or the [j] sound (as in *Alta**i***). The *long i* is also a way to convey the full [i] sound next to other vowels (which is less frequently encountered in the East Slavic languages, as in *Tro**í**ck*, in contrast to *tro**i**ka*).
+These characters stand for the long vowels in the Czech and Slovak orthographies: *dobrý den*, *Letní stadion*, *Průmyslový palác*. In the East Slavic languages, these long vowels represent [ij] (Rus., Bulg. *ий*; Bel., Ukr. *ій*; Serb., Mac. *иј*) and [ɨj] (Rus., Bel. *ый*; Ukr. *ий*) respectively (resulting in the same rendering of *dobrý* for Rus. *добрый* and Ukr. *добрий*). The plain *i* next to other vowels represents the *short i*: it is either the palatalization marker (as in *R**i**azań*) or the [j] sound (as in *Alta**i***). The *long i* is also a way to convey the full [i] sound next to other vowels (which is less frequently encountered in the East Slavic languages, as in *Tro**í**ck*, in contrast to *tro**i**ka*).
