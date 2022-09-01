@@ -116,7 +116,8 @@ This transliteration system:
 | я | **ja** ||
 |   | **ia** | after consonants |
 
-- *ja*, *ju* are used word-initially and after vowels.
+- *ja*, *ju* are used word-initially and after vowels;
+- Cyr. *ъ* &rarr; Lat. *ǒ* is in line with the transliteration of Old Slavonic *ъ* &rarr; *ǒ* (which has often come to correspond *o* in the modern Slavic languages, hence the spelling as *ǒ*, or *short o*) and results in a more recognizable spelling when compared to the other cognate languages (Bulg. *вълк* &rarr; *vǒlk*, Mac., Rus. *volk*; Bulg. *звън* &rarr; *zvǒn*, Bel., Rus., Serb. *zvon*; Bulg. *пълно* &rarr; *pǒlno*, Mac., Rus. *polno*).
 
 ### Macedonian
 
