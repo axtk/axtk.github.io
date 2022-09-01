@@ -226,7 +226,7 @@ This transliteration system:
 | ъ || omitted |
 
 - Cyr. *іи* &rarr; Lat. *ii*: a long *í* is redundant here;
-- Cyr. *ѣ* &rarr; Lat. *iě*: due to the probable historical pronunciation being close to [ie], and its cursive form resembling the ligature of *іь* (with the Old Russian vowel *ь* represented as *ě*); this form also combines the two major phonetic realizations: as [i] in the southwest of the East Slavic dialect continuum and [ʲe] elsewhere.
+- Cyr. *ѣ* &rarr; Lat. *iě*: due to the probable historical pronunciation being close to [ie], and its cursive form resembling the ligature of *іь* (with the Old Russian vowel *ь* represented as *ě*); this form also combines the two major phonetic realizations: as [i] in the southwest of the East Slavic dialect continuum and [ʲe] elsewhere (*свѣтъ*, *sviět* &rarr; Rus. *svet*, Ukr. *svit*).
 
 ### Serbian
 
