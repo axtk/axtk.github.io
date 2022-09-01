@@ -342,7 +342,7 @@ These characters stand for *ч* [tʃ], *ш* [ʃ], and *ж* [ʐ] respectively. Th
 
 ### *ŝ*
 
-This character stands for *щ* [Rus. ɕ; Ukr. ʃt͡ʃ] and resembles *š* standing for *ш* [ʃ] both phonetically and graphically.
+This character stands for *щ* [Rus. ɕ; Ukr. ʃt͡ʃ; Bul. ʃt] and resembles *š* standing for *ш* [ʃ] both phonetically and graphically.
 
 ### *j*
 
