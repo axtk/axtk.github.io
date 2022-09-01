@@ -354,7 +354,9 @@ This character represents the [ɨ]-sound (Rus., Bel. *ы*, Ukr. *и*), like in P
 
 ### *c*, *h*
 
-These characters represent the [t͡s] (*ц*) and [x] (*х*) sounds respectively. The *ts* and *kh* digraphs, that tend to be used as the representations of these sounds in some transliteration systems, are only reasonable in the writing systems where the standalone characters of *c* and *h* are already reserved to represent other sounds (as in English and French), while in the mentioned transliteration systems the standalone *c* and *h* are left completely unused. The *c* character also stands for the [t͡s] sound in all Latin-scripted Slavic languages (as in the Polish words *ulica*, *centralny*) and is part of the *č* character representing its palatalized counterpart (pronounced as [tʃ], *ч*).
+These characters represent the [t͡s] (*ц*) and [x] (*х*) sounds respectively. The *c* character stands for the [t͡s] sound in all Latin-scripted Slavic languages (as in the Polish words *ulica*, *centralny*) and is part of the *č* character representing its palatalized counterpart (pronounced as [tʃ], *ч*).
+
+The *ts* and *kh* digraphs, that tend to be used as the representations of these sounds in some transliteration systems, are only reasonable in the writing systems where the standalone characters of *c* and *h* are already reserved to represent other sounds (as in English and French), while in the mentioned transliteration systems the standalone *c* and *h* are left completely unused, which is odd.
 
 ### *ja*, *ia*
 
