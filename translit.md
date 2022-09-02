@@ -19,6 +19,7 @@ This transliteration system:
   - [Belarusian](#belarusian)
   - [Bulgarian](#bulgarian)
   - [Macedonian](#macedonian)
+  - [Old Slavonic](#old-slavonic)
   - [Russian](#russian)
   - [Serbian](#serbian)
   - [Ukrainian](#ukrainian)
@@ -162,6 +163,60 @@ This transliteration system:
 | ш | **š** ||
 
 - Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bulg. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bulg. *noŝ*, Rus. *noč*).
+
+### Old Slavonic
+
+| *Cyr* | *Lat* ||
+|:----:|:----:|---|
+| а | **a** ||
+| б | **b** ||
+| в | **v** ||
+| г | **g** ||
+| д | **d** ||
+| є | **je** ||
+|   | **e** | after consonants |
+| ж | **ž** ||
+| ѕ | **dz** ||
+| з | **z** ||
+| и, і, ї | **i** ||
+| ꙉ | **dž** ||
+| к | **k** ||
+| л | **l** ||
+| м | **m** ||
+| н | **n** ||
+| о | **o** ||
+| п | **p** ||
+| р | **r** ||
+| с | **s** ||
+| т | **t** ||
+| ѹ, ꙋ | **u** ||
+| ф | **f** ||
+| х | **h** ||
+| ѡ | **ō** | Cyr. *ѿ* &rarr; Lat. *ōᵗ* |
+| ц | **c** ||
+| ч | **č** ||
+| ш | **š** ||
+| щ | **ŝ** ||
+| ъ | **ǒ** ||
+| ꙑ, ы | **ǒi** | Cyr. ligature *ъ* + *і* &rarr; Lat. *ǒ* + *i* |
+| ь | **ě** ||
+| ѣ | **iě** | Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
+| ꙗ | **ja** ||
+|   | **ia** | after consonants |
+| ѥ | **je** ||
+|   | **ie** | after consonants |
+| ю | **ju** ||
+|   | **iu** | after consonants |
+| ѫ | **ǫ** ||
+| ѭ | **jǫ** ||
+|   | **iǫ** | after consonants |
+| ѧ | **ę** ||
+| ѩ | **ję** ||
+|   | **ię** | after consonants |
+| ѯ | **ks** ||
+| ѱ | **ps** ||
+| ѵ | **v̀** | Cyr. *ѷ* &rarr; Lat. *v&#783;* |
+| ҁ | **q** | used only as a numeral with no phonetic value |
 
 ### Russian
 
