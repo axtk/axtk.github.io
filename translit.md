@@ -176,8 +176,8 @@ This transliteration system:
 | є | **je** ||
 |   | **e** | after consonants |
 | ж | **ž** ||
-| ѕ | **dz** ||
-| з | **z** ||
+| ѕ, ꙃ | **dz** ||
+| з, ꙁ | **z** ||
 | и, і, ї | **i** ||
 | ꙉ | **dž** ||
 | к | **k** ||
@@ -198,7 +198,7 @@ This transliteration system:
 | ш | **š** ||
 | щ | **ŝ** ||
 | ъ | **ǒ** ||
-| ꙑ | **ǒi** | Cyr. ligature *ъ* + *і* &rarr; Lat. *ǒ* + *i* |
+| ꙑ, ы | **y** ||
 | ь | **ě** ||
 | ѣ | **jě** ||
 |   | **iě** | after consonants; Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
