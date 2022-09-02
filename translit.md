@@ -200,7 +200,8 @@ This transliteration system:
 | ъ | **ǒ** ||
 | ꙑ | **ǒi** | Cyr. ligature *ъ* + *і* &rarr; Lat. *ǒ* + *i* |
 | ь | **ě** ||
-| ѣ | **iě** | Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
+| ѣ | **jě** ||
+|   | **iě** | after consonants, Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
 | ꙗ | **ja** ||
 |   | **ia** | after consonants |
 | ѥ | **je** ||
