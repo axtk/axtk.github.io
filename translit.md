@@ -198,7 +198,7 @@ This transliteration system:
 | ш | **š** ||
 | щ | **ŝ** ||
 | ъ | **ǒ** ||
-| ꙑ, ы | **ǒi** | Cyr. ligature *ъ* + *і* &rarr; Lat. *ǒ* + *i* |
+| ꙑ | **ǒi** | Cyr. ligature *ъ* + *і* &rarr; Lat. *ǒ* + *i* |
 | ь | **ě** ||
 | ѣ | **iě** | Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
 | ꙗ | **ja** ||
