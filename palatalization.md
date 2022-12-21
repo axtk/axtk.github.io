@@ -9,11 +9,11 @@ The transition of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and 
 
 Since phonetic transformations usually progress over time gradually, at any given time a shift in articulation is subtle and is only adopted by some speakers, with others most likely perceiving it as unquestionably comprehensible. Therefore, in a complete sound chain fully representing the natural course of a phonetic transformation any two neighboring sounds should be close enough to be allophones of the same phoneme.
 
-If the first sound chain above is complete, it implies that at some point in time speakers of Vulgar Latin treated /kʲ/ and /tʲ/ as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation which would only take place in certain phonetic environments (see, for instance, Elcock *The Romance languages*, [p. 53](https://github.com/axtk/w/blob/main/_res/palatalization.png?raw=true)).
+If the first sound chain above is complete, it implies that at some point in time speakers of Vulgar Latin treated /kʲ/ and /tʲ/ as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation that would only take place in certain phonetic environments (see, for instance, Elcock *The Romance languages*, [p. 53](https://github.com/axtk/w/blob/main/_res/palatalization.png?raw=true)).
 
-On the other hand, the example of phonetic variation in the Modern German dialects seems to suggest a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects. A similar phonetic variation is seen with the adjectival suffix *-ig*. Since all of these variants are still observed in the living language varieties, this provides a credible insight to the possible transformations of the /k/ sound.
+On the other hand, the example of phonetic variation in the Modern German dialects seems to suggest a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects. A similar phonetic variation is seen with the adjectival suffix *-ig*. With all of these variants still observed in the living language varieties, this can provide a credible insight to the possible transformations of the /k/ sound.
 
-With this in mind, the sound change from Vulgar Latin /k/ to Modern French /ʃ/ could have passed in the following steps:
+Since similar phonetic patterns often reoccur across different language groups, the sound change from Vulgar Latin /k/ to Modern French /ʃ/ could have passed in the following steps:
 
 /k/ > /kʲ/ > /ç/ > /ɕ/ > /ʃ/, as in *cantare* > *chanter*.
 
@@ -31,4 +31,4 @@ In this chain, each pair of the neighboring sounds are close allophones that cou
 
 (2) Similarly, a /tɕ/ or /tʃ/ sound could have emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have been borrowed into English (to be nowadays observed in English loanwords like *chair* or *chamber*).
 
-(3) The sound change /k/ > /ts/, which does occur in other languages, could have resulted from a further development of /tɕ/ in the same sound chain.
+(3) The sound change /k/ > /ts/ that occurs in other languages could have resulted from a further development of /tɕ/ in the same sound chain.
