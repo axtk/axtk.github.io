@@ -2,7 +2,7 @@
 
 # From *cantare* to *chanter*
 
-The transition of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and /tʃ/ is an established fact, as seen, for instance, in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian. The generally accepted view of these transformations is the following:
+The transition of the Vulgar Latin sound /k/ into Modern Romance /s/, /ʃ/, and /tʃ/ is a well-known fact, but how exactly did it happen? This transition is seen, for instance, in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian. The generally accepted view of these transformations is the following:
 
 /k/ > /kʲ/ > /tʲ/ > /ts/ > /s/ &mdash; in Lat. *centum* > Fr. *cent*,<br>
 /k/ > /tʃ/ > /ʃ/ &mdash; in Lat. *centum* > It. *cento* and Lat. *cantare* > Fr. *chanter*.
@@ -11,7 +11,7 @@ Since phonetic transformations usually progress over time gradually, at any give
 
 If the first sound chain above is complete, it implies that at some point in time speakers of Vulgar Latin treated /kʲ/ and /tʲ/ as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation which would only take place in certain phonetic environments (see, for instance, Elcock *The Romance languages*, [p. 53](https://github.com/axtk/w/blob/main/_res/palatalization.png?raw=true)).
 
-On the other hand, an example of phonetic variation in the Modern German dialects seems to suggest a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects. A similar phonetic variation is seen with the adjectival suffix *-ig*. Since all of these variants are still observed in the living language varieties, this provides a credible insight to the possible transformations of the /k/ sound.
+On the other hand, the example of phonetic variation in the Modern German dialects seems to suggest a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects. A similar phonetic variation is seen with the adjectival suffix *-ig*. Since all of these variants are still observed in the living language varieties, this provides a credible insight to the possible transformations of the /k/ sound.
 
 With this in mind, the sound change from Vulgar Latin /k/ to Modern French /ʃ/ could have passed in the following steps:
 
