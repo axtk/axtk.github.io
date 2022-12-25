@@ -29,6 +29,6 @@ In this chain, each pair of the neighboring sounds are close allophones that cou
 /k/ > /k/, unchanged as in *cantare*,<br>
 /k/ > /kʲ/ > /ç/ > /ɕ/ > /tɕ/ > /tʃ/, as in *centum* > *cento*.
 
-(2) Similarly, a /tɕ/ or /tʃ/ sound could have emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have been borrowed into English (to be nowadays observed in English loanwords like *chair* or *chamber*).
+(2) Similarly, a /tɕ/ or /tʃ/ sound could have emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have survived in English borrowings like *chair* and *chamber*.
 
 (3) The sound change /k/ > /ts/ that occurs in other languages could have resulted from a further development of /tɕ/ in the same sound chain.
