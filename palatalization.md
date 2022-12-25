@@ -31,4 +31,4 @@ In this chain, each pair of the neighboring sounds are close allophones that cou
 
 (2) Similarly, a /tɕ/ or /tʃ/ sound could have emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have survived in English borrowings like *chair* and *chamber*.
 
-(3) The sound change /k/ > /ts/ that occurs in other languages could have resulted from a further development of /tɕ/ in the same sound chain.
+(3) The sound change /k/ > /ts/ occurring in other languages could have resulted from a further development of /tɕ/ in the same sound chain.
