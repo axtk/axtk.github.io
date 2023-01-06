@@ -377,12 +377,12 @@ This transliteration system:
 
 ## Stress mark
 
-There is a constant ambiguity in the use of the acute accent _́  in the writing systems employing the acute for other purposes or just having vowels with diacritical marks. This ambiguity seems to be easily resolvable with an underline as a stress mark proving, in fact, to be more suitable for this role.
+The use of the acute accent _́  as a stress mark becomes ambiguous in writing systems employing the acute for other purposes. This ambiguity seems to be easily resolvable with an underline as a stress mark proving, in fact, to be more suitable for this role.
 
 The underline as a stress mark
 - is immediately perceived as an emphasis mark;
 - doesn't conflict with most diacritics;
-- can be used to put a stress on a vowel sound represented by more than one letter (*Vanc<ins>ou</ins>ver*, *Montr<ins>eu</ins>x*) or on a whole stressed syllable;
+- can be used to put a stress on a vowel sound represented by more than one letter (*Vanc<ins>ou</ins>ver*, *Montr<ins>eu</ins>x*) or on an entire stressed syllable;
 - fits for stressed syllabic consonants (like in the Czech river name *V<ins>l</ins>tava*);
 - fits for most writing systems, including consonantal abjads (like Arabic and Hebrew);
 - and being part of the markup doesn't introduce an extra character into the text.
