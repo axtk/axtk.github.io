@@ -19,6 +19,7 @@ This transliteration system:
   - [Belarusian](#belarusian)
   - [Bulgarian](#bulgarian)
   - [Macedonian](#macedonian)
+  - [Montenegrin](#montenegrin)
   - [Old Slavonic](#old-slavonic)
   - [Russian](#russian)
   - [Serbian](#serbian)
@@ -163,6 +164,10 @@ This transliteration system:
 | ш | **š** ||
 
 - Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bulg. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bulg. *noŝ*, Rus. *noč*).
+
+### Montenegrin
+
+Same as the *[Serbian translit](#serbian)* with the addition of *ś* for Cyrillic *с́* and *ź* for Cyrillic *з́*.
 
 ### Old Slavonic
 
