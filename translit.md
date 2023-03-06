@@ -11,7 +11,7 @@ This transliteration system:
   - mimicking the English orthography while using consonant clusters like *zh*, *shch*, *kh* still ends up in a writing deeply foreign for an English speaker;
 - is aligned with the Latin-scripted Slavic languages, such as Czech, Slovak, Slovene, and to some extent Polish, with the reasons for this being:
   - these languages have a similar phonetic system and they already have well-established patterns for representing the phonetic features typical of the Slavic languages;
-  - writing all Slavic languages in a similar mutually intelligible way should contribute to a better understanding between speakers of these languages.
+  - writing in all Slavic languages in a similar mutually intelligible way should contribute to a better understanding between speakers of these languages.
 
 ## Contents
 
