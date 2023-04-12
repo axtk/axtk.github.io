@@ -394,9 +394,9 @@ The underline as a stress mark
 
 ## Background
 
-The transliteration system is fully described by the tables above. This section is a little step into the historical background of its features.
+The transliteration system is fully described by the tables above, and this section doesn't add any rules to those tables but offers a brief overview of the historical background of its features.
 
-The phonetic value of most Latin characters in the Slavic languages is quite predictable without prior knowledge of the Slavic writing systems, but like in many Latin-scripted languages there is a number of extra features requiring some remarks.
+The phonetic value of most Latin characters in the Slavic languages is quite predictable without prior knowledge of the Slavic writing systems, but like in many Latin-scripted languages there is a number of extra features requiring some remarks to demonstrate the motivation behind them.
 
 ### *č*, *š*, *ž*
 
