@@ -117,8 +117,8 @@ footer {
     margin: 0 auto;
     box-sizing: border-box;
 }
-main:last-child {
-    margin-bottom: 1.5rem;
+main:last-of-type {
+    margin-bottom: 2.5rem;
 }
 header hr,
 footer hr {
