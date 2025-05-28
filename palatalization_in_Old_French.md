@@ -1,34 +1,115 @@
-<sup>2018-09</sup>
+---
+date: 2018-09
+title: From *cantare* to *chanter*
+abstract: Reconsidering the course of the palatalization in Old French through comparison to the Modern German dialects
+---
 
-# From *cantare* to *chanter*
+<svg width="0" height="0" style="position:absolute;left:-9999px;"><defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z"/></marker></defs></svg>
 
-The transition of the Vulgar Latin sound /k/ into /s/, /ʃ/, and /tʃ/ in French and Italian is a well-known fact, but how exactly did it happen?
+The transition of the /k/ sound in medieval colloquial Latin (also known as *Vulgar Latin*) into /s/, /ʃ/, and /t͡ʃ/ in French and Italian is a well-known fact, but how exactly did it happen?
 
-This transition is seen, for instance, in *centum* > *cent*, *cantare* > *chanter* in French, and *centum* > *cento* in Italian, and the generally accepted view of these transformations is the following:
+This transition is seen, for instance, in *centum*&nbsp;&gt; *cent*, *cantare*&nbsp;&gt; *chanter* in French, *centum*&nbsp;&gt; *cento* in Italian, and the generally accepted view of these transformations is the following:
 
-/k/ > /kʲ/ > /tʲ/ > /ts/ > /s/ &mdash; in Lat. *centum* > Fr. *cent*,<br>
-/k/ > /tʃ/ > /ʃ/ &mdash; in Lat. *centum* > It. *cento* and Lat. *cantare* > Fr. *chanter*.
+/k/&nbsp;&gt; /kʲ/&nbsp;&gt; /tʲ/&nbsp;&gt; /ts/&nbsp;&gt; /s/&nbsp;— in <span class="lang">Lat.</span> *centum*&nbsp;&gt; <span class="lang">Fr.</span> *cent*,<br>
+/k/&nbsp;&gt; /t͡ʃ/&nbsp;&gt; /ʃ/&nbsp;— in <span class="lang">Lat.</span> *centum*&nbsp;&gt; <span class="lang">It.</span> *cento* and <span class="lang">Lat.</span> *cantare*&nbsp;&gt; <span class="lang">Fr.</span> *chanter*.
 
-One of the curious parts of these chains is /kʲ/ > /tʲ/. If there is nothing in between, it suggests that at some point in time speakers of Vulgar Latin regarded /kʲ/ and /tʲ/ as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation that would only take place in certain phonetic environments (see, for instance, Elcock *The Romance languages*, [p. 53](https://github.com/axtk/w/blob/main/_res/palatalization.png?raw=true)).
+One of the curious parts of these chains is <nobr>/kʲ/&nbsp;&gt; /tʲ/</nobr>. If there is nothing in between, it suggests that at some point in time speakers of Vulgar Latin regarded <nobr>/kʲ/</nobr> and <nobr>/tʲ/</nobr> as close variations of the same sound while speaking to each other. There is not much detail on how this could happen, apart from attributing this change to a shift of the point of articulation that would only take place in certain phonetic environments.
 
-On the other hand, the example of phonetic variation in the Modern German dialects seems to offer a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects. A similar phonetic variation is seen with the adjectival suffix *-ig*. With all of these variants still observed in the living language varieties, this can provide a credible insight to the possible transformations of the /k/ sound.
+On the other hand, the example of phonetic variation in the Modern German dialects seems to offer a different perspective. The sound pronounced as /ç/ in Standard German, as in *ich*, is rendered as /k/ and /kʲ/ in Low German, /ɕ/ (and in certain conditions /j/) in Kölsch and other Central German dialects.
 
-Since similar phonetic patterns often reoccur across different language groups, the sound change from Vulgar Latin /k/ to French /ʃ/ could have passed in the following steps:
+A similar phonetic variation is seen with the very productive Germanic adjectival <nobr>suffix&nbsp;*-ig*</nobr>:
+<ul>
+    <li>/-ɪç/ in Standard German,</li>
+    <li>/-ɪk/ in southern dialects of German,</li>
+    <li>/-ɪɕ/ or /-ɪʃ/ in Central German dialects,</li>
+    <li>/-əx/ in Dutch.</li>
+</ul>
 
-/k/ > /kʲ/ > /ç/ > /ɕ/ > /ʃ/, as in *cantare* > *chanter*.
+With all of these variants still observed in the living language varieties, this can provide a credible insight to the possible transformations of the /k/ sound.
 
-In this chain, each pair of the neighboring sounds are close allophones that could be taken for a single phoneme by speakers of the language, as proven by modern Germans. The other possibilities of the development of Vulgar Latin /k/ observable in French can also be aligned with this chain:
+Since similar phonetic patterns often recur across different language groups, the sound change from Vulgar Latin /k/ to French /ʃ/ could have passed in the following steps:
 
-/k/ > /kʲ/ > /ç/ > /ɕ/ > /sʲ/ > /s/, as in *centum* > *cent*,<br>
-/k/ > /kʲ/ > /ç/ > /j/ > /∅/, as in *facere* > *faire*.
+/k/&nbsp;&gt; /kʲ/&nbsp;&gt; /ç/&nbsp;&gt; /ɕ/&nbsp;&gt; /ʃ/, as in <span class="lang">Lat.</span> *cantare*&nbsp;&gt; <span class="lang">Fr.</span> *chanter*.
 
-### Related phonetic changes
+In this chain, each pair of the neighboring sounds are close allophones, which could be taken for a single phoneme by speakers of the language, as proven by modern Germans. The other possibilities of the development of Vulgar Latin /k/ observable in French can also be aligned with this chain:
 
-(1) The above chains can also be adjusted to fit Italian:
+/k/&nbsp;&gt; /kʲ/&nbsp;&gt; /ç/&nbsp;&gt; /ɕ/&nbsp;&gt; /sʲ/&nbsp;&gt; /s/, as in <span class="lang">Lat.</span> *centum*&nbsp;&gt; <span class="lang">Fr.</span> *cent*,<br>
+/k/&nbsp;&gt; /kʲ/&nbsp;&gt; /ç/&nbsp;&gt; /j/&nbsp;&gt; /<svg viewBox="0 0 78 100" width=".78em" height="1em"><!-- Cross-browser symbol ∅ --><title>∅</title><g stroke="currentColor" stroke-width="6" fill="none"><circle cx="39" cy="62" r="32"/><line x1="3" y1="96" x2="76" y2="30"/></g></svg>/, as in <span class="lang">Lat.</span> *facere*&nbsp;&gt; <span class="lang">Fr.</span> *faire*.
 
-/k/ > /k/, unchanged as in *cantare*,<br>
-/k/ > /kʲ/ > /ç/ > /ɕ/ > /tɕ/ > /tʃ/, as in *centum* > *cento*.
+The phonetic transition path from the older /k/ sound to its descendants in Modern French takes the following shape:
 
-(2) Similarly, a /tɕ/ or /tʃ/ sound could have emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have survived in English borrowings like *chair* and *chamber*.
+<svg class="text" viewBox="0 0 268 95" width="15.23em" role="img">
+<title>Palatalization of /k/ in Old French</title>
+<g style="transform: translate(0, -8px);">
+<g fill="currentColor">
+    <text x="0" y="24" id="i1_c1">k</text>
+    <text x="50" y="24" id="i1_c2">kʲ</text>
+    <text x="104" y="24" id="i1_c3">ç</text>
+    <text x="155" y="24" id="i1_c4">ɕ</text>
+    <text x="206" y="24" id="i1_c5">ʃ</text>
+    <text x="206" y="60" id="i1_c6">sʲ</text>
+    <text x="257" y="60" id="i1_c7">s</text>
+    <text x="175" y="96" id="i1_c8">j</text>
+    <!-- text x="221" y="96" id="i1_c9">∅</text -->
+    <g style="transform: translateY(-.95em);"><svg x="221" y="96" viewBox="0 0 78 100" width=".78em" height="1em"><!-- Cross-browser symbol ∅ --><title>∅</title><g stroke="currentColor" stroke-width="6" fill="none"><circle cx="39" cy="62" r="32"/><line x1="3" y1="96" x2="76" y2="30"/></g></svg></g>
+</g>
+<g stroke="currentColor" fill="none" opacity=".25" marker-end="url(#arrow)">
+    <path d="M14,19 44,19" id="i1_c1_c2"/>
+    <path d="M68,19 98,19" id="i1_c2_c3"/>
+    <path d="M119,19 149,19" id="i1_c3_c4"/>
+    <path d="M170,19 200,19" id="i1_c4_c5"/>
+    <path d="M170,19 201,55" id="i1_c4_c6"/>
+    <path d="M224,55 251,55" id="i1_c6_c7"/>
+    <path d="M119,19 169,89" id="i1_c4_c8"/>
+    <path d="M185,90 216,90" id="i1_c8_c9"/>
+</g>
+</g>
+</svg>
 
-(3) The sound change /k/ > /ts/ occurring in other languages could have resulted from a further development of /tɕ/ in the same sound chain.
+The above chains can also be adjusted to fit a possible transformation path from Vulgar Latin to Italian:
+
+/k/&nbsp;&gt; /k/, as in <span class="lang">Lat.</span> *cantare* &gt; <span class="lang">It.</span> *cantare*,<br>
+/k/&nbsp;&gt; /kʲ/&nbsp;&gt; /ç/&nbsp;&gt; /ɕ/&nbsp;&gt; /t͡ɕ/&nbsp;&gt; /t͡ʃ/, as in <span class="lang">Lat.</span> *centum*&nbsp;&gt; <span class="lang">It.</span> *cento*.
+
+Similarly, a /t͡ɕ/ or /t͡ʃ/ sound could have also emerged from /ɕ/ in varieties of Old French, not as a predecessor of /ʃ/, but as a regional alternative. This particular variant could have survived in English borrowings like *chair* and *chamber*.
+
+The sound change /k/&nbsp;&gt; /t͡s/ occurring in some Modern Romance languages (like in Sassarese *zena* and *ziddai*, akin to Italian *cena* and *città*) could have resulted from a further development of /t͡ɕ/ in the same sound chain.
+
+To summarize, the palatalization of the /k/ sound in the Proto-Romance language (and probably beyond) could have proceeded by the following paths:
+
+<svg class="text" viewBox="0 0 275 230" width="15.35em" role="img">
+<title>Palatalization of /k/</title>
+<g style="transform: translate(-20px, -28px);">
+<g fill="currentColor">
+    <text x="20" y="150" id="i2_c1">k</text>
+    <text x="70" y="150" id="i2_c2">kʲ</text>
+    <text x="124" y="150" id="i2_c3">ç</text>
+    <text x="175" y="150" id="i2_c4">ɕ</text>
+    <text x="226" y="150" id="i2_c5">ʃ</text>
+    <text x="192" y="119" style="font-size: 80%; opacity: .5;">ᵗɕ</text>
+    <text x="226" y="100" id="i2_c6">t͡ɕ</text>
+    <text x="275" y="50" id="i2_c7">t͡s</text>
+    <text x="277" y="100" id="i2_c8">t͡ʃ</text>
+    <text x="226" y="200" id="i2_c9">sʲ</text>
+    <text x="277" y="200" id="i2_c10">s</text>
+    <text x="200" y="250" id="i2_c11">j</text>
+    <!-- text x="246" y="250" id="i2_c12">∅</text -->
+    <g style="transform: translateY(-.95em);"><svg x="246" y="250" viewBox="0 0 78 100" width=".78em" height="1em"><!-- Cross-browser symbol ∅ --><title>∅</title><g stroke="currentColor" stroke-width="6" fill="none"><circle cx="39" cy="62" r="32"/><line x1="3" y1="96" x2="76" y2="30"/></g></svg></g>
+</g>
+<g stroke="currentColor" fill="none" opacity=".25">
+    <g marker-end="url(#arrow)">
+        <path d="M34,145 64,145" id="i2_c1_c2"/>
+        <path d="M88,145 118,145" id="i2_c2_c3"/>
+        <path d="M139,145 169,145" id="i2_c3_c4"/>
+        <path d="M190,145 220,145" id="i2_c4_c5"/>
+        <path d="M190,145 222,105" id="i2_c4_c6"/>
+        <path d="M246,95 271,95" id="i2_c6_c8"/>
+        <path d="M245,85 271,54" id="i2_c6_c7"/>
+        <path d="M190,145 220,195" id="i2_c4_c9"/>
+        <path d="M244,195 271,195" id="i2_c9_c10"/>
+        <path d="M139,145 195,245" id="i2_c3_c11"/>
+        <path d="M210,245 241,245" id="i2_c11_c12"/>
+    </g>
+</g>
+</g>
+</svg>
