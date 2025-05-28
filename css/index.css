@@ -4,6 +4,11 @@ html {
 body {
     padding: 2rem 0 3rem;
 }
+@media (max-width: 600px) {
+    body {
+        padding: 2rem 0;
+    }
+}
 h2 {
     border-bottom-width: .1rem;
 }
