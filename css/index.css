@@ -1,6 +1,9 @@
 html {
     --max-main-content-width: 36rem;
 }
+body {
+    padding: 2rem 0 3rem;
+}
 h2 {
     border-bottom-width: .1rem;
 }
@@ -63,4 +66,7 @@ main .intro h1:first-child {
     content: "•";
     display: inline-block;
     margin: 0 .5em;
+}
+.content p.sep {
+    text-align: center;
 }
