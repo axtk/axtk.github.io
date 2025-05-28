@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width">
     <title>{{page.title | strip_html}}</title>
     <link rel="stylesheet" href="css/plain.css">
+{% if content contains "<pre" %}
+    <link rel="stylesheet" href="css/code.lightbulb.css">
+{% endif %}
 </head>
 <body>
 
@@ -19,8 +22,8 @@
 <div class="abstract" role="doc-abstract">
 {{page.abstract}}
 </div>
-{% endif %}
 
+{% endif %}
 {{content}}
 </main>
 

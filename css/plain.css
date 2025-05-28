@@ -1,5 +1,5 @@
 html {
-    --max-main-content-width: 42rem;
+    --max-main-content-width: 40rem;
     --layout-padding-x: 1.1rem;
     --layout-padding-y: .9rem;
     --abstract-padding: var(--layout-padding-x);
