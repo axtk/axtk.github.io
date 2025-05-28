@@ -1,6 +1,6 @@
 ---
 date: 2018-09
-title: From *cantare* to *chanter*
+title: From <i>cantare</i> to <i>chanter</i>
 abstract: Reconsidering the course of the palatalization in Old French through comparison to the Modern German dialects
 ---
 

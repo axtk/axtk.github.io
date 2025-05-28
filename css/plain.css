@@ -82,6 +82,7 @@ h4 {
 }
 .abstract,
 [role="doc-abstract"] {
+    font-style: italic;
     background: rgba(0, 0, 0, .05);
     padding: var(--abstract-padding);
     margin: 1.25em calc(-1*var(--abstract-padding)) 1.75em;
