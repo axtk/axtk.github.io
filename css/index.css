@@ -1,0 +1,60 @@
+main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--layout-padding-y);
+}
+.intro h1 {
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+}
+main .intro h1:first-child {
+    margin-top: 0;
+}
+.intro p.nickname {
+    margin: .5em 0;
+}
+.intro .image {
+    --image-size: 5.5rem;
+}
+.intro .image p {
+    margin: 0;
+}
+.intro .image span {
+    display: block;
+    font-size: 0;
+    border: .5rem solid #f2f2f2;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.intro .image img {
+    height: var(--image-size);
+}
+.intro .content {
+    text-align: center;
+}
+.intro ul.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: .5em;
+}
+.intro ul.contacts li {
+    display: inline;
+}
+.intro ul.contacts li + li::before {
+    content: "•";
+    display: inline-block;
+    margin: 0 .5em;
+}
