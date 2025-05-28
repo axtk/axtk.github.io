@@ -1,3 +1,9 @@
+html {
+    --max-main-content-width: 36rem;
+}
+h2 {
+    border-bottom-width: .1rem;
+}
 main {
     min-height: 80vh;
     display: flex;
