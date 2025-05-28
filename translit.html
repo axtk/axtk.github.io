@@ -1,433 +1,739 @@
-# *Venedica*, nový translit
+---
+layout: default
+date: 2019-10
+updates: 2022, 2024-10
+title: <i>Venedica</i>, transliteration of Cyrillic
+abstract: <p>Unified transliteration system of the Cyrillic script for all Slavic languages</p><!--p>[ve <u>ne</u> di t͡sa]</p-->
+---
 
-[ve <ins>ne</ins> di t͡sa]
+<h2 id="features">Features</h2>
 
-*A project of a consistent transliteration system of the Cyrillic script*
+<p>This transliteration system:<p>
+<ul>
+    <li>doesn't seek to follow the patterns typical of the English orthography;</li>
+    <li>is aligned with the Latin-scripted Slavic languages, such as Czech, Slovak, Slovene, and to some extent Polish;</li>
+    <li>fits for Cyrillic of (in the alphabetical order): Belarusian, Bulgarian, Macedonian, Montenegrin, Russian, Serbian, Ukrainian.</li>
+</ul>
 
-This transliteration system:
+<h3 id="less_like_English">Less like English</h3>
 
-- doesn't seek to follow the patterns typical of the English orthography, with the reasons for this being:
-  - following English patterns results in inconsistencies (e.g. using *-y* as a transliteration for *-й*, *-ы*, *-ий*, or *-ый*; cf. *\*Valday*, *\*Andrey*, *\*Dmitry*, *\*Mirny*);
-  - mimicking the English orthography while using consonant clusters like *zh*, *shch*, *kh* still ends up in a writing deeply foreign for an English speaker;
-- is aligned with the Latin-scripted Slavic languages, such as Czech, Slovak, Slovene, and to some extent Polish, with the reasons for this being:
-  - these languages have a similar phonetic system and they already have well-established patterns for representing the phonetic features typical of the Slavic languages;
-  - writing in all Slavic languages in a similar mutually intelligible way should contribute to a better understanding between speakers of these languages.
+<p>Following patterns of the English language results in inconsistencies. The notable example is using the Latin letter <i>y</i> as a transliteration for <i>й</i>, <i>ы</i>, <i>-ий</i>, or <i>-ый</i> within a single transliteration system (<i>&times;Alta<span class="discouraged">y</span></i>, <i>&times;R<span class="discouraged">y</span>binsk</i>, <i>&times;Vasil<span class="discouraged">y</span></i>, <i>&times;Mal<span class="discouraged">y</span></i>).</p>
 
-## Contents
+<p>Also, the English orthography doesn't possess an established inventory for soft consonants, resulting in the softness in transliterations of the Slavic languages being conveyed inconsistently or ambiguously.</p>
 
-- Varieties (in the alphabetical order):
-  - [Belarusian](#belarusian)
-  - [Bulgarian](#bulgarian)
-  - [Macedonian](#macedonian)
-  - [Montenegrin](#montenegrin)
-  - [Old Slavonic](#old-slavonic)
-  - [Russian](#russian)
-  - [Serbian](#serbian)
-  - [Ukrainian](#ukrainian)
-- [Stress mark](#stress-mark)
-- [Background](#background)
+<p>The table below shows the multiple existing approaches to conveying soft consonants and the misrepresentation of certain cases resulting in duplicate forms (highlighted in red) which removes the difference apparent to a speaker of the Slavic languages and contributes to rendering the English-like transliterations suboptimal.</p>
 
-## Varieties
+<table border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th>Cyr</th>
+    <th>&times;Lat1</th>
+    <th>&times;Lat2</th>
+    <th>&times;Lat3</th>
+    <th>&times;Lat4</th>
+</tr>
+<tr>
+    <td><i>сья</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i>s'ya</i></td>
+    <td><i class="discouraged">s'ya</i></td>
+</tr>
+<tr>
+    <td><i>съя</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">s'ya</i></td>
+</tr>
+<tr>
+    <td><i>ся</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i class="discouraged">sya</i></td>
+    <td><i>sya</i></td>
+</tr>
+<tr>
+    <td><i>сь</i></td>
+    <td><i class="discouraged">s</i></td>
+    <td><i>s'</i></td>
+    <td><i>s'</i></td>
+    <td><i>s'</i></td>
+</tr>
+<tr>
+    <td><i>с</i></td>
+    <td><i class="discouraged">s</i></td>
+    <td><i>s</i></td>
+    <td><i>s</i></td>
+    <td><i>s</i></td>
+</tr>
+</table>
 
-### Belarusian
+<p>Furthermore, mimicking the English orthography while using apostrophes and consonant clusters like <i class="discouraged">zh</i>, <i class="discouraged">shch</i>, <i class="discouraged">kh</i> still ends up in a writing deeply foreign to an English speaker, defeating the purpose of making a transliteration system look familiar to speakers of English.</p>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| (ґ) | (**ġ**) ||
-| д | **d** ||
-| е | **je** ||
-|   | **ie** | after consonants |
-| ё | **jo** ||
-|   | **io** | after consonants |
-|   | **o** | after *č*, *š*, *ž* |
-| ж | **ž** ||
-| з | **z** ||
-| і | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for *ій* |
-| й | **j** ||
-|   | **i** | short *i*, *й* after a vowel and not followed by a vowel |
-| к | **k** ||
-| л | **l** ||
-| м | **m** ||
-| н | **n** ||
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| у | **u** ||
-| ў | **w** ||
-| ф | **f** ||
-| х | **h** ||
-| ц | **c** ||
-| ч | **č** ||
-| ш | **š** ||
-| ы | **y** ||
-|   | **ý** | long *y*, for *ый* |
-| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
-|   || omitted after *č*, *š*, *ž* |
-| э | **e** ||
-| ю | **ju** ||
-|   | **iu** | after consonants |
-| я | **ja** ||
-|   | **ia** | after consonants |
-| ' || omitted |
+<h3 id="more_like_Czech_and_Polish">More like Czech and Polish</h3>
 
-- *ja*, *je*, *jo*, *ju* are used word-initially, after vowels, after *ь* and *'*.
+<p>Compared to the Cyrillic-based Slavic languages, the Latin-scripted Slavic languages (such as Czech and Polish) have a similar phonetic system. With the well-established patterns for representing most phonetic features typical of the Slavic languages, these languages are the fittest source for a transliteration system of Slavic Cyrillic.</p>
 
-### Bulgarian
+<p>Also, writing in all Slavic languages in a similar and nearly mutually intelligible way should contribute to better understanding between speakers of these languages.</p>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| д | **d** ||
-| е | **e** ||
-| ж | **ž** ||
-| з | **z** ||
-| и | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for *ій* |
-| й | **j** ||
-|   | **i** | short *i*, *й* after a vowel and not followed by a vowel |
-| к | **k** ||
-| л | **l** ||
-| м | **m** ||
-| н | **n** ||
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| у | **u** ||
-| ф | **f** ||
-| х | **h** ||
-| ц | **c** ||
-| ч | **č** ||
-| ш | **š** ||
-| щ | **ŝ** ||
-| ъ | **ǒ** ||
-| ь | **i** | rarely used, only in *ьо* &rarr; *io* |
-| ю | **ju** ||
-|   | **iu** | after consonants |
-| я | **ja** ||
-|   | **ia** | after consonants |
+<h2 id="transliteration_rules">Transliteration rules</h2>
 
-- *ja*, *ju* are used word-initially and after vowels;
-- Cyr. *ъ* &rarr; Lat. *ǒ* is in line with the transliteration of Old Slavonic *ъ* &rarr; *ǒ* (which has often come to correspond *o* in the modern Slavic languages, hence the spelling as *ǒ*, or *short o*) and results in a recognizable spelling when compared to the other cognate languages (Bulg. *вълк* &rarr; *vǒlk*, Mac., Rus. *volk*; Bulg. *звън* &rarr; *zvǒn*, Bel., Rus., Serb. *zvon*; Bulg. *пълно* &rarr; *pǒlno*, Mac., Rus. *polno*).
+<p>As shown below, most Cyrillic letters have a simple one-to-one transliteration, with a few exceptions still following clear long-established patterns.</p>
 
-### Macedonian
+<h3 id="Czech_sibilants">Czech sibilants</h3>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| д | **d** ||
-| ѓ | **d́** ||
-|   | **di** | before vowels, except *i* |
-| е | **e** ||
-| ж | **ž** ||
-| з | **z** ||
-| ѕ | **dz** ||
-| и | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *иј* |
-| ј | **j** ||
-|   | **i** | short *i*, for Cyr. *ј* after a vowel and not followed by a vowel |
-| к | **k** ||
-| л | **l** ||
-| љ | **ĺ** ||
-|   | **li** | before vowels, except *i* |
-| м | **m** ||
-| н | **n** ||
-| њ | **ń** ||
-|   | **ni** | before vowels, except *i* |
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| ќ | **ć** ||
-|   | **ci** | before vowels, except *i* |
-| у | **u** ||
-| ф | **f** ||
-| х | **h** ||
-| ц | **c** ||
-| ч | **č** ||
-| џ | **dž** ||
-| ш | **š** ||
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+</tr>
+<tr>
+    <td class="cyr">ц</td>
+    <td class="lat">c<sup><a href="#c_h" id="c_h__ref">[b]</a></sup></td>
+    <td class="ipa">[t͡s]</td>
+</tr>
+<tr>
+    <td class="cyr">с</td>
+    <td class="lat">s</td>
+    <td class="ipa">[s]</td>
+</tr>
+<tr>
+    <td class="cyr">з</td>
+    <td class="lat">z</td>
+    <td class="ipa">[z]</td>
+</tr>
+<tr>
+    <td class="cyr">ч</td>
+    <td class="lat">č</td>
+    <td class="ipa">[t͡ʃ, t͡ɕ]</td>
+</tr>
+<tr>
+    <td class="cyr">ш</td>
+    <td class="lat">š</td>
+    <td class="ipa">[ʃ]</td>
+</tr>
+<tr>
+    <td class="cyr">ж</td>
+    <td class="lat">ž</td>
+    <td class="ipa">[ʒ]</td>
+</tr>
+</table>
 
-- Cyr. *ѓ* and *ќ* are transliterated as *d́* (and *di* before vowels, except *i*) and *ć* (and *ci* before vowels, except *i*) respectively to better convey their phonetic value; such transliteration also makes the writing less cryptic to the speakers of the cognate languages (Mac. *раѓање* &rarr; *radianie*, Serb. *rad́žanie*, Bulg. *raždane*, Rus. *roždenije*; Mac. *ноќ* &rarr; *noć*, Serb. *noć*, Bulg. *noŝ*, Rus. *noč*).
+<p><strong><i>č</i></strong>, <strong><i>š</i></strong>, <strong><i>ž</i></strong> are the common representations of the sounds corresponding to <i>ч</i>, <i>ш</i>, <i>ж</i>. These letters have been long used in Czech, Slovak, and Slovene.</p>
 
-### Montenegrin
+<p id="sibilant_affinity">The diacritic mark, caron, in these characters indicates their affinity with the unmarked consonants, which can be seen for instance in Russian word forms like <i>ули<mark>ц</mark>а</i>&nbsp;— <i>ули<mark>ч</mark>ный</i> (<i>c/č</i>), <i>пи<mark>с</mark>ать</i>&nbsp;— <i>пи<mark>ш</mark>у</i> (<i>s/š</i>), <i>во<mark>з</mark>ить</i>&nbsp;— <i>во<mark>ж</mark>у</i> (<i>z/ž</i>).</p>
 
-Same as the *[Serbian translit](#serbian)* with the addition of *ś* for Cyrillic *с́* and *ź* for Cyrillic *з́*.
+<p>This also means that, in many contexts, typing with a keyboard lacking the accented characters shouldn't render a text completely incomprehensible.</p>
 
-### Old Slavonic
+<h3 id="Polish_soft_acute">Polish soft acute</h3>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| д | **d** ||
-| є | **je** ||
-|   | **e** | after consonants |
-| ж | **ž** ||
-| ѕ, ꙃ | **dz** ||
-| з, ꙁ | **z** ||
-| и, і, ї | **i** ||
-| ꙉ | **dž** ||
-| к | **k** ||
-| л | **l** ||
-| м | **m** ||
-| н | **n** ||
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| ѹ, ꙋ | **u** ||
-| ф | **f** ||
-| х | **h** ||
-| ѡ | **ō** | Cyr. *ѿ* &rarr; Lat. *ōᵗ* |
-| ц | **c** ||
-| ч | **č** ||
-| ш | **š** ||
-| щ | **ŝ** ||
-| ъ | **ǒ** ||
-| ꙑ, ы | **y** ||
-| ь | **ě** ||
-| ѣ | **jě** ||
-|   | **iě** | after consonants; Cyr. ligature *і* + *ь* &rarr; Lat. *i* + *ě* |
-| ꙗ | **ja** ||
-|   | **ia** | after consonants |
-| ѥ | **je** ||
-|   | **ie** | after consonants |
-| ю | **ju** ||
-|   | **iu** | after consonants |
-| ѫ | **ǫ** ||
-| ѭ | **jǫ** ||
-|   | **iǫ** | after consonants |
-| ѧ | **ę** ||
-| ѩ | **ję** ||
-|   | **ię** | after consonants |
-| ѯ | **ks** ||
-| ѱ | **ps** ||
-| ѵ | **v̀** | Cyr. *ѷ* &rarr; Lat. *v&#783;* |
-| ҁ | **q** | used only as a numeral with no phonetic value |
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+    <th class="note"></th>
+</tr>
+<tr>
+    <td class="cyr" rowspan="3">ь</td>
+    <td class="lat">◌́</td>
+    <td class="ipa" rowspan="2"></td>
+    <td class="note">goes as an acute over the preceding consonant (◌́), except <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i> and except Old Slavic</td>
+</tr>
+<tr>
+    <td class="lat"></td>
+    <td class="note">omitted after <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i>, except Old Slavic</td>
+</tr>
+<tr class="archaic" data-lang="os">
+    <td class="lat">ě</td>
+    <td class="ipa">[*ĕ, *ĭ]</td>
+    <td class="note">in Old Slavic (see also <i><a href="#ъ_ь">jer and jeŕ</a></i>)</td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="cyr" rowspan="3">љ</td>
+    <td class="lat">ĺ</td>
+    <td class="ipa" rowspan="3">[ʎ, lʲ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="lat">li</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="lat">l</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="cyr" rowspan="3">њ</td>
+    <td class="lat">ń</td>
+    <td class="ipa" rowspan="3">[ɲ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="lat">ni</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="lat">n</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="sr">
+    <td class="cyr" rowspan="3">ћ</td>
+    <td class="lat">ć</td>
+    <td class="ipa" rowspan="3">[tɕ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="sr">
+    <td class="lat">ci</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="sr">
+    <td class="lat">c</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="me">
+    <td class="cyr" rowspan="3">с́</td>
+    <td class="lat">ś</td>
+    <td class="ipa" rowspan="3">[ɕ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="me">
+    <td class="lat">si</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="me">
+    <td class="lat">s</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="me">
+    <td class="cyr" rowspan="3">з́</td>
+    <td class="lat">ź</td>
+    <td class="ipa" rowspan="3">[ʑ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="me">
+    <td class="lat">zi</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="me">
+    <td class="lat">z</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="mk">
+    <td class="cyr" rowspan="3">ѓ</td>
+    <td class="lat">d́<sup><a href="#dshe" id="dshe__ref">[1]</a></sup></td>
+    <td class="ipa" rowspan="3">[dʲ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="mk">
+    <td class="lat">di</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="mk">
+    <td class="lat">d</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+<tr data-lang="mk">
+    <td class="cyr" rowspan="3">ќ</td>
+    <td class="lat">ć<sup><a href="#dshe" id="dshe__ref">[1]</a></sup></td>
+    <td class="ipa" rowspan="3">[c, tɕ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="mk">
+    <td class="lat">ci</td>
+    <td class="note">before vowels, except <i>i</i></td>
+</tr>
+<tr data-lang="mk">
+    <td class="lat">c</td>
+    <td class="note">before <i>i</i></td>
+</tr>
+</table>
 
-### Russian
+<p id="dshe"><sup><a href="#dshe__ref">[1]</a></sup> Although graphically based on <i>г</i> which is represented by Latin <i>g</i>, the Cyrillic letter <strong><i>ѓ</i></strong> is transliterated as <i>d́</i> based on its phonetic value, which makes it less cryptic and more recognizable to speakers of other Slavic languages. For a similar reason, Cyrillic <strong><i>ќ</i></strong> is transliterated as <i>ć</i>.</p>
 
-| *Cyr* | *Lat* || Examples |
-|:----:|:----:|---|---------|
-| а | **a** || Astrahań |
-| б | **b** || Baikal, Borodino |
-| в | **v** || Volga, Voronež |
-| г | **g** || Gatčina |
-| д | **d** || Dmitrov, Don |
-| е | **je** || Jekaterinburg, Bologoje |
-|   | **e** | after consonants | Peterburg |
-| ё | **jo** || Jolkino |
-|   | **io** | after consonants | Oriol, Koroliov |
-|   | **o** | after *č*, *š*, *ž* | Vyšní Voločok |
-| ж | **ž** || Žukovskí |
-| з | **z** || Zelenograd |
-| и | **i** || Ivanovo, Irkutsk |
-|   | **í** | long *i*, for [i] before or after a vowel and for *ий* | Troíck, Žukovskí |
-| й | **j** || Joškar-Ola |
-|   | **i** | short *i*, *й* after a vowel and not followed by a vowel | Altai, Možaisk |
-| к | **k** || Kaluga, Kazań, Kolomna |
-| л | **l** || Lipeck, Ladoga |
-| м | **m** || Moskva, Murmansk |
-| н | **n** || Nižní Novgorod, Novosibirsk |
-| о | **o** || Oriol, Orenburg |
-| п | **p** || Pskov, Piatigorsk |
-| р | **r** || Riazań, Rostov-na-Donu |
-| с | **s** || Samara, Smolensk, Suzdaĺ |
-| т | **t** || Tula, Tveŕ, Toržok |
-| у | **u** || Uĺjanovsk, Ufa |
-| ф | **f** || Fili |
-| х | **h** || Habarovsk |
-| ц | **c** || Novokuzneck |
-| ч | **č** || Čehov, Čeboksary |
-| ш | **š** || Kašira |
-| щ | **ŝ** || Blagoveŝensk |
-| ъ || omitted | Sjanovo |
-| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* | Riazań, Tveŕ, Perḿ, Viaźma |
-|   || omitted after *č*, *š*, *ž* | Povolžje, Medvežjegorsk |
-| ы | **y** || Syzrań, Čeboksary |
-|   | **ý** | long *y*, for *ый* | Dolgoprudný |
-| э | **e** || Ulan-Ude, Elektrostaĺ |
-| ю | **ju** || Južno-Sahalinsk |
-|   | **iu** | after consonants | Tiumeń, Velikí Ustiug |
-| я | **ja** || Jaroslavĺ, Krasnojarsk, Staraja Russa |
-|   | **ia** | after consonants | Riazań, Briansk, Viaźma |
+<ul>
+    <li><span class="lang">Mac.</span> <i>ра<mark>ѓ</mark>ање</i>&nbsp;&rarr; <i>ra<mark>di</mark>anie</i>&nbsp;~ <span class="lang">Bulg.</span> <i>raždane</i>, <span class="lang">Serb.</span> <i>rod́ženie</i>, <span class="lang">Rus.</span> <i>roždenije</i>;</li>
+    <li><span class="lang">Mac.</span> <i>но<mark>ќ</mark></i>&nbsp;&rarr; <i>no<mark>ć</mark></i>&nbsp;~ <span class="lang">Serb.</span> <i>noć</i>, <span class="lang">Bulg.</span> <i>noŝ</i>, <span class="lang">Rus.</span> <i>noč</i>.&nbsp;&para;</li>
+</ul>
 
-- *ja*, *je*, *jo*, *ju* are used word-initially, after vowels, after *ь* and *ъ*;
-- Cyr. *ии* &rarr; Lat. *ii*: a long *í* is redundant here;
-- Cyr. *ьо* &rarr; Lat. an acute over the preceding consonant + *jo*: due to its pronunciation as *ьё*;
-- Cyr. *йе*, *йё*, *йю*, *йя* (in rare loanwords) &rarr; Lat. *je*, *jo*, *ju*, *ja* (*j* is not duplicated).
+<p id="consonant_acute">Consonants are palatalized with the acute accent, unless followed by a vowel. Followed by a vowel, consonants are palatalized by introducing <i>i</i> after the consonant. If the vowel following the consonant is <i>i</i>, the palatalizing <i>i</i> is redundant and dropped. This is similar to the pattern in Polish (<i>ć</i> turns to <i>ci</i>). This pattern is applicable to unpalatalized consonants as well in order to render their palatalized counterparts: <i>n</i>&nbsp;&rarr; <i>ń</i>, <i>m</i>&nbsp;&rarr; <i>ḿ</i>, <i>r</i>&nbsp;&rarr; <i>ŕ</i>, etc. (like in Polish <i>Pozna<mark>ń</mark></i>).</p>
 
-#### Pre-reform spelling (before 1917)
+<h3 id="iotated_vowels">Iotated vowels</h3>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| і | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for *ій* |
-| ѣ | **jě** ||
-|   | **iě** | after consonants |
-| ѳ | **ḟ** ||
-| ъ || omitted |
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+    <th class="note"></th>
+</tr>
+<tr>
+    <td class="cyr" rowspan="2">е</td>
+    <td class="lat">je</td>
+    <td class="ipa">[je]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr>
+    <td class="lat">e</td>
+    <td class="ipa">[ʲe]</td>
+    <td class="note">after consonants</td>
+</tr>
+<tr data-lang="uk">
+    <td class="cyr" rowspan="2">є</td>
+    <td class="lat">je</td>
+    <td class="ipa">[je]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr data-lang="uk">
+    <td class="lat">ie</td>
+    <td class="ipa">[ʲe]</td>
+    <td class="note">after consonants</td>
+</tr>
+<tr class="archaic">
+    <td class="cyr" rowspan="2">ѣ</td>
+    <td class="lat">jě</td>
+    <td class="ipa">[je, ji, ije]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr class="archaic">
+    <td class="lat">iě</td>
+    <td class="ipa">[ʲe, ʲi, ʲije]</td>
+    <td class="note">after consonants</td>
+</tr>
+<tr data-lang="ru be">
+    <td class="cyr" rowspan="3">ё</td>
+    <td class="lat">jo</td>
+    <td class="ipa">[jo]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr data-lang="ru be">
+    <td class="lat">io</td>
+    <td class="ipa">[ʲo]</td>
+    <td class="note">after consonants, except <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="ru be">
+    <td class="lat">o</td>
+    <td class="ipa">[o]</td>
+    <td class="note">after <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="cyr" rowspan="3">ю</td>
+    <td class="lat">ju</td>
+    <td class="ipa">[ju]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="lat">iu</td>
+    <td class="ipa">[ʲu]</td>
+    <td class="note">after consonants, except <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="lat">u</td>
+    <td class="ipa">[u]</td>
+    <td class="note">after <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="cyr" rowspan="3">я</td>
+    <td class="lat">ja</td>
+    <td class="ipa">[ja]</td>
+    <td class="note">word-initially and after vowels</td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="lat">ia</td>
+    <td class="ipa">[ʲa]</td>
+    <td class="note">after consonants, except <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="ru be uk bg">
+    <td class="lat">a</td>
+    <td class="ipa">[a]</td>
+    <td class="note">after <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i></td>
+</tr>
+<tr data-lang="uk">
+    <td class="cyr">ї</td>
+    <td class="lat">ji</td>
+    <td class="ipa">[ji]</td>
+    <td class="note"></td>
+</tr>
+</table>
 
-- Cyr. *іи* &rarr; Lat. *ii*: a long *í* is redundant here;
-- Cyr. *ѣ* &rarr; Lat. *iě*: due to the probable historical pronunciation being close to [ie], and its cursive form resembling the ligature of *іь* (with the Old Russian vowel *ь* represented as *ě*); this form also combines the two major phonetic realizations: as [i] in the southwest of the East Slavic dialect continuum and [ʲe] elsewhere (*свѣтъ*, *sviět* &rarr; Rus. *svet*, Ukr. *svit*).
+<p>The sounds corresponding to the characters <strong><i>я</i></strong>, <strong><i>е</i></strong>, <strong><i>ё</i></strong>, <strong><i>ю</i></strong> are represented as <i>j</i>&nbsp;+&nbsp;vowel in the Slavic languages: <i>ja</i>, <i>je</i>, <i>jo</i>, <i>ju</i> (as in the name <i>Jan</i>) when the [j] sound is actually present: word-initially, after a vowel, after the soft sign <i>ь</i> and the hard sign <i>ъ</i>, after the Cyrillic apostrophe <i>'</i> (in Belarusian and Ukrainian) (in all these cases, <i>j</i> is in the beginning of a syllable).</p>
 
-### Serbian
+<p>After the palatalized (softened) consonants these characters no longer contain the [j] sound and, for this reason, they are represented with <i>ia</i>, <i>iu</i>, <i>io</i> (like in Polish), where the leading <i>i</i> marks the preceding consonant as softened. (Examples in Russian: <i><mark>Ja</mark>roslavĺ</i>, <i>R<mark>ia</mark>zań</i>.)</p>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| д | **d** ||
-| ђ | **d́ž** ||
-| е | **e** ||
-| ж | **ž** ||
-| з | **z** ||
-| и | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for Cyr. *иј* |
-| ј | **j** ||
-|   | **i** | short *i*, for Cyr. *ј* after a vowel and not followed by a vowel |
-| к | **k** ||
-| л | **l** ||
-| љ | **ĺ** ||
-|   | **li** | before vowels, except *i* |
-| м | **m** ||
-| н | **n** ||
-| њ | **ń** ||
-|   | **ni** | before vowels, except *i* |
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| ћ | **ć** ||
-|   | **ci** | before vowels, except *i* |
-| у | **u** ||
-| ф | **f** ||
-| х | **h** ||
-| ц | **c** ||
-| ч | **č** ||
-| џ | **dž** ||
-| ш | **š** ||
+<p>However, Cyrillic <strong><i>е</i></strong> after consonants can stand for both [ʲe] (as in <span class="lang">Rus.</span> <i>т<mark>е</mark>сто</i> [tʲestə]) and [e] (as in <span class="lang">Rus.</span> <i>т<mark>е</mark>ст</i> [test]) which is the reason why <i>ie</i> and <i>e</i> are merged into a single representation <i>e</i> after consonants. In the beginning of a syllable, Cyrillic <i>е</i> is still represented as <i>je</i>.</p>
 
-### Ukrainian
+<p id="ѣ">Cyrillic <strong><i>ѣ</i></strong> (<i>jat́</i>) (non-cursive form: <strong>ѣ</strong>) is transliterated as <i>iě</i> due to the probable historical pronunciation being close to [ie], and its cursive form resembling a ligature of <i>іь</i>, with the Old Slavic vowel <i>ь</i> represented as <i>ě</i> (see <i><a href="#ъ_ь">jer and jeŕ</a></i>) (<i>ѣ</i>&nbsp;&rarr; <i>іь</i>&nbsp;&rarr; <i>iě</i>).</p>
 
-| *Cyr* | *Lat* ||
-|:----:|:----:|---|
-| а | **a** ||
-| б | **b** ||
-| в | **v** ||
-| г | **g** ||
-| ґ | **ġ** ||
-| д | **d** ||
-| е | **e** ||
-| є | **je** ||
-|   | **ie** | after consonants |
-| ж | **ž** ||
-| з | **z** ||
-| и | **y** ||
-|   | **ý** | long *y*, for *ий* |
-| і | **i** ||
-|   | **í** | long *i*, for [i] before or after a vowel and for *ій* |
-| ї | **ji** ||
-| й | **j** ||
-|   | **i** | short *i*, *й* after a vowel and not followed by a vowel |
-| к | **k** ||
-| л | **l** ||
-| м | **m** ||
-| н | **n** ||
-| о | **o** ||
-| п | **p** ||
-| р | **r** ||
-| с | **s** ||
-| т | **t** ||
-| у | **u** ||
-| ф | **f** ||
-| х | **h** ||
-| ц | **c** ||
-| ч | **č** ||
-| ш | **š** ||
-| щ | **ŝ** ||
-| ь | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
-|   || omitted after *č*, *š*, *ž* |
-| ю | **ju** ||
-|   | **iu** | after consonants |
-| я | **ja** ||
-|   | **ia** | after consonants |
-| ʼ | _́ | transformed into an acute _́  over the preceding consonant, except *č*, *š*, *ž* |
-|   || omitted after *č*, *š*, *ž* |
+<h3 id="i_j_y"><i>i</i>, <i>j</i>, <i>y</i></h3>
 
-- *ja*, *je*, *ju* are used word-initially, after vowels, after *ь* and *ʼ*;
-- Cyr. *ьо* &rarr; Lat. *io*: due to its pronunciation as [ʲo]; for consistency with *ia* [ʲa], *ie* [ʲe], *iu* [ʲu].
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+    <th class="note"></th>
+</tr>
+<tr>
+    <td class="cyr" rowspan="2">і</td>
+    <td class="lat">i</td>
+    <td class="ipa">[i]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="lat">í</td>
+    <td class="ipa">[i(ː), ij]</td>
+    <td class="note"><i>long i</i>, for [i] before or after a vowel and for <i>ій</i> or <i>іј</i></td>
+</tr>
+<tr>
+    <td class="cyr" rowspan="4">и</td>
+    <td class="lat">i</td>
+    <td class="ipa">[i]</td>
+    <td class="note">except Ukrainian</td>
+</tr>
+<tr>
+    <td class="lat">í</td>
+    <td class="ipa">[i(ː), ij]</td>
+    <td class="note">except Ukrainian: <i>long i</i>, for [i] before or after a vowel and for <i>ий</i> or <i>иј</i></td>
+</tr>
+<tr data-lang="uk">
+    <td class="lat">y</td>
+    <td class="ipa">[ɨ]</td>
+    <td class="note">in Ukrainian</td>
+</tr>
+<tr data-lang="uk">
+    <td class="lat">ý</td>
+    <td class="ipa">[ɨ(ː), ɨj]</td>
+    <td class="note">in Ukrainian: <i>long y</i>, for <i>ий</i></td>
+</tr>
+<tr data-lang="ru be">
+    <td class="cyr" rowspan="2">ы</td>
+    <td class="lat">y</td>
+    <td class="ipa">[ɨ]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="ru be">
+    <td class="lat">ý</td>
+    <td class="ipa">[ɨ(ː), ɨj]</td>
+    <td class="note"><i>long y</i>, for <i>ый</i></td>
+</tr>
+<tr>
+    <td class="cyr" rowspan="2">й</td>
+    <td class="lat">j</td>
+    <td class="ipa" rowspan="2">[j]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="lat">i</td>
+    <td class="note"><i>short i</i>, for [j] after a vowel and not followed by a vowel</td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="cyr" rowspan="2">ј</td>
+    <td class="lat">j</td>
+    <td class="ipa" rowspan="2">[j]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="lat">i</td>
+    <td class="note"><i>short i</i>, for [j] after a vowel and not followed by a vowel</td>
+</tr>
+<tr data-lang="uk">
+    <td class="cyr">ї</td>
+    <td class="lat">ji</td>
+    <td class="ipa">[ji]</td>
+    <td class="note"></td>
+</tr>
+</table>
 
-## Stress mark
+<p>The characters <strong><i>í</i></strong> and <strong><i>ý</i></strong> stand for the long vowels in the Czech and Slovak orthographies: <i lang="cs">dobrý den</i>, <i lang="cs">Letní stadion</i>, <i lang="cs">Průmyslový palác</i>.</p>
 
-The use of the acute accent _́  as a stress mark becomes ambiguous in writing systems employing the acute for other purposes. This ambiguity seems to be easily resolvable with an underline as a stress mark proving, in fact, to be more suitable for this role.
+<p>In the transliteration, <i>i</i> and <i>y</i> are short. <i>y</i> represents [ɨ] (like in Polish and Old Czech), <i>i</i> can be:</p>
+<ul>
+    <li>[i] not followed or preceded by a vowel (as in <i>M<mark>i</mark>nsk</i>);</li>
+    <li>[j] after a vowel (as in <i>Alt<mark>ai</mark></i>);</li>
+    <li>the palatalization (or softening) marker after a consonant before a vowel (as in <i>R<mark>ia</mark>zań</i>).</li>
+</ul>
+    
+<p>While <i>í</i> and <i>ý</i> are long. They represent:</p>
+<ul>
+    <li>[ij] (<span class="lang">Rus.</span>, <span class="lang">Bulg.</span> <i>ий</i>; <span class="lang">Bel.</span>, <span class="lang">Ukr.</span> <i>ій</i>; <span class="lang">Serb.</span>, <span class="lang">Mac.</span> <i>иј</i>) and [ɨj] (<span class="lang">Rus.</span>, <span class="lang">Bel.</span> <i>ый</i>; <span class="lang">Ukr.</span> <i>ий</i>) respectively:
+        <ul>
+            <li><span class="lang">Rus.</span> <i>добр<mark>ый</mark></i>, <span class="lang">Ukr.</span> <i>добр<mark>ий</mark></i>&nbsp;&rarr; translit. <i>dobr<mark>ý</mark></i>, same as Czech <i>dobrý</i>;</li>
+            <li><span class="lang">Rus.</span> <i>летн<mark>ий</mark></i>&nbsp;&rarr; translit. <i>letn<mark>í</mark></i>, same as Czech <i>letní</i>.</li>
+        </ul>
+    </li>
+    <li>[i] and [ɨ] respectively next to other vowels (which is less frequently encountered in the Slavic languages, as in <i>Tr<mark>oí</mark>ck</i>, in contrast to <i>tr<mark>oi</mark>ka</i>).</li>
+</ul>
 
-The underline as a stress mark
-- is immediately perceived as an emphasis mark;
-- doesn't conflict with most diacritics;
-- can be used to put a stress on a vowel sound represented by more than one letter (*Vanc<ins>ou</ins>ver*, *Montr<ins>eu</ins>x*) or on an entire stressed syllable;
-- fits for stressed syllabic consonants (like in the Czech river name *V<ins>l</ins>tava*);
-- fits for most writing systems, including consonantal abjads (like Arabic and Hebrew);
-- and being part of the markup doesn't introduce an extra character into the text.
+<p>The use of the accented <i>í</i> character next to other vowels is also akin to the use of the diaeresis in some other languages to distinguish two standalone sounds from a diphthong represented by the same two characters, like in French <i>naïf</i>, <i>Noël</i>, <i>Citroën</i>, <i>Moët</i>.</p>
 
-## Background
+<p>Graphically, <i>í</i> and <i>ý</i> can be regarded as merged digraphs of <i>ij</i> and <i>yj</i>, where the trailing <i>j</i> was transformed to a handier superscript stroke.</p>
 
-The transliteration system is fully described by the tables above, and this section doesn't add any rules to those tables but offers a brief overview of the historical background of its features.
+<p id="j">As shown in the table above, some instances of the [j] sound ([й]) are represented by the letter <strong><i>j</i></strong> (<i>jot</i>) (not <i class="discouraged">y</i>), like in all Latin-scripted Slavic languages.</p>
 
-The phonetic value of most Latin characters in the Slavic languages is quite predictable without prior knowledge of the Slavic writing systems, but like in many Latin-scripted languages there is a number of extra features requiring some remarks to demonstrate the motivation behind them.
+<h3 id="ъ_ь"><i>Jer</i> and <i>jeŕ</i></h3>
 
-### *č*, *š*, *ž*
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+    <th class="note"></th>
+</tr>
+<tr>
+    <td class="cyr" rowspan="3">ъ</td>
+    <td class="lat"></td>
+    <td class="ipa"></td>
+    <td class="note">omitted, except Bulgarian and Old Slavic</td>
+</tr>
+<tr data-lang="bg">
+    <td class="lat">ǒ</td>
+    <td class="ipa">[ɤ̞, ə]</td>
+    <td class="note">in Bulgarian</td>
+</tr>
+<tr class="archaic" data-lang="os">
+    <td class="lat">ǒ</td>
+    <td class="ipa">[*ə, *ŭ]</td>
+    <td class="note">in Old Slavic</td>
+</tr>
+<tr>
+    <td class="cyr" rowspan="3">ь</td>
+    <td class="lat">◌́</td>
+    <td class="ipa" rowspan="2"></td>
+    <td class="note">goes as an acute over the preceding consonant (◌́), except <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i> and except Old Slavic</td>
+</tr>
+<tr>
+    <td class="lat"></td>
+    <td class="note">omitted after <i>č</i>, <i>š</i>, <i>ŝ</i>, <i>ž</i>, except Old Slavic</td>
+</tr>
+<tr class="archaic" data-lang="os">
+    <td class="lat">ě</td>
+    <td class="ipa">[*ĕ, *ĭ]</td>
+    <td class="note">in Old Slavic</td>
+</tr>
+</table>
 
-These characters stand for *ч* [tʃ], *ш* [ʃ], and *ж* [ʐ] respectively. The caron, the diacritic mark, in these characters indicates their affinity with the unmarked consonants, which can be seen for instance in Russian word forms like *возить*&nbsp;— *вожу* *(z/ž)*, *писать*&nbsp;— *пишу* *(s/š)*, *улица*&nbsp;— *уличный* *(c/č)*. This also means that, in many contexts, typing with a keyboard lacking the accented characters shouldn't render a text completely incomprehensible.
+<p>The Old Slavic <strong><i>ъ</i></strong> and <strong><i>ь</i></strong> (<i>jer</i> and <i>jeŕ</i>) are transliterated as <i>ǒ</i> and <i>ě</i> respectively (not&nbsp;<i class="discouraged">ŭ</i> and&nbsp;<i class="discouraged">ĭ</i>), which correspond to the modern voiced vowels, <i>о</i> and <i>е</i>, descending from those older ones:</p>
+<ul>
+    <li><span class="lang">Old Sl.</span> <i>с<mark>ъ</mark>н<mark>ъ</mark></i>&nbsp;&rarr; <i>s<mark>ǒ</mark>n<mark>ǒ</mark></i>&nbsp;~ Modern Russian <i>s<mark>o</mark>n</i>;</li>
+    <li><span class="lang">Old Sl.</span> <i>д<mark>ь</mark>н<mark>ь</mark></i>&nbsp;&rarr; <i>d<mark>ě</mark>n<mark>ě</mark></i>&nbsp;~ Modern Russian <i>d<mark>e</mark>ń</i>.</li>
+</ul>
 
-### *ŝ*
+<p>(The fact that in the written form of the Ancient Novgorod dialect <i>ъ</i>/<i>о</i> and <i>ь</i>/<i>е</i> were often used interchangeably also reinforces this approach to transliteration.)</p>
 
-This character stands for *щ* [Rus. ɕ; Ukr. ʃt͡ʃ; Bulg. ʃt] and resembles *š* standing for *ш* [ʃ] both phonetically and graphically.
+<p>Similarly, the Bulgarian <strong><i>ъ</i></strong> is transliterated as <i>ǒ</i> (not <i class="discouraged">ǎ</i>, as in <i>ISO 9</i>). Apart from offering a valid representation in Bulgarian, the transliteration of <i>ъ</i> as <i>ǒ</i> results in a more recognizable spelling when compared to the other cognate languages:</p>
 
-### *j*
+<ul>
+    <li><span class="lang">Bulg.</span> <i>в<mark>ъ</mark>лк</i>&nbsp;&rarr; <i>v<mark>ǒ</mark>lk</i>&nbsp;~ <span class="lang">Mac.</span>, <span class="lang">Rus.</span> <i>v<mark>o</mark>lk</i>;</li>
+    <li><span class="lang">Bulg.</span> <i>зв<mark>ъ</mark>н</i>&nbsp;&rarr; <i>zv<mark>ǒ</mark>n</i>&nbsp;~ <span class="lang">Bel.</span>, <span class="lang">Rus.</span>, <span class="lang">Serb.</span> <i>zv<mark>o</mark>n</i>;</li>
+    <li><span class="lang">Bulg.</span> <i>п<mark>ъ</mark>лно</i>&nbsp;&rarr; <i>p<mark>ǒ</mark>lno</i>&nbsp;~ <span class="lang">Mac.</span>, <span class="lang">Rus.</span> <i>p<mark>o</mark>lno</i>.</li>
+</ul>
 
-This character represents the [j]-sound (*й*), like in all Latin-scripted Slavic languages (as well as in most Germanic languages).
+<p>(See also the note on the letter <i><a href="#ѣ">ѣ</a></i>.)</p>
 
-### *y*
+<h3 id="Balkan_affricates">Balkan affricates</h3>
 
-This character represents the [ɨ]-sound (Rus., Bel. *ы*, Ukr. *и*), like in Polish.
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+</tr>
+<tr data-lang="sr">
+    <td class="cyr">ђ</td>
+    <td class="lat">d́ž</td>
+    <td class="ipa">[d͡ʑ]</td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="cyr">џ</td>
+    <td class="lat">dž</td>
+    <td class="ipa">[d͡ʒ, d͡ʐ]</td>
+</tr>
+</table>
 
-### *c*, *h*
+<h3 id="other_letters">Other letters</h3>
 
-These characters represent the [t͡s] (*ц*) and [x] (*х*) sounds respectively. The *c* character stands for the [t͡s] sound in all Latin-scripted Slavic languages (as in the Polish words *ulica*, *centralny*) and is part of the *č* character representing its palatalized counterpart (pronounced as [tʃ], *ч*).
+<table class="ch" border="1" cellspacing="0" cellpadding="5">
+<tr>
+    <th class="cyr">Cyr</th>
+    <th class="lat">Lat</th>
+    <th class="ipa">IPA<sup><a href="#ipa_column" id="ipa_column__ref">[a]</a></sup></th>
+    <th class="note"></th>
+</tr>
+<tr>
+    <td class="cyr">б</td>
+    <td class="lat">b</td>
+    <td class="ipa">[b]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">в</td>
+    <td class="lat">v</td>
+    <td class="ipa">[v]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">г</td>
+    <td class="lat">g</td>
+    <td class="ipa">[g, ɣ, ɦ]<sup><a href="#g" id="g__ref">[1]</a></sup></td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="be uk">
+    <td class="cyr">ґ</td>
+    <td class="lat">ġ</td>
+    <td class="ipa">[g]</td>
+    <td class="note">used when opposed to <i>г</i> realized as [ɣ]/[ɦ]</td>
+</tr>
+<tr>
+    <td class="cyr">д</td>
+    <td class="lat">d</td>
+    <td class="ipa">[d]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="mk">
+    <td class="cyr">ѕ</td>
+    <td class="lat">dz</td>
+    <td class="ipa">[d͡z]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="sr mk">
+    <td class="cyr">ј</td>
+    <td class="lat">j</td>
+    <td class="ipa">[j]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">к</td>
+    <td class="lat">k</td>
+    <td class="ipa">[k]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">л</td>
+    <td class="lat">l</td>
+    <td class="ipa">[l]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">м</td>
+    <td class="lat">m</td>
+    <td class="ipa">[m]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">н</td>
+    <td class="lat">n</td>
+    <td class="ipa">[n]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">п</td>
+    <td class="lat">p</td>
+    <td class="ipa">[p]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">р</td>
+    <td class="lat">r</td>
+    <td class="ipa">[r]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">т</td>
+    <td class="lat">t</td>
+    <td class="ipa">[t]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">ф</td>
+    <td class="lat">f</td>
+    <td class="ipa">[f]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">х</td>
+    <td class="lat">h<sup><a href="#c_h" id="c_h__ref">[b]</a></sup></td>
+    <td class="ipa">[x]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="ru uk bg">
+    <td class="cyr">щ</td>
+    <td class="lat">ŝ<sup><a href="#consonant_circumflex" id="consonant_circumflex__ref">[2]</a></sup></td>
+    <td class="ipa">[ɕ(ː), ʃt͡ʃ, ʃt]</td>
+    <td class="note"></td>
+</tr>
+<tr class="archaic">
+    <td class="cyr">ѳ</td>
+    <td class="lat">ḟ</td>
+    <td class="ipa">[f]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">а</td>
+    <td class="lat">a</td>
+    <td class="ipa">[a]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">і</td>
+    <td class="lat">i</td>
+    <td class="ipa">[i]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">о</td>
+    <td class="lat">o</td>
+    <td class="ipa">[o]</td>
+    <td class="note"></td>
+</tr>
+<tr>
+    <td class="cyr">у</td>
+    <td class="lat">u</td>
+    <td class="ipa">[u]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="be">
+    <td class="cyr">ў</td>
+    <td class="lat">w</td>
+    <td class="ipa">[w]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="ru be">
+    <td class="cyr" rowspan="2">э</td>
+    <td class="lat">ê<sup><a href="#e_circumflex" id="e_circumflex__ref">[3]</a></sup></td>
+    <td class="ipa" rowspan="2">[e]</td>
+    <td class="note"></td>
+</tr>
+<tr data-lang="ru be">
+    <td class="lat">e</td>
+    <td class="note">word-initially, the circumflex can be dropped</td>
+</tr>
+</table>
 
-The *ts* and *kh* digraphs, that tend to be used as the representations of these sounds in some transliteration systems, are only reasonable in the writing systems where the standalone characters of *c* and *h* are already reserved to represent other sounds (as in English and French), while in the mentioned transliteration systems the standalone *c* and *h* are left completely unused, which is odd.
+<p id="g"><sup><a href="#g__ref">[1]</a></sup> Similarly to Dutch, [ɣ] is represented by <i>g</i>. Both [ɣ] and [ɦ] are regarded as allophones of [g] and therefore they are represented by the same letter (which should also contribute to the mutual intelligibility across cognate languages).&nbsp;&para;</p>
 
-### *ja*, *ia*
+<p id="consonant_circumflex"><sup><a href="#consonant_circumflex__ref">[2]</a></sup> <strong><i>ŝ</i></strong> resembles <i>š</i> (see <i><a href="#Czech_sibilants">Czech sibilants</a></i>), just as <i>щ</i> is close to <i>ш</i>, both phonetically and graphically.&nbsp;&para;</p>
 
-The sounds corresponding to the characters *я*, *е*, *ё*, *ю* are represented as *j* + vowel in the Slavic languages: *ja*, *je*, *jo*, *ju* (as in the name *Jan*) when the [j] sound is actually present: word-initially, after a vowel, after the soft sign *ь* and the hard sign *ъ*, after the apostrophe *'* (*j* appears in the beginning of a syllable). After the palatalized (softened) consonants these characters no longer contain the [j] sound and, for this reason, they are represented with *ia*, *ie*, *iu*, *io* (like in Polish), where the leading *i* marks the preceding consonant as softened. (Examples in Russian: *Jaroslavĺ*, *Riazań*.) However, in Russian, the Cyrillic *е* after consonants stands for both [ʲe] (as in *тесто* [tʲestə]) and [e] (as in *тест* [test]) which is the reason why *ie* and *e* merge into a single representation *e* after consonants. Also, by far higher frequency of the palatalizing *e* in Russian renders the palatalization marker *i* redundant. In the beginning of a syllable, Russian Cyrillic *е* is still represented as *je*.
+<p id="e_circumflex"><sup><a href="#e_circumflex__ref">[3]</a></sup> The circumflex in <i>ê</i> helps distinguish words like <span class="lang">Rus.</span> <i>m<mark>ê</mark>tr</i> (<i>мэтр</i>) and <i>m<mark>e</mark>tr</i> (<i>метр</i>), or <span class="lang">Rus.</span> <i>s<mark>ê</mark>r</i> (<i>сэр</i>) and <i>s<mark>e</mark>r</i> (<i>сер</i>). In the beginning of a word, Cyrillic <i>e</i> is transliterated to <i>je</i> (see also <i><a href="#iotated_vowels">iotated vowels</a></i>), whereas a transliterated <i>э</i> won't have the leading <i>j</i>, rendering the circumflex unnecessary.&nbsp;&para;</p>
 
-### *ń*
+<h2 id="notes">Notes</h2>
 
-The acute accent above consonants represents soft consonants not followed by a vowel (as in Polish *Poznań*).
+<p id="ipa_column"><sup><a href="#ipa_column__ref">[a]</a></sup> The <i>IPA</i> column shows an approximate phonetic value of the most common realization of the given character (close to standard, and stressed in case of vowels).&nbsp;&para;</p>
 
-### *í*, *ý*
+<p id="c_h"><sup><a href="#c_h__ref">[b]</a></sup> The letters <strong><i>c</i></strong> and <strong><i>h</i></strong> represent the [t͡s] (<i>ц</i>) and [x] (<i>х</i>) sounds respectively (not <i class="discouraged">ts</i> and <i class="discouraged">kh</i>). <i>c</i> stands for the [t͡s] sound in all Latin-scripted Slavic languages (as in the Polish words <i>uli<mark>c</mark>a</i>, <i><mark>c</mark>entralny</i>).</p>
 
-These characters stand for the long vowels in the Czech and Slovak orthographies: *dobrý den*, *Letní stadion*, *Průmyslový palác*. In the East Slavic languages, these long vowels represent [ij] (Rus., Bulg. *ий*; Bel., Ukr. *ій*; Serb., Mac. *иј*) and [ɨj] (Rus., Bel. *ый*; Ukr. *ий*) respectively (resulting in the same rendering of *dobrý* for Rus. *добрый* and Ukr. *добрий* as in Cz. *dobrý*). The plain *i* next to other vowels represents the *short i*: it is either the palatalization marker (as in *R**i**azań*) or the [j] sound (as in *Alta**i***). The *long i* is also a way to convey the full [i] sound next to other vowels (which is less frequently encountered in the East Slavic languages, as in *Tro**í**ck*, in contrast to *tro**i**ka*). The use of the accented *í* character next to other vowels is also akin to the use of the diaeresis in some other languages to distinguish two standalone sounds from a diphthong represented by the same two characters, like in French *naïf*, *Noël*, *Citroën*, *Moët*.
+<p id="ts_kh">The use of the <i class="discouraged">ts</i> and <i class="discouraged">kh</i> digraphs would only be reasonable in a writing system where the standalone letters of <i>c</i> and <i>h</i> are already reserved to represent other sounds (as in English and French). Some transliteration systems employing these digraphs leave the standalone <i>c</i> and <i>h</i> unused (which is odd on its own), losing the&nbsp;<a href="#sibilant_affinity"><i><nobr>c/č</nobr></i>&nbsp;affinity</a> and being conspicuously unlike the Latin-scripted Slavic languages.&nbsp;&para;
+
+<h2 id="stress_mark">Stress mark</h2>
+
+<p>The use of the acute accent ◌́ as a stress mark becomes ambiguous in writing systems employing the acute for other purposes, like in this transliteration system. The ambiguity of the acute seems to be easily resolvable by using the underline as a stress mark proving, in fact, to be more suitable for this role.</p>
+
+<p>The underline as a stress mark:</p>
+<ul>
+    <li>is immediately perceived as an emphasis mark;</li>
+    <li>doesn't conflict with most diacritics;</li>
+    <li>can be used to put a stress on a vowel sound represented by more than one letter (<i>Vanc<u>ou</u>ver</i>, <i>Montr<u>eu</u>x</i>) or on an entire stressed syllable;</li>
+    <li>fits for stressed syllabic consonants (like in the Czech river name <i>V<u>l</u>tava</i>);</li>
+    <li>fits for most writing systems, including consonantal abjads (like Arabic and Hebrew);</li>
+    <li>and, being part of the markup, doesn't introduce an extra character into the&nbsp;text.</li>
+</ul>
