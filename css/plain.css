@@ -4,6 +4,7 @@ html {
     --layout-padding-y: .9rem;
     --abstract-padding: var(--layout-padding-x);
     --block-margin-y: 1em;
+    --block-border-radius: 1em;
     font: normal 100%/1.45 sans-serif;
     color: #222;
     background: white;
@@ -29,15 +30,6 @@ ul ul,
 li {
     margin-top: .25em;
     margin-bottom: .25em;
-}
-pre {
-    max-width: 100%;
-    border-radius: .5em;
-    padding: .75em 1em;
-    overflow: auto;
-}
-pre > code[class^="language"] {
-    margin: -.75em -1em;
 }
 hr {
     width: 100%;
@@ -162,4 +154,16 @@ blockquote {
     padding-inline-start: .75em;
     margin: var(--block-margin-y) 0;
     box-sizing: border-box;
+}
+.highlight {
+    border-radius: var(--block-border-radius);
+}
+pre,
+pre.highlight {
+    border-radius: var(--block-border-radius);
+    overflow: auto;
+}
+pre > code {
+    display: block;
+    padding: 1.25em;
 }
