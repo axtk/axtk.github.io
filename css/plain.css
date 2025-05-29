@@ -19,7 +19,7 @@ svg {
     font: inherit;
 }
 body {
-    padding: var(--layout-padding-y) 0;
+    padding: 1rem 0 2.5rem;
     margin: 0;
 }
 p, ul, ol, pre, details {
@@ -113,9 +113,6 @@ footer {
     padding: 0 var(--layout-padding-x);
     margin: 0 auto;
     box-sizing: border-box;
-}
-main:last-of-type {
-    margin-bottom: 2.5rem;
 }
 header hr,
 footer hr {

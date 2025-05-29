@@ -72,3 +72,7 @@ main .intro h1:first-child {
     display: inline-block;
     margin: 0 .5em;
 }
+.intro p.sep {
+    font-size: 0;
+    margin: 1.25rem 0;
+}
