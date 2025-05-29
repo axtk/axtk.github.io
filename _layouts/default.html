@@ -29,6 +29,9 @@
     {{page.author}}<br>
 {% endif %}
     <span class="date">{{page.date}}</span>
+{%- assign duration = content | number_of_words | divided_by: 200 %}
+    <span class="sep">&bull;</span>
+    <span class="duration">{{duration}} min read</span>
 </p>
 </header>
 
