@@ -196,6 +196,7 @@ a.star-button {
     border-radius: .35em;
     padding: .25em 1em;
     padding-inline-start: .8em;
+    margin: .75em 0;
 }
 a.star-button:hover {
     text-decoration: none;
