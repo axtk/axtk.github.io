@@ -62,7 +62,7 @@ main .intro h1:first-child {
     justify-content: center;
     list-style: none;
     padding: 0;
-    margin-top: .5em;
+    margin: .5em 0 0;
 }
 .intro ul.contacts li {
     display: inline;
