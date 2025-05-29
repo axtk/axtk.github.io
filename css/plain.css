@@ -189,3 +189,20 @@ header .date {
     font-size: .8rem;
     margin-top: .35rem;
 }
+a.star-button {
+    display: inline-block;
+    background: color(from currentColor srgb r g b / .12);
+    border: .05em solid;
+    border-radius: .35em;
+    padding: .25em 1em;
+    padding-inline-start: .8em;
+}
+a.star-button:hover {
+    text-decoration: none;
+    box-shadow: 0 0 .5em 0 color(from currentColor srgb r g b / .2);
+}
+a.star-button::before {
+    content: "⭐";
+    margin-inline-end: .5em;
+    filter: hue-rotate(190deg);
+}
