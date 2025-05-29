@@ -157,6 +157,11 @@ blockquote {
 .highlight {
     border-radius: var(--block-border-radius);
 }
+code {
+    background: color(from currentColor srgb r g b / .08);
+    border-radius: .35em;
+    padding: .15em .35em;
+}
 pre,
 pre.highlight {
     line-height: 1.35;
@@ -165,6 +170,7 @@ pre.highlight {
 }
 pre > code {
     display: block;
+    background: transparent;
     padding: 1.25em;
 }
 header {
