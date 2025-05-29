@@ -2,6 +2,7 @@
 title: A React router to my liking
 date: 2025-05-17
 updated: 2025-05-23
+tags: react, typescript, javascript, webdev
 ---
 
 Meet [Routescape](https://github.com/axtk/routescape), my own React router! Here's the story why I bothered to create it.

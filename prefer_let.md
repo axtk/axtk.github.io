@@ -2,6 +2,7 @@
 title: Prefer let over const (not the other way around)
 date: 2025-05-03
 updated: 2025-05-06
+tags: typescript, javascript, webdev
 ---
 
 Preferring `const` over `let` has become sort of mainstream (often enforced with a [linting rule](https://eslint.org/docs/latest/rules/prefer-const)), but that actually breaks their semantics and discards the developer's intention.
