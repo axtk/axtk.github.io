@@ -11,15 +11,15 @@
 <body>
 
 <header>
-{% if page.author == nil or page.author == 'axtk' %}
+{%- if page.author == nil or page.author == 'axtk' %}
 <p class="image">
     <span><img src="{{site.github.owner_gravatar_url}}" alt="" height="120"></span>
 </p>
-{% elsif page.avatar_url %}
+{%- elsif page.avatar_url %}
 <p class="image">
     <span><img src="{{page.avatar_url}}" alt="" height="120"></span>
 </p>
-{% endif %}
+{% endif -%}
 <p class="metadata">
 {%- if page.author == 'axtk' or page.author == nil %}
     <a href="{{site.github.baseurl}}">Alexander Tkačenko</a><br>
