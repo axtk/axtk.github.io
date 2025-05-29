@@ -159,6 +159,7 @@ blockquote {
 }
 pre,
 pre.highlight {
+    line-height: 1.35;
     border-radius: var(--block-border-radius);
     overflow: auto;
 }
