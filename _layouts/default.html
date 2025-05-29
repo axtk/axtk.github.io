@@ -11,7 +11,25 @@
 <body>
 
 <header>
-<p>{{page.date}} / <a href="{{site.github.baseurl}}">{{page.author | default: "Alexander Tkačenko"}}</a></p>
+{% if page.author == nil or page.author == 'axtk' %}
+<p class="image">
+    <span><img src="{{site.github.owner_gravatar_url}}" alt="" height="120"></span>
+</p>
+{% elsif page.avatar_url %}
+<p class="image">
+    <span><img src="{{page.avatar_url}}" alt="" height="120"></span>
+</p>
+{% endif %}
+<p class="metadata">
+{% if page.author == 'axtk' or page.author == nil %}
+    <a href="{{site.github.baseurl}}">Alexander Tkačenko</a><br>
+{% elsif page.author_url %}
+    <a href="{{page.author_url}}">{{page.author}}</a><br>
+{% else %}
+    {{page.author}}<br>
+{% endif %}
+    <span class="date">{{page.date}}</span>
+</p>
 </header>
 
 <main>
