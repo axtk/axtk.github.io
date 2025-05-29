@@ -185,10 +185,13 @@ header .image span {
 header .image img {
     height: 3rem;
 }
-header .date {
+header .metadata > span {
     display: inline-block;
     font-size: .8rem;
     margin-top: .35rem;
+}
+header .metadata .sep {
+    margin: 0 .25em;
 }
 p.tags {
     font-size: .75em;
