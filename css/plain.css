@@ -118,9 +118,6 @@ header hr,
 footer hr {
     display: none;
 }
-header, header small {
-    font-size: .8rem;
-}
 footer, footer small {
     font-size: .6rem;
 }
@@ -172,15 +169,23 @@ pre > code {
 header {
     display: flex;
     align-items: center;
+    font-size: .9rem;
+    line-height: 1.1;
 }
 header .image {
-    margin-right: 1.25em;
+    margin-right: 1em;
 }
 header .image span {
+    display: block;
     font-size: 0;
     border-radius: 50%;
     overflow: hidden;
 }
 header .image img {
     height: 3rem;
+}
+header .date {
+    display: inline-block;
+    font-size: .8rem;
+    margin-top: .35rem;
 }
