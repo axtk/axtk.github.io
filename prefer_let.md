@@ -15,7 +15,7 @@ For currently unchanged variables, the *prefer const* rule also introduces an un
 
 To fix this, `let` should be preferred over `const` by default, with `const` reserved to things that devs decide shouldn't be changed.
 
----
+~
 
 🔹 One way to achieve this is using [`eslint-plugin-prefer-let`](https://www.npmjs.com/package/eslint-plugin-prefer-let).
 
