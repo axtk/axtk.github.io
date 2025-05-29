@@ -19,7 +19,7 @@ There are often several uninterchangeable ways to match a route pattern against 
 
 - declarative for components: with a component like `<Route>`, a config, or a certain file structure;
 - imperative for props and other values: with a utility hook like `useMatch()` or `useMatchRoute()`;
-- mixed for active links: with specifically designed components like `<NavLink>` and/or props like `className={({isActive}) => {...}}` or `activeProps={{...}}`.
+- mixed for active links: with specifically designed components like `<NavLink>` and/or props like `className={({isActive}) => {...}}` or {% raw %}`activeProps={{...}}`{% endraw %}.
 
 Meanwhile, route-based rendering essentially falls under the category of conditional rendering. It can be expressed with something similar to the ternary conditional operator `matchesRoutePattern ? x : y`, commonly used with conditional rendering. Since route matching involves some more complex subtleties (like applying route matching parameters to the returned value), we're going with the ternary function `withRoute(routePattern, x, y)` maintaining the semantics similar to the ternary conditional operator.
 
