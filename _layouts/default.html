@@ -38,7 +38,7 @@
 {% if page.tags %}
 <p class="tags">
 {% for tag in page.tags %}
-    <em>{{tag}}</em>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+    <em>{{tag}}</em>{% unless forloop.last %}<span class="sep">, </span>{% endunless -%}
 {% endfor %}
 </p>
 {% endif %}
