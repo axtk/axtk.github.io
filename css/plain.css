@@ -216,8 +216,8 @@ a.star-button {
     background: color(from currentColor srgb r g b / .12);
     border: .05em solid;
     border-radius: .35em;
-    padding: .25em 1em;
-    padding-inline-start: .8em;
+    padding: .3em 1em;
+    padding-inline-start: .72em;
     margin: .75em 0;
 }
 p:last-child a.star-button {
