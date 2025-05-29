@@ -13,3 +13,9 @@ Automatically replacing `let` with `const` results in the loss of the distinctio
 For currently unchanged variables, the *prefer const* rule also introduces an unnecessary diff when the variable has to be reassigned in a later code change, by converting `const` to `let`. And since any `const` can now be easily switched to `let`, devs are deprived of a simple way to convey the meaning that a variable is not supposed to be modified.
 
 To fix this, `let` should be preferred over `const` by default, with `const` reserved to things that devs decide shouldn't be changed.
+
+---
+
+🔹 One way to achieve this is using [`eslint-plugin-prefer-let`](https://www.npmjs.com/package/eslint-plugin-prefer-let).
+
+🔹 Another way is to support the related [rule suggestion](https://github.com/biomejs/biome/discussions/5873) to Biome.
