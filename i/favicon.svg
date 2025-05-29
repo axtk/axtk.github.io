@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+<style>
+.b{fill:#055b2a;}
+.f{fill:#ef1deb;stroke:none;fill-rule:evenodd;}
+.x12 .b{fill:darkslateblue;fill-opacity:.35;}
+.x12 .f{fill:darkslateblue;fill-opacity:.35;}
+.x .b{fill:#c0b8d3;}
+.x .f{fill:#59536e;}
+.x9 .b{fill:#f6f8fa;}
+.x9 .f{fill:#59636e;}
+.x2 .b{fill:mediumpurple;}
+.x2 .f{fill:darkslateblue;}
+</style>
+<g class="x">
+<circle cx="50%" cy="50%" r="50%" class="b"/>
+<path d="M50,30 h10 v10 h20 v-10 h10 v30 h20 v50 h-10 v-10 h-10 v-10 h-10 v10 h-20 v-10 h-10 v10 h-10 v10 h-10 v-50 h20z m10,20 h20 v10 h-20z" class="f"/>
+</g>
+</svg>
