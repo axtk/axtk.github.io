@@ -71,4 +71,4 @@ With the store as a single intermediary, we've got a minimal shared state setup.
 
 Based on this approach and its minimalist spirit, I created [Groundstate](https://github.com/axtk/groundstate). The Groundstate's description covers its common use cases including a single-store and multistore setup (both being perfectly legit), filtering store state updates, and some live examples.
 
-<a href="https://github.com/axtk/groundstate" class="star-button">Star Groundstate on GitHub</a>
+<a href="https://github.com/axtk/groundstate" class="star-button" target="_blank">Star</a>
