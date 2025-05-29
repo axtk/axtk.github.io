@@ -2,7 +2,11 @@
 title: Unobtrusive async action state tracking in React
 date: 2025-05-06
 updated: 2025-05-21
-tags: react, typescript, javascript, webdev
+tags:
+    - react
+    - typescript
+    - javascript
+    - webdev
 ---
 
 Tracking the loading state, or an asynchronous action's pending state, is very common to React apps. In the UI and in the code, it's mostly about handling the secondary paths (like showing a process indicator or an error message) on top of the main successful scenario.

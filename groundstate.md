@@ -1,7 +1,11 @@
 ---
 title: Conjuring the minimal shared state setup in React
 date: 2025-05-25
-tags: react, typescript, javascript, webdev
+tags:
+    - react
+    - typescript
+    - javascript
+    - webdev
 ---
 
 To figure out what a minimal shared state setup should look like, I'm starting off with a local state setup with React's `useState()`:
