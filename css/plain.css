@@ -220,6 +220,9 @@ a.star-button {
     padding-inline-start: .8em;
     margin: .75em 0;
 }
+p:last-child a.star-button {
+    margin-bottom: 0;
+}
 a.star-button:hover {
     text-decoration: none;
     box-shadow: 0 0 .5em 0 color(from currentColor srgb r g b / .2);
