@@ -34,7 +34,7 @@ We'll assume that initially there was no loading state tracking, and we're addin
 +         queryKey: ['item-list'],
 +         queryFn: fetchItems,
 +     });
-
+-
 -     useEffect(() => {
 -         fetchItems().then(setItems);
 -     }, [fetchItems, withState]);
@@ -113,7 +113,7 @@ We've seen above that the React Query's `useQuery()` hook, used for the async ac
 +         initialData: initialItems,
 +         enabled: false,
 +     });
-
+-
 -     const loadItems = useCallback(() => {
 -         fetchItems().then(setItems);
 -     }, [fetchItems]);
