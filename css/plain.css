@@ -174,16 +174,21 @@ header {
     line-height: 1.1;
 }
 header .image {
+    --image-size: 3rem;
     margin-right: 1em;
 }
 header .image span {
     display: block;
+    width: var(--image-size);
+    height: var(--image-size);
     font-size: 0;
+    background: color(from currentColor srgb r g b / .07);
     border-radius: 50%;
     overflow: hidden;
 }
 header .image img {
-    height: 3rem;
+    max-width: var(--image-size);
+    max-height: var(--image-size);
 }
 header .metadata > span {
     display: inline-block;
