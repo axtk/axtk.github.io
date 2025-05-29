@@ -1,5 +1,5 @@
 html {
-    --max-main-content-width: 36rem;
+    --max-main-content-width: 640px;
 }
 body {
     padding: 2rem 0 3rem;
