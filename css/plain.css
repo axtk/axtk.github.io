@@ -220,7 +220,7 @@ h1 + p.tags {
 .tags em {
     display: inline-block;
     font-style: normal;
-    background: color(from var(--link-color) srgb r g b / .1);
+    background: color(from var(--link-color) srgb r g b / .15);
     border-radius: .85em;
     padding: .25em .85em;
     margin: .5em .25em 0 0;
