@@ -22,4 +22,4 @@ In order to address my question, I ended up creating a small package called [*Tr
     Star Transient State
 </a>
 
-*[Comparing loading state with Transient State and Tanstack React Query]({{site.github.baseurl}}/transient_state_vs_react_query)*
+Related: *[Comparing loading state with Transient State and Tanstack React Query]({{site.github.baseurl}}/transient_state_vs_react_query)*
