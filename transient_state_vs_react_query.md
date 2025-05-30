@@ -1,5 +1,5 @@
 ---
-title: Setting up loading state in React: Transient State vs Tanstack React Query
+title: "Setting up loading state in React: Transient State vs Tanstack React Query"
 date: 2025-05-06
 updated: 2025-05-21
 tags:
@@ -9,7 +9,7 @@ tags:
     - webdev
 ---
 
-[*Foreword*]({{site.github.baseurl}}/transient_state)
+*[Foreword]({{site.github.baseurl}}/transient_state)*
 
 Let's see what it takes to add the loading state tracking for an async action with Tanstack React Query and Transient State.
 
