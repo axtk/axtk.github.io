@@ -77,6 +77,6 @@ With the store as a single intermediary, we've got a minimal shared state setup.
 Based on this approach and its minimalist spirit, I created [Groundstate](https://github.com/axtk/groundstate). The Groundstate's description covers its common use cases including a single-store and multistore setup (both being perfectly legit), filtering store state updates, and some live examples.
 
 <a href="https://github.com/axtk/groundstate" class="star-button" target="_blank">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,5 l14,28 l31,6 l-22,22 l7,34 l-30,-15 l-30,15 l7,-34 l-22,-22 l31,-6z" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" height="16"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="16"><path d="M50,5 l14,28 l31,6 l-22,22 l7,34 l-30,-15 l-30,15 l7,-34 l-22,-22 l31,-6z" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
     Star Groundstate
 </a>
