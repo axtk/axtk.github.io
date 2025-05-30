@@ -2,9 +2,10 @@
     color-scheme: light dark;
 
     --color: light-dark(black, white);
-    --background: light-dark(white, black);
-    --link-color: royalblue;
-    --mark-background: greenyellow; /* #fff88a */
+    --background: light-dark(white, #1a1a1a);
+    --link-color: light-dark(royalblue, deepskyblue);
+    --mark-background: light-dark(greenyellow, limegreen); /* #fff88a */
+    --danger-color: light-dark(darkred, #df4242);
 }
 html {
     --max-main-content-width: 680px;
@@ -155,6 +156,9 @@ th {
 }
 mark {
     background: var(--mark-background);
+}
+.danger {
+    color: var(--danger-color);
 }
 blockquote {
     border-inline-start: .25em solid color(from var(--color) srgb r g b / .2);
