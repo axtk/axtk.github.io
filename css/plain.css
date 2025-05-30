@@ -241,8 +241,13 @@ a.star-button {
     border: .05em solid;
     border-radius: .35em;
     padding: .3em 1em;
-    padding-inline-start: .72em;
+    padding-inline-start: .8em;
     margin: .75em 0;
+}
+a.star-button svg {
+    height: 1em;
+    margin-inline-end: .25em;
+    transform: translateY(.1em);
 }
 p:last-child a.star-button {
     margin-bottom: 0;
@@ -250,9 +255,4 @@ p:last-child a.star-button {
 a.star-button:hover {
     text-decoration: none;
     box-shadow: 0 0 .5em 0 color(from currentColor srgb r g b / .2);
-}
-a.star-button::before {
-    content: "⭐";
-    margin-inline-end: .5em;
-    filter: hue-rotate(190deg);
 }
