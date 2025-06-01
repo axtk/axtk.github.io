@@ -164,8 +164,3 @@ The introduced changes are exactly the same as in the Example 1. And again the c
 Tanstack React Query offers a way to track async actions' state as part of its feature set. As we saw above, the adoption of React Query requires careful context-dependent refactors. It also takes over the app's shared state (or a part of it), affecting the way components interact with the app's state.
 
 When introducing a complex data fetching lib feels like an overkill, Transient State, as a small single-purpose lib, can offer a neat, minimalist way to set up the async action state tracking, either local or shared, without affecting the app's state.
-
-<a href="https://github.com/axtk/transient-state" class="star-button" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="16"><path d="M50,5 l14,28 l31,6 l-22,22 l7,34 l-30,-15 l-30,15 l7,-34 l-22,-22 l31,-6z" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-    Star Transient State
-</a>

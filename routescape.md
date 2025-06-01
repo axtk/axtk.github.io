@@ -171,8 +171,3 @@ let Content = ({value}) => {
 ~
 
 These features make up the point of Routescape. It's simple and lightweight, and specifically created to manage routing in a React app in a straightforward manner.
-
-<a href="https://github.com/axtk/routescape" class="star-button" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="16"><path d="M50,5 l14,28 l31,6 l-22,22 l7,34 l-30,-15 l-30,15 l7,-34 l-22,-22 l31,-6z" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-    Star Routescape
-</a>
