@@ -9,7 +9,7 @@ tags:
     - webdev
 ---
 
-Meet [Routescape](https://github.com/axtk/routescape), my own React router! Here's the story why I bothered to create it.
+Here's the story why I bothered to create [Routescape](https://github.com/axtk/routescape), a React router to my liking.
 
 I want simplicity:
 
