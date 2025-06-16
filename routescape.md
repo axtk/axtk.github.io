@@ -172,4 +172,4 @@ let Content = ({value}) => {
 
 These features make up the point of Routescape. It's simple and lightweight, and specifically created to manage routing in a React app in a straightforward manner.
 
-Follow-up: *[Painless type-safe routing with Routescape]({{site.github.baseurl}}/routescape_type_safety)*
+Follow-up: *[Type-safe routing with Routescape]({{site.github.baseurl}}/routescape_type_safety)*

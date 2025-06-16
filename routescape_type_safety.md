@@ -1,5 +1,5 @@
 ---
-title: Painless type-safe routing in React
+title: Type-safe routing with Routescape
 date: 2025-06-16
 tags:
     - react
@@ -8,11 +8,7 @@ tags:
     - webdev
 ---
 
-I was pretty excited to check out the [TanStack Router's approach](https://tanstack.com/blog/search-params-are-state) to routing type safety. The concept of securing the types of the routes and their parameters sounds nice even regardless of what the TanStack's implementation had to offer.
-
-I'm not a huge fan of the constraints of the hierarchical route configs or route-based file structure, the opaque inheritance of parent route schemas by nested routes, the indirectness and clumsiness of the file-based route definition through a factory function promoted by TanStack. The several ways to mess up the type inference performance and the considerations to counter them covered in the [TanStack docs](https://tanstack.com/router/latest/docs/framework/react/guide/type-safety) added to the slight discomfort with this particular approach. But the original concept looks cool nonetheless.
-
-So I came up with another approach to type-safe routing in [Routescape](https://routescape.js.org). Among its objectives is keeping the APIs of route matching and link components simple, as well as enabling gradual adoption of type-safe routing throughout the app. The way to achieve this is to entrust route typing to an external type-safe URL builder, enabling the router to accept the values created by the URL builder with regard to the typing.
+[Routescape](https://routescape.js.org) offers type-safe routing as an optional enhancement. It allows for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder and by enabling the router to accept the values created by the URL builder with regard to the typing.
 
 Here's an example:
 
@@ -72,7 +68,7 @@ let App = () => {
 
 [Live demo](https://codesandbox.io/p/sandbox/little-moon-393y94?file=%2Fsrc%2FApp.tsx)
 
-The URL schema (defined with Zod or Yup) is transparent and easy to follow, nothing is implied under the hood. The URL schema doesn't have to cover the entire app, the schema might be split into parts covering standalone portions of the app for better readability and maintainability.
+The URL schema (defined with Zod or Yup) is transparent and easy to follow, nothing is implied under the hood, no opaquely inherited parameters. The URL schema doesn't have to cover the entire app, the schema can be split into parts covering standalone portions of the app for better readability and maintainability.
 
 The ternary route matching function `withRoute(routePattern, x, y)` passes the route types provided by the `url()` function to its parameters. A type-aware code editor expects `params.id` in `<h1>Section {params.id}</h1>` to be a `number`, just as the URL schema suggests.
 
