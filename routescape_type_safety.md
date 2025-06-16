@@ -82,4 +82,4 @@ declare module 'routescape' {
 }
 ```
 
-This progressive and straightforward approach to type-safe routing adds to the neatness of Routescape.
+The Routescape's incremental approach to type-safe routing, from a partial URL schema to strict application-wide type safety, makes it easier to adopt and maintain.
