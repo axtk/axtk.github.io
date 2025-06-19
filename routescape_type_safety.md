@@ -33,7 +33,7 @@ const {url} = createURLSchema({
 });
 
 let App = () => {
-    let [route, withRoute] = useRoute();
+    let {withRoute} = useRoute();
 
     // `withRoute(routePattern, x, y)` acts similarly to
     // `matchesRoutePattern ? x : y`

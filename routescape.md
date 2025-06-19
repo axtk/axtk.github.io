@@ -29,7 +29,7 @@ The ternary route-matching function, as simple as it is, can handle all three ca
 import {useRoute} from 'routescape';
 
 let App = () => {
-    let [route, withRoute] = useRoute();
+    let {route, withRoute} = useRoute();
 
     // `withRoute(routePattern, x, y)` acts similarly to
     // `matchesRoutePattern ? x : y`
@@ -43,9 +43,9 @@ let App = () => {
                     <h1>Intro</h1>
                 </main>
             ))}
-            {withRoute(/^\/section\/(?<id>\d+)\/?$/, ({id}) => (
+            {withRoute(/^\/section\/(?<id>\d+)\/?$/, ({params}) => (
                 <main>
-                    <h1>Section #{id}</h1>
+                    <h1>Section #{params.id}</h1>
                 </main>
             ))}
         </>
@@ -63,7 +63,7 @@ All web devs are already familiar with `<a href="/x">` and `window.location`. So
 + import {A, useRoute} from 'routescape';
 
   let UserNav = ({signedIn}) => {
-+     let [route] = useRoute();
++     let {route} = useRoute();
 
       let handleClick = () => {
 -         window.location.assign(signedIn ? '/profile' : '/login');
@@ -124,7 +124,7 @@ The most direct way to set up lazy routing (that is loading the route content on
 + import {Projects} from './Projects.lazy';
 
   export const App = () => {
-      let [, withRoute] = useRoute();
+      let {withRoute} = useRoute();
 
       return (
           <>
