@@ -24,7 +24,7 @@
 {%- if page.author == 'axtk' or page.author == nil %}
     <a href="{{site.github.baseurl}}">Alexander Tkačenko</a><br>
 {%- elsif page.author_url %}
-    <a href="{{page.author_url}}">{{page.author}}</a><br>
+    <a href="{{page.author_url}}">{{page.author | escape}}</a><br>
 {%- else %}
     {{page.author}}<br>
 {% endif %}
@@ -43,7 +43,7 @@
 {% if page.tags %}
 <p class="tags">
 {%- for tag in page.tags %}
-    <em>{{tag}}</em>{% unless forloop.last %}<span class="sep">, </span>{% endunless -%}
+    <em>{{tag | escape}}</em>{% unless forloop.last %}<span class="sep">, </span>{% endunless -%}
 {% endfor %}
 </p>
 {% endif %}
