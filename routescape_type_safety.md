@@ -83,3 +83,7 @@ declare module 'routescape' {
 ```
 
 The Routescape's incremental approach to type-safe routing, from a partial URL schema to strict application-wide type safety, makes it easier to adopt and maintain.
+
+Follow-up:
+
+- [Type-safe URL parameters in Routescape]({{site.github.baseurl}}/routescape_typed_URL_parameters)
