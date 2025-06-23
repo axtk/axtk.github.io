@@ -91,8 +91,8 @@ h4 {
 [role="doc-abstract"] {
     font-style: italic;
     background: light-dark(
-        (from var(--color) srgb r g b / .07),
-        (from var(--color) srgb r g b / .12)
+        color(from var(--color) srgb r g b / .07),
+        color(from var(--color) srgb r g b / .12)
     );
     padding: var(--abstract-padding);
     margin: 1.25em calc(-1*var(--abstract-padding)) 1.75em;
