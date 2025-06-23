@@ -53,7 +53,7 @@
 </div>
 
 {% endif %}
-{{content | replace: '<p>~</p>', '<p class="sep">~</p>'}}
+{{content | replace: '\x3ca href="http', '\x3ca target="_blank" href="http' | replace: '\x3cp>~\x3c/p>', '\x3cp class="sep">~\x3c/p>'}}
 </main>
 
 <script>
