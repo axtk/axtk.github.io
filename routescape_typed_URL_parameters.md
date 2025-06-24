@@ -18,7 +18,7 @@ import {createURLSchema} from 'url-shape';
 import {z} from 'zod';
 
 const {url} = createURLSchema({
-    "/shape/:id": {
+    '/shape/:id': {
         params: z.object({
             id: z.coerce.number(),
         }),
@@ -64,7 +64,7 @@ export const ShapeSection = () => {
             <nav>
                 <A href="/">Intro</A>
                 {' | '}
-                <A href={url("/shape/:id", {params: {id: params.id + 1}})}>
+                <A href={url('/shape/:id', {params: {id: params.id + 1}})}>
                     Next shape →
                 </A>
             </nav>
