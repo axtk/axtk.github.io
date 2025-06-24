@@ -8,9 +8,9 @@ tags:
     - webdev
 ---
 
-The URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` and in a type-safe manner with the [Routescape](https://routescape.js.org)'s `useRouteState()` hook.
+URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [Routescape](https://routescape.js.org)'s `useRouteState()` hook.
 
-The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (It's outlined in the [type-safe routing overview]({{site.github.baseurl}}/routescape_type_safety) in more detail.)
+The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview]({{site.github.baseurl}}/routescape_type_safety).)
 
 ```ts
 import {A, useRouteState} from 'routescape';
@@ -77,4 +77,4 @@ export const ShapeSection = () => {
 
 This example shows how Routescape's `useRouteState()` follows the familiar pattern of React's `useState()`: both return a tuple of `[state, setState]`, with `setState()` accepting either a fixed state value or an updater function. (Which also allows for quick migration from local state to URL state, if need be.)
 
-`useRouteState()` can be used with an untyped fixed `string` route, skipping the schema definition part and assuming general types of URL parameters. With a type-safe URL builder like the `url()` function in the example above, we're getting a more refined, typed URL state.
+`useRouteState()` can be used with an untyped fixed `string` route, skipping the schema definition part and assuming general types of URL parameters. With a type-safe URL builder like the `url()` function in the example above we're getting a more refined, typed URL state.
