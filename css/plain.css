@@ -74,6 +74,15 @@ h2 {
     padding: 0 0 .2em 0;
     margin: 1.5em 0 .75em 0;
 }
+h2#related {
+    font-size: .8rem;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: color(from var(--color) srgb r g b / .5);
+    margin-top: 2rem;
+}
 h3 {
     font-size: 1.15em;
     line-height: 1.1;

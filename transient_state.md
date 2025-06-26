@@ -17,4 +17,6 @@ Most ways to handle an async action's state are wired into complex libs either f
 
 In order to address my question, I ended up creating a small package called [*Transient State*](https://github.com/axtk/transient-state). It helps track async actions' state without breaking into the async actions' code and the app's shared state (and even without requiring one), meaning that the async action tracking is easy to set up. The async action's state can be used either locally within a component or shared between multiple components equally easily. The package description outlines these and some other options in more detail.
 
-Related: *[Comparing loading state with Transient State and Tanstack React Query]({{site.github.baseurl}}/transient_state_vs_react_query)*
+## Related
+
+- [Comparing loading state with Transient State and Tanstack React Query]({{site.github.baseurl}}/transient_state_vs_react_query)

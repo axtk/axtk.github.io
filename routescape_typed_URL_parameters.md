@@ -78,3 +78,8 @@ export const ShapeSection = () => {
 This example shows how Routescape's `useRouteState()` follows the familiar pattern of React's `useState()`: both return a tuple of `[state, setState]`, with `setState()` accepting either a fixed state value or an updater function. (Which also allows for quick migration from local state to URL state, if need be.)
 
 `useRouteState()` can be used with an untyped fixed `string` route, skipping the schema definition part and assuming general types of URL parameters. With a type-safe URL builder like the `url()` function in the example above we're getting a more refined, typed URL state.
+
+## Related
+
+- [Type-safe routing with Routescape]({{site.github.baseurl}}/routescape_type_safety)
+- [A React router to my liking]({{site.github.baseurl}}/routescape)
