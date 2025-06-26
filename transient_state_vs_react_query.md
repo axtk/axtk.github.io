@@ -1,5 +1,5 @@
 ---
-title: "Setting up loading state in React: Transient State vs Tanstack React Query"
+title: "Setting up loading state in React: Transient State vs TanStack React Query"
 date: 2025-05-06
 updated: 2025-05-21
 tags:
@@ -11,7 +11,7 @@ tags:
 
 *[Foreword]({{site.github.baseurl}}/transient_state)*
 
-Let's see what it takes to add the loading state tracking for an async action with Tanstack React Query and Transient State.
+Let's see what it takes to add the loading state tracking for an async action with TanStack React Query and Transient State.
 
 ## Example 1
 
@@ -19,7 +19,7 @@ In this example, we've got an `<ItemList>` component that fetches its data with 
 
 We'll assume that initially there was no loading state tracking, and we're adding it to the already existing code reflecting the successful scenario. For simplicity, the loaded data is stored locally, but it could be stored in some shared state instead.
 
-### With Tanstack React Query
+### With TanStack React Query
 
 ```diff
 + import {useQuery} from '@tanstack/react-query';
@@ -94,7 +94,7 @@ The async action state tracking with Transient State doesn't alter the structure
 
 Let's add a button to `<ItemList>` from the example above that refreshes the items. We'll also assume now that we've got an initial list of items, without an initial fetch.
 
-### With Tanstack React Query
+### With TanStack React Query
 
 We've seen above that the React Query's `useQuery()` hook, used for the async action state tracking, automatically runs the action. We'll have to [disable it explicitly](https://tanstack.com/query/latest/docs/framework/react/guides/disabling-queries) by setting `enabled: false` to run the async action conditionally, when the button is clicked.
 
@@ -161,6 +161,6 @@ The introduced changes are exactly the same as in the Example 1. And again the c
 
 ## Summary
 
-Tanstack React Query offers a way to track async actions' state as part of its feature set. As we saw above, the adoption of React Query requires careful context-dependent refactors. It also takes over the app's shared state (or a part of it), affecting the way components interact with the app's state.
+TanStack React Query offers a way to track async actions' state as part of its feature set. As we saw above, the adoption of React Query requires careful context-dependent refactors. It also takes over the app's shared state (or a part of it), affecting the way components interact with the app's state.
 
 When introducing a complex data fetching lib feels like an overkill, Transient State, as a small single-purpose lib, can offer a neat, minimalist way to set up the async action state tracking, either local or shared, without affecting the app's state.
