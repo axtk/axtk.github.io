@@ -128,9 +128,11 @@ a:active {
 a:hover {
     text-decoration: underline;
 }
+/*
 a:visited {
     color: var(--visited-link-color);
 }
+*/
 main,
 header,
 footer {
