@@ -4,7 +4,7 @@
     --color: light-dark(black, white);
     --background: light-dark(white, #1a1a1a);
     --link-color: light-dark(royalblue, deepskyblue);
-    --visited-link-color: mediumorchid;
+    --visited-link-color: light-dark(blueviolet, mediumorchid);
     --mark-background: light-dark(greenyellow, limegreen); /* #fff88a */
     --danger-color: light-dark(darkred, #df4242);
 }
