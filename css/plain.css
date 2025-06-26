@@ -4,6 +4,7 @@
     --color: light-dark(black, white);
     --background: light-dark(white, #1a1a1a);
     --link-color: light-dark(royalblue, deepskyblue);
+    --visited-link-color: mediumorchid;
     --mark-background: light-dark(greenyellow, limegreen); /* #fff88a */
     --danger-color: light-dark(darkred, #df4242);
 }
@@ -126,6 +127,9 @@ a:active {
 }
 a:hover {
     text-decoration: underline;
+}
+a:visited {
+    color: var(--visited-link-color);
 }
 main,
 header,
