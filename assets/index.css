@@ -27,7 +27,7 @@ li {
 li .description {
     display: block;
     font-size: .8em;
-    margin-top: .5em;
+    margin-top: .35em;
 }
 .intro {
     display: flex;
