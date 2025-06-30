@@ -1,0 +1,61 @@
+import {markerSize, ns} from './const';
+import {getScreenPosition} from './getScreenPosition';
+import type {RenderOptions} from './RenderOptions';
+
+const d = markerSize.moon ?? markerSize.default;
+const r = d/2;
+
+/* axtk MMXX, MMXXV (ts, gh pages) */
+export function renderMoonPhase(options: RenderOptions) {
+    let container = options.element.querySelector('g.markers')!;
+    let element = container.querySelector('[data-id="moon-phase"]');
+
+    if (!element) {
+        element = document.createElementNS(ns, 'svg');
+        element.setAttribute('data-id', 'moon-phase');
+        element.setAttribute('viewBox', `0 0 ${d} ${d}`);
+        element.setAttribute('width', String(d));
+        element.setAttribute('height', String(d));
+        container.appendChild(element);
+    }
+
+    let arcs = element.querySelector('path');
+
+    if (!arcs) {
+        arcs = document.createElementNS(ns, 'path');
+        arcs.setAttribute('class', 'phase-shadow');
+        element.appendChild(arcs);
+    }
+
+    let {position, phase} = options.tracks.moon;
+
+    if (phase >= 1) phase -= 1;
+
+    let quarter = Math.floor(phase/.25);
+    let dr = r*((phase % .25)/.25), rx1, rx2, dir1, dir2;
+
+    switch (quarter) {
+        case 0:
+            rx1 = r; dir1 = 1; rx2 = r - dr; dir2 = 1;
+            break;
+        case 1:
+            rx1 = r; dir1 = 1; rx2 = dr; dir2 = 0;
+            break;
+        case 2:
+            rx1 = r - dr; dir1 = 0; rx2 = r; dir2 = 1;
+            break;
+        default:
+            rx1 = dr; dir1 = 1; rx2 = r; dir2 = 1;
+    }
+
+    arcs.setAttribute('d',
+        `M ${r},${d} ` +
+        `A ${rx1} ${r} 180 0 ${dir1} ${r},0 ` +
+        `A ${rx2} ${r} 180 0 ${dir2} ${r},${d}`
+    );
+
+    let [x, y] = getScreenPosition(position, options);
+
+    element.setAttribute('x', String(x - r));
+    element.setAttribute('y', String(y - r));
+}
