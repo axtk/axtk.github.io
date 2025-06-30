@@ -3,7 +3,7 @@ import {access, readdir, rm} from 'node:fs/promises';
 import {promisify} from 'node:util';
 
 const sourceDir = 'src';
-const targetDir = 'assets/_dist';
+const targetDir = 'assets/0';
 
 const exec = promisify(defaultExec);
 const target = process.argv[2];
