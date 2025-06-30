@@ -59,7 +59,7 @@ function validate({location, time}: RenderOptions) {
     return valid;
 }
 
-function render() {
+function render(repeat?: boolean) {
     renderForm();
 
     let renderOptions = getRenderOptions();
@@ -75,6 +75,9 @@ function render() {
     renderMarkerLines(renderOptions);
     renderPositionLabels(renderOptions);
     renderMoonPhase(renderOptions);
+
+    if (repeat)
+        setTimeout(() => render(true), 15000);
 }
 
 function init() {
@@ -84,10 +87,10 @@ function init() {
         if (resizeTimeout !== null)
             clearTimeout(resizeTimeout);
 
-        resizeTimeout = setTimeout(render, 200);
+        resizeTimeout = setTimeout(() => render(), 200);
     });
 
-    render();
+    render(true);
 }
 
 init();
