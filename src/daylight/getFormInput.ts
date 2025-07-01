@@ -27,3 +27,5 @@ export function getFormInput() {
         time: getTime(),
     };
 }
+
+export type FormInput = ReturnType<typeof getFormInput>;

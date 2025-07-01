@@ -1,4 +1,4 @@
-import {getFormInput} from './getFormInput';
+import {type FormInput, getFormInput} from './getFormInput';
 import {getTracks} from './getTracks';
 import {isValidFormInput} from './isValidFormInput';
 import {setDimensions} from './setDimensions';
@@ -15,17 +15,18 @@ import type {RenderOptions} from './RenderOptions';
 type Timeout = ReturnType<typeof setTimeout>;
 
 let renderTimeout: Timeout | null = null;
+let formInput: FormInput | null = null;
 
 function render(repeat?: boolean) {
-    renderForm();
+    if (!formInput) {
+        renderForm();
+        formInput = getFormInput();
 
-    let formInput = getFormInput();
-    let hasValidInput = isValidFormInput(formInput);
-
-    document.documentElement.classList.toggle('error', !hasValidInput);
-
-    if (!hasValidInput)
-        return;
+        if (!isValidFormInput(formInput)) {
+            document.documentElement.classList.add('error');
+            return;
+        }
+    }
 
     let renderOptions: RenderOptions = {
         ...formInput,

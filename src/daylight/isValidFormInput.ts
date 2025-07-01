@@ -1,6 +1,4 @@
-import type {getFormInput} from './getFormInput';
-
-type FormInput = ReturnType<typeof getFormInput>;
+import type {FormInput} from './getFormInput';
 
 export function isValidFormInput({location, time}: FormInput) {
     if (!location || isNaN(location.lat) || isNaN(location.lon))
