@@ -1,6 +1,6 @@
-import {RAD} from './astronomy/const';
-import type {GeoLocation} from './astronomy/GeoLocation';
+import {getFormInput} from './getFormInput';
 import {getTracks} from './getTracks';
+import {isValidFormInput} from './isValidFormInput';
 import {setDimensions} from './setDimensions';
 import {renderDirections} from './renderDirections';
 import {renderForm} from './renderForm';
@@ -12,60 +12,22 @@ import {renderPositionLabels} from './renderPositionLabels';
 import {renderTracks} from './renderTracks';
 import type {RenderOptions} from './RenderOptions';
 
-function getLocation(): GeoLocation {
-    let input = document.querySelector<HTMLInputElement>('form [name="p"]')?.value.trim() ?? '';
-
-    let s = input.split(/\s*[,;]\s*/);
-    let lat = parseFloat(s[0])*RAD;
-    let lon = parseFloat(s[1])*RAD;
-
-    if (s[0]?.endsWith('S'))
-        lat *= -1;
-
-    if (s[1]?.endsWith('W'))
-        lon *= -1;
-
-    return {lat, lon};
-}
-
-function getTime() {
-    let input = document.querySelector<HTMLInputElement>('form [name="t"]')?.value.trim();
-
-    return input || Date.now();
-}
-
-function getRenderOptions(): RenderOptions {
-    let element = document.querySelector<SVGElement>('#screen svg')!;
-
-    let currentLocation = getLocation();
-    let time = getTime();
-
-    return {
-        element,
-        tracks: getTracks(currentLocation, time),
-        location: currentLocation,
-        time,
-    };
-}
-
-function validate({location, time}: RenderOptions) {
-    let valid = location && !isNaN(location.lat) && !isNaN(location.lon) && (
-        typeof time === 'number' ||
-        !isNaN((time instanceof Date ? time : new Date(time)).getTime())
-    );
-
-    document.documentElement.classList.toggle('error', !valid);
-
-    return valid;
-}
-
 function render(repeat?: boolean) {
     renderForm();
 
-    let renderOptions = getRenderOptions();
+    let formInput = getFormInput();
+    let hasValidInput = isValidFormInput(formInput);
 
-    if (!validate(renderOptions))
+    document.documentElement.classList.toggle('error', !hasValidInput);
+
+    if (!hasValidInput)
         return;
+
+    let renderOptions: RenderOptions = {
+        ...formInput,
+        element: document.querySelector<SVGElement>('#screen svg')!,
+        tracks: getTracks(formInput.location, formInput.time),
+    };
 
     setDimensions(renderOptions);
     renderHorizon(renderOptions);
@@ -76,7 +38,7 @@ function render(repeat?: boolean) {
     renderPositionLabels(renderOptions);
     renderMoonPhase(renderOptions);
 
-    if (repeat)
+    if (repeat && !formInput.time)
         setTimeout(() => render(true), 15000);
 }
 

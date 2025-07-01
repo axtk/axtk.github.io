@@ -20,7 +20,7 @@ function toTimestamp(time: number | string | Date | undefined) {
     if (typeof time === 'number')
         return time;
 
-    if (time === undefined)
+    if (time === undefined || time === '')
         return Date.now();
 
     return (time instanceof Date ? time : new Date(time)).getTime();
@@ -29,7 +29,10 @@ function toTimestamp(time: number | string | Date | undefined) {
 const dtMin = -2.5*hr;
 const dtMax = 22.5*hr;
 
-export function getTracks(location: GeoLocation, time?: number | string | Date) {
+export function getTracks(
+    location: GeoLocation,
+    time?: number | string | Date | undefined,
+) {
     let t0 = toTimestamp(time);
 
     let sunTrack: [number, number][] = [];
