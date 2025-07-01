@@ -19,6 +19,10 @@ main {
     justify-content: center;
     box-sizing: border-box;
 }
+ul {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
 li {
     line-height: 1.2;
     margin-top: .5em;
