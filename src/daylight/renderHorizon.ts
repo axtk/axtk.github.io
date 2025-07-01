@@ -6,24 +6,35 @@ import type {RenderOptions} from './RenderOptions';
 export function renderHorizon(options: RenderOptions) {
     let container = options.element.querySelector('.horizon')!;
     let {width, height} = getDimensions(options);
-    let twilights = Array.from(container.querySelectorAll('.twilight'));
+    let twilights = [
+        Array.from(container.querySelectorAll('.under')),
+        Array.from(container.querySelectorAll('.above')),
+    ];
 
-    while (twilights.length < 3) {
-        let horizon = document.createElementNS(ns, 'rect');
+    for (let k = 0; k < twilights.length; k++) {
+        while (twilights[k].length < 3) {
+            let horizon = document.createElementNS(ns, 'rect');
 
-        horizon.setAttribute('class', 'twilight');
-        horizon.setAttribute('x', '0');
+            horizon.setAttribute('class', k === 0 ? 'under' : 'above');
+            horizon.setAttribute('x', '0');
 
-        container.appendChild(horizon);
-        twilights.push(horizon);
+            container.appendChild(horizon);
+            twilights[k].push(horizon);
+        }
     }
 
-    for (let i = 0; i < twilights.length; i++) {
-        let twilight = twilights[i];
+    for (let i = 0; i < 3; i++) {
+        let under = twilights[0][i];
+        let above = twilights[1][i];
+
         let y = getScreenPosition([0, -i*6], options)[1];
 
-        twilight.setAttribute('y', String(y));
-        twilight.setAttribute('width', String(width));
-        twilight.setAttribute('height', String(height - y - horizonOffset));
+        under.setAttribute('y', String(y));
+        under.setAttribute('width', String(width));
+        under.setAttribute('height', String(height - y - horizonOffset));
+
+        above.setAttribute('y', '0');
+        above.setAttribute('width', String(width));
+        above.setAttribute('height', String(y));
     }
 }
