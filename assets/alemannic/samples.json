@@ -1,0 +1,990 @@
+{"alemannic": [
+	{
+		"position": [47.38, 9.27],
+		"title": "Herisau, Kanton Appenzell-Ausserrhoden",
+		"description": {
+			"name": "Herisau",
+			"province": "AR",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "D Appezëller Landsgmënd",
+				"author": "Otto Frehner",
+				"url": "https://www.idiotikon.ch/Texte/audio/Herisau_Frehner_Landsgemein.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.05, 9.42],
+		"title": "Mels, Sarganserland, Kanton St. Gallen",
+		"description": {
+			"name": "Mels",
+			"province": "SG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Erzabbau am Gonzen",
+				"author": "Bernadette Gartmann-Hidber und Josef Tschirky",
+				"date": "1971",
+				"url": "https://www.idiotikon.ch/Texte/audio/Erzabbau_am_Gonzen.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.08, 9.48],
+		"title": "Wartau, Sarganserland, Kanton St. Gallen",
+		"description": {
+			"name": "Wartau",
+			"province": "SG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Dr Hosalupf im Schlossbongert",
+				"author": "Jakob Kuratli",
+				"url": "https://www.idiotikon.ch/Texte/audio/Wartau_Kuratli_Hosalupf.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.21, 9.52],
+		"title": "Eschen, Liechtenstein",
+		"description": {
+			"name": "Eschen",
+			"province": "Unterland",
+			"country": "FL"
+		},
+		"resources": [
+			{
+				"title": "Chüechla",
+				"author": "Elwina Schädler",
+				"url": "https://www.idiotikon.ch/Texte/audio/Eschen_Schaedler_Chuechla.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.22, 9.51],
+		"title": "Gamprin, Liechtenstein",
+		"description": {
+			"name": "Gamprin",
+			"province": "Unterland",
+			"country": "FL"
+		},
+		"resources": [
+			{
+				"title": "Beim Dorfschneider",
+				"author": "Erwin Heeb, Almerida Heeb, Ewald Hasler",
+				"url": "https://www.idiotikon.ch/Texte/audio/Gamprin_Beim_Dorfschneider.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.70, 8.63],
+		"title": "Kanton Schaffhausen",
+		"description": {
+			"name": "",
+			"province": "SH",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "E paar Müschterli us \"Haametstimm\"",
+				"author": "Albert Bächthold",
+				"url": "https://www.idiotikon.ch/Texte/audio/Baechthold_Mueschterli.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.70, 8.52],
+		"title": "Siblingen, Kanton Shaffhausen",
+		"description": {
+			"name": "Siblingen",
+			"province": "SH",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Otto und Emma Storer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_SH4.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.59, 9.32],
+		"title": "Kesswil, Kanton Thurgau",
+		"description": {
+			"name": "Kesswil",
+			"province": "TG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "\"'s Biwack\" (nach C.F. Ramuz)",
+				"author": "Fritz Enderlin",
+				"date": "1964",
+				"url": "https://www.idiotikon.ch/Texte/audio/Enderlin_sBiwack.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.55, 9.30],
+		"title": "Amriswil, Kanton Thurgau",
+		"description": {
+			"name": "Amriswil",
+			"province": "TG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Do bin i deham",
+				"author": "Dino Larese",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Larese_Do_bini_deham.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.38, 8.54],
+		"title": "Stadt Zürich",
+		"description": {
+			"name": "Zürich",
+			"province": "ZH",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Self-Service",
+				"author": "Ernst Kappeler",
+				"url": "https://www.idiotikon.ch/Texte/audio/Kappeler_Self-Service.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "'s Märli vom Bäreprinz",
+				"author": "Sylvia Sempert",
+				"date": "1964",
+				"url": "https://www.idiotikon.ch/Texte/audio/Sempert_Bareprinz.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "De Läitüüfel",
+				"author": "Traugott Vogel",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vogel_De_Laitufel.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Uf em Möischterplatz",
+				"author": "Helen Iten",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Iten_Uf_em_Moischterplatz.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.24, 8.46],
+		"title": "Mettmenstetten, Knonaueramt, Kanton Zürich",
+		"description": {
+			"name": "Mettmenstetten",
+			"province": "ZH",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Karl Funk-Huber",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_ZH50.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.48, 8.44],
+		"title": "Regensberg, Zürcher Unterland",
+		"description": {
+			"name": "Regensberg",
+			"province": "ZH",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Vom Seechte (Laugenwäsche)",
+				"author": "Adelheid Schwenk",
+				"url": "https://www.idiotikon.ch/Texte/audio/Regensberg_Schwenk_vom_Seec.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.81, 7.22],
+		"title": "Sensebezirk, Kanton Freiburg (Fribourg)",
+		"description": {
+			"name": "Sensebezirk",
+			"province": "FR",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Üsi Sprach (gelesen von Anton Kolly)",
+				"author": "Pius Emmenegger",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Emmenegger_Uesi_Sprach.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.05, 8.26],
+		"title": "Reussbühl, Kanton Luzern",
+		"description": {
+			"name": "Reussbühl",
+			"province": "LU",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "\"Vor em Altersheim\", \"Illusion\"",
+				"author": "Adolf Winiger",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Winiger.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.14, 8.58],
+		"title": "Unterägeri, Kanton Zug",
+		"description": {
+			"name": "Unterägeri",
+			"province": "ZG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Wes i de Waldschwöschtere ggangen isch",
+				"author": "A. Iten",
+				"url": "https://www.idiotikon.ch/Texte/audio/Iten_Waldschwoeschtere.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.14, 8.46],
+		"title": "Buonas, Kanton Zug",
+		"description": {
+			"name": "Buonas",
+			"province": "ZG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Geschichte des Dörfleins Buonas",
+				"author": "Verena Stuber",
+				"url": "https://www.idiotikon.ch/Texte/audio/Stuber_Buonas.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.79, 8.16],
+		"title": "Lungern, Kanton Obwalden",
+		"description": {
+			"name": "Lungern",
+			"province": "OW",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Älplerchilwi",
+				"author": "Marie Furrer, Emma Furrer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Lungern_Furrer_Aelplerchilw.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.96, 8.37],
+		"title": "Stans, Kanton Nidwalden",
+		"description": {
+			"name": "Stans",
+			"province": "NW",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Am Wildbach",
+				"author": "Josef von Matt",
+				"url": "https://www.idiotikon.ch/Texte/audio/Stans_VonMatt_Am_Wildbach.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Nidwaldner Mundart",
+				"author": "Josef von Matt",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/vonMatt_Nidwaldner_Mundart.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.02, 8.66],
+		"title": "Schwyz, Kanton Schwyz",
+		"description": {
+			"name": "Schwyz",
+			"province": "SZ",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Schwyzer Mundart",
+				"author": "Paul Kamer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Kamer_Schwyzer_Mundart.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.05, 8.7],
+		"title": "Kanton Schwyz",
+		"description": {
+			"name": "",
+			"province": "SZ",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Muettersprooch (gelesen von Wernerkarl Kälin)",
+				"author": "Otto Helmut Lienert",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Lienert_Muettersprooch.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.18, 8.88],
+		"title": "Galgenen, Kanton Schwyz",
+		"description": {
+			"name": "Galgenen",
+			"province": "SZ",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Herbstarbeiten",
+				"author": "Anna Benz-Ziegler",
+				"url": "https://www.idiotikon.ch/Texte/audio/Galgenen_Herbstarbeiten.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.12, 9.15],
+		"title": "Obstalden, Kanton Glarus",
+		"description": {
+			"name": "Obstalden",
+			"province": "GL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Holzarbeiten",
+				"author": "Meinrad Kamm",
+				"url": "https://www.idiotikon.ch/Texte/audio/Obstalden_Kamm_Holzarbeit.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.95, 7.44],
+		"title": "Stadt Bern, Kanton Bern",
+		"description": {
+			"name": "Bern",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Im Bärner Mittelland",
+				"author": "Ernst Balzli",
+				"date": "1964",
+				"url": "https://www.idiotikon.ch/Texte/audio/Balzli_Baerner_Mittelland.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Madame de ...",
+				"author": "Susi Langhans",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Langhans_Madame_de.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Gedichte: \"rosa loui\", \"verchehrsornig\", \"wo chiemte mer hi\", \"0,05 sekunde\", \"wort und uwort\", \"liebesgedicht\", \"alles in allem\", \"legände\"",
+				"author": "Kurt Marti",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Marti_Gedichte.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.02, 7.45],
+		"title": "Münchenbuchsee, Kanton Bern",
+		"description": {
+			"name": "Münchenbuchsee",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Otto Hegg",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_BE34.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.5, 7.38],
+		"title": "St. Stephan, Berner Oberland, Kanton Bern",
+		"description": {
+			"name": "St. Stephan",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Dr Lindwurm im Ried",
+				"author": "Armin Bratschi",
+				"url": "https://www.idiotikon.ch/Texte/audio/Bratschi_Lindwurm.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.66, 8.29],
+		"title": "Guttannen, Berner Oberland, Kanton Bern",
+		"description": {
+			"name": "Guttannen",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Nahchääseller",
+				"author": "Bertha Brügger",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Bruegger_Nahchaeaeseller.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.47, 7.28],
+		"title": "Saanenland, Berner Oberland, Kanton Bern",
+		"description": {
+			"name": "Saanenland",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Zwei Müsterchen aus dem Saanenland",
+				"author": "Arnold Jaggi",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Jaggi_Muesterchen.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.58, 7.65],
+		"title": "Frutigtal, Berner Oberland, Kanton Bern",
+		"description": {
+			"name": "Frutigen",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gedichte: \"Abschied\", \"Under Tanne\", \"Leeär\", \"Holiecht\"",
+				"author": "Maria Lauber",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Lauber_Gedichte.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.63, 7.55],
+		"title": "Diemtigen, Diemtigtal, Berner Oberland, Kanton Bern",
+		"description": {
+			"name": "Diemtigen",
+			"province": "BE",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Tierstimmen",
+				"author": "Wilhelm Schütz",
+				"url": "https://www.idiotikon.ch/Texte/audio/Diemtigen_Schuetz_Tierstimm.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.1, 8.2],
+		"title": "Kanton Luzern",
+		"description": {
+			"name": "",
+			"province": "LU",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "D Schwyz isch en tüüre Bode",
+				"author": "Toni Schaller",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Schaller.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.13, 8.32],
+		"title": "Eschenbach, Seetal, Kanton Luzern",
+		"description": {
+			"name": "Eschenbach",
+			"province": "LU",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Hubert Bühlmann sen. und jun.",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_LU20.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.21, 7.54],
+		"title": "Stadt Solothurn",
+		"description": {
+			"name": "Solothurn",
+			"province": "SO",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Scho wider Sunndig ­ Ou e schöne Obe ­ Vor em Färnseh ­ Nüt isch rächt ­ Angscht",
+				"author": "Ernst Burren",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Burren.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.39, 7.97],
+		"title": "Stüsslingen (Schtüsslige), Kanton Solothurn",
+		"description": {
+			"name": "Stüsslingen",
+			"province": "SO",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Theodor und Lina von Arx-Meier",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_SO13.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.56, 7.59],
+		"title": "Basel-Stadt",
+		"description": {
+			"name": "",
+			"province": "BS",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Pflotsch",
+				"author": "Blasius (Felix Burckhardt)",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Blasius_Pflotsch.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Basler Mundart",
+				"author": "Hans Haeser",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Haeser_Basler_Mundart.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Jo-jä (gelesen von Walter Morath)",
+				"author": "C.F. Vaucher",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vaucher_Jo-jae.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Der Morgestraich",
+				"author": "Eberhard Vischer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vischer_Morgestraich.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.47, 7.85],
+		"title": "Gelterkinden, Kanton Baselland",
+		"description": {
+			"name": "Gelterkinden",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Baselbieter Mundart",
+				"author": "Fritz Klaus",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Klaus_Baselbieter_Mundart.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.43, 7.93],
+		"title": "Oltingen (Oltige), Kanton Baselland",
+		"description": {
+			"name": "Oltingen",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Drei Anekdoten",
+				"author": "Emil Weitnauer",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Weitnauer_Drei_Anekdoten.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.47, 7.82],
+		"title": "Sissach, Kanton Baselland",
+		"description": {
+			"name": "Sissach",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Zwei Gedichte: \"Wünsch\" und \"Gigampfe\"",
+				"author": "Helene Bossert",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Bossert_Zwei_Gedichte.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.46, 7.76],
+		"title": "Kanton Baselland",
+		"description": {
+			"name": "",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Muetersprooch",
+				"author": "Ida Schweizer",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Schweizer_Muettersprooch.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Vom Ursprung des Rendesart «Dur d'Lümpe go»",
+				"author": "Max Frey",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Frey_Dur_dLuempe_go.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Sage vom Hauenstein",
+				"author": "Eduard Fischer",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Fischer_Sage_vom_Hauenstein.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.44, 7.91],
+		"title": "Wenslingen (Weislige), Kanton Baselland",
+		"description": {
+			"name": "Wenslingen",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "s Gwitter",
+				"author": "Traugott Meyer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Meyer_s_Gwitter.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.48, 7.55],
+		"title": "Ettingen (Ettige), Kanton Baselland",
+		"description": {
+			"name": "Ettingen",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Karl und Susanne Thüring-Brodmann",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_BA%205.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.48, 7.53],
+		"title": "Leimental, Kanton Baselland",
+		"description": {
+			"name": "Leimental",
+			"province": "BL",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Radio Jingle",
+				"author": "Vollmond (Rockband)",
+				"date": "2000",
+				"url": "https://www.idiotikon.ch/Texte/audio/vollmond.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [48.15, 7.49],
+		"title": "Grussenheim, Oberelsass, Frankreich",
+		"description": {
+			"name": "Grussenheim",
+			"province": "Alsace",
+			"country": "FR"
+		},
+		"resources": [
+			{
+				"title": "Ohne Titel, Oberelsässer Jiddisch",
+				"author": "Anna Bollag-Geismar",
+				"url": "https://www.idiotikon.ch/Texte/audio/Bollag_Grussenheim.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.51, 8.05],
+		"title": "Fricktal, Kanton Aargau",
+		"description": {
+			"name": "Fricktal",
+			"province": "AG",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Dr Schatz vom Wygarte",
+				"author": "Traugott Fricker",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Fricker_Dr_Schatz_vom_Wygar.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.48, 7.46],
+		"title": "Rodersdorf, Kanton Solothurn",
+		"description": {
+			"name": "Rodersdorf",
+			"province": "SO",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Backen in früherer Zeit",
+				"author": "Joseph Groeli-Kaufmann",
+				"url": "https://www.idiotikon.ch/Texte/audio/Rodersdorf_Groeli_Backen.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.38, 7.47],
+		"title": "Bärschwil, Kanton Solothurn, Kanton Aargau",
+		"description": {
+			"name": "Bärschwil",
+			"province": "SO",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "In dr grosse Stadt",
+				"author": "Albin Fringeli",
+				"date": "1964",
+				"url": "https://www.idiotikon.ch/Texte/audio/Fringeli_In_dr_grosse_Stadt.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [47.62, 7.66],
+		"title": "Lörrach, Baden-Würtemberg, Deutschland",
+		"description": {
+			"name": "Lörrach",
+			"province": "Baden-Würtemberg",
+			"country": "DE"
+		},
+		"resources": [
+			{
+				"title": "Gedicht \"Wurzle un Blatt\"",
+				"author": "Gerhard Jung",
+				"date": "1976",
+				"url": "https://www.idiotikon.ch/Texte/audio/Jung_Wurzle_un_Blatt.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.32, 8.5],
+		"title": "Bosco Gurin, Kanton Tessin",
+		"description": {
+			"name": "Bosco/Gurin",
+			"province": "TI",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Ds Chriedschiböimdschi",
+				"author": "Hans Tomamichel",
+				"url": "https://www.idiotikon.ch/Texte/audio/Tomamichel_Chriedschiboem.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.42, 7.82],
+		"title": "Blatten, Kanton Wallis",
+		"description": {
+			"name": "Blatten",
+			"province": "VS",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Jägerlatein",
+				"author": "Marinus Ritler",
+				"url": "https://www.idiotikon.ch/Texte/audio/Blatten_Ritler_Jaegerlatein.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			},
+			{
+				"title": "Gespräch am Neujahrsmorgen",
+				"author": "Otto und Franziska Ebener-Blötzer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_WS7.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.41, 7.83],
+		"title": "Lötschental, Kanton Wallis",
+		"description": {
+			"name": "Lötschental",
+			"province": "VS",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Lötschentaler Müsterchen",
+				"author": "Pius Blötzer",
+				"url": "https://www.idiotikon.ch/Texte/audio/Bloetzer_Loetschentaler_Mue.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.85, 9.53],
+		"title": "Chur, Graubünden",
+		"description": {
+			"name": "Chur",
+			"province": "GR",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "(ohne Titel; Bemerkungen zu den deutschen Dialekten in Graubünden)",
+				"author": "Paul Meinherz",
+				"date": "1977",
+				"url": "https://www.idiotikon.ch/Texte/audio/Meinherz_Chur.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.83, 9.61],
+		"title": "Lüen, Schanfigg, Graubünden",
+		"description": {
+			"name": "Lüen",
+			"province": "GR",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Vam Brodbache",
+				"author": "Marie Fleisch",
+				"date": "1964",
+				"url": "https://www.idiotikon.ch/Texte/audio/Fleisch_Vam_Broodbache.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	},
+	{
+		"position": [46.47, 9.51],
+		"title": "Avers-Cresta, Graubünden",
+		"description": {
+			"name": "Avers",
+			"province": "GR",
+			"country": "CH"
+		},
+		"resources": [
+			{
+				"title": "Gespräch am Neujahrstag",
+				"author": "Simon Heinz und Marlis Heinz",
+				"url": "https://www.idiotikon.ch/Texte/audio/Vergleich_GR33.mp3",
+				"source": "www.idiotikon.ch/hoerproben"
+			}
+		]
+	}
+]}
