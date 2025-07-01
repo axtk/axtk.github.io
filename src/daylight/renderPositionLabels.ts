@@ -12,7 +12,7 @@ function renderLabel(id: 'sun' | 'moon', options: RenderOptions) {
 
     if (id === 'moon') {
         label.querySelector('.ph .value')!.textContent =
-            options.tracks.moon.phase.toFixed(2);
+            `${Math.round(options.tracks.moon.phase*100)}%`;
     }
 
     let [x] = getScreenPosition(position, options);
