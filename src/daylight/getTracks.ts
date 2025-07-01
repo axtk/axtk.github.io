@@ -85,6 +85,9 @@ export function getTracks(
 ) {
     let t0 = toTimestamp(time);
 
+    // show the past crossing time within 5 min after the crossing
+    let crossingRefTime = t0 - 5*min;
+
     let sunTrack: [number, number][] = [];
     let moonTrack: [number, number][] = [];
 
@@ -96,8 +99,8 @@ export function getTracks(
         let t = t0 + dt;
         let sunPos = getNormalizedPosition(getSunPosition(t, location));
 
-        // get approx time of Sun's crossing horizon
-        updateCrossing(crossingResult, {t0, t, alt: sunPos[1]});
+        // get the approx time of the Sun's crossing the horizon
+        updateCrossing(crossingResult, {t0: crossingRefTime, t, alt: sunPos[1]});
 
         sunTrack.push(sunPos);
         moonTrack.push(
@@ -112,12 +115,14 @@ export function getTracks(
             ...initialCrossingResult,
         };
 
-        // get more precise time of Sun's crossing horizon
+        crossingRefTime -= min;
+
+        // get a more precise time of the Sun's crossing the horizon
         for (let dt = -min; dt < min; dt += sec) {
             let t = crossingTime + dt;
             let sunPos = getNormalizedPosition(getSunPosition(t, location));
 
-            updateCrossing(crossingResult, {t0, t, alt: sunPos[1]});
+            updateCrossing(crossingResult, {t0: crossingRefTime, t, alt: sunPos[1]});
         }
     }
 
