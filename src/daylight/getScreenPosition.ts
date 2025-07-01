@@ -8,11 +8,14 @@ export function getScreenPosition(
 ) {
     let {width, height} = getDimensions(options);
 
-    let x = (options.location.lat < latThreshold ? .5 - az/360 : az/360)*width;
+    let x = (options.location.lat < latThreshold ? az/360 - .5 : az/360)*width;
     let y = yOffset + (.5 - h/180)*(height - 2*yOffset);
 
-    if (x < 0)
+    while (x < 0)
         x += width;
+
+    while (x >= width)
+        x -= width;
 
     return [x, y];
 }
