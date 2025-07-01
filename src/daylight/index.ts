@@ -12,6 +12,10 @@ import {renderPositionLabels} from './renderPositionLabels';
 import {renderTracks} from './renderTracks';
 import type {RenderOptions} from './RenderOptions';
 
+type Timeout = ReturnType<typeof setTimeout>;
+
+let renderTimeout: Timeout | null = null;
+
 function render(repeat?: boolean) {
     renderForm();
 
@@ -38,18 +42,29 @@ function render(repeat?: boolean) {
     renderPositionLabels(renderOptions);
     renderMoonPhase(renderOptions);
 
-    if (repeat && !formInput.time)
-        setTimeout(() => render(true), 15000);
+    if (repeat && !formInput.time) {
+        if (renderTimeout !== null)
+            clearTimeout(renderTimeout);
+
+        renderTimeout = setTimeout(() => render(true), 15000);
+    }
 }
 
 function init() {
-    let resizeTimeout: ReturnType<typeof setTimeout> | null = null;
+    let resizeTimeout: Timeout | null = null;
 
     window.addEventListener('resize', () => {
         if (resizeTimeout !== null)
             clearTimeout(resizeTimeout);
 
         resizeTimeout = setTimeout(() => render(), 200);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible')
+            render(true);
+        else if (renderTimeout !== null)
+            clearTimeout(renderTimeout);
     });
 
     render(true);
