@@ -14,6 +14,18 @@ function renderLabel(id: 'sun' | 'moon', options: RenderOptions) {
         label.querySelector('.ph .value')!.textContent =
             `${Math.round(options.tracks.moon.phase*100)}%`;
     }
+    else if (id === 'sun') {
+        let {next} = options.tracks.sun;
+
+        if (next.time !== null && next.type !== null) {
+            let d = new Date(next.time);
+
+            label.querySelector('.next .value')!.textContent =
+                `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+            label.querySelector('.next .type')!.textContent =
+                next.type === 'rise' ? 'Rise' : 'Set';
+        }
+    }
 
     let [x] = getScreenPosition(position, options);
     let {width: labelWidth} = label.querySelector('span')!.getBoundingClientRect();
