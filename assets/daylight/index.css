@@ -103,7 +103,10 @@ body {
     position: absolute;
     left: var(--x);
 }
-.pos > span > span:not(.icon) {
+.pos .az,
+.pos .alt,
+.pos .ph,
+.pos .event {
     margin: 0 .25em;
 }
 .pos .value {

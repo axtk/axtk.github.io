@@ -28,17 +28,21 @@ function toTimestamp(time: number | string | Date | undefined) {
     return (time instanceof Date ? time : new Date(time)).getTime();
 }
 
+type CrossingEvent = {
+    time: number;
+    type: 'rise' | 'set';
+    alt: number;
+};
+
 type CrossingResult = {
-    time: number | null;
-    type: 'rise' | 'set' | null;
-    alt: number | null;
+    refTime: number | null; // t0
+    events: CrossingEvent[];
     prevAlt: number | null;
     prevTime: number | null;
 };
 
 type CrossingIteration = {
-    t0: number;
-    t: number;
+    time: number;
     alt: number;
 };
 
@@ -46,35 +50,34 @@ const minVisibleAlt = -.25; // Sun's half angular size below horizon
 
 function updateCrossing(result: CrossingResult, iteration: CrossingIteration) {
     if (
-        iteration.t >= iteration.t0 &&
-        result.time === null &&
+        (result.refTime === null || iteration.time >= result.refTime) &&
         result.prevAlt !== null &&
         result.prevTime !== null &&
         Math.sign(iteration.alt - minVisibleAlt) !== Math.sign(result.prevAlt - minVisibleAlt)
     ) {
-        if (Math.abs(iteration.alt - minVisibleAlt) < Math.abs(result.prevAlt - minVisibleAlt)) {
-            result.time = iteration.t;
-            result.alt = iteration.alt;
-        }
-        else {
-            result.time = result.prevTime;
-            result.alt = result.prevAlt;
-        }
+        let preferPrev =
+            Math.abs(result.prevAlt - minVisibleAlt) < Math.abs(iteration.alt - minVisibleAlt);
 
-        result.type = result.prevAlt < iteration.alt ? 'rise' : 'set';
+        let event: CrossingEvent = {
+            time: preferPrev ? result.prevTime : iteration.time,
+            alt: preferPrev ? result.prevAlt : iteration.alt,
+            type: result.prevAlt < iteration.alt ? 'rise' : 'set',
+        };
+
+        result.events.push(event);
+        result.refTime = event.time;
     }
 
     result.prevAlt = iteration.alt;
-    result.prevTime = iteration.t;
+    result.prevTime = iteration.time;
 }
 
 const dtMin = -2.5*hr;
 const dtMax = 22.5*hr;
+const dtMaxExtended = 25*hr; // to check crossing events
 
-const initialCrossingResult: CrossingResult = {
-    time: null,
-    type: null,
-    alt: null,
+const initialCrossingResult: Omit<CrossingResult, 'events'> = {
+    refTime: null,
     prevAlt: null,
     prevTime: null,
 };
@@ -85,44 +88,50 @@ export function getTracks(
 ) {
     let t0 = toTimestamp(time);
 
-    // show the past crossing time within 5 min after the crossing
-    let crossingRefTime = t0 - 5*min;
-
     let sunTrack: [number, number][] = [];
     let moonTrack: [number, number][] = [];
 
     let crossingResult: CrossingResult = {
         ...initialCrossingResult,
+        // show the past crossing time within 5 min after the crossing
+        refTime: t0 - 5*min,
+        events: [],
     };
 
-    for (let dt = dtMin; dt < dtMax; dt += min) {
+    for (let dt = dtMin; dt < dtMaxExtended; dt += min) {
         let t = t0 + dt;
         let sunPos = getNormalizedPosition(getSunPosition(t, location));
 
         // get the approx time of the Sun's crossing the horizon
-        updateCrossing(crossingResult, {t0: crossingRefTime, t, alt: sunPos[1]});
+        updateCrossing(crossingResult, {time: t, alt: sunPos[1]});
 
-        sunTrack.push(sunPos);
-        moonTrack.push(
-            getNormalizedPosition(getMoonPosition(t, location)),
-        );
+        if (dt < dtMax) {
+            sunTrack.push(sunPos);
+            moonTrack.push(
+                getNormalizedPosition(getMoonPosition(t, location)),
+            );
+        }
     }
 
-    let crossingTime = crossingResult.time;
-
-    if (crossingTime !== null) {
-        crossingResult = {
+    for (let event of crossingResult.events) {
+        let preciseCrossingResult: CrossingResult = {
             ...initialCrossingResult,
+            events: [],
         };
-
-        crossingRefTime -= min;
 
         // get a more precise time of the Sun's crossing the horizon
         for (let dt = -min; dt < min; dt += sec) {
-            let t = crossingTime + dt;
+            let t = event.time + dt;
             let sunPos = getNormalizedPosition(getSunPosition(t, location));
 
-            updateCrossing(crossingResult, {t0: crossingRefTime, t, alt: sunPos[1]});
+            updateCrossing(preciseCrossingResult, {time: t, alt: sunPos[1]});
+        }
+
+        let preciseEvent = preciseCrossingResult.events[0];
+
+        if (preciseEvent) {
+            event.time = preciseEvent.time;
+            event.alt = preciseEvent.alt;
         }
     }
 
@@ -152,11 +161,7 @@ export function getTracks(
             position: getNormalizedPosition(getSunPosition(t0, location)),
             track: sunTrack,
             ticks: sunTicks,
-            next: {
-                alt: crossingResult.alt,
-                time: crossingResult.time,
-                type: crossingResult.type,
-            },
+            events: crossingResult.events,
         },
         moon: {
             position: getNormalizedPosition(getMoonPosition(t0, location)),

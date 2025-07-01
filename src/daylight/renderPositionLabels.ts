@@ -8,23 +8,26 @@ function renderLabel(id: 'sun' | 'moon', options: RenderOptions) {
     let {position} = options.tracks[id];
 
     label.querySelector('.az .value')!.textContent = `${position[0].toFixed(1)}°`;
-    label.querySelector('.h .value')!.textContent = `${position[1].toFixed(1)}°`;
+    label.querySelector('.alt .value')!.textContent = `${position[1].toFixed(1)}°`;
 
     if (id === 'moon') {
         label.querySelector('.ph .value')!.textContent =
             `${Math.round(options.tracks.moon.phase*100)}%`;
     }
     else if (id === 'sun') {
-        let {next} = options.tracks.sun;
+        let events = options.tracks.sun.events.slice(0, 2);
+        let content = '';
 
-        if (next.time !== null && next.type !== null) {
-            let d = new Date(next.time);
+        for (let {time, type} of events) {
+            let d = new Date(time);
+            let t = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 
-            label.querySelector('.next .value')!.textContent =
-                `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
-            label.querySelector('.next .type')!.textContent =
-                next.type === 'rise' ? 'Rise' : 'Set';
+            content += `${content ? ' ' : ''}<span class="event">` +
+                `<span class="type">${type === 'rise' ? 'Rise' : 'Set'}</span> ` +
+                `<span class="value">${t}</span></span>`;
         }
+
+        label.querySelector('.events')!.innerHTML = content;
     }
 
     let [x] = getScreenPosition(position, options);
