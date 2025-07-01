@@ -138,7 +138,8 @@ form button {
     border: none;
     cursor: pointer;
 }
-form button img {
+form button img,
+form button svg {
     height: 1.2em;
     transform: translateY(.15em);
 }
