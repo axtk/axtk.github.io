@@ -9,7 +9,7 @@ export const urlMap = {
 
 export const ns = 'http://www.w3.org/2000/svg';
 
-export const bayerDesignationMap = {
+export const bayerDesignationMap: Record<string, string> = {
     alp: '\u03b1', bet: '\u03b2', gam: '\u03b3',
     del: '\u03b4', eps: '\u03b5', zet: '\u03b6',
     eta: '\u03b7', the: '\u03b8', iot: '\u03b9',

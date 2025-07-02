@@ -20,7 +20,7 @@ function getScreenName(star: Star) {
     if (!key)
         return;
 
-    let n = matches[2] ? superscriptNumbers[matches[2]] ?? '' : '';
+    let n = matches[2] ? superscriptNumbers[Number(matches[2])] ?? '' : '';
 
     return `${key}${n}`;
 }
