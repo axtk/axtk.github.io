@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="description" content="Star sky map, a model of the celestial sphere with the stars and constellations observable with the naked eye. Also in a sort of a van Gogh style."/>
+    <title>Star sky map</title>
+    <link rel="stylesheet" href="assets/stars/v0/main.css"/>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+</head>
+<body class="busy">
+<div class="main">
+    <canvas></canvas>
+    <div class="about">
+        Star sky map | @axtk
+        <!-- MMVII • MMXVII -->
+    </div>
+    <ul class="menu">
+        <li>
+            <div class="title"></div>
+            <div class="details">
+                <table>
+                    <tr><th>RA</th><td data-id="ra"></td></tr>
+                    <tr><th>Dec</th><td data-id="dec"></td></tr>
+                    <tr><th>M</th><td data-id="m"></td></tr>
+                    <tr><th>SpCl</th><td data-id="spcl"></td></tr>
+                </table>
+            </div>
+        </li>
+        <li class="close">✓</li>
+    </ul>
+    <ul class="non-selectable mode">
+        <li><label><input type="radio" name="mode" value="chart"/> <span>Chart</span></label></li>
+        <li><label><input type="radio" name="mode" value="night"/> <span>Night</span></label></li>
+        <li><label><input type="radio" name="mode" value="van_gogh"/> <span>van Gogh</span></label></li>
+    </ul>
+    <!--div class="tip">
+        <div>Drag the map around and click the stars</div>
+        </!--div class="mini">best viewed on&nbsp;larger&nbsp;screens</div--/>
+    </div-->
+    <!--div class="short tip">↔</div-->
+</div>
+<script src="assets/stars/v0/lib/math3D.transform.js"></script>
+<script src="assets/stars/v0/lib/math3D.shape.Sphere.js"></script>
+<script src="assets/stars/v0/lib/graphics.event.js"></script>
+<script src="assets/stars/v0/lib/graphics.color.js"></script>
+<script src="assets/stars/v0/lib/graphics.canvas.js"></script>
+<script src="assets/stars/v0/lib/astro.CelestialSphere.js"></script>
+<script src="assets/stars/v0/main.js"></script>
+<script src="assets/stars/v0/clicks.js"></script>
+<script src="assets/stars/v0/styles.js"></script>
+<script src="assets/stars/v0/modes.js"></script>
+<!--script src="assets/stars/v0/animation.js"></script-->
+
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ym(102234416, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102234416" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>

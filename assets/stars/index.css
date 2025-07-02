@@ -1,0 +1,76 @@
+:root {
+    color-scheme: light dark;
+
+    --color: light-dark(black, white);
+    --background: light-dark(white, #161522);
+}
+html {
+    font: normal 80%/1.2 sans-serif;
+    color: var(--color);
+    background: var(--background);
+}
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+#screen {
+    flex: auto;
+    overflow: hidden;
+}
+#screen svg {
+    font: inherit;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+#screen svg text {
+    cursor: default;
+}
+#screen .stars circle {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: .75;
+}
+@media (prefers-color-scheme: dark) {
+    #screen .stars circle {
+        stroke: none;
+    }
+}
+#screen .stars svg path {
+    fill: none;
+    stroke-linecap: round;
+}
+#screen .grid path {
+    stroke: currentColor;
+    stroke-width: .5;
+    stroke-opacity: .2;
+    fill: none;
+}
+#screen .star-labels {
+    font-family: serif;
+    fill: currentColor;
+    fill-opacity: .5;
+}
+#screen .constellation-labels {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: .2em;
+    text-anchor: middle;
+    fill: currentColor;
+    fill-opacity: .15;
+}
+#screen .constellation-lines path {
+    stroke: currentColor;
+    stroke-width: .5;
+    stroke-opacity: .3;
+    fill: none;
+}
+#screen .hidden {
+    display: none;
+}
