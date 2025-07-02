@@ -9,6 +9,7 @@ html {
     font: normal 80%/1.2 sans-serif;
     color: var(--color);
     background: var(--background);
+    overscroll-behavior: contain;
 }
 html,
 body {
