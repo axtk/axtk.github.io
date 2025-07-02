@@ -22,6 +22,7 @@ export function renderGrid(ctx: Context) {
         line.setAttribute('y1', String(y));
         line.setAttribute('x2', String(width));
         line.setAttribute('y2', String(y));
+        line.setAttribute('data-alt', String(h));
     }
 
     for (let az = 30; az < 360; az += 30) {
