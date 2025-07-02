@@ -1,21 +1,21 @@
 import {getDimensions} from './getDimensions';
 import {getScreenPosition} from './getScreenPosition';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
-function renderLabel(id: 'sun' | 'moon', options: RenderOptions) {
-    let {width} = getDimensions(options);
+function renderLabel(id: 'sun' | 'moon', ctx: Context) {
+    let {width} = getDimensions(ctx);
     let label = document.querySelector<HTMLElement>(`.pos[data-id="${id}"]`)!;
-    let {position} = options.tracks[id];
+    let {position} = ctx.tracks[id];
 
     label.querySelector('.az .value')!.textContent = `${position[0].toFixed(1)}°`;
     label.querySelector('.alt .value')!.textContent = `${position[1].toFixed(1)}°`;
 
     if (id === 'moon') {
         label.querySelector('.ph .value')!.textContent =
-            `${Math.round(options.tracks.moon.phase*100)}%`;
+            `${Math.round(ctx.tracks.moon.phase*100)}%`;
     }
     else if (id === 'sun') {
-        let events = options.tracks.sun.events.slice(0, 2);
+        let events = ctx.tracks.sun.events.slice(0, 2);
         let content = '';
 
         for (let {time, type} of events) {
@@ -30,13 +30,13 @@ function renderLabel(id: 'sun' | 'moon', options: RenderOptions) {
         label.querySelector('.events')!.innerHTML = content;
     }
 
-    let [x] = getScreenPosition(position, options);
+    let [x] = getScreenPosition(position, ctx);
     let {width: labelWidth} = label.querySelector('span')!.getBoundingClientRect();
 
     label.style.setProperty('--x', `${Math.min(x - 6, width - labelWidth)}px`);
 }
 
-export function renderPositionLabels(options: RenderOptions) {
-    renderLabel('sun', options);
-    renderLabel('moon', options);
+export function renderPositionLabels(ctx: Context) {
+    renderLabel('sun', ctx);
+    renderLabel('moon', ctx);
 }

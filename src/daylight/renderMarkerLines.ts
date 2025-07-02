@@ -1,11 +1,11 @@
 import {markerSize, ns} from './const';
 import {getDimensions} from './getDimensions';
 import {getScreenPosition} from './getScreenPosition';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
-function setMarkerLines(position: [number, number], id: string, options: RenderOptions) {
-    let {width, height} = getDimensions(options);
-    let container = options.element.querySelector('g.marker-lines')!;
+function setMarkerLines(position: [number, number], id: string, ctx: Context) {
+    let {width, height} = getDimensions(ctx);
+    let container = ctx.element.querySelector('g.marker-lines')!;
     let lines = Array.from(container.querySelectorAll(`line[data-id="${id}"]`));
 
     while (lines.length < 4) {
@@ -15,7 +15,7 @@ function setMarkerLines(position: [number, number], id: string, options: RenderO
         lines.push(line);
     }
 
-    let [x, y] = getScreenPosition(position, options);
+    let [x, y] = getScreenPosition(position, ctx);
     let r = (markerSize[id] ?? markerSize.default)/2;
 
     let coords = [
@@ -41,9 +41,9 @@ function setMarkerLines(position: [number, number], id: string, options: RenderO
     }
 }
 
-export function renderMarkerLines(options: RenderOptions) {
-    let {tracks: {sun, moon}} = options;
+export function renderMarkerLines(ctx: Context) {
+    let {tracks: {sun, moon}} = ctx;
 
-    setMarkerLines(sun.position, 'sun', options);
-    setMarkerLines(moon.position, 'moon', options);
+    setMarkerLines(sun.position, 'sun', ctx);
+    setMarkerLines(moon.position, 'moon', ctx);
 }

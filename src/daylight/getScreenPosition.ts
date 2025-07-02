@@ -1,14 +1,14 @@
 import {latThreshold, yOffset} from './const';
 import {getDimensions} from './getDimensions';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
 export function getScreenPosition(
     [az, h]: [number, number],
-    options: RenderOptions,
+    ctx: Context,
 ) {
-    let {width, height} = getDimensions(options);
+    let {width, height} = getDimensions(ctx);
 
-    let x = (options.location.lat < latThreshold ? az/360 - .5 : az/360)*width;
+    let x = (ctx.location.lat < latThreshold ? az/360 - .5 : az/360)*width;
     let y = yOffset + (.5 - h/180)*(height - 2*yOffset);
 
     while (x < 0)

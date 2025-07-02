@@ -1,11 +1,11 @@
 import {getDimensions} from './getDimensions';
 import {getScreenPosition} from './getScreenPosition';
 import {horizonOffset, ns} from './const';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
-export function renderHorizon(options: RenderOptions) {
-    let container = options.element.querySelector('.horizon')!;
-    let {width, height} = getDimensions(options);
+export function renderHorizon(ctx: Context) {
+    let container = ctx.element.querySelector('.horizon')!;
+    let {width, height} = getDimensions(ctx);
     let twilights = [
         Array.from(container.querySelectorAll('.under')),
         Array.from(container.querySelectorAll('.above')),
@@ -27,7 +27,7 @@ export function renderHorizon(options: RenderOptions) {
         let under = twilights[0][i];
         let above = twilights[1][i];
 
-        let y = getScreenPosition([0, -i*6], options)[1];
+        let y = getScreenPosition([0, -i*6], ctx)[1];
 
         under.setAttribute('y', String(y));
         under.setAttribute('width', String(width));

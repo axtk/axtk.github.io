@@ -1,14 +1,14 @@
 import {getDimensions} from './getDimensions';
 import {fromScreenPosition} from './fromScreenPosition';
 import {ns} from './const';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
 const tickLength = 5;
 const tickCaptions = ['N', 'E', 'S', 'W'];
 
-export function renderDirections(options: RenderOptions) {
-    let container = options.element.querySelector('.directions')!;
-    let {width, height} = getDimensions(options);
+export function renderDirections(ctx: Context) {
+    let container = ctx.element.querySelector('.directions')!;
+    let {width, height} = getDimensions(ctx);
 
     let ticks = Array.from(container.querySelectorAll('.tick'));
     let tickLabels = Array.from(container.querySelectorAll('.tick-label'));
@@ -39,7 +39,7 @@ export function renderDirections(options: RenderOptions) {
     for (let i = 0; i < tickLabels.length; i++) {
         let tickLabel = tickLabels[i];
         let x = i/4*width;
-        let [az] = fromScreenPosition([x, 0], options);
+        let [az] = fromScreenPosition([x, 0], ctx);
 
         tickLabel.setAttribute('x', String(x));
         tickLabel.setAttribute('y', String(height/2 + 12));

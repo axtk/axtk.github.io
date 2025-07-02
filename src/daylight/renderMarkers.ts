@@ -1,12 +1,12 @@
 import {getScreenPosition} from './getScreenPosition';
 import {markerSize} from './const';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
-function updateMarker(position: [number, number], id: string, options: RenderOptions) {
-    let marker = options.element.querySelector(`.markers [data-id="${id}"]`)!;
+function updateMarker(position: [number, number], id: string, ctx: Context) {
+    let marker = ctx.element.querySelector(`.markers [data-id="${id}"]`)!;
 
     let d = markerSize[id] ?? markerSize.default;
-    let [x, y] = getScreenPosition(position, options);
+    let [x, y] = getScreenPosition(position, ctx);
 
     marker.setAttribute('data-id', id);
     marker.setAttribute('x', String(x - d/2));
@@ -17,9 +17,9 @@ function updateMarker(position: [number, number], id: string, options: RenderOpt
     return marker;
 }
 
-export function renderMarkers(options: RenderOptions) {
-    let {tracks: {sun, moon}} = options;
+export function renderMarkers(ctx: Context) {
+    let {tracks: {sun, moon}} = ctx;
 
-    updateMarker(sun.position, 'sun', options);
-    updateMarker(moon.position, 'moon', options);
+    updateMarker(sun.position, 'sun', ctx);
+    updateMarker(moon.position, 'moon', ctx);
 }

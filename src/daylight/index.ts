@@ -10,7 +10,7 @@ import {renderMarkerLines} from './renderMarkerLines';
 import {renderMoonPhase} from './renderMoonPhase';
 import {renderPositionLabels} from './renderPositionLabels';
 import {renderTracks} from './renderTracks';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
 type Timeout = ReturnType<typeof setTimeout>;
 
@@ -28,20 +28,20 @@ function render(repeat?: boolean) {
         }
     }
 
-    let renderOptions: RenderOptions = {
+    let ctx: Context = {
         ...formInput,
         element: document.querySelector<SVGElement>('#screen svg')!,
         tracks: getTracks(formInput.location, formInput.time),
     };
 
-    setDimensions(renderOptions);
-    renderHorizon(renderOptions);
-    renderDirections(renderOptions);
-    renderTracks(renderOptions);
-    renderMarkers(renderOptions);
-    renderMarkerLines(renderOptions);
-    renderPositionLabels(renderOptions);
-    renderMoonPhase(renderOptions);
+    setDimensions(ctx);
+    renderHorizon(ctx);
+    renderDirections(ctx);
+    renderTracks(ctx);
+    renderMarkers(ctx);
+    renderMarkerLines(ctx);
+    renderPositionLabels(ctx);
+    renderMoonPhase(ctx);
 
     if (repeat && !formInput.time) {
         if (renderTimeout !== null)

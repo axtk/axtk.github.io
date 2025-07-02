@@ -1,4 +1,4 @@
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
 type Dimensions = {
     width: number;
@@ -8,7 +8,7 @@ type Dimensions = {
 let dimensions: Dimensions | null = null;
 let cacheKey = '';
 
-export function getDimensions({element}: RenderOptions): Dimensions {
+export function getDimensions({element}: Context): Dimensions {
     let currentCacheKey = element.getAttribute('data-size')!;
 
     if (currentCacheKey === cacheKey && dimensions !== null)

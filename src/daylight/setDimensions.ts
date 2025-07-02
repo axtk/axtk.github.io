@@ -1,6 +1,6 @@
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
-export function setDimensions({element}: RenderOptions) {
+export function setDimensions({element}: Context) {
     let container = element.parentElement;
 
     if (!container)

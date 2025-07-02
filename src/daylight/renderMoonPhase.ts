@@ -1,13 +1,13 @@
 import {markerSize, ns} from './const';
 import {getScreenPosition} from './getScreenPosition';
-import type {RenderOptions} from './RenderOptions';
+import type {Context} from './Context';
 
 const d = markerSize.moon ?? markerSize.default;
 const r = d/2;
 
 /* axtk MMXX, MMXXV (ts, gh pages) */
-export function renderMoonPhase(options: RenderOptions) {
-    let container = options.element.querySelector('g.markers')!;
+export function renderMoonPhase(ctx: Context) {
+    let container = ctx.element.querySelector('g.markers')!;
     let element = container.querySelector('[data-id="moon-phase"]');
 
     if (!element) {
@@ -27,7 +27,7 @@ export function renderMoonPhase(options: RenderOptions) {
         element.appendChild(arcs);
     }
 
-    let {position, phase} = options.tracks.moon;
+    let {position, phase} = ctx.tracks.moon;
 
     if (phase >= 1) phase -= 1;
 
@@ -54,7 +54,7 @@ export function renderMoonPhase(options: RenderOptions) {
         `A ${rx2} ${r} 180 0 ${dir2} ${r},${d}`
     );
 
-    let [x, y] = getScreenPosition(position, options);
+    let [x, y] = getScreenPosition(position, ctx);
 
     element.setAttribute('x', String(x - r));
     element.setAttribute('y', String(y - r));
