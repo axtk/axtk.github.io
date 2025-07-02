@@ -5,6 +5,7 @@ import {setDimensions} from './setDimensions';
 import {renderDirections} from './renderDirections';
 import {renderForm} from './renderForm';
 import {renderHorizon} from './renderHorizon';
+import {renderGrid} from './renderGrid';
 import {renderMarkers} from './renderMarkers';
 import {renderMarkerLines} from './renderMarkerLines';
 import {renderMoonPhase} from './renderMoonPhase';
@@ -36,6 +37,7 @@ function render(repeat?: boolean) {
 
     setDimensions(ctx);
     renderHorizon(ctx);
+    renderGrid(ctx);
     renderDirections(ctx);
     renderTracks(ctx);
     renderMarkers(ctx);
