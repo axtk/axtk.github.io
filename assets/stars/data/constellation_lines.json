@@ -1,0 +1,70 @@
+{
+"And": [
+    ["alp", "del", "bet", "gam"]
+],
+"Aur": [
+    ["alp", "bet", "#71083", "bet Tau", "iot", "eta", "alp"]
+],
+"Boo": [
+    ["alp", "#103553", "del", "bet", "gam", "rho", "alp"]
+],
+"Cap": [
+    ["alp1", "bet", "psi", "omg", "24", "zet", "#272540", "del", "gam", "iot", "the", "alp1"]
+],
+"Cas": [
+    ["bet", "alp", "gam", "del", "eps"]
+],
+"CMa": [
+    ["bet", "alp", "del", "eta"],
+    ["del", "eps"]
+],
+"CrA": [
+    ["#298348", "#298348", "#298559", "alp", "#298639", "#324808", "#324720", "#324590"]
+],
+"CrB": [
+    ["the", "bet", "alp", "gam #104258", "del #104349", "eps", "iot #104529"]
+],
+"Cru": [
+    ["alp", "gam"],
+    ["bet", "del"]
+],
+"Gem": [
+    ["alp", "bet", "del", "gam", "nu", "mu", "eps", "alp"]
+],
+"Leo": [
+    ["gam #127320", "eta", "alp", "the", "bet", "del", "gam #127320", "zet", "mu", "eps"]
+],
+"Lib": [
+    ["alp", "bet", "gam", "sig", "alp"]
+],
+"Lyr": [
+    ["alp", "zet1", "bet", "gam", "del1", "zet1"]
+],
+"Ori": [
+    ["kap", "zet", "alp", "lam #149166", "gam", "del", "bet"],
+    ["zet", "eps", "del"],
+    ["pi1 #120382", "pi2 #148045", "pi3", "pi4", "pi5"]
+],
+"Peg": [
+    ["alp", "bet", "alp And", "gam", "alp"]
+],
+"PsA": [
+    ["alp", "del #303181", "gam #303110", "bet", "mu", "iot", "the #301836", "tau #302262", "eps", "alp"]
+],
+"Sco": [
+    ["del", "sig", "alp", "tau", "eps", "mu #295564", "zet1 #322371", "eta", "the", "iot1", "kap", "ups", "lam"],
+    ["bet", "sig", "pi"]
+],
+"TrA": [
+    ["alp", "bet", "gam", "alp"]
+],
+"UMa": [
+    ["del", "alp", "bet", "gam", "del", "eps", "zet", "eta"]
+],
+"UMi": [
+    ["alp", "del", "eps", "zet", "bet", "gam", "eta", "zet"]
+],
+"_": [
+    ["alp Lyr", "alp Cyg", "alp Aql"]
+]
+}
