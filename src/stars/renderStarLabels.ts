@@ -62,6 +62,8 @@ export function renderStarLabels(ctx: Context) {
 
         element.setAttribute('x', (pos[0] + r + 2).toFixed(3));
         element.setAttribute('y', (pos[1] + 2).toFixed(3));
+        // to show fewer labels on smaller screens
+        element.setAttribute('data-x', star[2] < 3 ? '1' : '0');
         element.textContent = name;
     }
 
