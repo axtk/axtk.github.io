@@ -31,6 +31,7 @@ body {
 }
 #screen svg text {
     cursor: default;
+    user-select: none;
 }
 #screen .stars circle {
     fill: currentColor;
