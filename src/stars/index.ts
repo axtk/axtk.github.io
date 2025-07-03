@@ -13,7 +13,7 @@ async function init() {
         ...data,
         element,
         tilt: [-.12, 0],
-        // mode: 'van_gogh',
+        mode: document.documentElement.dataset.mode as Context['mode'],
     };
 
     let resizeRaf: number | null = null;
@@ -26,6 +26,20 @@ async function init() {
             setDimensions(ctx);
             render(ctx);
         });
+    });
+
+    document.querySelector('#screen form')!.addEventListener('change', event => {
+        let target = event.target;
+
+        if (target instanceof HTMLInputElement && target.name === 'mode') {
+            let prevMode = ctx.mode;
+
+            document.documentElement.dataset.mode = target.value;
+            ctx.mode = target.value as Context['mode'];
+
+            if (ctx.mode === 'fantasy' || prevMode === 'fantasy')
+                render(ctx);
+        }
     });
 
     setDimensions(ctx);

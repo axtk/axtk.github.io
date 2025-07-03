@@ -48,6 +48,10 @@ export function renderCompoundStars(ctx: Context) {
     let starElements = Array.from(container.querySelectorAll('svg'));
     let fragment: DocumentFragment | null = null;
 
+    // clean up regular stars
+    for (let element of container.querySelectorAll('circle'))
+        element.remove();
+
     let star: Star;
     let element: SVGElement;
     let pos: [number, number, number] | null;

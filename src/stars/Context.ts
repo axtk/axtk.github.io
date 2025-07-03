@@ -8,5 +8,5 @@ export type Context = {
     constellationNames: Record<string, string>;
     constellationLines: [number, number][][];
     tilt: [number, number];
-    mode?: 'default' | 'van_gogh';
+    mode: 'dark' | 'light' | 'fantasy';
 };
