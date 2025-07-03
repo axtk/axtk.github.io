@@ -1,0 +1,12 @@
+{
+  "name": "translit-names",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "axtk",
+  "type": "module",
+  "dependencies": {
+    "glyphmap": "^0.2.0",
+    "stfm": "^0.1.0"
+  }
+}
