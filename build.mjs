@@ -1,5 +1,5 @@
 import {exec as defaultExec} from 'node:child_process';
-import {access, readdir, rm} from 'node:fs/promises';
+import {access, cp, readdir, rename, rm} from 'node:fs/promises';
 import {promisify} from 'node:util';
 
 const sourceDir = 'src';
@@ -13,7 +13,40 @@ async function customBuild(dir) {
 
     try {
         await access(path);
+        console.log('  Running custom build');
         await exec(`node ${path}`);
+    }
+    catch {}
+}
+
+async function checkDependencies(dir) {
+    try {
+        await access(`${sourceDir}/${dir}/package.json`);
+
+        try {
+            await access(`${sourceDir}/${dir}/node_modules`);
+        }
+        catch {
+            console.log('  Installing dependencies');
+            await cp(`${sourceDir}/${dir}/package.json`, 'package.json');
+
+            try {
+                await access(`${sourceDir}/${dir}/package-lock.json`);
+                await cp(`${sourceDir}/${dir}/package-lock.json`, 'package-lock.json');
+            }
+            catch {}
+
+            await exec('npm i');
+            await rename('node_modules', `${sourceDir}/${dir}/node_modules`);
+            await rm('package.json');
+
+            try {
+                await access('package-lock.json');
+                await cp('package-lock.json', `${sourceDir}/${dir}/package-lock.json`);
+                await rm('package-lock.json');
+            }
+            catch {}
+        }
     }
     catch {}
 }
@@ -23,6 +56,7 @@ async function compile(dir) {
 
     try {
         await access(path);
+        console.log('  Compiling');
         await exec(`npx esbuild ${path} --outdir=${targetDir}/${dir} --platform=browser --bundle --minify`);
     }
     catch {}
@@ -31,6 +65,8 @@ async function compile(dir) {
 async function build(dir) {
     try {
         await access(`${sourceDir}/${dir}`);
+        console.log(`Building "${sourceDir}/${dir}"`);
+        await checkDependencies(dir);
         await Promise.all([
             customBuild(dir),
             compile(dir),
@@ -49,7 +85,11 @@ async function build(dir) {
 
         try {
             await access(sourceDir);
-            await Promise.all((await readdir(sourceDir)).map(build));
+
+            let dirs = await readdir(sourceDir);
+
+            for (let dir of dirs)
+                await build(dir);
         }
         catch {}
     }
