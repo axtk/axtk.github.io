@@ -9,9 +9,6 @@ body {
         padding: 2rem 0;
     }
 }
-h2 {
-    border-bottom-width: .1rem;
-}
 main {
     min-height: 80vh;
     display: flex;
