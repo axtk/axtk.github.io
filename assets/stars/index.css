@@ -50,6 +50,23 @@ a:active {
     #screen .stars circle {
         stroke: none;
     }
+    #screen .stars circle[data-spcl^="O"],
+    #screen .stars circle[data-spcl^="B"] {
+        fill: #c0ffff; /* blue */
+    }
+    #screen .stars circle[data-spcl^="A"],
+    #screen .stars circle[data-spcl^="F"] {
+        fill: #ffffff; /* white */
+    }
+    #screen .stars circle[data-spcl^="G"] {
+        fill: #f9f9d8; /* yellow */
+    }
+    #screen .stars circle[data-spcl^="K"] {
+        fill: #ffe0c0; /* orange */
+    }
+    #screen .stars circle[data-spcl^="M"] {
+        fill: #f9cdcd; /* red */
+    }
 }
 #screen .stars svg path {
     fill: none;
