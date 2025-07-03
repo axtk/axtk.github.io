@@ -5,7 +5,7 @@
             ["ru|čas|час", "cz|čas|время", "sk|čas|время"],
             ["ru|učiteĺ|учитель", "cz|učitel", "sk|učiteľ"],
             ["ru|čelo|чело", "cz|čelo|лоб", "sk|čelo|лоб"],
-            ["ru|čorný|чёрный", "cz|černý", 0]
+            ["ru|čorný|чёрный", "cz|černý", "-"]
         ]
     },
     "š": {
@@ -36,12 +36,12 @@
             ["ru|voĺný|вольный", "cz|volný", "sk|voľný"],
             ["ru|celý|целый", "cz|celý", "sk|celý"],
             ["ru|južný|южный", "sk|južný"],
-            ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý", 0],
-            ["ru|fíoletový|фиолетовый", "cz|fialový", 0],
-            ["ru|moločný|молочный", "cz|mléčný", 0],
+            ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý", "-"],
+            ["ru|fíoletový|фиолетовый", "cz|fialový", "-"],
+            ["ru|moločný|молочный", "cz|mléčný", "-"],
             ["ru|zdorový|здоровый", "cz|zdravý", "sk|zdravý"],
-            ["ru|značiteĺný|значительный", "cz|značný", 0],
-            ["ru|miortvý|мёртвый", "cz|mrtvý", 0]
+            ["ru|značiteĺný|значительный", "cz|značný", "-"],
+            ["ru|miortvý|мёртвый", "cz|mrtvý", "-"]
         ]
     },
     "c": {
@@ -56,11 +56,11 @@
         "examples": [
             ["ru|jakoby|якобы", "cz|jakoby"],
             ["ru|zajac|заяц", "sk|zajac"],
-            ["ru|jadro|ядро", "sk|jadro", 0],
-            ["ru|jama|яма", "pl|jama", 0],
+            ["ru|jadro|ядро", "sk|jadro", "-"],
+            ["ru|jama|яма", "pl|jama", "-"],
             ["ru|jezdit́|ездить", "cz|jezdit"],
             ["ru|jediničný|единичный", "cz|jedinečný"],
-            ["ru|jedinstvenný|единственный", "cz|jediný", 0],
+            ["ru|jedinstvenný|единственный", "cz|jediný", "-"],
             ["ru|južný|южный", "sk|južný"]
         ]
     },
