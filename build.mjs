@@ -1,5 +1,5 @@
 import {exec as defaultExec} from 'node:child_process';
-import {access, cp, readdir, rename, rm} from 'node:fs/promises';
+import {access, cp, lstat, readdir, rename, rm} from 'node:fs/promises';
 import {promisify} from 'node:util';
 
 const sourceDir = 'src';
@@ -88,8 +88,12 @@ async function build(dir) {
 
             let dirs = await readdir(sourceDir);
 
-            for (let dir of dirs)
+            for (let dir of dirs) {
+                if (!(await lstat(`${sourceDir}/${dir}`)).isDirectory())
+                    continue;
+
                 await build(dir);
+            }
         }
         catch {}
     }
