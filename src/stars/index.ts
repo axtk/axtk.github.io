@@ -2,19 +2,26 @@ import {fetchData} from './fetchData';
 import {initRotation} from './initRotation';
 import {initClicks} from './initClicks';
 import {render} from './render';
+import {renderForm} from './renderForm';
 import {setDimensions} from './setDimensions';
+import {state} from './state';
 import type {Context} from './Context';
 
 async function init() {
     let element = document.querySelector<SVGElement>('#screen svg')!;
     let data = await fetchData();
+    let mode = state.read<Context['mode']>('mode') ??
+        document.documentElement.dataset.mode as Context['mode'];
 
     let ctx: Context = {
         ...data,
         element,
-        tilt: [-.12, 0],
-        mode: document.documentElement.dataset.mode as Context['mode'],
+        tilt: state.read('tilt') ?? [-.12, 0],
+        mode,
     };
+
+    if (document.documentElement.dataset.mode !== mode)
+        document.documentElement.dataset.mode = mode;
 
     let resizeRaf: number | null = null;
 
@@ -28,24 +35,8 @@ async function init() {
         });
     });
 
-    document.querySelector('#screen form')!.addEventListener('change', event => {
-        let target = event.target;
-
-        if (target instanceof HTMLInputElement && target.name === 'mode') {
-            let prevMode = ctx.mode;
-            let nextMode = target.value as Context['mode'];
-
-            document.documentElement.dataset.mode = nextMode;
-            ctx.mode = nextMode;
-
-            if (nextMode === 'fantasy' || prevMode === 'fantasy')
-                render(ctx);
-
-            window.sendEvent?.(['set mode', nextMode]);
-        }
-    });
-
     setDimensions(ctx);
+    renderForm(ctx);
     render(ctx);
     initRotation(ctx);
     initClicks(ctx);

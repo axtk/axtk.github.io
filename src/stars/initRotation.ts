@@ -1,6 +1,7 @@
 import type {Context} from './Context';
 import {getDimensions} from './getDimensions';
 import {render} from './render';
+import {state} from './state';
 import {toBounds} from './toBounds';
 
 const {PI, asin} = Math;
@@ -25,6 +26,7 @@ function move(ctx: Context, dx: number, dy: number) {
     if (!busy) {
         requestAnimationFrame(() => {
             render(ctx);
+            state.write('tilt', tilt);
             busy = false;
         });
         busy = true;
