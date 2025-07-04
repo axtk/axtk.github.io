@@ -1,7 +1,8 @@
 import {getDimensions} from './getDimensions';
+import {toBounds} from './toBounds';
 import type {Context} from './Context';
 
-const {sin, cos, asin, atan2, sqrt} = Math;
+const {sin, cos, asin, atan2, sqrt, PI} = Math;
 
 export function fromScreenPosition(
     x: number,
@@ -30,8 +31,8 @@ export function fromScreenPosition(
     let y3 = y2;
     let z3 = -x2*sin(-phi) + z2*cos(-phi);
 
-    let delta = asin(y3/r);
-    let alpha = atan2(z3, x3);
+    let alpha = toBounds(atan2(z3, x3));
+    let delta = toBounds(asin(y3/r), -PI/2, PI/2, true);
 
-    return [delta, alpha];
+    return [alpha, delta];
 }

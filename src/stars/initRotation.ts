@@ -1,18 +1,9 @@
 import type {Context} from './Context';
 import {getDimensions} from './getDimensions';
 import {render} from './render';
+import {toBounds} from './toBounds';
 
 const {PI, asin} = Math;
-
-function toBounds(x: number, min = 0, max = 2*PI) {
-    while (x < min)
-        x += max - min;
-
-    while (x >= max)
-        x -= max - min;
-
-    return x;
-}
 
 let busy = false;
 
