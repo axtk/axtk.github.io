@@ -4,9 +4,11 @@ import {transformInput} from './transformInput';
 
 export function renderResult(ctx: Context) {
     let {q, config} = ctx;
+    let baseDocumentTitle = document.title.split('/').at(-1)?.trim() ?? '';
 
     if (!q) {
         document.documentElement.dataset.output = 'none';
+        document.title = baseDocumentTitle;
         return;
     }
 
@@ -25,6 +27,7 @@ export function renderResult(ctx: Context) {
 
     document.documentElement.dataset.output =
         q === unstressedInput ? 'unstressed' : 'stressed';
+    document.title = `${q} латиницей / ${baseDocumentTitle}`;
 
     renderCharHint(output, ctx);
 }
