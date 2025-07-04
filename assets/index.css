@@ -57,6 +57,7 @@ main .intro h1:first-child {
     width: var(--image-size);
     height: var(--image-size);
     font-size: 0;
+    background: color(from var(--color) srgb r g b / .05);
     border-radius: 50%;
     overflow: hidden;
 }
