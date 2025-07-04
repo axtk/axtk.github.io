@@ -73,6 +73,7 @@ main .intro h1:first-child {
 }
 .intro ul.contacts li {
     display: inline;
+    margin-bottom: 0;
 }
 .intro ul.contacts li + li::before {
     content: "•";
