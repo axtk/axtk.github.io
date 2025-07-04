@@ -91,10 +91,11 @@ html[data-mode="dark"] #screen .stars circle[data-spcl^="M"] {
     }
 }
 #screen .constellation-labels {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     letter-spacing: .2em;
     text-anchor: middle;
+    text-transform: uppercase;
     fill: currentColor;
     fill-opacity: .15;
 }
