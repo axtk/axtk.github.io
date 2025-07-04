@@ -7,6 +7,7 @@ export function getScreenPosition(
     alpha: number,
     delta: number,
     ctx: Context,
+    q = .25,
 ): [number, number, number] | null {
     let {tilt: [phi, theta]} = ctx;
     let {width: w, height: h, x0, y0, r} = getDimensions(ctx);
@@ -25,8 +26,11 @@ export function getScreenPosition(
     let y = y2*cos(theta) - z2*sin(theta);
     let z = y2*sin(theta) + z2*cos(theta);
 
-    if (z < 0 || x < -.75*w || x > 1.75*w || y < -.75*h || y > 1.75*h)
+    x = x0 + x;
+    y = y0 - y;
+
+    if (z < 0 || x < -q*w || x > (1 + q)*w || y < -q*h || y > (1 + q)*h)
         return null;
 
-    return [x0 + x, y0 - y, z];
+    return [x, y, z];
 }

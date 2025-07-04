@@ -26,7 +26,7 @@ export function renderGrid(ctx: Context) {
         let off = false;
 
         for (let phi = 0; phi <= 2*PI + eps; phi += lineStep) {
-            pos = getScreenPosition(phi, theta, ctx);
+            pos = getScreenPosition(phi, theta, ctx, .5);
             prefix = di && !off ? ' L' : 'M';
 
             if (pos === null) {
@@ -48,7 +48,7 @@ export function renderGrid(ctx: Context) {
         let off = false;
 
         for (let theta = -PI/2; theta <= PI/2 + eps; theta += lineStep) {
-            pos = getScreenPosition(phi, theta, ctx);
+            pos = getScreenPosition(phi, theta, ctx, .5);
             prefix = di && !off ? ' L' : 'M';
 
             if (pos === null) {

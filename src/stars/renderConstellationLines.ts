@@ -18,7 +18,7 @@ export function renderConstellationLines(ctx: Context) {
         d = '';
 
         for (let point of line) {
-            pos = getScreenPosition(point[0], point[1], ctx);
+            pos = getScreenPosition(point[0], point[1], ctx, 1);
 
             if (pos !== null)
                 d += `${d ? ' L' : 'M'}${pos[0]},${pos[1]}`;
