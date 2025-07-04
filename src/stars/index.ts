@@ -33,12 +33,15 @@ async function init() {
 
         if (target instanceof HTMLInputElement && target.name === 'mode') {
             let prevMode = ctx.mode;
+            let nextMode = target.value as Context['mode'];
 
-            document.documentElement.dataset.mode = target.value;
-            ctx.mode = target.value as Context['mode'];
+            document.documentElement.dataset.mode = nextMode;
+            ctx.mode = nextMode;
 
-            if (ctx.mode === 'fantasy' || prevMode === 'fantasy')
+            if (nextMode === 'fantasy' || prevMode === 'fantasy')
                 render(ctx);
+
+            window.sendEvent?.(['set mode', nextMode]);
         }
     });
 

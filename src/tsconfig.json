@@ -1,6 +1,7 @@
 {
     "include": [
-        "./**/*"
+        "./**/*",
+        "../assets/stats.d.ts"
     ],
     "compilerOptions": {
         "lib": ["ESNext", "DOM", "DOM.Iterable"],
