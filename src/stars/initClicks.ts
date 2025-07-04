@@ -19,7 +19,10 @@ export function initClicks(ctx: Context) {
         let x = event.offsetX - left;
         let y = event.offsetY - top;
 
-        if (fromScreenPosition(x, y, ctx) === null)
+        let pos = fromScreenPosition(x, y, ctx);
+        console.log('click', pos);
+
+        if (pos === null)
             return;
 
         let matches: Star[] = [];
