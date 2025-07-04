@@ -32,10 +32,8 @@ li .description {
 }
 .intro {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: var(--layout-padding-y);
+    gap: 1.5rem;
 }
 .intro h1 {
     border-bottom: none;
@@ -63,16 +61,12 @@ main .intro h1:first-child {
 .intro .image img {
     height: var(--image-size);
 }
-.intro .content {
-    text-align: center;
-}
 .intro ul.contacts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     list-style: none;
     padding: 0;
-    margin: .5em 0 0;
+    margin: 0;
 }
 .intro ul.contacts li {
     display: inline;
