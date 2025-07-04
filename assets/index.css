@@ -54,6 +54,8 @@ main .intro h1:first-child {
 }
 .intro .image span {
     display: block;
+    width: var(--image-size);
+    height: var(--image-size);
     font-size: 0;
     border-radius: 50%;
     overflow: hidden;
