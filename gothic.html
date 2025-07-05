@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Gothic Language Dictionary Online</title>
+    <link rel="stylesheet" href="assets/gothic/index.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>document.documentElement.className=new URLSearchParams(window.location.search).get('q')?.trim()?'search':'cover';</script>
+</head>
+<body>
+
+<main>
+    <h1>Gothic Dictionary</h1>
+    <form class="input">
+        <p class="text">
+            <input name="q">
+            <button type="submit" title="Search">▶</button>
+        </p>
+        <p class="controls">
+            <label>
+                <input type="checkbox" name="eg" value="1">
+                <span>English—Gothic</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="ge" value="1">
+                <span>Gothic—English</span>
+            </label>
+        </p>
+    </form>
+    <div class="output" hidden>
+        <hr>
+        <div class="content"></div>
+    </div>
+</main>
+<hr>
+<footer>
+    <nav>
+        <p><em>Examples</em></p>
+        <ul>
+            <li><a href="?q=boat">boat</a></li>
+            <li><a href="?q=river">river</a></li>
+            <li><a href="?q=month">month</a></li>
+            <li><a href="?q=moon">moon</a></li>
+            <li><a href="?q=bread">bread</a></li>
+            <li><a href="?q=speak">speak</a></li>
+            <li><a href="?q=day">day</a></li>
+            <li><a href="?q=night">night</a></li>
+            <li><a href="?q=word">word</a></li>
+            <li><a href="?q=talk">talk</a></li>
+            <li><a href="?q=people">people</a></li>
+            <li><a href="?q=home">home</a></li>
+            <li><a href="?q=morning">morning</a></li>
+            <li><a href="?q=evening">evening</a></li>
+            <li><a href="?q=sea">sea</a></li>
+            <li><a href="?q=forest">forest</a></li>
+            <li><a href="?q=trade">trade</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="assets/0/gothic/index.js"></script>
+<script src="assets/stats.js"></script>
+</body>
+</html>
