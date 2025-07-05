@@ -3,12 +3,16 @@ import {renderForm} from './renderForm';
 import {renderResult} from './renderResult';
 
 async function init() {
-    let params = new URLSearchParams(window.location.search);
+    let urlParams = new URLSearchParams(window.location.search);
+    let params = {
+        eg: urlParams.get('eg'),
+        ge: urlParams.get('ge'),
+    };
 
     let ctx: Context = {
-        q: params.get('q')?.trim() ?? '',
-        eg: [null, '1'].includes(params.get('eg')),
-        ge: [null, '1'].includes(params.get('ge')),
+        q: urlParams.get('q')?.trim() ?? '',
+        eg: params.eg === '1' || (params.eg === null && params.ge === null),
+        ge: params.ge === '1' || (params.eg === null && params.ge === null),
         data: {},
     };
 
@@ -17,11 +21,11 @@ async function init() {
 
         if (window.location.href.endsWith('?'))
             nextLocation = window.location.pathname;
-        else if (ctx.q && params.get('eg') === '1' && params.get('ge') === '1') {
-            params.delete('eg');
-            params.delete('ge');
+        else if (ctx.q && params.eg === '1' && params.ge === '1') {
+            urlParams.delete('eg');
+            urlParams.delete('ge');
 
-            nextLocation = `?${params.toString()}`;
+            nextLocation = `?${urlParams.toString()}`;
         }
 
         if (nextLocation)
