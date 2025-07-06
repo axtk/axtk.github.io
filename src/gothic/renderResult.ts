@@ -6,7 +6,7 @@ export async function renderResult(ctx: Context) {
     let {q} = ctx;
     let baseDocumentTitle = document.title.split('/').at(-1)?.trim() ?? '';
 
-    let container = document.querySelector('.output')!;
+    let container = document.querySelector<HTMLDivElement>('.output')!;
     let h1 = document.querySelector('h1')!;
 
     container.toggleAttribute('hidden', !q);
@@ -14,17 +14,17 @@ export async function renderResult(ctx: Context) {
     if (!q) {
         document.title = baseDocumentTitle;
         h1.innerHTML = h1.textContent!;
-    
+
         return;
     }
 
     document.title = `${escapeHTML(q)} / ${baseDocumentTitle}`;
     h1.innerHTML = `<a href="?">${h1.textContent}</a>`;
 
-    let contentContainer = container.querySelector<HTMLDivElement>('.content')!;
+    let contentContainer = container.querySelector('.content')!;
 
     contentContainer.textContent = 'Loading...';
-    contentContainer.dataset.status = 'loading';
+    container.dataset.status = 'loading';
 
     let entries = (await search(ctx))?.entries;
 
@@ -40,17 +40,16 @@ export async function renderResult(ctx: Context) {
             content += '<br> Try to search with both dictionaries enabled.';
 
         contentContainer.innerHTML = content;
-        contentContainer.dataset.status = 'warning';
+        container.dataset.status = 'warning';
 
         return;
     }
 
     let content = '';
 
-    for (let {htmlTerm, htmlDef} of entries) {
+    for (let {htmlTerm, htmlDef} of entries)
         content += `<dt>${htmlTerm}</dt>\n<dd>${htmlDef}</dd>\n`;
-    }
 
     contentContainer.innerHTML = `<dl>${content}</dl>`;
-    contentContainer.dataset.status = 'loaded';
+    container.dataset.status = 'loaded';
 }

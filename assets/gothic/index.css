@@ -1,0 +1,276 @@
+:root {
+    color-scheme: light dark;
+
+    --color: light-dark(black, white);
+    --background: light-dark(white, #1a1a1a);
+    --highlight: #b23;
+    --link-color: var(--highlight);
+    --content-width: 42rem;
+    --form-width: 24rem;
+}
+html {
+    height: 100%;
+    font: normal 100%/1.6 sans-serif;
+    color: var(--color);
+    background: color(from var(--color) srgb r g b / .05);
+}
+body {
+    padding: 0 1em;
+    margin: 0;
+}
+html.cover body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p, ul {
+    margin: 1em 0;
+}
+input,
+button,
+table {
+    font: inherit;
+}
+hr {
+    display: none;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+main {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+h1 {
+    font-family: serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-variant: small-caps;
+    line-height: 1.1;
+    text-align: center;
+    margin: 1rem auto;
+}
+h1 a,
+h1 a:hover,
+h1 a:visited,
+h1 a:active {
+    color: var(--color);
+}
+html.cover h1 {
+    font-size: 2.4rem;
+}
+@media (max-width: 500px) {
+    html.cover h1 {
+        font-size: 2rem;
+    }
+}
+form.input {
+    text-align: center;
+    margin: 2em auto;
+}
+html.search form.input {
+    font-size: .9em;
+}
+form.input .text {
+    width: var(--form-width);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+form.input .text input {
+    display: block;
+    width: 100%;
+    background: none transparent;
+    border: none;
+    border-bottom: .15em solid;
+    padding: .2em 1.5em .2em .2em;
+    box-sizing: border-box;
+}
+form.input .text input:focus {
+    border-color: var(--link-color);
+    outline: none;
+}
+form.input .text button {
+    width: 1.3em;
+    text-align: right;
+    background: none transparent;
+    border: none;
+    padding: 0 .2em;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+form.input .controls br,
+form.input .controls input {
+    display: none;
+}
+form.input .controls label {
+    cursor: pointer;
+}
+form.input .controls label ~ label {
+    margin-inline-start: 1.25em;
+}
+form.input .controls input + span::before {
+    content: "\2713";
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+    margin-right: .5em;
+    opacity: .15;
+}
+form.input .controls input:checked + span::before {
+    color: var(--highlight);
+    opacity: 1;
+}
+.output {
+    background: var(--background);
+    padding: 2.75em 3em;
+}
+@media (max-width: 500px) {
+    .output {
+        padding: .5em 1em;
+        margin: 0 -1em;
+    }
+}
+.output[data-status="loading"] {
+    text-align: center;
+}
+
+dl {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 500px) {
+    dl {
+        margin: 1.75rem 0;
+    }
+}
+dt {
+    display: inline;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    padding: 0;
+    margin: 0 .65em 0 0;
+}
+dt:not(:first-child)::before {
+    content: "";
+    display: block;
+    margin-top: 2em;
+}
+dd {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+dl mark {
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+    background: color(from var(--highlight) srgb r g b / .1);
+    border-bottom: .15em solid var(--highlight);
+}
+dd > span + span::before {
+    content: ' ⬥ ';
+    color: var(--color);
+    margin: 0 .25em;
+}
+dd > span .ex::before {
+    content: " ⬦ ";
+    color: var(--color);
+    margin: 0 .25em;
+}
+dd .intro,
+dd .spec,
+dd .term .d {
+    color: color(from var(--color) srgb r g b / .5);
+}
+dd .intro .d::before,
+dd .intro .d::after {
+    content: "'";
+}
+dd .title {
+    font-weight: normal;
+    font-style: italic;
+    font-variant: all-small-caps;
+    margin-right: .2em;
+}
+abbr {
+    font-style: italic;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--highlight);
+    cursor: help;
+}
+abbr.i {
+    color: inherit;
+}
+
+footer {
+    width: 100%;
+    max-width: var(--content-width);
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+html.cover footer {
+    margin-top: 1em;
+}
+nav {
+    width: var(--form-width);
+    max-width: 100%;
+    margin: 0 auto;
+}
+html.search nav {
+    display: none;
+}
+nav a {
+    text-decoration: underline;
+}
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    display: inline-block;
+    margin: 0 1em;
+}
+nav li.hidden {
+    display: none;
+}
+nav li::after {
+    content: "▶";
+    font-size: .65em;
+    margin-left: .75em;
+}
+footer p.signature {
+    display: inline-block;
+    font-size: .8em;
+}
+html.cover footer p.signature {
+    margin-top: 4.2rem;
+}
+footer .signature span {
+    font-size: .78em;
+    margin-inline-start: .25em;
+}

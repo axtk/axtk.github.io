@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="cover" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
@@ -38,25 +38,30 @@
     <nav>
         <p><em>Examples</em></p>
         <ul>
-            <li><a href="?q=boat">boat</a></li>
-            <li><a href="?q=river">river</a></li>
-            <li><a href="?q=month">month</a></li>
-            <li><a href="?q=moon">moon</a></li>
-            <li><a href="?q=bread">bread</a></li>
-            <li><a href="?q=speak">speak</a></li>
-            <li><a href="?q=day">day</a></li>
-            <li><a href="?q=night">night</a></li>
-            <li><a href="?q=word">word</a></li>
-            <li><a href="?q=talk">talk</a></li>
-            <li><a href="?q=people">people</a></li>
-            <li><a href="?q=home">home</a></li>
-            <li><a href="?q=morning">morning</a></li>
-            <li><a href="?q=evening">evening</a></li>
-            <li><a href="?q=sea">sea</a></li>
-            <li><a href="?q=forest">forest</a></li>
-            <li><a href="?q=trade">trade</a></li>
+            <li><a href="?q=boat&source=examples">boat</a></li>
+            <li><a href="?q=river&source=examples">river</a></li>
+            <li><a href="?q=month&source=examples">month</a></li>
+            <li><a href="?q=moon&source=examples">moon</a></li>
+            <li><a href="?q=bread&source=examples">bread</a></li>
+            <li><a href="?q=speak&source=examples">speak</a></li>
+            <li><a href="?q=day&source=examples">day</a></li>
+            <li><a href="?q=night&source=examples">night</a></li>
+            <li><a href="?q=word&source=examples">word</a></li>
+            <li><a href="?q=talk&source=examples">talk</a></li>
+            <li><a href="?q=people&source=examples">people</a></li>
+            <li><a href="?q=home&source=examples">home</a></li>
+            <li><a href="?q=morning&source=examples">morning</a></li>
+            <li><a href="?q=evening&source=examples">evening</a></li>
+            <li><a href="?q=sea&source=examples">sea</a></li>
+            <li><a href="?q=forest&source=examples">forest</a></li>
+            <li><a href="?q=trade&source=examples">trade</a></li>
         </ul>
     </nav>
+    <p class="signature">
+        <a href="https://axtk.github.io/x">axtk</a>
+        <span>MMIX · MMXXV</span>
+    </p>
+    <script>{let li=Array.from(document.querySelectorAll('nav li')),selected=new Set();while(selected.size<3)selected.add(Math.floor(Math.random()*li.length));for(let i=0;i<li.length;i++)li[i].classList.toggle('hidden',!selected.has(i));}</script>
 </footer>
 
 <script src="assets/0/gothic/index.js"></script>
