@@ -72,7 +72,6 @@ main .intro h1:first-child {
     margin: 0;
 }
 .intro table.contacts {
-    font-family: monospace;
     font-size: .8rem;
     border: none;
     border-collapse: collapse;
