@@ -69,7 +69,7 @@ h1 a:active {
 }
 html.cover h1 {
     font-size: 2.4rem;
-    margin-top: 2rem;
+    margin: 2rem auto;
 }
 @media (max-width: 500px) {
     html.cover h1 {
@@ -97,6 +97,7 @@ form.input .text::before {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    filter: grayscale(100%);
 }
 form.input .text input {
     display: block;
