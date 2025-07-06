@@ -59,6 +59,7 @@ h1 {
     line-height: 1.1;
     text-align: center;
     margin: 1rem auto;
+    transform: scaleY(.85);
 }
 h1 a,
 h1 a:hover,
@@ -68,6 +69,7 @@ h1 a:active {
 }
 html.cover h1 {
     font-size: 2.4rem;
+    margin-top: 2rem;
 }
 @media (max-width: 500px) {
     html.cover h1 {
@@ -76,10 +78,11 @@ html.cover h1 {
 }
 form.input {
     text-align: center;
-    margin: 2em auto;
+    margin: 1em auto 2em;
 }
 html.search form.input {
     font-size: .9em;
+    margin-bottom: 1rem;
 }
 form.input .text {
     width: var(--form-width);
@@ -88,13 +91,22 @@ form.input .text {
     margin-right: auto;
     position: relative;
 }
+form.input .text::before {
+    content: "🔎︎";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
 form.input .text input {
     display: block;
     width: 100%;
+    font-size: 1.35em;
+    font-weight: bold;
     background: none transparent;
     border: none;
-    border-bottom: .15em solid;
-    padding: .2em 1.5em .2em .2em;
+    border-bottom: .15rem solid;
+    padding: 0 1.5rem;
     box-sizing: border-box;
 }
 form.input .text input:focus {
@@ -102,11 +114,11 @@ form.input .text input:focus {
     outline: none;
 }
 form.input .text button {
-    width: 1.3em;
+    width: 1.3rem;
     text-align: right;
     background: none transparent;
     border: none;
-    padding: 0 .2em;
+    padding: 0 .2rem;
     position: absolute;
     top: 50%;
     right: 0;
@@ -148,6 +160,7 @@ form.input .controls input:checked + span::before {
 }
 .output[data-status="loading"] {
     text-align: center;
+    background: transparent;
 }
 
 dl {
@@ -183,7 +196,7 @@ dl mark {
     font-style: inherit;
     color: inherit;
     background: light-dark(
-        color(from var(--highlight) srgb r g b / .1),
+        color(from var(--highlight) srgb r g b / .15),
         color(from var(--highlight) srgb r g b / .5)
     );
     border-bottom: .15em solid var(--highlight);
