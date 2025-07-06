@@ -157,6 +157,10 @@ form.input .controls input:checked + span::before {
         padding: .5em 1em;
         margin: 0 -1em;
     }
+    .output[data-status="loading"],
+    .output[data-status="warning"] {
+        padding: 1.5em 1em;
+    }
 }
 .output[data-status="loading"] {
     text-align: center;
