@@ -4,11 +4,6 @@ html {
 body {
     padding: 2rem 0 3rem;
 }
-@media (max-width: 600px) {
-    body {
-        padding: 2rem 0;
-    }
-}
 main {
     min-height: 80vh;
     display: flex;
@@ -36,6 +31,7 @@ li .description {
     gap: 1.5rem;
 }
 .intro h1 {
+    font-size: 1.5rem;
     border-bottom: none;
     padding: 0;
     margin: 0;
@@ -47,13 +43,13 @@ main .intro h1:first-child {
     margin: .5em 0;
 }
 .intro .image {
-    --image-size: 5.5rem;
+    --image-size: 7rem;
 }
 .intro .image p {
     margin: .5em 0;
 }
 .intro .image span {
-    display: block;
+    display: inline-block;
     width: var(--image-size);
     height: var(--image-size);
     font-size: 0;
@@ -65,22 +61,47 @@ main .intro h1:first-child {
     width: var(--image-size);
 }
 .intro ul.contacts {
-    display: flex;
-    flex-wrap: wrap;
+    font-family: monospace;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 .intro ul.contacts li {
-    display: inline;
-    margin-bottom: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
-.intro ul.contacts li + li::before {
-    content: "•";
-    display: inline-block;
-    margin: 0 .5em;
+.intro table.contacts {
+    font-family: monospace;
+    font-size: .8rem;
+    border: none;
+    border-collapse: collapse;
+    margin: .75em 0 0;
+}
+.intro table.contacts td {
+    border: none;
+    padding: .2em .25em .2em 0;
+}
+.intro table.contacts td:first-child {
+    text-align: right;
 }
 .content p.sep {
     font-size: 0;
     margin: 1.25rem 0;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 1.5rem 0;
+    }
+    .intro {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .intro .image {
+        --image-size: 3.6rem;
+        flex: auto;
+        text-align: right;
+        margin-top: -.5rem;
+    }
 }
