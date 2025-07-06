@@ -2,8 +2,8 @@
     color-scheme: light dark;
 
     --color: light-dark(black, white);
-    --background: light-dark(white, #1a1a1a);
-    --highlight: #b23;
+    --background: light-dark(white, #222);
+    --highlight: light-dark(#b23, #e63e51);
     --link-color: var(--highlight);
     --content-width: 42rem;
     --form-width: 24rem;
@@ -182,7 +182,10 @@ dl mark {
     font-weight: inherit;
     font-style: inherit;
     color: inherit;
-    background: color(from var(--highlight) srgb r g b / .1);
+    background: light-dark(
+        color(from var(--highlight) srgb r g b / .1),
+        color(from var(--highlight) srgb r g b / .5)
+    );
     border-bottom: .15em solid var(--highlight);
 }
 dd > span + span::before {
