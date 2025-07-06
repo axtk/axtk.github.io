@@ -103,4 +103,7 @@ main .intro h1:first-child {
         text-align: right;
         margin-top: -.5rem;
     }
+    main > .content > ul {
+        padding-inline-start: 1.25em;
+    }
 }
