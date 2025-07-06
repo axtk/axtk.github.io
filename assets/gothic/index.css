@@ -91,13 +91,12 @@ form.input .text {
     margin-right: auto;
     position: relative;
 }
-form.input .text::before {
-    content: "🔎︎";
+form.input .text svg {
+    height: 1rem;
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    filter: grayscale(100%);
 }
 form.input .text input {
     display: block;
