@@ -74,8 +74,10 @@ html:not([data-output="none"]) nav {
 main .input,
 main .hints,
 footer {
+    width: 100%;
     max-width: var(--content-width);
     margin: 2rem auto;
+    box-sizing: border-box;
 }
 main .input,
 main .output,
@@ -83,6 +85,12 @@ footer {
     text-align: center;
 }
 
+main {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 main .input input {
     width: 100%;
     font-size: 1.5em;
@@ -128,6 +136,7 @@ html[data-output="unstressed"] main .output .controls .unstress {
 
 footer {
     font-size: .8em;
+    margin-top: 0;
 }
 footer p {
     margin: .5em 0;
