@@ -1,4 +1,4 @@
-const dataRoot = 'https://raw.githubusercontent.com/axtk/x/refs/heads/main/assets/stars/data';
+const dataRoot = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/assets/stars/data';
 
 export const urlMap = {
     stars: `${dataRoot}/stars_m6.json`,
