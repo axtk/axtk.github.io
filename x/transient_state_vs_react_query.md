@@ -9,7 +9,7 @@ tags:
     - webdev
 ---
 
-*[Foreword]({{site.github.baseurl}}/transient_state)*
+*[Foreword](/x/transient_state)*
 
 Let's see what it takes to add the loading state tracking for an async action with TanStack React Query and Transient State.
 

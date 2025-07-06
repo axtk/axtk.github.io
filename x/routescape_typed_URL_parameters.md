@@ -10,7 +10,7 @@ tags:
 
 URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [Routescape](https://routescape.js.org)'s `useRouteState()` hook.
 
-The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview]({{site.github.baseurl}}/routescape_type_safety).)
+The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](/x/routescape_type_safety).)
 
 ```ts
 import {A, useRouteState} from 'routescape';
@@ -81,5 +81,5 @@ This example shows how Routescape's `useRouteState()` follows the familiar patte
 
 ## Related
 
-- [Type-safe routing with Routescape]({{site.github.baseurl}}/routescape_type_safety)
-- [A React router to my liking]({{site.github.baseurl}}/routescape)
+- [Type-safe routing with Routescape](/x/routescape_type_safety)
+- [A React router to my liking](/x/routescape)

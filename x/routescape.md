@@ -174,5 +174,5 @@ These features make up the point of Routescape. It's simple and lightweight, and
 
 ## Related
 
-- [Type-safe routing with Routescape]({{site.github.baseurl}}/routescape_type_safety)
-- [Type-safe URL parameters in Routescape]({{site.github.baseurl}}/routescape_typed_URL_parameters)
+- [Type-safe routing with Routescape](/x/routescape_type_safety)
+- [Type-safe URL parameters in Routescape](/x/routescape_typed_URL_parameters)

@@ -2,8 +2,8 @@ import {exec as defaultExec} from 'node:child_process';
 import {access, cp, lstat, readdir, rename, rm} from 'node:fs/promises';
 import {promisify} from 'node:util';
 
-const sourceDir = 'src';
-const targetDir = 'assets/0';
+const sourceDir = 'x/src';
+const targetDir = 'x/assets/0';
 
 const exec = promisify(defaultExec);
 const target = process.argv[2];

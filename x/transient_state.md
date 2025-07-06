@@ -19,4 +19,4 @@ In order to address my question, I ended up creating a small package called [*Tr
 
 ## Related
 
-- [Comparing loading state with Transient State and TanStack React Query]({{site.github.baseurl}}/transient_state_vs_react_query)
+- [Comparing loading state with Transient State and TanStack React Query](/x/transient_state_vs_react_query)

@@ -86,5 +86,5 @@ The Routescape's incremental approach to type-safe routing, from a partial URL s
 
 ## Related
 
-- [Type-safe URL parameters in Routescape]({{site.github.baseurl}}/routescape_typed_URL_parameters)
-- [A React router to my liking]({{site.github.baseurl}}/routescape)
+- [Type-safe URL parameters in Routescape](/x/routescape_typed_URL_parameters)
+- [A React router to my liking](/x/routescape)
