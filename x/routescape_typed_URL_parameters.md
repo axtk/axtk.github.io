@@ -18,7 +18,7 @@ import {createURLSchema} from 'url-shape';
 import {z} from 'zod';
 
 const {url} = createURLSchema({
-    '/shape/:id': {
+    '/shapes/:id': {
         params: z.object({
             id: z.coerce.number(),
         }),
@@ -36,7 +36,7 @@ Once we've defined the URL schema, with the route pattern and allowed path compo
 
 ```tsx
 export const ShapeSection = () => {
-    let [{params, query}, setState] = useRouteState(url('/shape/:id'));
+    let [{params, query}, setState] = useRouteState(url('/shapes/:id'));
 
     let setPosition = () => {
         setState((state) => ({
@@ -64,7 +64,7 @@ export const ShapeSection = () => {
             <nav>
                 <A href="/">Intro</A>
                 {' | '}
-                <A href={url('/shape/:id', {params: {id: params.id + 1}})}>
+                <A href={url('/shapes/:id', {params: {id: params.id + 1}})}>
                     Next shape →
                 </A>
             </nav>

@@ -43,7 +43,7 @@ let App = () => {
                     <h1>Intro</h1>
                 </main>
             ))}
-            {withRoute(/^\/section\/(?<id>\d+)\/?$/, ({params}) => (
+            {withRoute(/^\/sections\/(?<id>\d+)\/?$/, ({params}) => (
                 <main>
                     <h1>Section #{params.id}</h1>
                 </main>
