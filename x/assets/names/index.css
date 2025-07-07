@@ -76,8 +76,14 @@ main .hints,
 footer {
     width: 100%;
     max-width: var(--content-width);
-    margin: 2rem auto;
     box-sizing: border-box;
+}
+main .input,
+footer {
+    margin: 2rem auto;
+}
+main .hints {
+    margin: 0 auto;
 }
 main .input,
 main .output,
