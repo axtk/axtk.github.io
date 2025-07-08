@@ -6,7 +6,7 @@ const sourceDir = 'x/src';
 const targetDir = 'x/assets/0';
 
 const exec = promisify(defaultExec);
-const target = process.argv[2];
+const targets = process.argv.slice(2);
 
 async function customBuild(dir) {
     let path = `${sourceDir}/${dir}/build.mjs`;
@@ -76,9 +76,11 @@ async function build(dir) {
 }
 
 (async () => {
-    if (target) {
-        await rm(`${targetDir}/${target}`, {recursive: true, force: true});
-        await build(target);
+    if (targets.length) {
+        for (let target of targets) {
+            await rm(`${targetDir}/${target}`, {recursive: true, force: true});
+            await build(target);
+        }
     }
     else {
         await rm(targetDir, {recursive: true, force: true});
