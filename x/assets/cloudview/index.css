@@ -2,7 +2,7 @@
     color-scheme: light dark;
 
     --color: light-dark(black, white);
-    --background: light-dark(#e3e3e3, #1a1a1a);
+    --background: light-dark(#d9d9d9, #1a1a1a);
     --link-color: light-dark(royalblue, deepskyblue);
     --hovered-link-decoration: underline;
     --hovered-link-background: transparent;
@@ -140,4 +140,40 @@ html.loading body::before {
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
+}
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+    main picture {
+        display: flex;
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        justify-content: center;
+        align-items: center;
+    }
+    main picture img {
+        max-width: 100%;
+        max-height: none;
+        position: static;
+        transform: none;
+    }
+    main figcaption {
+        padding: .75em 1em 0;
+    }
+    html.standalone main {
+        padding: 0;
+    }
+    html.standalone main picture {
+        min-height: 100vh;
+        background: color(from var(--color) srgb r g b / .1);
+    }
+    html.standalone main picture img {
+        max-width: 100%;
+    }
+    html.standalone main figcaption {
+        padding-top: 1.25em;
+    }
 }
