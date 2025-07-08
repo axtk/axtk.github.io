@@ -12,6 +12,7 @@ export type RenderingContext = {
 
 export type InputContext = RenderingContext & {
     publicKey?: string;
+    path?: string;
     indexPublicKey?: string;
     pageSize?: number;
     sort?: Sort;

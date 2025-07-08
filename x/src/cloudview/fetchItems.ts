@@ -9,6 +9,7 @@ export async function fetchItems(ctx: Context): Promise<{
     total?: number;
 }> {
     let {
+        path,
         startIndex,
         fileIndex,
         fileName,
@@ -31,13 +32,18 @@ export async function fetchItems(ctx: Context): Promise<{
 
     // ctx.mode = 'standalone';
 
-    if (fileName)
-        params.path = `/${fileName}`;
+    if (fileName) {
+        params.path = path
+            ? `/${[...path.split('/'), fileName].filter(Boolean).join('/')}`
+            : `/${fileName}`;
+    }
     else if (fileIndex !== undefined && !isNaN(fileIndex)) {
+        params.path = path;
         params.offset = fileIndex;
         params.limit = 1;
     }
     else {
+        params.path = path;
         params.offset = startIndex;
         params.limit = pageSize;
         params.preview_size = '1024x';

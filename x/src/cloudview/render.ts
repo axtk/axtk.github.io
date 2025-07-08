@@ -32,9 +32,17 @@ export async function render(options: InputContext) {
     let k = searchParams.get('k')?.trim();
     let n = searchParams.get('n')?.trim();
 
+    let {
+        publicKey,
+        path,
+        indexPublicKey,
+        ...otherOptions
+    } = options;
+
     let ctx: Context = {
-        publicKey: searchParams.get('u') || undefined,
-        indexPublicKey: searchParams.get('i') || undefined,
+        publicKey: searchParams.get('u') || publicKey,
+        path: searchParams.get('t') || path,
+        indexPublicKey: searchParams.get('i') || indexPublicKey,
         pageSize: 60,
         sort: '-exif.date_time' as Sort,
         startIndex: (s && parseInt(s, 10)) || 0,
@@ -47,7 +55,7 @@ export async function render(options: InputContext) {
         getDescription,
         renderItems,
         renderNav,
-        ...options,
+        ...otherOptions,
     };
 
     if (typeof ctx.fileIndex === 'number' && isNaN(ctx.fileIndex))
