@@ -57,11 +57,11 @@ main picture img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    opacity: .1;
-    transition: opacity .5s;
+    filter: opacity(35%) grayscale(100%);
+    transition: filter .5s;
 }
 main picture img.complete {
-    opacity: 1;
+    filter: none;
 }
 main figcaption {
     display: flex;
