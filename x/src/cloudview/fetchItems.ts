@@ -3,6 +3,14 @@ import type {Context} from './Context';
 import type {ViewItem} from './ViewItem';
 import {ydsdk} from './const';
 
+function toPath(path: string | undefined, fileName?: string) {
+    if (path)
+        return `/${[...path.split('/'), fileName].filter(Boolean).join('/')}`;
+
+    if (fileName)
+        return `/${fileName}`;
+}
+
 export async function fetchItems(ctx: Context): Promise<{
     ok: boolean | undefined;
     items: ViewItem[];
@@ -32,18 +40,15 @@ export async function fetchItems(ctx: Context): Promise<{
 
     // ctx.mode = 'standalone';
 
-    if (fileName) {
-        params.path = path
-            ? `/${[...path.split('/'), fileName].filter(Boolean).join('/')}`
-            : `/${fileName}`;
-    }
+    if (fileName)
+        params.path = toPath(path, fileName);
     else if (fileIndex !== undefined && !isNaN(fileIndex)) {
-        params.path = path;
+        params.path = toPath(path);
         params.offset = fileIndex;
         params.limit = 1;
     }
     else {
-        params.path = path;
+        params.path = toPath(path);
         params.offset = startIndex;
         params.limit = pageSize;
         params.preview_size = '1024x';
