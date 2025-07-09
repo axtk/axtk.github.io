@@ -1,14 +1,14 @@
 import type {Context} from '../Context';
 import type {ViewItem} from '../ViewItem';
-import {getIndexMap} from './getIndexMap';
+import {getIndexMaps} from './getIndexMaps';
 
-export function getDescription({name}: ViewItem, ctx: Context) {
-    if (!name || !ctx.indexContent)
+export function getDescription({name}: ViewItem, ctx: Context): string | undefined {
+    if (!name)
         return;
 
-    let indexMap = getIndexMap(ctx.indexContent);
+    let indexMaps = getIndexMaps(ctx);
 
-    if (!indexMap)
+    if (!indexMaps?.length)
         return;
 
     let keyParts = name
@@ -17,29 +17,32 @@ export function getDescription({name}: ViewItem, ctx: Context) {
         .slice(0, 2);
 
     let key = keyParts.join('_');
-
-    if (indexMap[key])
-        return indexMap[key].description;
-
+    let matchedMapIndex: number | null = null;
     let matchedKey: string | null = null;
 
-    for (let i = keyParts.length; i > 0; i--) {
-        key = keyParts.slice(0, i).join('_');
+    for (let i = 0; i < indexMaps.length; i++) {
+        let map = indexMaps[i];
 
-        for (let k of Object.keys(indexMap)) {
-            let kPrefix = k.endsWith('*') ? k.replace(/\*+$/, '') : k;
+        if (map[key])
+            return map[key].description;
 
-            if (key.startsWith(kPrefix) && (
-                !matchedKey ||
-                matchedKey.length < k.length
-            )) {
-                matchedKey = k;
+        for (let n = keyParts.length; n > 0; n--) {
+            key = keyParts.slice(0, n).join('_');
+
+            for (let k of Object.keys(map)) {
+                let kPrefix = k.endsWith('*') ? k.replace(/\*+$/, '') : k;
+
+                if (key.startsWith(kPrefix) && (
+                    !matchedKey ||
+                    matchedKey.length < k.length
+                )) {
+                    matchedKey = k;
+                    matchedMapIndex = i;
+                }
             }
         }
     }
 
-    if (!matchedKey)
-        return;
-
-    return indexMap[matchedKey].description;
+    if (matchedMapIndex !== null && matchedKey !== null)
+        return indexMaps[matchedMapIndex]?.[matchedKey]?.description;
 }

@@ -42,8 +42,9 @@ export async function render(options: InputContext) {
     let ctx: Context = {
         url: searchParams.get('u') || url,
         path: searchParams.get('t') || path,
-        index: searchParams.get('i') || index,
-        pageSize: 60,
+        index: searchParams.get('i')?.split(',').map(s => {
+            return s.startsWith('https://') ? {url: s} : {path: s};
+        }) || index,
         sort: '-exif.date_time' as Sort,
         startIndex: (s && parseInt(s, 10)) || 0,
         fileIndex: k ? parseInt(k, 10) : undefined,
@@ -61,7 +62,7 @@ export async function render(options: InputContext) {
     if (typeof ctx.fileIndex === 'number' && isNaN(ctx.fileIndex))
         ctx.fileIndex = undefined;
 
-    let [{items, total}, metadata] = await Promise.all([
+    let [{items, total}] = await Promise.all([
         fetchItems(ctx),
         fetchMetadata(ctx),
     ]);
@@ -70,7 +71,6 @@ export async function render(options: InputContext) {
 
     ctx.items = items;
     ctx.total = total;
-    ctx.indexContent = metadata.content;
 
     ctx.renderItems?.(ctx);
     ctx.renderNav?.(ctx);

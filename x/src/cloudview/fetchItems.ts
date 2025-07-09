@@ -4,6 +4,8 @@ import type {ViewItem} from './ViewItem';
 import {ydsdk} from './const';
 import {toPath} from './toPath';
 
+const specialFiles = new Set(['_index.csv', '_config.yml']);
+
 export async function fetchItems(ctx: Context): Promise<{
     ok: boolean | undefined;
     items: ViewItem[];
@@ -15,7 +17,7 @@ export async function fetchItems(ctx: Context): Promise<{
         startIndex,
         fileIndex,
         fileName,
-        pageSize,
+        pageSize = 60,
         sort,
         cropPreview,
     } = ctx;
@@ -43,7 +45,7 @@ export async function fetchItems(ctx: Context): Promise<{
     else {
         params.path = toPath(path);
         params.offset = startIndex;
-        params.limit = pageSize;
+        params.limit = pageSize + specialFiles.size;
         params.preview_size = '1024x';
         params.preview_crop = Boolean(cropPreview);
 
@@ -62,16 +64,19 @@ export async function fetchItems(ctx: Context): Promise<{
         ? [body]
         : body._embedded?.items ?? [];
 
-    let items: ViewItem[] = rawItems.map((item, i) => {
-        return {
-            id: item.resource_id && `x${item.resource_id.slice(-10)}`,
-            name: item.name,
-            index: params.offset === undefined ? undefined : params.offset + i,
-            url: ctx.mode === 'list' ? item.preview : item.file,
-            date: item.created,
-            exifDate: item.exif?.date_time,
-        };
-    });
+    let items: ViewItem[] = rawItems
+        .filter(({name}) => !name || !specialFiles.has(name))
+        .slice(0, pageSize)
+        .map((item, i) => {
+            return {
+                id: item.resource_id && `x${item.resource_id.slice(-10)}`,
+                name: item.name,
+                index: params.offset === undefined ? undefined : params.offset + i,
+                url: ctx.mode === 'list' ? item.preview : item.file,
+                date: item.created,
+                exifDate: item.exif?.date_time,
+            };
+        });
 
     return {
         ok,

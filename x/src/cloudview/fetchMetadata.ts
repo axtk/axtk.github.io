@@ -1,50 +1,47 @@
 import type {Context} from './Context';
-import {ydsdk} from './const';
-import {toPath} from './toPath';
+import {fetchText} from './fetchText';
+import {parseYaml} from './parseYaml';
 
-export async function fetchMetadata(ctx: Context): Promise<{
-    ok: boolean | undefined;
-    content: string | null;
-}> {
+type Config = {
+    index?: string | string[];
+};
+
+export async function fetchMetadata(ctx: Context): Promise<void> {
     let {index, url, path} = ctx;
 
-    let indexURL: string | undefined = undefined;
-    let indexPath: string | undefined = undefined;
+    try {
+        let config = parseYaml<Config>(
+            await fetchText(url, `${path ?? ''}/_config.yml`),
+        );
 
-    if (typeof index === 'string') {
-        if (index.startsWith('https://')) indexURL = index;
-        else indexPath = index;
+        let configIndex = config?.index;
+
+        if (configIndex)
+            index = (Array.isArray(configIndex) ? configIndex : [configIndex]).map(s => {
+                return s.startsWith('https://') ? {url: s} : {path: s};
+            });
     }
-    else if (index) {
-        indexURL = index.url;
-        indexPath = index.path;
+    catch {}
+
+    if (!index?.length) {
+        if (path)
+            index = [
+                {path: `${path}/_index.csv`},
+                {path: `${path}.csv`},
+            ];
+        else
+            index = [{path: '_index.csv'}];
     }
-
-    if (!indexURL) {
-        if (!indexPath)
-            indexPath = path ? `${path}.csv` : '_index.csv';
-
-        indexURL = url;
-    }
-
-    if (!indexURL)
-        return {ok: true, content: null};
 
     try {
-        let {ok, body} = await ydsdk.public.download({
-            public_key: indexURL,
-            path: toPath(indexPath),
-        });
+        let content = await Promise.all(
+            index.map(item => fetchText(item.url ?? url, item.path)),
+        );
 
-        if (!ok || !body)
-            return {ok, content: null};
-
-        let url = `https://night-salad.vercel.app/?u=${encodeURIComponent(body.href)}`;
-        let content = await (await fetch(url)).text();
-
-        return {ok: true, content};
+        for (let i = 0; i < index.length; i++)
+            index[i].content = content[i];
     }
-    catch {
-        return {ok: false, content: null};
-    }
+    catch {}
+
+    ctx.index = index;
 }

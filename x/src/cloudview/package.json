@@ -6,6 +6,7 @@
   "author": "axtk",
   "type": "module",
   "dependencies": {
-    "yd-sdk": "^1.1.22"
+    "yd-sdk": "^1.1.22",
+    "yeahml": "github:mourner/yeahml#915b2a504833e0755bf7732040e90c3890210430"
   }
 }

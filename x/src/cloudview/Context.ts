@@ -13,10 +13,11 @@ export type RenderingContext = {
 export type InputContext = RenderingContext & {
     url?: string;
     path?: string;
-    index?: string | {
+    index?: {
         url?: string;
         path?: string;
-    };
+        content?: string;
+    }[];
     pageSize?: number;
     sort?: Sort;
     cropPreview?: boolean;
@@ -29,7 +30,6 @@ export type ViewContext = {
     fileIndex?: number | undefined;
     fileName?: string | undefined;
     mode?: 'list' | 'standalone';
-    indexContent?: string | null;
     items?: ViewItem[];
     total?: number;
 };
