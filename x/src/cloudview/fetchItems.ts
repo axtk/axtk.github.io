@@ -2,14 +2,7 @@ import type {YDIn} from 'yd-sdk';
 import type {Context} from './Context';
 import type {ViewItem} from './ViewItem';
 import {ydsdk} from './const';
-
-function toPath(path: string | undefined, fileName?: string) {
-    if (path)
-        return `/${[...path.split('/'), fileName].filter(Boolean).join('/')}`;
-
-    if (fileName)
-        return `/${fileName}`;
-}
+import {toPath} from './toPath';
 
 export async function fetchItems(ctx: Context): Promise<{
     ok: boolean | undefined;
@@ -17,24 +10,24 @@ export async function fetchItems(ctx: Context): Promise<{
     total?: number;
 }> {
     let {
+        url,
         path,
         startIndex,
         fileIndex,
         fileName,
-        publicKey,
         pageSize,
         sort,
         cropPreview,
     } = ctx;
 
-    if (!publicKey)
+    if (!url)
         return {
             ok: false,
             items: [],
         };
 
     let params: YDIn.Public.Info = {
-        public_key: publicKey,
+        public_key: url,
         sort,
     };
 

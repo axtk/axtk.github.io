@@ -4,7 +4,7 @@ import {getDisplayedDate} from './defaults/getDisplayedDate';
 import {renderItems} from './defaults/renderItems';
 import {renderNav} from './defaults/renderNav';
 import type {Context, InputContext} from './Context';
-import {fetchIndex} from './fetchIndex';
+import {fetchMetadata} from './fetchMetadata';
 import {fetchItems} from './fetchItems';
 
 export async function render(options: InputContext) {
@@ -33,16 +33,16 @@ export async function render(options: InputContext) {
     let n = searchParams.get('n')?.trim();
 
     let {
-        publicKey,
+        url,
         path,
-        indexPublicKey,
+        index,
         ...otherOptions
     } = options;
 
     let ctx: Context = {
-        publicKey: searchParams.get('u') || publicKey,
+        url: searchParams.get('u') || url,
         path: searchParams.get('t') || path,
-        indexPublicKey: searchParams.get('i') || indexPublicKey,
+        index: searchParams.get('i') || index,
         pageSize: 60,
         sort: '-exif.date_time' as Sort,
         startIndex: (s && parseInt(s, 10)) || 0,
@@ -61,16 +61,16 @@ export async function render(options: InputContext) {
     if (typeof ctx.fileIndex === 'number' && isNaN(ctx.fileIndex))
         ctx.fileIndex = undefined;
 
-    let [{items, total}, {content: indexContent}] = await Promise.all([
+    let [{items, total}, metadata] = await Promise.all([
         fetchItems(ctx),
-        fetchIndex(ctx),
+        fetchMetadata(ctx),
     ]);
 
     document.documentElement.classList.remove('loading');
 
     ctx.items = items;
     ctx.total = total;
-    ctx.indexContent = indexContent;
+    ctx.indexContent = metadata.content;
 
     ctx.renderItems?.(ctx);
     ctx.renderNav?.(ctx);

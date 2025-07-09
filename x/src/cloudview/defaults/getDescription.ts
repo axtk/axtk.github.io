@@ -1,40 +1,12 @@
 import type {Context} from '../Context';
 import type {ViewItem} from '../ViewItem';
-
-function toMap(s: string) {
-    let items = s.split(/\r?\n/)
-        .map(s => s.trim())
-        .filter(s => s !== '');
-
-    if (items.length === 0)
-        return null;
-
-    let map: Record<string, string> = {};
-
-    for (let item of items) {
-        let k = item.indexOf(' ');
-
-        if (k === -1)
-            continue;
-
-        let key = item.slice(0, k).replace(/[xх]/g, '*');
-        let value = item.slice(k).trim();
-
-        if (key && value)
-            map[key] = value;
-    }
-
-    return map;
-}
-
-let indexMap: Record<string, string> | null = null;
+import {getIndexMap} from './getIndexMap';
 
 export function getDescription({name}: ViewItem, ctx: Context) {
     if (!name || !ctx.indexContent)
         return;
 
-    if (!indexMap)
-        indexMap = toMap(ctx.indexContent);
+    let indexMap = getIndexMap(ctx.indexContent);
 
     if (!indexMap)
         return;
@@ -47,17 +19,14 @@ export function getDescription({name}: ViewItem, ctx: Context) {
     let key = keyParts.join('_');
 
     if (indexMap[key])
-        return indexMap[key];
+        return indexMap[key].description;
 
     let matchedKey: string | null = null;
 
     for (let i = keyParts.length; i > 0; i--) {
         key = keyParts.slice(0, i).join('_');
 
-        for (let [k, v] of Object.entries(indexMap)) {
-            if (k === key)
-                return v;
-
+        for (let k of Object.keys(indexMap)) {
             let kPrefix = k.endsWith('*') ? k.replace(/\*+$/, '') : k;
 
             if (key.startsWith(kPrefix) && (
@@ -72,5 +41,5 @@ export function getDescription({name}: ViewItem, ctx: Context) {
     if (!matchedKey)
         return;
 
-    return indexMap[matchedKey];
+    return indexMap[matchedKey].description;
 }

@@ -11,9 +11,12 @@ export type RenderingContext = {
 };
 
 export type InputContext = RenderingContext & {
-    publicKey?: string;
+    url?: string;
     path?: string;
-    indexPublicKey?: string;
+    index?: string | {
+        url?: string;
+        path?: string;
+    };
     pageSize?: number;
     sort?: Sort;
     cropPreview?: boolean;
