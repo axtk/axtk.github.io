@@ -7,8 +7,9 @@
     --hovered-link-decoration: underline;
     --hovered-link-background: transparent;
     --main-padding: 2rem;
-    --tile-content-size: 480px;
+    --tile-content-size: 500px;
     --tile-padding: 1em;
+    --aspect-ratio: 1;
 }
 html {
     font: normal 100%/1.3 sans-serif;
@@ -45,7 +46,7 @@ main figure {
 main picture {
     display: block;
     width: calc(var(--tile-content-size) + 2*var(--tile-padding));
-    height: calc(var(--tile-content-size) + 2*var(--tile-padding));
+    height: calc(var(--aspect-ratio)*var(--tile-content-size) + 2*var(--tile-padding));
     background: color(from var(--color) srgb r g b / .05);
     position: relative;
 }
