@@ -1,5 +1,6 @@
 import type {Context} from '../Context';
 import {getDefaultQuery} from '../getDefaultQuery';
+import {i18n} from '../i18n';
 
 let container: Element | null = null;
 
@@ -42,10 +43,18 @@ export function renderItems(ctx: Context) {
             (!ctx.hideDate && displayedDate ? `<span class="date">${displayedDate}</span> ` : '') +
             (description ? `<span class="description">${description}</span> ` : '') +
             '</span><span class="controls">' +
-            (ctx.mode === 'list' ? `<a href="${fullViewURL}" title="На весь экран">⌞⌝</a>` : '') +
+            (ctx.mode === 'list'
+                ? `<a href="${fullViewURL}" title="${i18n('list_item_fullscreen')}">⌞⌝</a>`
+                : '') +
             '</span></figcaption>';
 
         container.appendChild(element);
+
+        if (ctx.mode === 'standalone' && description && ctx.items.length === 1) {
+            document.title =
+                `${description}${!ctx.hideDate && displayedDate ? `, ${displayedDate}` : ''}` +
+                ` / ${ctx.title ?? i18n('title')}`;
+        }
     }
 
     for (let image of container.querySelectorAll('img')) {

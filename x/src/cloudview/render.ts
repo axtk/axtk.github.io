@@ -7,6 +7,7 @@ import type {Context, InputContext} from './Context';
 import {fetchIndex} from './fetchIndex';
 import {fetchItems} from './fetchItems';
 import {fetchMetadata} from './fetchMetadata';
+import {i18n, lang} from './i18n';
 
 export async function render(options: InputContext) {
     if (window.history) {
@@ -62,12 +63,18 @@ export async function render(options: InputContext) {
         ...otherOptions,
     };
 
+    document.documentElement.setAttribute('lang', lang());
+    document.title = i18n('title');
+
     if (typeof ctx.fileIndex === 'number' && isNaN(ctx.fileIndex))
         ctx.fileIndex = undefined;
 
     // some settings (like `cropPreview`) should be fetched
     // before fetching items
     await fetchMetadata(ctx);
+
+    if (ctx.title)
+        document.title = ctx.title;
 
     let [{items, total}] = await Promise.all([
         fetchItems(ctx),

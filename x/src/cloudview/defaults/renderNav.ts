@@ -1,5 +1,6 @@
 import type {Context} from '../Context';
 import {getDefaultQuery} from '../getDefaultQuery';
+import {i18n} from '../i18n';
 
 let container: Element | null = null;
 
@@ -39,11 +40,13 @@ export function renderNav(ctx: Context) {
 
     if (ctx.mode === 'list') {
         container.innerHTML =
-            '<a title="На первую страницу" data-key="start">◀◀</a> ' +
-            '<a title="На предыдущую страницу [←]" data-key="prev">◀</a> ' +
-            (ctx.homePage ? `<a href="${ctx.homePage}" title="На главную" data-key="quit">◆</a> ` : '') +
-            '<a title="На следующую страницу [→]" data-key="next">▶</a> ' +
-            '<a title="На последнюю страницу" data-key="end">▶▶</a>';
+            `<a title="${i18n('list_nav_first_page')}" data-key="start">◀◀</a> ` +
+            `<a title="${i18n('list_nav_prev_page')} [←]" data-key="prev">◀</a> ` +
+            (ctx.homePage
+                ? `<a href="${ctx.homePage}" title="${i18n('list_nav_home')}" data-key="quit">◆</a> `
+                : '') +
+            `<a title="${i18n('list_nav_next_page')} [→]" data-key="next">▶</a> ` +
+            `<a title="${i18n('list_nav_last_page')}" data-key="end">▶▶</a>`;
 
         let {startIndex, pageSize, total} = ctx;
 
@@ -61,9 +64,9 @@ export function renderNav(ctx: Context) {
 
     if (ctx.mode === 'standalone') {
         container.innerHTML =
-            '<a title="Предыдущая [←]" data-key="prev">◀</a> ' +
-            '<a title="К списку" data-key="quit">☰</a> ' +
-            '<a title="Следующая [→]" data-key="next">▶</a>';
+            `<a title="${i18n('standalone_nav_prev')} [←]" data-key="prev">◀</a> ` +
+            `<a title="${i18n('standalone_nav_quit')}" data-key="quit">☰</a> ` +
+            `<a title="${i18n('standalone_nav_next')} [→]" data-key="next">▶</a>`;
 
         let {fileIndex, pageSize} = ctx;
 
