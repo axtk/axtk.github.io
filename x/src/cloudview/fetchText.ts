@@ -1,4 +1,4 @@
-import {ydsdk} from './const';
+import {ydsdk, downloadURL} from './const';
 import {toPath} from './toPath';
 
 export async function fetchText(url: string | undefined, path?: string | undefined) {
@@ -14,9 +14,7 @@ export async function fetchText(url: string | undefined, path?: string | undefin
         if (!ok || !body)
             return;
 
-        let res = await fetch(
-            `https://night-salad.vercel.app/?u=${encodeURIComponent(body.href)}`,
-        );
+        let res = await fetch(`${downloadURL}?u=${encodeURIComponent(body.href)}`);
 
         return res.text();
     }

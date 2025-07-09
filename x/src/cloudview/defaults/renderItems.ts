@@ -1,4 +1,5 @@
 import type {Context} from '../Context';
+import {downloadURL} from '../const';
 import {getDefaultQuery} from '../getDefaultQuery';
 import {i18n} from '../i18n';
 
@@ -22,7 +23,7 @@ export function renderItems(ctx: Context) {
 
     for (let item of ctx.items) {
         let element = document.createElement('figure');
-        let src = `https://night-salad.vercel.app/?u=${encodeURIComponent(item.url ?? '')}`;
+        let src = `${downloadURL}?u=${encodeURIComponent(item.url ?? '')}`;
 
         let displayedDate = ctx.getDisplayedDate?.(item, ctx);
         let description = ctx.getDescription?.(item, ctx);
