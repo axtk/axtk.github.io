@@ -1,28 +1,5 @@
 import type {Context} from '../Context';
-
-function stripQuotes(s: string) {
-    return s.startsWith('"') && s.endsWith('"') ? s.slice(1, -1) : s;
-}
-
-function split(s: string) {
-    let items: string[] = [];
-    let item = '';
-    let open = false;
-
-    for (let c of s) {
-        if (c === ',' && !open) {
-            items.push(stripQuotes(item));
-            item = '';
-            continue;
-        }
-        if (c === '"') open = !open;
-        item += c;
-    }
-
-    if (item) items.push(stripQuotes(item));
-
-    return items;
-}
+import {split} from '../split';
 
 type IndexEntry = {
     description?: string;

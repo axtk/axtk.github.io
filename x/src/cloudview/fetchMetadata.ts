@@ -1,19 +1,13 @@
 import type {Context} from './Context';
 import {fetchText} from './fetchText';
-import {parseYaml} from './parseYaml';
-
-type Config = {
-    index?: string | string[];
-};
+import {parseConfig} from './parseConfig';
 
 export async function fetchMetadata(ctx: Context): Promise<void> {
     let {index, url, path} = ctx;
 
     try {
-        let config = parseYaml<Config>(
-            await fetchText(url, `${path ?? ''}/_config.yml`),
-        );
-
+        let configContent = await fetchText(url, `${path ?? ''}/_config.yml`);
+        let config = parseConfig(configContent);
         let configIndex = config?.index;
 
         if (configIndex)
