@@ -36,7 +36,7 @@ export function renderItems(ctx: Context) {
 
         element.innerHTML =
             '<picture><span>' +
-            `<img src="${src}" alt="${item.name ?? ''}" height="300" loading="lazy">` +
+            `<img src="${src}" alt="${item.name ?? ''}" height="300" loading="lazy" class="loading">` +
             '</span></picture>' +
             '<figcaption><span class="content">' +
             (!ctx.hideDate && displayedDate ? `<span class="date">${displayedDate}</span> ` : '') +
@@ -50,12 +50,12 @@ export function renderItems(ctx: Context) {
 
     for (let image of container.querySelectorAll('img')) {
         if (image.complete) {
-            image.classList.add('complete');
+            image.classList.remove('loading');
             continue;
         }
 
         image.addEventListener('load', () => {
-            image.classList.add('complete');
+            image.classList.remove('loading');
         });
     }
 }
