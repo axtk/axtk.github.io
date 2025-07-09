@@ -18,7 +18,7 @@ export type InputContext = RenderingContext & {
         path?: string;
         content?: string;
     }[];
-    pageSize?: number;
+    pageSize: number;
     sort?: Sort;
     cropPreview?: boolean;
     hideDate?: boolean;

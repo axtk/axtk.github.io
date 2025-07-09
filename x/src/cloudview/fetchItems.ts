@@ -17,7 +17,7 @@ export async function fetchItems(ctx: Context): Promise<{
         startIndex,
         fileIndex,
         fileName,
-        pageSize = 60,
+        pageSize,
         sort,
         cropPreview,
     } = ctx;

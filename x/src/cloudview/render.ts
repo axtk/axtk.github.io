@@ -37,6 +37,7 @@ export async function render(options: InputContext) {
         url,
         path,
         index,
+        pageSize,
         ...otherOptions
     } = options;
 
@@ -47,6 +48,7 @@ export async function render(options: InputContext) {
             return s.startsWith('https://') ? {url: s} : {path: s};
         }) || index,
         sort: '-exif.date_time' as Sort,
+        pageSize: pageSize ?? 60,
         startIndex: (s && parseInt(s, 10)) || 0,
         fileIndex: k ? parseInt(k, 10) : undefined,
         fileName: n || undefined,

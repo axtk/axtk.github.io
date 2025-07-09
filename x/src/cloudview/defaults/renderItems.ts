@@ -16,7 +16,7 @@ export function renderItems(ctx: Context) {
     if (!container)
         return;
 
-    if (ctx.aspectRatio !== undefined)
+    if (ctx.mode === 'list' && ctx.aspectRatio !== undefined)
         (container as HTMLElement).style.setProperty('--aspect-ratio', String(ctx.aspectRatio));
 
     for (let item of ctx.items) {
@@ -35,7 +35,9 @@ export function renderItems(ctx: Context) {
             element.dataset.name = item.name;
 
         element.innerHTML =
-            `<picture><img src="${src}" alt="${item.name ?? ''}" height="300" loading="lazy"></picture>` +
+            '<picture><span>' +
+            `<img src="${src}" alt="${item.name ?? ''}" height="300" loading="lazy">` +
+            '</span></picture>' +
             '<figcaption><span class="content">' +
             (!ctx.hideDate && displayedDate ? `<span class="date">${displayedDate}</span> ` : '') +
             (description ? `<span class="description">${description}</span> ` : '') +
