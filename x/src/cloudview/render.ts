@@ -4,8 +4,9 @@ import {getDisplayedDate} from './defaults/getDisplayedDate';
 import {renderItems} from './defaults/renderItems';
 import {renderNav} from './defaults/renderNav';
 import type {Context, InputContext} from './Context';
-import {fetchMetadata} from './fetchMetadata';
+import {fetchIndex} from './fetchIndex';
 import {fetchItems} from './fetchItems';
+import {fetchMetadata} from './fetchMetadata';
 
 export async function render(options: InputContext) {
     if (window.history) {
@@ -62,9 +63,13 @@ export async function render(options: InputContext) {
     if (typeof ctx.fileIndex === 'number' && isNaN(ctx.fileIndex))
         ctx.fileIndex = undefined;
 
+    // some settings (like `cropPreview`) should be fetched
+    // before fetching items
+    await fetchMetadata(ctx);
+
     let [{items, total}] = await Promise.all([
         fetchItems(ctx),
-        fetchMetadata(ctx),
+        fetchIndex(ctx),
     ]);
 
     document.documentElement.classList.remove('loading');
