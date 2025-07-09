@@ -1,3 +1,4 @@
+import type {ConfigContext} from './Context';
 import {split} from './split';
 import {stripQuotes} from './stripQuotes';
 
@@ -6,21 +7,17 @@ function toCamelCase(s: string) {
 }
 
 const transform = {
+    index: (x: string | string[]) => {
+        return (Array.isArray(x) ? x : [x]).map(s => {
+            return s.startsWith('https://') ? {url: s} : {path: s};
+        });
+    },
     cropPreview: JSON.parse,
     hideDate: JSON.parse,
     aspectRatio: Number,
 };
 
-export type Config = {
-    title?: string;
-    index?: string | string[];
-    cropPreview?: boolean;
-    hideDate?: boolean;
-    aspectRatio?: number;
-    sort?: string;
-};
-
-export function parseConfig(s: string | undefined): Config | undefined {
+export function parseConfig(s: string | undefined): ConfigContext | undefined {
     if (!s)
         return;
 
@@ -52,7 +49,11 @@ export function parseConfig(s: string | undefined): Config | undefined {
                     k = toCamelCase(k);
                     v = stripQuotes(v?.trim() ?? '');
 
-                    (parentItem as Record<string, string>)[k] = v;
+                    let kx = `${parentKey}.${k}`;
+
+                    (parentItem as Record<string, string>)[k] = kx in transform
+                        ? transform[kx as keyof typeof transform](v)
+                        : v;
                 }
             }
             else if (parentItem) {
@@ -68,10 +69,9 @@ export function parseConfig(s: string | undefined): Config | undefined {
             if (v) {
                 v = stripQuotes(v);
 
-                if (k in transform)
-                    v = transform[k as keyof typeof transform](v);
-
-                data[k] = v;
+                data[k] = k in transform
+                    ? transform[k as keyof typeof transform](v)
+                    : v;
             }
             else parentKey = k;
         }
@@ -80,5 +80,5 @@ export function parseConfig(s: string | undefined): Config | undefined {
     if (parentKey)
         data[parentKey] = parentItem ?? '';
 
-    return data as Config;
+    return data as ConfigContext;
 }

@@ -21,9 +21,21 @@ export type InputContext = RenderingContext & {
     pageSize?: number;
     sort?: Sort;
     cropPreview?: boolean;
+    hideDate?: boolean;
+    aspectRatio?: number;
     dateFormat?: 'full' | 'short';
+    title?: string;
     homePage?: string;
 };
+
+export type ConfigContext = Pick<InputContext,
+    | 'index'
+    | 'title'
+    | 'cropPreview'
+    | 'hideDate'
+    | 'aspectRatio'
+    | 'sort'
+>;
 
 export type ViewContext = {
     startIndex?: number;
