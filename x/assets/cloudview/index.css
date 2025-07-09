@@ -100,11 +100,12 @@ html.standalone main picture > span {
 }
 main picture img {
     height: auto;
-    transition: filter .5s;
+    transition: filter .5s, opacity .5s;
     filter: none;
 }
-main picture img.loading {
-    filter: opacity(35%) grayscale(100%);
+main picture.loading img {
+    filter: grayscale(100%) brightness(0);
+    opacity: .05;
 }
 html.list main picture img {
     max-width: var(--tile-content-size);
