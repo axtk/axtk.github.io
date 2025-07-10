@@ -71,6 +71,7 @@ function init() {
     });
 
     render(true);
+    document.documentElement.classList.remove('loading');
 }
 
 init();
