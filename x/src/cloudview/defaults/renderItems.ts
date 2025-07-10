@@ -23,7 +23,7 @@ export function renderItems(ctx: Context) {
 
     for (let item of ctx.items) {
         let element = document.createElement('figure');
-        let src = `${downloadURL}?u=${encodeURIComponent(item.url ?? '')}`;
+        let src = `${downloadURL}/${item.name}?u=${encodeURIComponent(item.url ?? '')}`;
 
         let displayedDate = ctx.getDisplayedDate?.(item, ctx);
         let description = ctx.getDescription?.(item, ctx);
