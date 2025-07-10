@@ -41,7 +41,7 @@ export function initClicks(ctx: Context) {
 
         for (let star of matches) {
             console.log(`#${star[3]}; ${star[5]}`, star[2]);
-            window.sendEvent?.(['click star', String(star[5] ?? star[3])]);
+            window.sendEvent?.(['click star', String(star[5] ?? `#${star[3]}`)]);
         }
     });
 }
