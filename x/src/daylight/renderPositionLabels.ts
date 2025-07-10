@@ -2,6 +2,11 @@ import {getDimensions} from './getDimensions';
 import {getScreenPosition} from './getScreenPosition';
 import type {Context} from './Context';
 
+const phaseName: Record<string, string> = {
+    '0': 'New',
+    '50': 'Full',
+};
+
 function renderLabel(id: 'sun' | 'moon', ctx: Context) {
     let {width} = getDimensions(ctx);
     let label = document.querySelector<HTMLElement>(`.pos[data-id="${id}"]`)!;
@@ -11,8 +16,10 @@ function renderLabel(id: 'sun' | 'moon', ctx: Context) {
     label.querySelector('.alt .value')!.textContent = `${position[1].toFixed(1)}°`;
 
     if (id === 'moon') {
+        let phase = String(Math.round(ctx.tracks.moon.phase*100));
+
         label.querySelector('.ph .value')!.textContent =
-            `${Math.round(ctx.tracks.moon.phase*100)}%`;
+            `${phase}%${phaseName[phase] ? ` · ${phaseName[phase]}` : ''}`;
     }
     else if (id === 'sun') {
         let events = ctx.tracks.sun.events.slice(0, 2);
