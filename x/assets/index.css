@@ -12,6 +12,18 @@ main {
     justify-content: center;
     box-sizing: border-box;
 }
+section {
+    margin: 0;
+}
+section + section {
+    margin-top: .5em;
+}
+section.intro {
+    margin-bottom: 1.5em;
+}
+section h2:first-child {
+    margin-top: 0;
+}
 ul {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -104,7 +116,7 @@ main .intro h1:first-child {
         text-align: right;
         margin-top: -.5rem;
     }
-    main > .content > ul {
+    :not(li) > ul {
         padding-inline-start: 1.25em;
     }
 }
