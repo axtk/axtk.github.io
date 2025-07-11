@@ -1,0 +1,23 @@
+:root {
+    --document-fill: #f5f5f5;
+    --document-color: rgba(0, 0, 0, .85);
+    --link-color: #36c;
+    --link-background-color: #36c2;
+    --active-link-background-color: #03f2;
+    --page-fill: #fff;
+    --page-pads: 1rem 3.5rem;
+    --page-margins: 1.5rem auto;
+    /*--layer-width: 60rem;*/
+    --layer-width: 800px;
+    --layer-xpad: 1.5rem;
+    --layer-ypad: 1.5rem;
+    --layer-border: 2px solid rgba(0, 0, 0, .6);
+    --internal-border: 1px dotted rgba(0, 0, 0, .8);
+    --header-picture-size: 4.5rem;
+    --sidebar-width: 24rem;
+}
+@media (max-width: 500px) {
+    :root {
+        --layer-xpad: 1rem;
+    }
+}
