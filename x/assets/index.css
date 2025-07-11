@@ -92,7 +92,7 @@ main .intro h1:first-child {
 }
 .intro table.contacts td {
     border: none;
-    padding: .2em .25em .2em 0;
+    padding: .2em .5em .2em 0;
 }
 .intro table.contacts td:first-child {
     text-align: right;
