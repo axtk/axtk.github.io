@@ -242,4 +242,5 @@ details[open] > summary .closed {
 details > summary .closed,
 details[open] > summary .open {
     display: inline-block;
+    text-decoration: dotted underline;
 }

@@ -235,4 +235,10 @@ document.addEventListener('click', event => {
     if (control) window.sendEvent?.(['click_button', control.dataset.id]);
 });
 
+let details = document.querySelector('details');
+
+details.addEventListener('toggle', () => {
+    window.sendEvent?.(['toggle intro', `toggled ${details.open ? 'open' : 'closed'}`]);
+});
+
 }
