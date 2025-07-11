@@ -102,6 +102,9 @@ main .intro h1:first-child {
     margin: 1.25rem 0;
 }
 @media (max-width: 600px) {
+    html {
+        --smaller-font-size: .9em;
+    }
     body {
         padding: 1.5rem 0;
     }
