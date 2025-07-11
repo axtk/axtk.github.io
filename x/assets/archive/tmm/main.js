@@ -110,13 +110,13 @@ fetch(`${DATA_LOCATION}/barriers.json`)
 
 document.addEventListener('click', event => {
     let control = event.target.closest('[data-action]');
-    if (control) window.sendEvent?.(['click_button', control.dataset.action]);
+    if (control) window.sendEvent?.(['click button', control.dataset.action]);
 });
 
 let details = document.querySelector('details');
 
 details.addEventListener('toggle', () => {
-    window.sendEvent?.(['toggle intro', `toggled ${details.open ? 'open' : 'closed'}`]);
+    window.sendEvent?.(['toggle intro', `toggle ${details.open ? 'open' : 'closed'}`]);
 });
 
 }

@@ -232,13 +232,13 @@ E.peaks.identify.addEventListener('click', event => {
 
 document.addEventListener('click', event => {
     let control = event.target.closest('a[data-id]');
-    if (control) window.sendEvent?.(['click_button', control.dataset.id]);
+    if (control) window.sendEvent?.(['click button', control.dataset.id]);
 });
 
 let details = document.querySelector('details');
 
 details.addEventListener('toggle', () => {
-    window.sendEvent?.(['toggle intro', `toggled ${details.open ? 'open' : 'closed'}`]);
+    window.sendEvent?.(['toggle intro', `toggle ${details.open ? 'open' : 'closed'}`]);
 });
 
 }
