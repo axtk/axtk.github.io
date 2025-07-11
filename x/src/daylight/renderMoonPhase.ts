@@ -5,7 +5,7 @@ import type {Context} from './Context';
 const d = markerSize.moon ?? markerSize.default;
 const r = d/2;
 
-/* axtk MMXX, MMXXV (ts, gh pages) */
+/* axtk 2020, 2025-06 (ts, gh pages) */
 export function renderMoonPhase(ctx: Context) {
     let container = ctx.element.querySelector('g.markers')!;
     let element = container.querySelector('[data-id="moon-phase"]');
@@ -32,7 +32,8 @@ export function renderMoonPhase(ctx: Context) {
     if (phase >= 1) phase -= 1;
 
     let quarter = Math.floor(phase/.25);
-    let dr = r*((phase % .25)/.25), rx1, rx2, dir1, dir2;
+    let dr = r*((phase % .25)/.25);
+    let rx1: number, rx2: number, dir1: number, dir2: number;
 
     switch (quarter) {
         case 0:
