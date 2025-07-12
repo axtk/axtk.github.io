@@ -1,7 +1,16 @@
 import type {Context} from '../Context';
+import type {ViewItem} from '../ViewItem';
 import {downloadURL} from '../const';
 import {getDefaultQuery} from '../getDefaultQuery';
 import {i18n} from '../i18n';
+
+function getImageURL(item: ViewItem) {
+    return `${downloadURL}/${item.name}?u=${encodeURIComponent(item.url ?? '')}`;
+}
+
+async function handleLoad(image: HTMLImageElement) {
+    image.closest('picture')?.classList.remove('loading');
+}
 
 let container: Element | null = null;
 
@@ -23,7 +32,6 @@ export function renderItems(ctx: Context) {
 
     for (let item of ctx.items) {
         let element = document.createElement('figure');
-        let src = `${downloadURL}/${item.name}?u=${encodeURIComponent(item.url ?? '')}`;
 
         let displayedDate = ctx.getDisplayedDate?.(item, ctx);
         let description = ctx.getDescription?.(item, ctx);
@@ -38,7 +46,8 @@ export function renderItems(ctx: Context) {
 
         element.innerHTML =
             '<picture class="loading"><span>' +
-            `<img src="${src}" alt="${item.name ?? ''}" height="300" loading="lazy">` +
+            `<img src="${getImageURL(item)}" alt="${item.name ?? ''}" ` +
+            'height="300" loading="lazy">' +
             '</span></picture>' +
             '<figcaption><span class="content">' +
             (!ctx.hideDate && displayedDate ? `<span class="date">${displayedDate}</span> ` : '') +
@@ -59,13 +68,7 @@ export function renderItems(ctx: Context) {
     }
 
     for (let image of container.querySelectorAll('img')) {
-        if (image.complete) {
-            image.closest('picture')?.classList.remove('loading');
-            continue;
-        }
-
-        image.addEventListener('load', () => {
-            image.closest('picture')?.classList.remove('loading');
-        });
+        if (image.complete) handleLoad(image);
+        else image.addEventListener('load', () => handleLoad(image));
     }
 }

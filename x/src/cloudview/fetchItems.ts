@@ -70,6 +70,8 @@ export async function fetchItems(ctx: Context): Promise<{
         .map((item, i) => {
             return {
                 id: item.resource_id && `x${item.resource_id.slice(-10)}`,
+                key: item.public_key,
+                path: item.path,
                 name: item.name,
                 index: params.offset === undefined ? undefined : params.offset + i,
                 url: ctx.mode === 'list' ? item.preview : item.file,
