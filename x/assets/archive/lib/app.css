@@ -123,10 +123,20 @@ i {
 }
 .navigation {
     display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     border-bottom: var(--layer-border);
     padding: .75rem var(--layer-xpad) .55rem;
 }
+.navigation h1 {
+    flex: auto;
+    font-size: 1.25em;
+    margin: 0;
+    margin-right: 1em;
+    margin-bottom: .35em;
+}
 .navigation p {
+    flex: none;
     margin: 0;
 }
 .navigation p.refs {
