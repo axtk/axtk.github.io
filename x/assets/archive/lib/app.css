@@ -190,9 +190,6 @@ a[data-action]:hover,
     border-top: var(--layer-border);
     padding: .75rem var(--layer-xpad);
 }
-.footer p {
-    margin: 0;
-}
 .footer br {
     display: none;
 }
@@ -201,6 +198,7 @@ a[data-action]:hover,
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
+    margin: 0;
 }
 .columns {
     display: flex;
