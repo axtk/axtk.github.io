@@ -18,7 +18,7 @@ export type InputContext = RenderingContext & {
         path?: string;
         content?: string;
     }[];
-    pageSize: number;
+    pageSize?: number;
     sort?: Sort;
     cropPreview?: boolean;
     hideDate?: boolean;
@@ -46,4 +46,6 @@ export type ViewContext = {
     total?: number;
 };
 
-export type Context = InputContext & ViewContext;
+export type Context = Omit<InputContext & ViewContext, 'pageSize'> & {
+    pageSize: number;
+};
