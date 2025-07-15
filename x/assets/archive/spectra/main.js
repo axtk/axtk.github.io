@@ -134,8 +134,15 @@ let pickAbsorbanceData = data => {
         data = storage.converted || storage.initial || tabular.toDataArray(E.initial.data.value);
 
     if (E.peaks.data.classList.contains('intact')) {
-        return fetch(`${DATA_LOCATION}/ir_peaks.json`)
-            .then(response => response.json())
+        return fetch(`${DATA_LOCATION}/ir_peaks.csv`)
+            .then(response => response.text())
+            .then(s => {
+                return s.split(/\r?\n/).filter(Boolean).map(s => {
+                    let [k, ...def] = s.split(',')
+                        .map(x => x.startsWith('"') && x.endsWith('"') ? x.slice(1, -1) : x);
+                    return [Number(k), ...def];
+                });
+            })
             .then(peakTable => {
                 E.peaks.data.value = tabular.toPlainText(peakTable);
                 E.peaks.data.classList.remove('intact');
@@ -180,8 +187,9 @@ let renderAbsorbancePeaks = data => {
     E.absorbance.data.value = tabular.toPlainText(data.identifiedPeaks);
 };
 
-fetch(`${DATA_LOCATION}/ir_spectrum.json`)
-    .then(response => response.json())
+fetch(`${DATA_LOCATION}/ir_spectrum.csv`)
+    .then(response => response.text())
+    .then(s => s.split(/\r?\n/).filter(Boolean).map(x => x.split(',').map(Number)))
     .then(analyzeTransmittance)
     .then(renderAnalyzedTransmittance)
     .then(pickConversionData)
