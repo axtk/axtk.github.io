@@ -2,6 +2,8 @@
 
 const DATA_LOCATION = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/x/assets/archive/spectra';
 
+const lineColor = '#48e';
+
 let E = layout.pickElements();
 let storage = {};
 
@@ -61,7 +63,7 @@ let renderAnalyzedTransmittance = data => {
         {
             data: data.transmittance.data,
             lines: { show: true, lineWidth: 1 },
-            points: { show: false }, color: '#69f'
+            points: { show: false }, color: lineColor
         },
         /*{
             data: data.transmittance.spline,
@@ -119,7 +121,7 @@ let renderAbsorbance = data => {
     $(E.absorbance.plot).plot([{
         data: data,
         lines: { show: true, lineWidth: 1 },
-        points: { show: false }, color: '#69f'
+        points: { show: false }, color: lineColor
     }]);
 
     E.converted.data.classList.remove('hidden');
@@ -174,7 +176,7 @@ let renderAbsorbancePeaks = data => {
         {
             data: data.absorbance,
             lines: { show: true, lineWidth: 1 },
-            points: { show: false }, color: '#69f'
+            points: { show: false }, color: lineColor
         },
         {
             data: data.peaks,

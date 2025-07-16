@@ -2,6 +2,8 @@
 
 const DATA_LOCATION = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/x/assets/archive/tmm';
 
+const lineColor = '#48e';
+
 let plot = {
     potential: document.querySelector('.plot[data-id="potential"]'),
     transmittance: document.querySelector('.plot[data-id="transmittance"]')
@@ -59,7 +61,7 @@ let renderPotential = data => {
         label: 'U(x) – Potential profile',
         lines: { show: true },
         points: { show: false },
-        color: '#c3f'
+        color: lineColor
     }]);
 
     return Promise.resolve(data);
@@ -74,7 +76,7 @@ let renderTransmittance = data => {
         label: 'T(E) – Transmittance',
         lines: { show: true },
         points: { show: false },
-        color: '#c3f'
+        color: lineColor
     }], { legend: { position: "se" } });
 
     return Promise.resolve(data);
