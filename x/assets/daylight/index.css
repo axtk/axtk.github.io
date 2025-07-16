@@ -149,7 +149,10 @@ form {
     box-sizing: border-box;
 }
 form > span {
-    margin: 0 .5em;
+    margin: 0 .25em;
+}
+form > span.field + span.field {
+    margin-left: .75em;
 }
 form .field {
     display: inline-block;
