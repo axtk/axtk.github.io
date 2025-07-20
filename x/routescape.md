@@ -25,6 +25,7 @@ Meanwhile, route-based rendering essentially falls under the category of conditi
 
 The ternary route-matching function, as simple as it is, can handle all three cases listed above in a single manner. Without imposing any specific route structure or hierarchy in advance, keeping routes decoupled from each other by default, since `withRoute()` can be used with any route pattern anywhere in the app's components. Which is an advantage, since routes and route-specific logic can be pretty arbitrary sometimes, breaking with a route hierarchy you might have designed.
 
+<a name="routing-example"></a>
 ```jsx
 import {useRoute} from 'routescape';
 
