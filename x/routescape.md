@@ -54,6 +54,8 @@ let App = () => {
 };
 ```
 
+This approach is also flexible enough to allow for stricter route typing, covered in the [routing type safety overview](/x/routescape_type_safety).
+
 ## Similarity to native APIs
 
 That's about simplicity, too. It might seem a minor thing, but similar APIs for similar things considerably reduce cognitive load, the effort of repeatedly consulting the docs and migrating from the native APIs.
