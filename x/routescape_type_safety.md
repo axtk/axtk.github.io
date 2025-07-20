@@ -8,9 +8,9 @@ tags:
     - webdev
 ---
 
-[Routescape](https://routescape.js.org) offers type-safe routing as an optional enhancement. It allows for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder and by enabling the same routing APIs to accept the values created by the URL builder with regard to the typing.
+[Routescape](https://routescape.js.org) offers type-safe routing as an optional enhancement. It allows for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder, such as the `url()` function below, and by enabling the same routing APIs to accept the values created by the URL builder with regard to the typing.
 
-Here's an example:
+Here's an example (based on the previous one from the [Routescape overview](/x/routescape#routing-example)):
 
 ```tsx
 import {A, useRoute} from 'routescape';
@@ -72,7 +72,7 @@ The URL schema (defined with Zod or Yup) is transparent and easy to follow, noth
 
 The ternary route matching function `withRoute(routePattern, x, y)` passes the route types provided by the `url()` function to its parameters. A type-aware code editor expects `params.id` in `<h1>Section {params.id}</h1>` to be a `number`, just as the URL schema suggests.
 
-Once we have covered the entire app with type-safe routes we might want to disallow plain `string` and `RegExp` URLs and URL patterns created outside the URL builder (the `url()` function) to enforce type-safe routing further on. This can be done by overriding the Routescape's type config:
+Although not a requirement, we might want to cover the entire app with type-safe routes. Once we've done that, we might want to disallow plain `string` and `RegExp` URLs and URL patterns created outside the URL builder (the `url()` function) to enforce type-safe routing further on. This can be done by overriding the Routescape's type config:
 
 ```ts
 declare module 'routescape' {
