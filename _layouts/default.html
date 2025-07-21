@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>{{page.title | strip_html}}</title>
     <link rel="stylesheet" href="assets/plain.css">{% if content contains "<pre" %}
-    <link rel="stylesheet" href="assets/code.lightbulb.css">{% endif %}
+    <link rel="stylesheet" href="assets/code.lovelace.css" media="screen and (prefers-color-scheme: light)">
+    <link rel="stylesheet" href="assets/code.lightbulb.css" media="screen and (prefers-color-scheme: dark)">{% endif %}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
