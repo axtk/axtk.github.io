@@ -10,21 +10,16 @@
 }
 html {
     --max-main-content-width: 680px;
+    --smaller-font-size: .85em;
     --layout-padding-x: 1.1rem;
     --layout-padding-y: .9rem;
     --abstract-padding: var(--layout-padding-x);
     --block-margin-y: 1em;
     --block-border-radius: 1em;
 
-    font: normal 120%/1.45 sans-serif;
+    font: normal 100%/1.5 sans-serif;
     color: color(from var(--color) srgb r g b / .9);
     background: var(--background);
-}
-@media (max-width: 600px) {
-    html {
-        font-size: 110%;
-        line-height: 1.4;
-    }
 }
 table,
 svg {
@@ -176,7 +171,7 @@ td {
     box-sizing: border-box;
 }
 th {
-    font-size: .75em;
+    font-size: var(--smaller-font-size);
     font-weight: bold;
 }
 tr:first-child td {
@@ -186,7 +181,7 @@ tr:first-child th {
     border-top: none;
     border-bottom-width: .12rem;
     padding-top: 0;
-    padding-bottom: .15rem;
+    padding-bottom: .2rem;
 }
 tbody {
     border-bottom: .12rem solid;
