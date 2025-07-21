@@ -10,7 +10,7 @@ tags:
 
 To figure out what a minimal shared state setup should look like, I'm starting off with a local state setup with React's `useState()`:
 
-```js
+```jsx
 let Counter = () => {
     let [count, setCount] = useState(0);
 
