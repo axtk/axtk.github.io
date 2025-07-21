@@ -60,9 +60,7 @@ h1 {
     font-weight: 900;
     font-size: 1.67em;
     line-height: 1.1;
-    border-bottom: .04em solid color(from var(--color) srgb r g b / .2);
-    padding: 0 0 .2em 0;
-    margin: 1.5em 0 .75em 0;
+    margin: 1.5em 0 .85em 0;
 }
 h2 {
     font-size: 1.3em;
