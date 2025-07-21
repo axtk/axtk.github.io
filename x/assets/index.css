@@ -90,6 +90,9 @@ main .intro h1:first-child {
     border-collapse: collapse;
     margin: .75em 0 0;
 }
+.intro table.contacts tbody {
+    border: none;
+}
 .intro table.contacts td {
     border: none;
     padding: .2em .5em .2em 0;

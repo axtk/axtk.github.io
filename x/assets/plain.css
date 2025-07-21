@@ -154,24 +154,42 @@ footer {
     opacity: .5;
 }
 table {
+    border: none;
     border-collapse: collapse;
     margin: 1.5em 0;
+}
+table + br {
+    display: none;
+}
+br + table {
+    margin-top: 2em;
 }
 th,
 td {
     line-height: 1.1;
     text-align: start;
     vertical-align: text-top;
-    border: 1px solid color(from var(--color) srgb r g b / .2);
-    padding: .5rem .75rem;
+    border: .03em solid;
+    border-left: none;
+    border-right: none;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
 }
 th {
     font-size: .75em;
-    font-style: italic;
     font-weight: bold;
-    background: color(from var(--color) srgb r g b / .07);
-    padding-top: .3rem;
-    padding-bottom: .3rem;
+}
+tr:first-child td {
+    border-top-width: .12rem;
+}
+tr:first-child th {
+    border-top: none;
+    border-bottom-width: .12rem;
+    padding-top: 0;
+    padding-bottom: .15rem;
+}
+tbody {
+    border-bottom: .12rem solid;
 }
 mark {
     background: var(--mark-background);
