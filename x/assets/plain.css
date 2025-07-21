@@ -58,8 +58,10 @@ main p.sep {
 h1 {
     font-family: "Arial Black", Gadget, sans-serif;
     font-weight: 900;
-    font-size: 1.67em;
+    font-size: 1.75em;
     line-height: 1.1;
+    border-bottom: .02em solid;
+    padding: 0 0 .15em;
     margin: 1.5em 0 .85em 0;
 }
 h2 {
