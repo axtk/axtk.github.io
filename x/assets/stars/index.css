@@ -161,7 +161,11 @@ footer {
     margin: 0;
 }
 #screenmenu li {
+    white-space: nowrap;
     border-bottom: .05em solid color(from var(--background) srgb r g b / .75);
+}
+#screenmenu.wide li {
+    white-space: normal;
 }
 #screenmenu button {
     display: block;

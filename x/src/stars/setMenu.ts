@@ -2,9 +2,11 @@ import type {Context} from './Context';
 import {getDimensions} from './getDimensions';
 import type {Star} from './Star';
 
+const maxWidth = 240;
+
 export function setMenu(x: number, y: number, stars: Star[], ctx: Context) {
     let {width, height} = getDimensions(ctx);
-    let menu = document.querySelector('#screenmenu');
+    let menu = document.querySelector<HTMLDivElement>('#screenmenu');
 
     if (!menu) {
         menu = document.createElement('div');
@@ -35,11 +37,21 @@ export function setMenu(x: number, y: number, stars: Star[], ctx: Context) {
     // });
 
     menu.innerHTML = '';
+    menu.style.width = '';
+
     menu.appendChild(list);
     // menu.appendChild(closeButton);
     menu.classList.remove('hidden');
 
     let {width: w, height: h} = menu.getBoundingClientRect();
+
+    if (w > maxWidth) {
+        menu.style.width = `${maxWidth}px`;
+        menu.classList.add('wide');
+        w = maxWidth;
+    }
+    else menu.classList.remove('wide');
+
     let menuX = Math.min(x + 4, width - w - 6);
     let menuY = Math.min(y + 4, height - h - 6);
 
