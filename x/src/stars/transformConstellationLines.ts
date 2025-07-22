@@ -4,7 +4,7 @@ function getStarMap(stars: Star[]) {
     let map: Record<string, [number, number]> = {};
 
     for (let star of stars) {
-        let key = star.name?.split(', ').at(-1) || `#${star.id}`;
+        let key = star.originalName?.split(', ').at(-1) || `#${star.id}`;
 
         map[key] = [star.ra, star.dec];
     }

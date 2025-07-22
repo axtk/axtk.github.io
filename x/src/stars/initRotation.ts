@@ -70,6 +70,8 @@ function setTouches(ctx: Context) {
         x = event.changedTouches[0].pageX;
         y = event.changedTouches[0].pageY;
         busy = false;
+
+        document.querySelector('#screenmenu')?.classList.add('hidden');
     });
 
     element.addEventListener('touchend', () => {

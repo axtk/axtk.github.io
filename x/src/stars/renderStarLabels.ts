@@ -1,29 +1,8 @@
-import {bayerDesignationMap, superscriptNumbers, ns} from './const';
+import {ns} from './const';
 import {getScreenPosition} from './getScreenPosition';
 import {getStarRadius} from './getStarRadius';
 import type {Context} from './Context';
 import type {Star} from './Star';
-
-function getScreenName(star: Star) {
-    if (!star.name)
-        return;
-
-    // 'Albireo, bet1 Cyg' -> 'bet1'
-    let fullKey = star.name?.split(', ').at(-1)?.split(' ')?.[0];
-    let matches = fullKey?.match(/^([^\d]+)(\d+)?$/);
-
-    if (!matches || matches.length < 2)
-        return;
-
-    let key = bayerDesignationMap[matches[1]] ?? matches[1] ?? '';
-
-    if (!key)
-        return;
-
-    let n = matches[2] ? superscriptNumbers[Number(matches[2])] ?? '' : '';
-
-    return `${key}${n}`;
-}
 
 export function renderStarLabels(ctx: Context) {
     let container = ctx.element.querySelector('g.star-labels')!;
@@ -31,16 +10,14 @@ export function renderStarLabels(ctx: Context) {
     let fragment: DocumentFragment | null = null;
 
     let star: Star;
-    let name: string | undefined;
     let element: SVGTextElement;
     let pos: [number, number, number] | null;
     let k = 0;
 
     for (let i = 0; i < ctx.stars.length; i++) {
         star = ctx.stars[i];
-        name = getScreenName(star);
 
-        if (!name)
+        if (!star.bayerKey || star.magnitude > 4)
             continue;
 
         pos = getScreenPosition(star.ra, star.dec, ctx);
@@ -64,7 +41,7 @@ export function renderStarLabels(ctx: Context) {
         element.setAttribute('y', (pos[1] + 2).toFixed(3));
         // to show fewer labels on smaller screens
         element.setAttribute('data-x', star.magnitude < 3 ? '1' : '0');
-        element.textContent = name;
+        element.textContent = star.bayerKey;
     }
 
     if (fragment)

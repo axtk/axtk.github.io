@@ -1,6 +1,7 @@
 import type {Context} from './Context';
 import {fromScreenPosition} from './fromScreenPosition';
 import {getScreenPosition} from './getScreenPosition';
+import {setMenu} from './setMenu';
 import type {Star} from './Star';
 
 const {abs} = Math;
@@ -41,7 +42,9 @@ export function initClicks(ctx: Context) {
 
         for (let star of matches) {
             console.log(`#${star.id}; ${star.name}`, star.magnitude);
-            window.sendEvent?.(['click star', String(star.name ?? `#${star.id}`)]);
+            window.sendEvent?.(['click star', star.name ?? `#${star.id}`]);
         }
+
+        setMenu(x, y, matches, ctx);
     });
 }

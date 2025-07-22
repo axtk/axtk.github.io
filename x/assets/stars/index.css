@@ -33,6 +33,7 @@ a:active {
 #screen {
     flex: auto;
     overflow: hidden;
+    position: relative;
 }
 #screen svg {
     font: inherit;
@@ -145,4 +146,37 @@ footer {
     padding: .2em .65em .3em .75em;
     right: 0;
     bottom: 0;
+}
+
+#screenmenu {
+    --x: 0px;
+    --y: 0px;
+
+    color: color(from var(--link-color) srgb r g b / .95);
+    background: color(from var(--link-color) srgb r g b / .25);
+    border: .05em solid color(from var(--link-color) srgb r g b / .5);
+    position: absolute;
+    z-index: 100;
+    left: var(--x);
+    top: var(--y);
+}
+#screenmenu ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#screenmenu li {
+    border-bottom: .05em solid color(from var(--link-color) srgb r g b / .25);
+    padding: .35em 1em .3em;
+}
+#screenmenu button {
+    display: block;
+    width: 100%;
+    color: inherit;
+    background: transparent;
+    border: none;
+    padding: .35em 1em .3em;
+    box-sizing: border-box;
+    cursor: pointer;
 }
