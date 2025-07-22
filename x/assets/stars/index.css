@@ -147,9 +147,8 @@ footer {
     --x: 0px;
     --y: 0px;
 
-    color: color(from var(--link-color) srgb r g b / .95);
-    background: color(from var(--link-color) srgb r g b / .25);
-    border: .05em solid color(from var(--link-color) srgb r g b / .5);
+    color: color(from var(--background) srgb r g b / .85);
+    background: color(from var(--link-color) srgb r g b / .95);
     position: absolute;
     z-index: 100;
     left: var(--x);
@@ -162,8 +161,7 @@ footer {
     margin: 0;
 }
 #screenmenu li {
-    border-bottom: .05em solid color(from var(--link-color) srgb r g b / .25);
-    padding: .35em 1em .3em;
+    border-bottom: .05em solid color(from var(--background) srgb r g b / .75);
 }
 #screenmenu button {
     display: block;
@@ -171,7 +169,11 @@ footer {
     color: inherit;
     background: transparent;
     border: none;
-    padding: .35em 1em .3em;
-    box-sizing: border-box;
     cursor: pointer;
+}
+#screenmenu li,
+#screenmenu button {
+    padding: .3em .5em .2em;
+    margin: 0;
+    box-sizing: border-box;
 }
