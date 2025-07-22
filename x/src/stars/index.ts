@@ -1,6 +1,7 @@
 import {fetchData} from './fetchData';
 import {initRotation} from './initRotation';
 import {initClicks} from './initClicks';
+import {hideMenu} from './hideMenu';
 import {render} from './render';
 import {renderForm} from './renderForm';
 import {setDimensions} from './setDimensions';
@@ -30,6 +31,7 @@ async function init() {
             cancelAnimationFrame(resizeRaf);
 
         resizeRaf = requestAnimationFrame(() => {
+            hideMenu();
             setDimensions(ctx);
             render(ctx);
         });

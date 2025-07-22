@@ -1,5 +1,6 @@
 import type {Context} from './Context';
 import {getDimensions} from './getDimensions';
+import {hideMenu} from './hideMenu';
 import {render} from './render';
 import {state} from './state';
 import {toBounds} from './toBounds';
@@ -70,8 +71,7 @@ function setTouches(ctx: Context) {
         x = event.changedTouches[0].pageX;
         y = event.changedTouches[0].pageY;
         busy = false;
-
-        document.querySelector('#screenmenu')?.classList.add('hidden');
+        hideMenu();
     });
 
     element.addEventListener('touchend', () => {
