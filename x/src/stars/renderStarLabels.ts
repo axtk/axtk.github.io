@@ -1,10 +1,14 @@
 import {ns} from './const';
+import {getDimensions} from './getDimensions';
 import {getScreenPosition} from './getScreenPosition';
 import {getStarRadius} from './getStarRadius';
 import type {Context} from './Context';
 import type {Star} from './Star';
 
 export function renderStarLabels(ctx: Context) {
+    let {r} = getDimensions(ctx);
+    let maxMagnitude = r < 640 ? 3 : 4;
+
     let container = ctx.element.querySelector('g.star-labels')!;
     let labels = Array.from(container.querySelectorAll('text'));
     let fragment: DocumentFragment | null = null;
@@ -17,7 +21,7 @@ export function renderStarLabels(ctx: Context) {
     for (let i = 0; i < ctx.stars.length; i++) {
         star = ctx.stars[i];
 
-        if (!star.bayerKey || star.magnitude > 4)
+        if (!star.bayerKey || star.magnitude > maxMagnitude)
             continue;
 
         pos = getScreenPosition(star.ra, star.dec, ctx);
@@ -39,8 +43,6 @@ export function renderStarLabels(ctx: Context) {
 
         element.setAttribute('x', (pos[0] + r + 2).toFixed(3));
         element.setAttribute('y', (pos[1] + 2).toFixed(3));
-        // to show fewer labels on smaller screens
-        element.setAttribute('data-x', star.magnitude < 3 ? '1' : '0');
         element.textContent = star.bayerKey;
     }
 

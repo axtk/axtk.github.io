@@ -86,11 +86,6 @@ html[data-mode="dark"] #screen .stars circle[data-spcl^="M"] {
     fill: currentColor;
     fill-opacity: .5;
 }
-@media (max-width: 500px) {
-    #screen .star-labels [data-x="0"] {
-        display: none;
-    }
-}
 #screen .constellation-labels {
     font-size: 1.3em;
     font-weight: bold;
