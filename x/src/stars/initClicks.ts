@@ -7,7 +7,7 @@ const {abs} = Math;
 const clickRadius = 5;
 
 function byMagnitude(star1: Star, star2: Star) {
-    return star1[2] - star2[2];
+    return star1.magnitude - star2.magnitude;
 }
 
 export function initClicks(ctx: Context) {
@@ -28,7 +28,7 @@ export function initClicks(ctx: Context) {
         let matches: Star[] = [];
 
         for (let star of ctx.stars) {
-            let starPos = getScreenPosition(star[0], star[1], ctx);
+            let starPos = getScreenPosition(star.ra, star.dec, ctx);
 
             if (starPos === null)
                 continue;
@@ -40,8 +40,8 @@ export function initClicks(ctx: Context) {
         matches.sort(byMagnitude);
 
         for (let star of matches) {
-            console.log(`#${star[3]}; ${star[5]}`, star[2]);
-            window.sendEvent?.(['click star', String(star[5] ?? `#${star[3]}`)]);
+            console.log(`#${star.id}; ${star.name}`, star.magnitude);
+            window.sendEvent?.(['click star', String(star.name ?? `#${star.id}`)]);
         }
     });
 }

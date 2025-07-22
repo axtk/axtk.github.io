@@ -5,11 +5,11 @@ import type {Context} from './Context';
 import type {Star} from './Star';
 
 function getScreenName(star: Star) {
-    if (!star[5])
+    if (!star.name)
         return;
 
     // 'Albireo, bet1 Cyg' -> 'bet1'
-    let fullKey = star[5].split(', ').at(-1)?.split(' ')?.[0];
+    let fullKey = star.name?.split(', ').at(-1)?.split(' ')?.[0];
     let matches = fullKey?.match(/^([^\d]+)(\d+)?$/);
 
     if (!matches || matches.length < 2)
@@ -43,7 +43,7 @@ export function renderStarLabels(ctx: Context) {
         if (!name)
             continue;
 
-        pos = getScreenPosition(star[0], star[1], ctx);
+        pos = getScreenPosition(star.ra, star.dec, ctx);
 
         if (pos === null)
             continue;
@@ -63,7 +63,7 @@ export function renderStarLabels(ctx: Context) {
         element.setAttribute('x', (pos[0] + r + 2).toFixed(3));
         element.setAttribute('y', (pos[1] + 2).toFixed(3));
         // to show fewer labels on smaller screens
-        element.setAttribute('data-x', star[2] < 3 ? '1' : '0');
+        element.setAttribute('data-x', star.magnitude < 3 ? '1' : '0');
         element.textContent = name;
     }
 

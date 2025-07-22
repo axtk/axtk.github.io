@@ -4,10 +4,10 @@ import type {Context} from './Context';
 import type {ConstellationLabel} from './ConstellationLabel';
 
 function getScreenName(item: ConstellationLabel, ctx: Context) {
-    if (!item[2])
+    if (!item.name)
         return;
 
-    return ctx.constellationNames[item[2]] ?? item[2];
+    return ctx.constellationNames[item.name] ?? item.name;
 }
 
 export function renderConstellationLabels(ctx: Context) {
@@ -25,10 +25,10 @@ export function renderConstellationLabels(ctx: Context) {
         item = ctx.constellationLabels[i];
         name = getScreenName(item, ctx);
 
-        if (!item[2] || !name)
+        if (!name)
             continue;
 
-        pos = getScreenPosition(item[0], item[1], ctx);
+        pos = getScreenPosition(item.ra, item.dec, ctx);
 
         if (pos === null)
             continue;

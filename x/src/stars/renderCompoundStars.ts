@@ -61,7 +61,7 @@ export function renderCompoundStars(ctx: Context) {
 
     for (let i = 0; i < ctx.stars.length; i++) {
         star = ctx.stars[i];
-        pos = getScreenPosition(star[0], star[1], ctx);
+        pos = getScreenPosition(star.ra, star.dec, ctx);
 
         if (pos === null)
             continue;
@@ -85,7 +85,7 @@ export function renderCompoundStars(ctx: Context) {
         element.setAttribute('y', (pos[1] - r).toFixed(3));
         element.setAttribute('width', size);
         element.setAttribute('height', size);
-        element.setAttribute('data-spcl', star[4]);
+        element.setAttribute('data-spcl', star.spectralClass);
     }
 
     if (fragment)

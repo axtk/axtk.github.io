@@ -24,7 +24,7 @@ export function renderStars(ctx: Context) {
 
     for (let i = 0; i < ctx.stars.length; i++) {
         star = ctx.stars[i];
-        pos = getScreenPosition(star[0], star[1], ctx);
+        pos = getScreenPosition(star.ra, star.dec, ctx);
 
         if (pos === null)
             continue;
@@ -42,7 +42,7 @@ export function renderStars(ctx: Context) {
         element.setAttribute('cx', pos[0].toFixed(3));
         element.setAttribute('cy', pos[1].toFixed(3));
         element.setAttribute('r', getStarRadius(star, ctx).toFixed(3));
-        element.setAttribute('data-spcl', star[4]);
+        element.setAttribute('data-spcl', star.spectralClass);
     }
 
     if (fragment)
