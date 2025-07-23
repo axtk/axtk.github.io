@@ -55,5 +55,6 @@ export function setMenu(x: number, y: number, stars: Star[], ctx: Context) {
     let menuX = Math.min(x + 4, width - w - 6);
     let menuY = Math.min(y + 4, height - h - 6);
 
-    menu.setAttribute('style', `--x: ${menuX}px; --y: ${menuY}px;`);
+    menu.style.setProperty('--x', `${menuX}px`);
+    menu.style.setProperty('--y', `${menuY}px`);
 }
