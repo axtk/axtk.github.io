@@ -1,11 +1,5 @@
 import {Star} from './Star';
-
-function stripQuotes(s: string | undefined) {
-    if (!s || !s.startsWith('"') || !s.endsWith('"'))
-        return s;
-
-    return s.slice(1, -1);
-}
+import {stripQuotes} from './stripQuotes';
 
 export function transformStars(data: string) {
     return data.trim().split(/\r?\n/).slice(1).map(line => {

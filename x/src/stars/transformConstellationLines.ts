@@ -13,34 +13,32 @@ function getStarMap(stars: Star[]) {
     return map;
 }
 
-export function transformConstellationLines(
-    rawConstellationLines: Record<string, string[][]>,
-    stars: Star[],
-) {
+export function transformConstellationLines(data: string, stars: Star[]) {
     let starMap = getStarMap(stars);
-    let constellationLines: [number, number][][] = [];
 
-    for (let [key, lineSet] of Object.entries(rawConstellationLines)) {
-        for (let line of lineSet) {
-            let mappedLine: [number, number][] = [];
+    return data.trim().split(/\r?\n/).map(line => {
+        let t = line.split(',');
+        let mappedLine: [number, number][] = [];
 
-            for (let item of line) {
-                let id: string | undefined = undefined;
+        let key = t[0];
+        let points = t[1].slice(1, -1).split(' ');
 
-                if (item.includes(' #') || item.startsWith('#'))
-                    id = item.split(' ').at(-1);
-                else if (!item.includes(' ') && key !== '_')
-                    id = `${toBayerKey(item)} ${key}`;
-                else id = toBayerKey(item);
+        for (let point of points) {
+            let id: string | undefined = undefined;
 
-                if (id && starMap[id])
-                    mappedLine.push(starMap[id]);
+            if (point.includes('='))
+                id = `#${point.split('=').at(-1)}`;
+            else if (point.includes('_')) {
+                let k = point.indexOf('_');
+
+                id = `${toBayerKey(point.slice(0, k))} ${point.slice(k + 1)}`;
             }
+            else id = `${toBayerKey(point)} ${key}`;
 
-            if (mappedLine.length !== 0)
-                constellationLines.push(mappedLine);
+            if (id && starMap[id])
+                mappedLine.push(starMap[id]);
         }
-    }
 
-    return constellationLines;
+        return mappedLine;
+    });
 }
