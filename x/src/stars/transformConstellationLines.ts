@@ -24,19 +24,25 @@ export function transformConstellationLines(data: string, stars: Star[]) {
         let points = t[1].slice(1, -1).split(' ');
 
         for (let point of points) {
-            let id: string | undefined = undefined;
+            let coords: [number, number] | null = null;
 
             if (point.includes('='))
-                id = `#${point.split('=').at(-1)}`;
-            else if (point.includes('_')) {
+                coords = starMap[`#${point.split('=').at(-1)}`];
+
+            if (coords) {
+                mappedLine.push(coords);
+                continue;
+            }
+
+            if (point.includes('_')) {
                 let k = point.indexOf('_');
 
-                id = `${toBayerKey(point.slice(0, k))} ${point.slice(k + 1)}`;
+                coords = starMap[`${toBayerKey(point.slice(0, k))} ${point.slice(k + 1)}`];
             }
-            else id = `${toBayerKey(point)} ${key}`;
+            else coords = starMap[`${toBayerKey(point)} ${key}`];
 
-            if (id && starMap[id])
-                mappedLine.push(starMap[id]);
+            if (coords)
+                mappedLine.push(coords);
         }
 
         return mappedLine;
