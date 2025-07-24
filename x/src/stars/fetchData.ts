@@ -1,7 +1,6 @@
 import {urlMap} from './const';
-import {Star} from './Star';
-import {type RawConstellationLabel, ConstellationLabel} from './ConstellationLabel';
 import {transformStars} from './transformStars';
+import {transformConstellationLabels} from './transformConstellationLabels';
 import {transformConstellationLines} from './transformConstellationLines';
 
 function fetchText(url: string) {
@@ -20,18 +19,18 @@ export async function fetchData() {
         rawConstellationLines,
     ] = await Promise.all([
         fetchText(urlMap.stars),
-        fetchJSON(urlMap.constellationLabels),
+        fetchText(urlMap.constellationLabels),
         fetchJSON(urlMap.constellationNames),
         fetchJSON(urlMap.constellationLines),
     ]) as [
         string,
-        RawConstellationLabel[],
+        string,
         Record<string, string>,
         Record<string, string[][]>,
     ];
 
     let stars = transformStars(rawStars);
-    let constellationLabels = rawConstellationLabels.map(data => new ConstellationLabel(data));
+    let constellationLabels = transformConstellationLabels(rawConstellationLabels);
     let constellationLines = transformConstellationLines(rawConstellationLines, stars);
 
     return {
