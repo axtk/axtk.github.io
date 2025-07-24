@@ -1,10 +1,10 @@
 import type {Context} from './Context';
 import {starColors} from './const';
 
-let colorsInited = false;
+let inited = false;
 
 export function renderStarColors(ctx: Context) {
-    if (ctx.mode !== 'dark' || colorsInited)
+    if (ctx.mode !== 'dark' || inited)
         return;
 
     let container = ctx.element.parentElement!;
@@ -32,5 +32,5 @@ export function renderStarColors(ctx: Context) {
     style.innerHTML = gradientStyleContent;
 
     container.prepend(style);
-    colorsInited = true;
+    inited = true;
 }
