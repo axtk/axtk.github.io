@@ -1,21 +1,13 @@
 import {ns} from './const';
 import {getScreenPosition} from './getScreenPosition';
 import {getStarRadius} from './getStarRadius';
-import {renderCompoundStars} from './renderCompoundStars';
 import type {Context} from './Context';
 import type {Star} from './Star';
 
 export function renderStars(ctx: Context) {
-    if (ctx.mode === 'fantasy')
-        return renderCompoundStars(ctx);
-
     let container = ctx.element.querySelector('g.stars')!;
     let starElements = Array.from(container.querySelectorAll('circle'));
     let fragment: DocumentFragment | null = null;
-
-    // clean up compound stars
-    for (let element of container.querySelectorAll('svg'))
-        element.remove();
 
     let star: Star;
     let element: SVGCircleElement;
