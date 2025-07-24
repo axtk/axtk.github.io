@@ -46,13 +46,9 @@ a:active {
     user-select: none;
 }
 #screen .stars circle {
-    color: currentColor;
     fill: currentColor;
     stroke: none;
     stroke-width: .75;
-}
-html[data-mode="dark"] #screen .stars circle {
-    fill: url(#spcl);
 }
 #screen .stars svg path {
     fill: none;

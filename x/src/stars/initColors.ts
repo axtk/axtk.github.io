@@ -10,18 +10,24 @@ export function initColors(ctx: Context) {
         return;
 
     let style = document.createElement('style');
-    let styleContent = '';
+    // let regularStyleContent = '';
+    let gradientStyleContent = '';
     let defsContent = '';
 
     for (let [key, color] of Object.entries(starColors)) {
-        styleContent += `html[data-mode="dark"] #screen .stars circle[data-spcl^="${key}"] ` +
-            `{ fill: url(#spcl_${key}); }\n`;
+        let starSelector = `html[data-mode="dark"] #screen .stars circle[data-spcl^="${key}"]`;
+
+        // regularStyleContent += `${starSelector}{fill:${color};}`;
+        gradientStyleContent += `${starSelector}{fill:url(#spcl_${key});}`;
+
         defsContent += `\n${spclDefContent}`
             .replace('id="spcl"', `id="spcl_${key}"`)
             .replaceAll('currentColor', color);
     }
 
     defs.innerHTML += defsContent;
-    style.innerHTML = styleContent;
+    // style.innerHTML = `${gradientStyleContent}@media(max-width:600px){${regularStyleContent}}`;
+    style.innerHTML = gradientStyleContent;
+
     container.prepend(style);
 }
