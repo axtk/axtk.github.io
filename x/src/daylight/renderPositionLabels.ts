@@ -16,7 +16,7 @@ function renderLabel(id: 'sun' | 'moon', ctx: Context) {
     label.querySelector('.alt .value')!.textContent = `${position[1].toFixed(1)}°`;
 
     if (id === 'moon') {
-        let phase = String(Math.round(ctx.tracks.moon.phase*100));
+        let phase = String(Math.round(ctx.tracks.moon.phase*100) % 100);
 
         label.querySelector('.ph .value')!.textContent =
             `${phase}%${phaseName[phase] ? ` · ${phaseName[phase]}` : ''}`;
