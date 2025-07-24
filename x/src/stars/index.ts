@@ -1,7 +1,6 @@
 import {fetchData} from './fetchData';
 import {initRotation} from './initRotation';
 import {initClicks} from './initClicks';
-import {initColors} from './initColors';
 import {hideMenu} from './hideMenu';
 import {render} from './render';
 import {renderForm} from './renderForm';
@@ -38,7 +37,6 @@ async function init() {
         });
     });
 
-    initColors(ctx);
     setDimensions(ctx);
     renderForm(ctx);
     render(ctx);
