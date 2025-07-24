@@ -42,6 +42,8 @@ async function init() {
     render(ctx);
     initRotation(ctx);
     initClicks(ctx);
+
+    window.sendEvent?.(['load mode', mode]);
 }
 
 init();
