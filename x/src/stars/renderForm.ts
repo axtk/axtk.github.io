@@ -12,14 +12,12 @@ export function renderForm(ctx: Context) {
         let target = event.target;
 
         if (target instanceof HTMLInputElement && target.name === 'mode') {
-            let prevMode = ctx.mode;
             let nextMode = target.value as Context['mode'];
 
             document.documentElement.dataset.mode = nextMode;
             ctx.mode = nextMode;
 
-            if (nextMode === 'fantasy' || prevMode === 'fantasy')
-                render(ctx);
+            render(ctx);
 
             state.write('mode', nextMode);
             window.sendEvent?.(['set mode', nextMode]);
