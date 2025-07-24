@@ -1,4 +1,4 @@
-import {renderColors} from './renderColors';
+import {renderStarColors} from './renderStarColors';
 import {renderGrid} from './renderGrid';
 import {renderStars} from './renderStars';
 import {renderStarLabels} from './renderStarLabels';
@@ -8,8 +8,8 @@ import {renderConstellationLines} from './renderConstellationLines';
 import type {Context} from './Context';
 
 export function render(ctx: Context) {
-    renderColors(ctx);
     renderGrid(ctx);
+    renderStarColors(ctx);
     renderStars(ctx);
     renderStarLabels(ctx);
     renderStarPatterns(ctx);

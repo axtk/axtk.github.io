@@ -3,7 +3,7 @@ import {starColors} from './const';
 
 let colorsInited = false;
 
-export function renderColors(ctx: Context) {
+export function renderStarColors(ctx: Context) {
     if (ctx.mode !== 'dark' || colorsInited)
         return;
 
