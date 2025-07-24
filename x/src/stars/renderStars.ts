@@ -42,7 +42,7 @@ export function renderStars(ctx: Context) {
         element.setAttribute('cx', pos[0].toFixed(3));
         element.setAttribute('cy', pos[1].toFixed(3));
         element.setAttribute('r', getStarRadius(star, ctx).toFixed(3));
-        element.setAttribute('data-spcl', star.spectralClass);
+        element.setAttribute('data-spcl', star.spectralClass ?? '');
     }
 
     if (fragment)

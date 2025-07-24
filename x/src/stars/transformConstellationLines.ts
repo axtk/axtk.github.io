@@ -1,10 +1,11 @@
 import type {Star} from './Star';
+import {toBayerKey} from './toBayerKey';
 
 function getStarMap(stars: Star[]) {
     let map: Record<string, [number, number]> = {};
 
     for (let star of stars) {
-        let key = star.originalName?.split(', ').at(-1) || `#${star.id}`;
+        let key = star.bayerName || `#${star.id}`;
 
         map[key] = [star.ra, star.dec];
     }
@@ -29,8 +30,8 @@ export function transformConstellationLines(
                 if (item.includes(' #') || item.startsWith('#'))
                     id = item.split(' ').at(-1);
                 else if (!item.includes(' ') && key !== '_')
-                    id = `${item} ${key}`;
-                else id = item;
+                    id = `${toBayerKey(item)} ${key}`;
+                else id = toBayerKey(item);
 
                 if (id && starMap[id])
                     mappedLine.push(starMap[id]);
