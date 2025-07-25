@@ -17,7 +17,7 @@ async function init() {
     let ctx: Context = {
         ...data,
         element,
-        tilt: state.read('tilt') ?? [-.12, 0],
+        tilt: state.read('tilt') ?? [1.2, 1.25], // [-.12, 0],
         mode,
     };
 
