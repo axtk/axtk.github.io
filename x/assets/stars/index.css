@@ -11,7 +11,7 @@ html {
 html[data-mode="dark"],
 html[data-mode="fantasy"] {
     --color: white;
-    --background: #161522;
+    --background: #0d0c15;
     --link-color: deepskyblue;
 }
 html,
@@ -57,7 +57,7 @@ a:active {
 #screen .grid path {
     stroke: currentColor;
     stroke-width: .5;
-    stroke-opacity: .08;
+    stroke-opacity: .09;
     fill: none;
 }
 #screen .star-labels {
@@ -72,7 +72,7 @@ a:active {
     text-anchor: middle;
     text-transform: uppercase;
     fill: currentColor;
-    fill-opacity: .15;
+    fill-opacity: .12;
 }
 #screen .hint-lines path {
     stroke: currentColor;
