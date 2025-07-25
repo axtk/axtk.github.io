@@ -6,7 +6,7 @@ export type Context = {
     stars: Star[];
     constellationLabels: ConstellationLabel[];
     constellationNames: Record<string, string>;
-    constellationLines: [number, number][][];
+    hintLines: [number, number][][];
     tilt: [number, number];
     mode: 'dark' | 'light' | 'fantasy';
 };

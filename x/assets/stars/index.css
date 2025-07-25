@@ -57,7 +57,7 @@ a:active {
 #screen .grid path {
     stroke: currentColor;
     stroke-width: .5;
-    stroke-opacity: .2;
+    stroke-opacity: .08;
     fill: none;
 }
 #screen .star-labels {
@@ -74,9 +74,10 @@ a:active {
     fill: currentColor;
     fill-opacity: .15;
 }
-#screen .constellation-lines path {
+#screen .hint-lines path {
     stroke: currentColor;
     stroke-width: .5;
+    stroke-dasharray: 3 2;
     stroke-opacity: .3;
     fill: none;
 }

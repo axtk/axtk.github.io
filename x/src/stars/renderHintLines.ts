@@ -2,8 +2,8 @@ import {ns} from './const';
 import {getScreenPosition} from './getScreenPosition';
 import type {Context} from './Context';
 
-export function renderConstellationLines(ctx: Context) {
-    let container = ctx.element.querySelector('g.constellation-lines')!;
+export function renderHintLines(ctx: Context) {
+    let container = ctx.element.querySelector('g.hint-lines')!;
     let paths = Array.from(container.querySelectorAll('path'));
     let fragment: DocumentFragment | null = null;
 
@@ -13,8 +13,8 @@ export function renderConstellationLines(ctx: Context) {
     let pos: [number, number, number] | null;
     let k = 0;
 
-    for (let i = 0; i < ctx.constellationLines.length; i++) {
-        line = ctx.constellationLines[i];
+    for (let i = 0; i < ctx.hintLines.length; i++) {
+        line = ctx.hintLines[i];
         d = '';
 
         for (let point of line) {

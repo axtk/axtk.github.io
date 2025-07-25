@@ -4,7 +4,7 @@ import {renderStars} from './renderStars';
 import {renderStarLabels} from './renderStarLabels';
 import {renderStarPatterns} from './renderStarPatterns';
 import {renderConstellationLabels} from './renderConstellationLabels';
-import {renderConstellationLines} from './renderConstellationLines';
+import {renderHintLines} from './renderHintLines';
 import type {Context} from './Context';
 
 export function render(ctx: Context) {
@@ -14,5 +14,5 @@ export function render(ctx: Context) {
     renderStarLabels(ctx);
     renderStarPatterns(ctx);
     renderConstellationLabels(ctx);
-    renderConstellationLines(ctx);
+    renderHintLines(ctx);
 }

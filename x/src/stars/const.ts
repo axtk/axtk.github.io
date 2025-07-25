@@ -4,7 +4,7 @@ export const urlMap = {
     stars: `${dataRoot}/stars_m6.csv`,
     constellationLabels: `${dataRoot}/constellation_labels.csv`,
     constellationNames: `${dataRoot}/constellation_names.csv`,
-    constellationLines: `${dataRoot}/constellation_lines.csv`,
+    hintLines: `${dataRoot}/hint_lines.csv`,
 };
 
 export const ns = 'http://www.w3.org/2000/svg';

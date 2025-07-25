@@ -18,18 +18,18 @@ export async function fetchData() {
         urlMap.stars,
         urlMap.constellationLabels,
         urlMap.constellationNames,
-        urlMap.constellationLines,
+        urlMap.hintLines,
     ].map(fetchText));
 
     let stars = transformStars(rawStars);
     let constellationLabels = transformConstellationLabels(rawConstellationLabels);
-    let constellationLines = transformConstellationLines(rawConstellationLines, stars);
+    let hintLines = transformConstellationLines(rawConstellationLines, stars);
     let constellationNames = transformMap(rawConstellationNames);
 
     return {
         stars,
         constellationLabels,
         constellationNames,
-        constellationLines,
+        hintLines,
     };
 }
