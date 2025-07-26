@@ -15,13 +15,15 @@ export function renderStarColors(ctx: Context) {
         return;
 
     let style = document.createElement('style');
+    let regularStyleContent = '';
     let gradientStyleContent = '';
     let defsContent = '';
 
     for (let [key, color] of Object.entries(starColors)) {
         let starSelector = `html[data-mode="dark"] #screen .stars circle[data-spcl^="${key}"]`;
 
-        gradientStyleContent += `${starSelector}{fill:url(#spcl_${key});}`;
+        regularStyleContent += `${starSelector}[r^="0."]{fill:${color};}`;
+        gradientStyleContent += `${starSelector}:not([r^="0."]){fill:url(#spcl_${key});}`;
 
         defsContent += `\n${spclDefContent}`
             .replace('id="spcl"', `id="spcl_${key}"`)
@@ -29,6 +31,7 @@ export function renderStarColors(ctx: Context) {
     }
 
     defs.innerHTML += defsContent;
+    style.innerHTML = regularStyleContent;
     style.innerHTML = gradientStyleContent;
 
     container.prepend(style);
