@@ -1,6 +1,6 @@
 {
 
-const DATA_LOCATION = 'assets/stars/v0/data';
+const DATA_LOCATION = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/x/assets/stars/v0/data';
 
 let astro = window.astro = window.astro || {};
 

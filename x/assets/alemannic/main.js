@@ -1,5 +1,7 @@
 "use strict";
 {
+const dataRoot = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/x/';
+
 let items = [];
 let refItems = [];
 
@@ -21,7 +23,7 @@ let refs = [
 ];
 
 function loadMarkers() {
-    return fetch('assets/alemannic/samples.json')
+    return fetch(`${dataRoot}assets/alemannic/samples.json`)
         .then(res => res.json())
         .then(({alemannic}) => {
             items = alemannic;
@@ -222,7 +224,7 @@ function loadPlaces() {
     return Promise
         .all(
             countryCodes.map(countryCode => {
-                return fetch(`assets/alemannic/places/${countryCode}.json`)
+                return fetch(`${dataRoot}assets/alemannic/places/${countryCode}.json`)
                     .then(res => res.json())
             }),
         )
