@@ -39,8 +39,8 @@ export function renderStarPatterns(ctx: Context) {
                 let y1 = 5 + r*sin(phi1);
                 let color = colors[floor(random()*colors.length)];
 
-                content += `<path d="M${x0} ${y0} A ${r} ${r} 0 1 0 ${x1} ${y1}" ` +
-                    `stroke="${color}" fill="none" ` +
+                content += `<path d="M${x0} ${y0} A ${r} ${r} 0 1 0 ${x1} ${y1}" class="p" ` +
+                    `stroke="${color}" ` +
                     `stroke-width="${(.75 + random()).toFixed(3)}" ` +
                     `stroke-opacity="${(.35 + .55*random()).toFixed(3)}"/>`;
             }
@@ -48,14 +48,14 @@ export function renderStarPatterns(ctx: Context) {
 
         let pattern = document.createElementNS(ns, 'pattern');
 
-        pattern.setAttribute('id', `s_${i}`);
+        pattern.setAttribute('id', `p_${i}`);
         pattern.setAttribute('viewBox', '0 0 10 10');
         pattern.setAttribute('width', '100%');
         pattern.setAttribute('height', '100%');
         pattern.innerHTML = content;
         fragment.append(pattern);
 
-        styleContent += `${starSelector}:nth-child(${n}n+${i}){fill:url(#s_${i});}`;
+        styleContent += `${starSelector}:nth-child(${n}n+${i}){fill:url(#p_${i});}`;
     }
 
     let style = document.createElement('style');

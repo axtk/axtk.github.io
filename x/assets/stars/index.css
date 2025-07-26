@@ -45,18 +45,18 @@ a:active {
     cursor: default;
     user-select: none;
 }
-#screen .stars circle {
+#screen .stars {
     fill: currentColor;
     stroke: none;
     stroke-width: .75;
 }
-#screen .stars svg path {
+#screen .p {
     fill: none;
     stroke-linecap: round;
 }
-#screen .grid path {
+#screen .grid {
     stroke: currentColor;
-    stroke-width: .5;
+    stroke-width: .55;
     stroke-opacity: .09;
     fill: none;
 }
@@ -74,7 +74,7 @@ a:active {
     fill: currentColor;
     fill-opacity: .12;
 }
-#screen .hint-lines path {
+#screen .hint-lines {
     stroke: currentColor;
     stroke-width: .5;
     stroke-dasharray: 3 2;
