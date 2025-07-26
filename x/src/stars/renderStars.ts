@@ -1,6 +1,7 @@
 import {ns} from './const';
 import {getScreenPosition} from './getScreenPosition';
 import {getStarRadius} from './getStarRadius';
+import {getStarOpacity} from './getStarOpacity';
 import type {Context} from './Context';
 import type {Star} from './Star';
 
@@ -33,7 +34,8 @@ export function renderStars(ctx: Context) {
 
         element.setAttribute('cx', pos[0].toFixed(3));
         element.setAttribute('cy', pos[1].toFixed(3));
-        element.setAttribute('r', getStarRadius(star, ctx).toFixed(3));
+        element.setAttribute('r', getStarRadius(star, ctx).toFixed(2));
+        element.setAttribute('fill-opacity', getStarOpacity(star, ctx).toFixed(2));
         element.setAttribute('data-spcl', star.spectralClass ?? '');
     }
 

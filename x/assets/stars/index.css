@@ -50,12 +50,6 @@ a:active {
     stroke: none;
     stroke-width: .75;
 }
-#screen .stars [r^="0."] {
-    fill-opacity: .5;
-}
-#screen .stars [r^="1."] {
-    fill-opacity: .75;
-}
 #screen .p {
     fill: none;
     stroke-linecap: round;
