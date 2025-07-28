@@ -2,8 +2,7 @@ const dataRoot = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/hea
 
 export const urlMap = {
     stars: `${dataRoot}/stars_m6.csv`,
-    constellationLabels: `${dataRoot}/constellation_labels.csv`,
-    constellationNames: `${dataRoot}/constellation_names.csv`,
+    constellations: `${dataRoot}/constellations.csv`,
     hintLines: `${dataRoot}/hint_lines.csv`,
 };
 
