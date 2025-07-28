@@ -3,7 +3,7 @@ const dataRoot = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/hea
 export const urlMap = {
     stars: `${dataRoot}/stars_m6.csv`,
     constellations: `${dataRoot}/constellations.csv`,
-    hintLines: `${dataRoot}/hint_lines.csv`,
+    hintLines: `${dataRoot}/constellation_lines.csv`,
 };
 
 export const ns = 'http://www.w3.org/2000/svg';
