@@ -1,7 +1,7 @@
 import {urlMap} from './const';
 import {transformStars} from './transformStars';
 import {transformConstellations} from './transformConstellations';
-import {transformConstellationLines} from './transformConstellationLines';
+import {transformHintLines} from './transformHintLines';
 
 async function fetchText(url: string) {
     return fetch(url).then(res => res.text());
@@ -11,7 +11,7 @@ export async function fetchData() {
     let [
         rawStars,
         rawConstellations,
-        rawConstellationLines,
+        rawHintLines,
     ] = await Promise.all([
         urlMap.stars,
         urlMap.constellations,
@@ -20,7 +20,7 @@ export async function fetchData() {
 
     let stars = transformStars(rawStars);
     let constellations = transformConstellations(rawConstellations);
-    let hintLines = transformConstellationLines(rawConstellationLines, stars);
+    let hintLines = transformHintLines(rawHintLines, stars);
 
     return {
         stars,

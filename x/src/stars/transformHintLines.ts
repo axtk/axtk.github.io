@@ -13,7 +13,7 @@ function getStarMap(stars: Star[]) {
     return map;
 }
 
-export function transformConstellationLines(data: string, stars: Star[]) {
+export function transformHintLines(data: string, stars: Star[]) {
     let starMap = getStarMap(stars);
 
     return data.trim().split(/\r?\n/).map(line => {
