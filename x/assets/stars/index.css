@@ -140,11 +140,24 @@ footer {
     padding: 0;
     margin: 0;
 }
-#screenmenu li {
-    white-space: nowrap;
-    border-bottom: .05em solid color(from var(--background) srgb r g b / .75);
+#screenmenu table {
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
 }
-#screenmenu.wide li {
+#screenmenu td {
+    padding: .3em .5em .2em;
+}
+#screenmenu td:not(:first-child) {
+    border-left: .05em solid color(from var(--background) srgb r g b / .25);
+}
+#screenmenu li,
+#screenmenu td {
+    white-space: nowrap;
+    border-bottom: .05em solid color(from var(--background) srgb r g b / .85);
+}
+#screenmenu.wide li,
+#screenmenu.wide td {
     white-space: normal;
 }
 #screenmenu button {
@@ -160,4 +173,12 @@ footer {
     padding: .3em .5em .2em;
     margin: 0;
     box-sizing: border-box;
+}
+#screenmenu .b {
+    text-align: right;
+}
+#screenmenu .x {
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
 }

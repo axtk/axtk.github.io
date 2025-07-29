@@ -1,14 +1,29 @@
 import type {Star} from './Star';
 
+function createCell(className: string, content: string | undefined) {
+    let cell = document.createElement('td');
+
+    cell.className = `${content ? '' : 'x '}${className}`;
+    cell.textContent = content || '•';
+
+    return cell;
+}
+
 export function getSelectionContent(stars: Star[]) {
     let content = document.createDocumentFragment();
-    let list = document.createElement('ul');
+    let list = document.createElement('table');
+    let hasProperNames = stars.some(({properName}) => Boolean(properName));
 
     for (let star of stars) {
-        let listItem = document.createElement('li');
+        let item = document.createElement('tr');
 
-        listItem.textContent = star.name ?? `#${star.id}`;
-        list.appendChild(listItem);
+        if (hasProperNames)
+            item.append(createCell('n', star.properName));
+
+        item.append(createCell('b', star.bayerName));
+        item.append(createCell('m', `${star.magnitude}ᵐ`));
+
+        list.append(item);
     }
 
     content.append(list);
