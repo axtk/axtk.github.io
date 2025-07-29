@@ -20,7 +20,7 @@ export class Star {
     id: string;
     spectralClass?: string;
     bayerKey?: string;
-    constellation?: string;
+    bayerName?: string;
     properName?: string;
 
     constructor({ra, dec, magnitude, id, spectralClass, bayerName, properName}: StarProps) {
@@ -32,20 +32,14 @@ export class Star {
         this.properName = properName;
 
         if (bayerName) {
-            [this.bayerKey, this.constellation] = bayerName.split(' ');
+            let [rawBayerKey, ...parts] = bayerName.split(' ');
+            let bayerKey = toBayerKey(rawBayerKey);
 
-            this.bayerKey = toBayerKey(this.bayerKey);
+            this.bayerKey = bayerKey;
+            this.bayerName = bayerKey
+                ? `${bayerKey}${parts.length === 0 ? '' : ` ${parts.join(' ')}`}`
+                : undefined;
         }
-    }
-
-    get bayerName() {
-        if (this.bayerKey === undefined)
-            return;
-
-        if (this.constellation === undefined)
-            return this.bayerKey;
-
-        return `${this.bayerKey} ${this.constellation}`;
     }
 
     get name() {
