@@ -1,7 +1,7 @@
 const dataRoot = 'https://raw.githubusercontent.com/axtk/axtk.github.io/refs/heads/main/x/assets/stars/data';
 
 export const urlMap = {
-    stars: `${dataRoot}/stars_m6_ppm.csv`,
+    stars: `${dataRoot}/stars_m6_bsc5.csv`,
     constellations: `${dataRoot}/constellations.csv`,
     hintLines: `${dataRoot}/constellation_lines.csv`,
 };

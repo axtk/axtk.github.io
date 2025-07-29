@@ -2,6 +2,7 @@ import type {Context} from './Context';
 import {starColors} from './const';
 
 let inited = false;
+let starSelector = 'html[data-mode="dark"] #screen .stars circle';
 
 export function renderStarColors(ctx: Context) {
     if (ctx.mode !== 'dark' || inited)
@@ -19,11 +20,13 @@ export function renderStarColors(ctx: Context) {
     let gradientStyleContent = '';
     let defsContent = '';
 
-    for (let [key, color] of Object.entries(starColors)) {
-        let starSelector = `html[data-mode="dark"] #screen .stars circle[data-spcl^="${key}"]`;
+    gradientStyleContent += `${starSelector}:not([r^="0."]){fill:url(#spcl);}`;
 
-        regularStyleContent += `${starSelector}[r^="0."]{fill:${color};}`;
-        gradientStyleContent += `${starSelector}:not([r^="0."]){fill:url(#spcl_${key});}`;
+    for (let [key, color] of Object.entries(starColors)) {
+        let coloredStarSelector = `${starSelector}[data-spcl^="${key}"]`;
+
+        regularStyleContent += `${coloredStarSelector}[r^="0."]{fill:${color};}`;
+        gradientStyleContent += `${coloredStarSelector}:not([r^="0."]){fill:url(#spcl_${key});}`;
 
         defsContent += `\n${spclDefContent}`
             .replace('id="spcl"', `id="spcl_${key}"`)
