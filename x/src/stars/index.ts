@@ -8,6 +8,12 @@ import {setDimensions} from './setDimensions';
 import {state} from './state';
 import type {Context} from './Context';
 
+const defaultTilt: [number, number] = [
+    // -.12, 0 // r .52 Ori
+    // 1.2, 1.25 // r .52 UMa Umi
+    1.7, 1.05 // r .65 UMa
+];
+
 async function init() {
     let element = document.querySelector<SVGElement>('#screen svg')!;
     let data = await fetchData();
@@ -17,7 +23,7 @@ async function init() {
     let ctx: Context = {
         ...data,
         element,
-        tilt: state.read('tilt') ?? [1.2, 1.25], // [-.12, 0],
+        tilt: state.read('tilt') ?? defaultTilt,
         mode,
     };
 
