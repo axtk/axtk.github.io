@@ -1,6 +1,7 @@
 import type {Context} from './Context';
 import {fromScreenPosition} from './fromScreenPosition';
 import {getScreenPosition} from './getScreenPosition';
+import {getSelectionContent} from './getSelectionContent';
 import {setMenu} from './setMenu';
 import type {Star} from './Star';
 
@@ -45,6 +46,6 @@ export function initClicks(ctx: Context) {
             window.sendEvent?.(['click star', star.name ?? `#${star.id}`]);
         }
 
-        setMenu(x, y, matches, ctx);
+        setMenu(x, y, getSelectionContent(matches), ctx);
     });
 }

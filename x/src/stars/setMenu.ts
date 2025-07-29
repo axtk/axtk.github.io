@@ -1,10 +1,9 @@
 import type {Context} from './Context';
 import {getDimensions} from './getDimensions';
-import type {Star} from './Star';
 
 const maxWidth = 240;
 
-export function setMenu(x: number, y: number, stars: Star[], ctx: Context) {
+export function setMenu(x: number, y: number, content: DocumentFragment, ctx: Context) {
     let {width, height} = getDimensions(ctx);
     let menu = document.querySelector<HTMLDivElement>('#screenmenu');
 
@@ -14,33 +13,15 @@ export function setMenu(x: number, y: number, stars: Star[], ctx: Context) {
         ctx.element.parentElement?.appendChild(menu);
     }
 
-    if (stars.length === 0) {
+    if (content.children.length === 0) {
         menu.classList.add('hidden');
         return;
     }
 
-    let list = document.createElement('ul');
-
-    for (let star of stars) {
-        let listItem = document.createElement('li');
-
-        listItem.textContent = star.name ?? `#${star.id}`;
-        list.appendChild(listItem);
-    }
-
-    // let closeButton = document.createElement('button');
-
-    // closeButton.textContent = '×';
-    // closeButton.setAttribute('aria-label', 'Close');
-    // closeButton.addEventListener('click', () => {
-    //     document.querySelector('#screenmenu')?.classList.add('hidden');
-    // });
-
     menu.innerHTML = '';
     menu.style.width = '';
 
-    menu.appendChild(list);
-    // menu.appendChild(closeButton);
+    menu.append(content);
     menu.classList.remove('hidden');
 
     let {width: w, height: h} = menu.getBoundingClientRect();
