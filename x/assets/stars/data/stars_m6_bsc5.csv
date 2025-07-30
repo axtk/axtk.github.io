@@ -1,4 +1,4 @@
-ra,dec,m,sp_cl,id,bayer_name,proper_name
+ra,dec,m,sp_cl,hd_id,bayer_name,proper_name
 1.76779309,-0.29175118,-1.46,A1,48915,alp CMa,Sirius
 1.67530519,-0.91971579,-0.72,F0,45348,alp Car,Canopus
 3.73352834,0.33479778,-0.04,K1.5,124897,alp Boo,Arcturus
