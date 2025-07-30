@@ -20,7 +20,7 @@ export function getSelectionContent(stars: Star[]) {
         if (hasProperNames)
             item.append(createCell('n', star.properName));
 
-        item.append(createCell('b', star.bayerName));
+        item.append(createCell('b', star.bayerName || `HD ${star.id}`));
         item.append(createCell('m', `${star.magnitude}ᵐ`));
 
         list.append(item);
