@@ -78,7 +78,7 @@ picture:empty::after {
     opacity: .3;
 }
 figcaption {
-    padding: 0 3rem;
+    padding: 0 2rem;
 }
 .intro {
     display: flex;
