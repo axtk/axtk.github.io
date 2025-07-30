@@ -37,6 +37,48 @@ li .description {
     font-size: var(--smaller-font-size);
     margin-top: .35em;
 }
+figure {
+    padding: 0;
+    margin: 1.5rem 0;
+}
+figure + figure {
+    margin-top: 3rem;
+}
+p + figure {
+    margin-top: 2rem;
+}
+picture {
+    display: block;
+    font-size: 0;
+    min-height: 320px;
+    background: color(from var(--color) srgb r g b / .05);
+    border-radius: .35rem;
+    box-shadow: 0 0 .3rem .05rem color(from var(--color) srgb r g b / .2);
+    padding: .35rem;
+    margin: 1.25rem 0;
+}
+picture img {
+    max-width: 100%;
+    height: auto;
+    border: .03rem solid color(from var(--color) srgb r g b / .2);
+}
+picture:empty {
+    position: relative;
+}
+picture:empty::after {
+    /* content: "¯\\_(ツ)_/¯"; */
+    content: "No preview yet";
+    font-size: 1.25rem;
+    font-family: monospace;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleY(.8);
+    opacity: .3;
+}
+figcaption {
+    padding: 0 3rem;
+}
 .intro {
     display: flex;
     align-items: center;
@@ -123,5 +165,11 @@ main .intro h1:first-child {
     }
     :not(li) > ul {
         padding-inline-start: 1.25em;
+    }
+    picture {
+        min-height: 200px;
+    }
+    figcaption {
+        padding: 0 1rem;
     }
 }
