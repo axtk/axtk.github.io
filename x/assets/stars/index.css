@@ -66,8 +66,9 @@ a:active {
     fill-opacity: .5;
 }
 #screen .constellation-labels {
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: bold;
+    font-style: italic;
     letter-spacing: .2em;
     text-anchor: middle;
     text-transform: uppercase;
