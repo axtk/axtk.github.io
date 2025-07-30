@@ -80,7 +80,7 @@ footer {
 }
 main .input,
 footer {
-    margin: 2rem auto;
+    margin: 1.5rem auto;
 }
 main .hints {
     margin: 0 auto;
@@ -118,8 +118,9 @@ main .input .hint i {
     font-size: 1.2em;
 }
 
-main .output .result {
+main .output p.result {
     line-height: 1.1;
+    margin: 0;
 }
 main .output .result strong {
     font-size: 2em;
@@ -131,7 +132,7 @@ main .output .result .uppercased {
     margin-top: 1em;
 }
 main .output .controls {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 main .output .controls a {
     margin: .5em;
