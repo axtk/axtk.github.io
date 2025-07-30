@@ -70,6 +70,7 @@ picture:empty::after {
     content: "No preview yet";
     font-size: 1.25rem;
     font-family: monospace;
+    text-transform: uppercase;
     position: absolute;
     left: 50%;
     top: 50%;
