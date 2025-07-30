@@ -1,8 +1,10 @@
 import type {Star} from './Star';
 import {toBayerKey} from './toBayerKey';
 
+type HintStar = [number, number, number];
+
 function getStarMap(stars: Star[]) {
-    let map: Record<string, [number, number, number]> = {};
+    let map: Record<string, HintStar> = {};
 
     for (let star of stars) {
         let key = star.bayerName || `#${star.id}`;
@@ -13,8 +15,36 @@ function getStarMap(stars: Star[]) {
     return map;
 }
 
-function byMagnitude(a: [number, number, number], b: [number, number, number]) {
+function byMagnitude(a: HintStar, b: HintStar) {
     return a[2] - b[2];
+}
+
+const numericSuffixes = [1, 2, 3];
+const letterSuffixes = ['A', 'B'];
+
+/** If there's no 'alp X', look for 'alp1 X' or 'alp2 X' or 'alp X A' */
+function getSimilarlyNamedStar(
+    rawBayerKey: string,
+    bayerNameTail: string,
+    starMap: Record<string, HintStar>,
+): HintStar | undefined {
+    let stars: HintStar[] = [];
+
+    for (let n of numericSuffixes) {
+        let star = starMap[`${toBayerKey(`${rawBayerKey}${n}`)} ${bayerNameTail}`];
+
+        if (star) stars.push(star);
+    }
+
+    let bayerKey = toBayerKey(rawBayerKey);
+
+    for (let s of letterSuffixes) {
+        let star = starMap[`${bayerKey} ${bayerNameTail} ${s}`];
+
+        if (star) stars.push(star);
+    }
+
+    return stars.sort(byMagnitude)[0];
 }
 
 export function transformHintLines(data: string, stars: Star[]) {
@@ -28,7 +58,7 @@ export function transformHintLines(data: string, stars: Star[]) {
         let points = t[1].slice(1, -1).split(' ');
 
         for (let point of points) {
-            let coords: [number, number, number] | null = null;
+            let coords: HintStar | null | undefined = null;
 
             if (point.includes('='))
                 coords = starMap[`#${point.split('=').at(-1)}`];
@@ -39,32 +69,24 @@ export function transformHintLines(data: string, stars: Star[]) {
             }
 
             let rawBayerKey = '';
-            let constellation = '';
+            let bayerNameTail = '';
 
             if (point.includes('_')) {
                 let k = point.indexOf('_');
 
                 rawBayerKey = point.slice(0, k);
-                constellation = point.slice(k + 1);
+                bayerNameTail = point.slice(k + 1).replace(/_/g, ' ');
             }
             else {
                 rawBayerKey = point;
-                constellation = key;
+                bayerNameTail = key;
             }
 
-            if (rawBayerKey && constellation) {
-                coords = starMap[`${toBayerKey(rawBayerKey)} ${constellation}`];
+            if (rawBayerKey && bayerNameTail) {
+                coords = starMap[`${toBayerKey(rawBayerKey)} ${bayerNameTail}`];
 
-                // if there's no 'alp X', look for 'alp1 X' or 'alp2 X'
-                if (!coords) {
-                    let coordsSet = [1, 2, 3]
-                        .map(n => starMap[`${toBayerKey(`${rawBayerKey}${n}`)} ${constellation}`])
-                        .filter(coords => coords !== undefined)
-                        .sort(byMagnitude);
-
-                    if (coordsSet.length !== 0)
-                        coords = coordsSet[0];
-                }
+                if (!coords)
+                    coords = getSimilarlyNamedStar(rawBayerKey, bayerNameTail, starMap);
             }
 
             if (coords)
