@@ -1,4 +1,5 @@
 import type {Star} from './Star';
+import {stripQuotes} from './stripQuotes';
 import {toBayerKey} from './toBayerKey';
 
 type HintStar = [number, number, number];
@@ -55,7 +56,7 @@ export function transformHintLines(data: string, stars: Star[]) {
         let mappedLine: [number, number][] = [];
 
         let key = t[0];
-        let points = t[1].slice(1, -1).split(' ');
+        let points = stripQuotes(t[1])!.split(' ');
 
         for (let point of points) {
             let coords: HintStar | null | undefined = null;
