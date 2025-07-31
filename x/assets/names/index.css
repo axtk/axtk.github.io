@@ -7,7 +7,7 @@
     --content-width: 32rem;
 }
 html {
-    font: normal 100%/1.3 sans-serif;
+    font: normal 100%/1.3 system-ui, sans-serif;
     color: var(--color);
     background: var(--background);
 }
