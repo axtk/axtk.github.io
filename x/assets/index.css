@@ -53,7 +53,7 @@ picture {
     min-height: 320px;
     background: color(from var(--color) srgb r g b / .12);
     border: .03rem solid color(from var(--color) srgb r g b / .2);
-    border-radius: .35rem;
+    border-radius: .5rem;
     /* border: .03rem solid color(from var(--color) srgb r g b / .2); */
     padding: .35rem;
     margin: 1.25rem 0;
