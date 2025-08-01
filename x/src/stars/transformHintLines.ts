@@ -2,22 +2,24 @@ import type {Star} from './Star';
 import {stripQuotes} from './stripQuotes';
 import {toBayerKey} from './toBayerKey';
 
-type HintStar = [number, number, number];
-
 function getStarMap(stars: Star[]) {
-    let map: Record<string, HintStar> = {};
+    let map: Record<string, Star> = {};
 
     for (let star of stars) {
         let key = star.bayerName || `#${star.id}`;
 
-        map[key] = [star.ra, star.dec, star.magnitude];
+        map[key] = star;
     }
 
     return map;
 }
 
-function byMagnitude(a: HintStar, b: HintStar) {
-    return a[2] - b[2];
+function toCoords(star: Star | undefined): [number, number] | null {
+    return star ? [star.ra, star.dec] : null;
+}
+
+function byMagnitude(a: Star, b: Star) {
+    return a.magnitude - b.magnitude;
 }
 
 const numericSuffixes = [1, 2, 3];
@@ -27,9 +29,9 @@ const letterSuffixes = ['A', 'B'];
 function getSimilarlyNamedStar(
     rawBayerKey: string,
     bayerNameTail: string,
-    starMap: Record<string, HintStar>,
-): HintStar | undefined {
-    let stars: HintStar[] = [];
+    starMap: Record<string, Star>,
+): Star | undefined {
+    let stars: Star[] = [];
 
     for (let n of numericSuffixes) {
         let star = starMap[`${toBayerKey(`${rawBayerKey}${n}`)} ${bayerNameTail}`];
@@ -59,13 +61,13 @@ export function transformHintLines(data: string, stars: Star[]) {
         let points = stripQuotes(t[1])!.split(' ');
 
         for (let point of points) {
-            let coords: HintStar | null | undefined = null;
+            let coords: [number, number] | null | undefined = null;
 
             if (point.includes('='))
-                coords = starMap[`#${point.split('=').at(-1)}`];
+                coords = toCoords(starMap[`#${point.split('=').at(-1)}`]);
 
             if (coords) {
-                mappedLine.push([coords[0], coords[1]]);
+                mappedLine.push(coords);
                 continue;
             }
 
@@ -84,14 +86,14 @@ export function transformHintLines(data: string, stars: Star[]) {
             }
 
             if (rawBayerKey && bayerNameTail) {
-                coords = starMap[`${toBayerKey(rawBayerKey)} ${bayerNameTail}`];
+                coords = toCoords(starMap[`${toBayerKey(rawBayerKey)} ${bayerNameTail}`]);
 
                 if (!coords)
-                    coords = getSimilarlyNamedStar(rawBayerKey, bayerNameTail, starMap);
+                    coords = toCoords(getSimilarlyNamedStar(rawBayerKey, bayerNameTail, starMap));
             }
 
             if (coords)
-                mappedLine.push([coords[0], coords[1]]);
+                mappedLine.push(coords);
         }
 
         return mappedLine;
