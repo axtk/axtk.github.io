@@ -30,9 +30,12 @@ export async function render(options: InputContext) {
         ...otherOptions
     } = options;
 
+    let urlParam = searchParams.get('url') || undefined;
+    let pathParam = searchParams.get('path') || searchParams.get('tag') || undefined;
+
     let ctx: Context = {
-        url: searchParams.get('url') || url,
-        path: searchParams.get('path') || searchParams.get('tag') || path,
+        url: urlParam || url,
+        path: urlParam ? pathParam : pathParam || path,
         index: searchParams.get('index')?.split(',').map(s => {
             return s.startsWith('https://') ? {url: s} : {path: s};
         }) || index,
