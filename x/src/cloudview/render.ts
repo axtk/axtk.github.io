@@ -4,29 +4,15 @@ import {getDisplayedDate} from './defaults/getDisplayedDate';
 import {renderItems} from './defaults/renderItems';
 import {renderNav} from './defaults/renderNav';
 import type {Context, InputContext} from './Context';
+import {events} from './events';
 import {fetchIndex} from './fetchIndex';
 import {fetchItems} from './fetchItems';
 import {fetchMetadata} from './fetchMetadata';
+import {updateURL} from './updateURL';
 import {i18n, lang} from './i18n';
 
 export async function render(options: InputContext) {
-    if (window.history) {
-        let {href, pathname, search, hash} = window.location;
-        let nextLocation = '';
-
-        if (/(\?#?|\??#)$/.test(href))
-            nextLocation = pathname;
-        else if (/\?#.+$/.test(href))
-            nextLocation = pathname + hash;
-
-        if (nextLocation)
-            window.history.pushState(null, '', nextLocation);
-
-        if (hash)
-            setTimeout(() => {
-                window.history.pushState(null, '', pathname + search);
-            }, 2000);
-    }
+    updateURL();
 
     let searchParams = new URLSearchParams(window.location.search);
 
@@ -88,4 +74,6 @@ export async function render(options: InputContext) {
 
     ctx.renderItems?.(ctx);
     ctx.renderNav?.(ctx);
+
+    events.dispatch('render');
 }

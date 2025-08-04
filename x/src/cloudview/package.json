@@ -6,6 +6,7 @@
   "author": "axtk",
   "type": "module",
   "dependencies": {
+    "evtm": "^4.2.4",
     "yd-sdk": "^1.1.22"
   }
 }
