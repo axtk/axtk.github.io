@@ -9,10 +9,12 @@ import {fetchIndex} from './fetchIndex';
 import {fetchItems} from './fetchItems';
 import {fetchMetadata} from './fetchMetadata';
 import {updateURL} from './updateURL';
+import {setHotkeys} from './setHotkeys';
 import {i18n, lang} from './i18n';
 
 export async function render(options: InputContext) {
     updateURL();
+    setHotkeys();
 
     let searchParams = new URLSearchParams(window.location.search);
 
