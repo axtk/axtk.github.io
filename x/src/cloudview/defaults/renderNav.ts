@@ -53,12 +53,12 @@ export function renderNav(ctx: Context) {
         if (startIndex !== undefined && pageSize && total !== undefined) {
             let maxStartIndex = (Math.ceil(total/pageSize) - 1)*pageSize;
 
-            setParam('start', 's', startIndex === 0 ? undefined : 0);
-            setParam('prev', 's', startIndex === 0 ? undefined : startIndex - pageSize);
-            setParam('next', 's', startIndex < maxStartIndex
+            setParam('start', 'start', startIndex === 0 ? undefined : 0);
+            setParam('prev', 'start', startIndex === 0 ? undefined : startIndex - pageSize);
+            setParam('next', 'start', startIndex < maxStartIndex
                 ? Math.min(startIndex + pageSize, maxStartIndex)
                 : undefined);
-            setParam('end', 's', startIndex < maxStartIndex ? maxStartIndex : undefined);
+            setParam('end', 'start', startIndex < maxStartIndex ? maxStartIndex : undefined);
         }
     }
 
@@ -76,7 +76,7 @@ export function renderNav(ctx: Context) {
             setParam('prev', 'k', fileIndex === 0 ? undefined : fileIndex - 1);
             setParam('next', 'k', fileIndex + 1);
 
-            let query = `?${s > 0 ? `${getDefaultQuery('&')}s=${s}` : getDefaultQuery()}`;
+            let query = `?${s > 0 ? `${getDefaultQuery('&')}start=${s}` : getDefaultQuery()}`;
             let hash = `#${ctx.items?.[0]?.id ?? ''}`;
 
             setLink('quit', `${query}${hash}`);

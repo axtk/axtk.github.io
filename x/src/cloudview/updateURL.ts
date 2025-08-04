@@ -30,8 +30,8 @@ function setNameParam() {
         let name = document.querySelector<HTMLElement>('figure[data-name]')?.dataset.name;
         let {href, searchParams} = new URL(window.location.href);
 
-        if (window.history && name && searchParams.get('n') !== name)
-            window.history.replaceState({}, '', `${href}&n=${encodeURIComponent(name)}`);
+        if (window.history && name && searchParams.get('name') !== name)
+            window.history.replaceState({}, '', `${href}&name=${encodeURIComponent(name)}`);
     });
 }
 

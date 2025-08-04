@@ -36,7 +36,7 @@ export function renderItems(ctx: Context) {
         let displayedDate = ctx.getDisplayedDate?.(item, ctx);
         let description = ctx.getDescription?.(item, ctx);
         let fullViewURL = `?${getDefaultQuery('&')}k=${encodeURIComponent(item.index ?? '')}` +
-            `&n=${encodeURIComponent(item.name ?? '')}`;
+            `&name=${encodeURIComponent(item.name ?? '')}`;
 
         if (item.id)
             element.id = item.id;

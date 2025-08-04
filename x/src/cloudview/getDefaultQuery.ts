@@ -1,19 +1,14 @@
+const keys = ['url', 'path', 'tag', 'index'];
+
 export function getDefaultQuery(postfix?: '&') {
     let params = new URLSearchParams(window.location.search);
     let nextParams = new URLSearchParams();
 
-    let u = params.get('u');
-    let i = params.get('i');
-    let t = params.get('t');
+    for (let key of keys) {
+        let value = params.get(key);
 
-    if (u)
-        nextParams.set('u', u);
-
-    if (i)
-        nextParams.set('i', i);
-
-    if (t)
-        nextParams.set('t', t);
+        if (value) nextParams.set(key, value);
+    }
 
     let query = nextParams.toString();
 

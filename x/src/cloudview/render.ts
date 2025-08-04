@@ -18,9 +18,9 @@ export async function render(options: InputContext) {
 
     let searchParams = new URLSearchParams(window.location.search);
 
-    let s = searchParams.get('s')?.trim();
+    let startIndex = searchParams.get('start')?.trim();
     let k = searchParams.get('k')?.trim();
-    let n = searchParams.get('n')?.trim();
+    let name = searchParams.get('name')?.trim();
 
     let {
         url,
@@ -31,16 +31,16 @@ export async function render(options: InputContext) {
     } = options;
 
     let ctx: Context = {
-        url: searchParams.get('u') || url,
-        path: searchParams.get('t') || path,
-        index: searchParams.get('i')?.split(',').map(s => {
+        url: searchParams.get('url') || url,
+        path: searchParams.get('path') || searchParams.get('tag') || path,
+        index: searchParams.get('index')?.split(',').map(s => {
             return s.startsWith('https://') ? {url: s} : {path: s};
         }) || index,
         sort: '-exif.date_time' as Sort,
         pageSize: pageSize ?? 60,
-        startIndex: (s && parseInt(s, 10)) || 0,
+        startIndex: (startIndex && parseInt(startIndex, 10)) || 0,
         fileIndex: k ? parseInt(k, 10) : undefined,
-        fileName: n || undefined,
+        fileName: name || undefined,
         mode: document.documentElement.classList.contains('standalone')
             ? 'standalone'
             : 'list',
