@@ -27,15 +27,9 @@ ul {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-li {
-    line-height: 1.2;
-    margin-top: .5em;
-    margin-bottom: .5em;
-}
 li .description {
     display: block;
     font-size: var(--smaller-font-size);
-    margin-top: .35em;
 }
 figure {
     padding: 0;

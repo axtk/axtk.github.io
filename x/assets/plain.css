@@ -33,10 +33,14 @@ p, ul, ol, pre, details {
     margin-top: var(--block-margin-y);
     margin-bottom: var(--block-margin-y);
 }
-ul ul,
-li {
-    margin-top: .25em;
-    margin-bottom: .25em;
+li,
+li ul {
+    margin-top: .35em;
+    margin-bottom: .35em;
+}
+ul {
+    padding-inline-start: 1.75em;
+    padding-inline-end: 0;
 }
 hr {
     width: 100%;
