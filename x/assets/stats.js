@@ -1,3 +1,7 @@
+"use strict";
+{
+let ymId = +document.querySelector('script[data-ymid]')?.dataset.ymid || 102234416;
+
 if (window.location.protocol === "https:") {
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
@@ -11,7 +15,7 @@ else {
     };
 }
 
-ym(102234416, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true});
+ym(ymId, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true});
 
 window.sendParams = function(key, value) {
     let keys = Array.isArray(key) ? key : String(key).split(".");
@@ -19,7 +23,7 @@ window.sendParams = function(key, value) {
     for (let k of keys) p[k] = (p = {});
     if (lastKey) p[lastKey] = value;
     // https://yandex.com/support/metrica/data/visit-params-data.html
-    ym(102234416, "params", params);
+    ym(ymId, "params", params);
 };
 
 window.sendEvent = function(key, prefix) {
@@ -27,3 +31,4 @@ window.sendEvent = function(key, prefix) {
     let lastKey = keys.pop();
     window.sendParams([prefix || window.location.pathname, ...keys], lastKey);
 };
+}
