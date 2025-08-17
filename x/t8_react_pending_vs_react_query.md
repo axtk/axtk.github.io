@@ -1,5 +1,5 @@
 ---
-title: "Setting up loading state in React: Transient State vs TanStack React Query"
+title: "Setting up loading state in React: T8 React Pending vs TanStack React Query"
 date: 2025-05-06
 updated: 2025-05-21
 tags:
@@ -9,9 +9,9 @@ tags:
     - webdev
 ---
 
-*[Foreword](/x/transient_state)*
+Let's see what it takes to add the loading state tracking for an async action with TanStack React Query and T8 React Pending.
 
-Let's see what it takes to add the loading state tracking for an async action with TanStack React Query and Transient State.
+*[Foreword](/x/t8_react_pending)*
 
 ## Example 1
 
@@ -58,14 +58,14 @@ In order to introduce the async action tracking with React Query, we've changed 
 
 The data fetched in `<ItemList>` has moved from the component's (or app's) state to React Query, and should be manipulated with its hooks further on. Moving the app's state (or a part of it) to React Query might potentially affect other components interacting with it.
 
-### With Transient State
+### With React Pending
 
 ```diff
-+ import {useTransientState} from 'transient-state';
++ import {usePendingState} from '@t8/react-pending';
 
   const ItemList = () => {
       const [items, setItems] = useState([]);
-+     const [state, withState] = useTransientState('item-list');
++     const [state, withState] = usePendingState('item-list');
 
       useEffect(() => {
 -         fetchItems().then(setItems);
@@ -82,13 +82,13 @@ The data fetched in `<ItemList>` has moved from the component's (or app's) state
   };
 
   const Status = () => {
-+     const [state] = useTransientState('item-list');
++     const [state] = usePendingState('item-list');
 +
 +     return state.complete ? 'Done' : 'Busy';
   };
 ```
 
-The async action state tracking with Transient State doesn't alter the structure of the code and doesn't affect the app's state, which means there's no need for major refactors to set it up.
+The async action state tracking with React Pending doesn't alter the structure of the code and doesn't affect the app's state, which means there's no need for major refactors to set it up.
 
 ## Example 2
 
@@ -130,14 +130,14 @@ As in the Example 1, we refactored the entire component's setup, but in a somewh
 
 As a side note, it's also worth mentioning that the React Query's core features (like caching) are unavailable when an async action has to be run conditionally (e.g. in response to a user action, by using `refetch()` returned from `useQuery()`, as shown in the example above)<sup>[[4](https://tanstack.com/query/latest/docs/framework/react/guides/disabling-queries), [5](https://github.com/TanStack/query/discussions/5820#discussioncomment-9016843)]</sup>, which is a common scenario. This might obscure the point of introducing React Query.
 
-### With Transient State
+### With React Pending
 
 ```diff
-+ import {useTransientState} from 'transient-state';
++ import {usePendingState} from '@t8/react-pending';
 
   const ItemList = () => {
       const [items, setItems] = useState(initialItems);
-+     const [state, withState] = useTransientState('item-list');
++     const [state, withState] = usePendingState('item-list');
 
       const loadItems = useCallback(() => {
 -         fetchItems().then(setItems);
@@ -157,10 +157,10 @@ As a side note, it's also worth mentioning that the React Query's core features 
   };
 ```
 
-The introduced changes are exactly the same as in the Example 1. And again the changes affected the code only tangentially. The Transient State setup is largely decoupled from the code it handles, which reduces cognitive load and makes the async action state tracking more transparent and maintainable.
+The introduced changes are exactly the same as in the Example 1. And again the changes affected the code only tangentially. The React Pending setup is largely decoupled from the code it handles, which reduces cognitive load and makes the async action state tracking more transparent and maintainable.
 
 ## Summary
 
 TanStack React Query offers a way to track async actions' state as part of its feature set. As we saw above, the adoption of React Query requires careful context-dependent refactors. It also takes over the app's shared state (or a part of it), affecting the way components interact with the app's state.
 
-When introducing a complex data fetching lib feels like an overkill, Transient State, as a small single-purpose lib, can offer a neat, minimalist way to set up the async action state tracking, either local or shared, without affecting the app's state.
+When introducing a complex data fetching lib feels like an overkill, T8 React Pending, as a small single-purpose lib, can offer a neat, minimalist way to set up the async action state tracking, either local or shared, without affecting the app's state.

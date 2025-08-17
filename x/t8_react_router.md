@@ -9,13 +9,13 @@ tags:
     - webdev
 ---
 
-Here's the story why I bothered to create [Routescape](https://github.com/axtk/routescape), a React router to my liking.
+Here's the story why I bothered to create [`@t8/react-router`](https://github.com/t8dev/react-router), a React router to my liking.
 
 I want simplicity:
 
 ## Single route matching format for everything
 
-There are often several uninterchangeable ways to match a route pattern against the current location within a single router lib:
+From what I've seen, there are often several uninterchangeable ways to match a route pattern against the current location within a single router lib:
 
 - declarative for components: with a component like `<Route>`, a config, or a certain file structure;
 - imperative for props and other values: with a utility hook like `useMatch()` or `useMatchRoute()`;
@@ -26,8 +26,9 @@ Meanwhile, route-based rendering essentially falls under the category of conditi
 The ternary route-matching function, as simple as it is, can handle all three cases listed above in a single manner. Without imposing any specific route structure or hierarchy in advance, keeping routes decoupled from each other by default, since `withRoute()` can be used with any route pattern anywhere in the app's components. Which is an advantage, since routes and route-specific logic can be pretty arbitrary sometimes, breaking with a route hierarchy you might have designed.
 
 <a name="routing-example"></a>
+
 ```jsx
-import {useRoute} from 'routescape';
+import {useRoute} from '@t8/react-router';
 
 let App = () => {
     let {route, withRoute} = useRoute();
@@ -54,16 +55,16 @@ let App = () => {
 };
 ```
 
-This approach is also flexible enough to allow for stricter route typing, covered in the [routing type safety overview](/x/routescape_type_safety).
+The [routing type safety overview](/x/t8_react_router_type_safety) also covers how this approach allows for seamless and gradual adoption of stricter route typing.
 
 ## Similarity to native APIs
 
 That's about simplicity, too. It might seem a minor thing, but similar APIs for similar things considerably reduce cognitive load, the effort of repeatedly consulting the docs and migrating from the native APIs.
 
-All web devs are already familiar with `<a href="/x">` and `window.location`. So, instead of introducing a unique `<Link to={...}>` and `navigate(...)`, Routescape sticks to the familiar APIs and carries them over to SPA navigation:
+All web devs are already familiar with `<a href="/x">` and `window.location`. So, instead of introducing a unique `<Link to={...}>` and `navigate(...)`, `@t8/react-router` sticks to the familiar APIs and carries them over to SPA navigation:
 
 ```diff
-+ import {A, useRoute} from 'routescape';
++ import {A, useRoute} from '@t8/react-router';
 
   let UserNav = ({signedIn}) => {
 +     let {route} = useRoute();
@@ -85,10 +86,10 @@ All web devs are already familiar with `<a href="/x">` and `window.location`. So
 
 ## Straightforward routing middleware
 
-To cover the common app's needs, Routescape offers two middleware hooks `useNavigationStart()` and `useNavigationComplete()` to define actions to be done before and after the route navigation occurs:
+To cover the common app's needs, `@t8/react-router` offers two middleware hooks `useNavigationStart()` and `useNavigationComplete()` to define actions to be done before and after the route navigation occurs:
 
 ```jsx
-import {useNavigationComplete, useNavigationStart} from 'routescape';
+import {useNavigationComplete, useNavigationStart} from '@t8/react-router';
 
 function setTitle(href) {
     if (href === '/intro')
@@ -114,15 +115,15 @@ let App = () => {
 
 ## Straightforward SSR
 
-For server-side rendering (SSR) or tests (without a global URL location object), the Routescape's `<Router location={url}>` component can be used as a React Context provider defining the current URL location for nested components. It can be used in the client-side code too, but it won't be necessary most of the times, if the app is OK with the URL provided by `window.location`.
+For server-side rendering (SSR) or tests (without a global URL location object), the `<Router location={url}>` component from `@t8/react-router` can be used as a React Context provider defining the current URL location for nested components. It can be used in the client-side code too, but it won't be necessary most of the times, if the app is OK with the URL provided by `window.location`.
 
 ## Straightforward lazy routes
 
-The most direct way to set up lazy routing (that is loading the route content on demand) is a combination of route matching + React's code splitting (with `React.lazy()`, `<Suspense>`, and a code-splitting build tool). Routescape's route matching fits just fine.
+The most direct way to set up lazy routing (that is loading the route content on demand) is a combination of route matching + React's code splitting (with `React.lazy()`, `<Suspense>`, and a code-splitting build tool). `@t8/react-router` fits just fine.
 
 ```diff
 + import {Suspense} from 'react';
-  import {useRoute} from 'routescape';
+  import {useRoute} from '@t8/react-router';
 - import {Projects} from './Projects';
 + import {Projects} from './Projects.lazy';
 
@@ -152,11 +153,11 @@ The most direct way to set up lazy routing (that is loading the route content on
 
 ## Converting HTML links to SPA route links
 
-Sometimes a React app has to deal with static HTML content (e.g. fetched from the server) that can contain plain HTML links. It can be desirable to turn them to SPA route links. Since these links are not part of JSX, the route link component can't be easily used there. In this case, the Routescape's `useRouteLinks()` hook can be helpful:
+Sometimes a React app has to deal with static HTML content (e.g. fetched from the server) that can contain plain HTML links. It can be desirable to turn them to SPA route links. Since these links are not part of JSX, the route link component can't be easily used there. In this case, the `useRouteLinks()` hook can be helpful:
 
 ```jsx
 import {useRef} from 'react';
-import {useRouteLinks} from 'routescape';
+import {useRouteLinks} from '@t8/react-router';
 
 let Content = ({value}) => {
     let containerRef = useRef(null);
@@ -173,9 +174,9 @@ let Content = ({value}) => {
 
 ~
 
-These features make up the point of Routescape. It's simple and lightweight, and specifically created to manage routing in a React app in a straightforward manner.
+These features make up the point of `@t8/react-router`. It's simple and lightweight, and specifically created to manage routing in a React app in a straightforward manner.
 
 ## Related
 
-- [Type-safe routing with Routescape](/x/routescape_type_safety)
-- [Type-safe URL parameters in Routescape](/x/routescape_typed_URL_parameters)
+- [Type-safe routing with T8 React Router](/x/t8_react_router_type_safety)
+- [Type-safe URL parameters in T8 React Router](/x/t8_react_router_typed_URL_parameters)

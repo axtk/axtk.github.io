@@ -1,5 +1,5 @@
 ---
-title: Type-safe URL parameters in Routescape
+title: Type-safe URL parameters in T8 React Router
 date: 2025-06-23
 tags:
     - react
@@ -8,12 +8,12 @@ tags:
     - webdev
 ---
 
-URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [Routescape](https://routescape.js.org)'s `useRouteState()` hook.
+URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [`@t8/react-router`](https://github.com/t8dev/react-router)'s `useRouteState()` hook.
 
-The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](/x/routescape_type_safety).)
+The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](/x/t8_react_router_type_safety).)
 
 ```ts
-import {A, useRouteState} from 'routescape';
+import {A, useRouteState} from '@t8/react-router';
 import {createURLSchema} from 'url-shape';
 import {z} from 'zod';
 
@@ -73,13 +73,13 @@ export const ShapeSection = () => {
 };
 ```
 
-[Live demo](https://codesandbox.io/p/sandbox/tqdqln?file=%2Fsrc%2FShapeSection.tsx)
+[Live demo](https://codesandbox.io/p/sandbox/qnd87w?file=%2Fsrc%2FShapeSection.tsx)
 
-This example shows how Routescape's `useRouteState()` follows the familiar pattern of React's `useState()`: both return a tuple of `[state, setState]`, with `setState()` accepting either a fixed state value or an updater function. (Which also allows for quick migration from local state to URL state, if need be.)
+This example shows how the `useRouteState()` hook follows the familiar pattern of React's `useState()`: both return a tuple of `[state, setState]`, with `setState()` accepting either a fixed state value or an updater function. (Which also allows for quick migration from local state to URL state, if need be.)
 
 `useRouteState()` can be used with an untyped fixed `string` route, skipping the schema definition part and assuming general types of URL parameters. With a type-safe URL builder like the `url()` function in the example above we're getting a more refined, typed URL state.
 
 ## Related
 
-- [Type-safe routing with Routescape](/x/routescape_type_safety)
-- [A React router to my liking](/x/routescape)
+- [Type-safe routing with T8 React Router](/x/t8_react_router_type_safety)
+- [A React router to my liking](/x/t8_react_router)
