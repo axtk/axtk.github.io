@@ -74,4 +74,4 @@ Now, calling `setCount()` updates the store state value, which is visible to all
 
 With the store as a single intermediary, we've got a minimal shared state setup. Its close similarity to the local state setup with React's `useState()` makes it already familiar to React developers and streamlines the common task of migration from local state to shared state.
 
-Based on this approach and its minimalist spirit, I created [`@t8/react-store`](https://github.com/t8dev/react-store). Its description covers its common use cases including a single-store and multistore setup (both being perfectly legit), filtering store state updates, and some live examples.
+Based on this approach and its minimalist spirit, I created [`@t8/react-store`](https://github.com/t8dash/react-store). Its description covers its common use cases including a single-store and multistore setup (both being perfectly legit), filtering store state updates, and some live examples.

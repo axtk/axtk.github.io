@@ -8,7 +8,7 @@ tags:
     - webdev
 ---
 
-URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [`@t8/react-router`](https://github.com/t8dev/react-router)'s `useRouteState()` hook.
+URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [`@t8/react-router`](https://github.com/t8dash/react-router)'s `useRouteState()` hook.
 
 The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](/x/t8_react_router_type_safety).)
 
