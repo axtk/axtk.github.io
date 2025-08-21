@@ -140,6 +140,9 @@ main .intro h1:first-child {
 .intro table.contacts td:first-child {
     text-align: right;
 }
+.intro table.contacts .sep {
+    margin: 0 .15em;
+}
 .content p.sep {
     font-size: 0;
     margin: 1.25rem 0;
