@@ -21,14 +21,15 @@ body {
     margin: 0;
 }
 html.loading body::before {
-    content: "◌";
+    content: "⏳";
     display: inline-block;
-    font-size: 5rem;
+    font-size: 3rem;
     opacity: .35;
     position: absolute;
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
+    filter: grayscale(1);
 }
 a,
 a:hover,
