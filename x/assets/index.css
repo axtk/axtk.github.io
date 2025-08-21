@@ -18,7 +18,7 @@ section + section {
     margin-top: .5em;
 }
 section.intro {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 section h2:first-child {
     margin-top: 0;
