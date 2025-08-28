@@ -40,12 +40,12 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 
 The fractal web app design roughly boils down to the following file structure:
 
-```
+```sh
 src
-  entries // split by semantics, rendering strategy, or technology
-    <entry_name> // can be called `main` if there's just one entry
-      public // for the entry point's public assets
-      server // `server.ts` or `server/index.ts` exports an instance of Express Router
+  entries # split by semantics, rendering strategy, or technology
+    <entry_name> # can be called `main` if there's just one entry
+      public # for the entry point's public assets
+      server # `server.ts` or `server/index.ts` exports an instance of Express Router
       types
       ui
         <feature>
@@ -56,22 +56,22 @@ src
           utils
         Component
           index.css
-          index.tsx // not `Component/Component.tsx`, exports `Component` and `ComponentProps`
-        index.tsx // CSR entry point, `hydrateRoot()` in React apps
+          index.tsx # not `Component/Component.tsx`, exports `Component` and `ComponentProps`
+        index.tsx # CSR entry point, `hydrateRoot()` in React apps
       utils
-  lib // would-be packages, pre-publishing, and patched external libs
+  lib # would-be packages, pre-publishing, and patched external libs
     <package-name>
-  public // for publicly available assets shared by multiple entries
+  public # for publicly available assets shared by multiple entries
   server
     middleware
     types
     utils
-    index.ts // plugs in the required entry points' Express Routers
-  types // shared types
-    CustomEntity.ts // exports `type CustomEntity`
-  ui // UI components shared by multiple entries
-  utils // shared utils
-    getValue.ts // exports only `function getValue` (and possibly `type GetValueParams`)
+    index.ts # plugs in the required entry points' Express Routers
+  types # shared types
+    CustomEntity.ts # exports `type CustomEntity`
+  ui # UI components shared by multiple entries
+  utils # shared utils
+    getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
 ```
 
 All the code resides in the `src` directory. `src/server` contains the app server code, all other directories in `src` are optional.
