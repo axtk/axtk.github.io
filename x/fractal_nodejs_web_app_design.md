@@ -122,8 +122,6 @@ Public files shared by multiple entry points can still be placed into `/src/publ
 
 The `lib` directories (such as `/src/lib`) are pre-package antechambers. In real-life, publishing a chunk of code as a standalone package takes time: it might need a number of iterations to take a stable shape in order to meet the necessary requirements and it might take time to actually publish it. `lib` should contain directories acting like standalone packages in regard to exports and imports. `lib` can also contain patched versions of existing external libs.
 
-~
-
 ## Demos
 
 - [React app](https://github.com/t8js/webapp-react)
