@@ -2,10 +2,10 @@
 title: Fractal Node.js web app design
 date: 2025-08-28
 tags:
-│    - webdev
-│    - nodejs
-│    - typescript
-│    - javascript
+    - webdev
+    - nodejs
+    - typescript
+    - javascript
 ---
 
 ## Motivation
@@ -14,10 +14,10 @@ The design discussed here is the result of my attempt to come up with a simple, 
 
 By scalability I mean here mostly the following things:
 - the app should be able to evolve seamlessly from a smaller app to a larger one;
-│  - preferably without restructuring the app much as its size changes;
-│  - preferably without imposing too much complexity ahead of time in anticipation of the app's potential growth;
+  - preferably without restructuring the app much as its size changes;
+  - preferably without imposing too much complexity ahead of time in anticipation of the app's potential growth;
 - to reflect the reality, the app should preferably be able to maintain multiple entry points implementing different rendering strategies (such as SSR, CSR) or using some legacy tech running on the same server;
-│  - entry points should be loosely coupled and self-contained so that connecting and disconnecting an entry point should be nearly effortless.
+  - entry points should be loosely coupled and self-contained so that connecting and disconnecting an entry point should be nearly effortless.
 
 ## Key points
 
@@ -40,38 +40,38 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 
 The fractal web app design roughly boils down to the following file structure:
 
-```
+```sh
 src
-├─ entries # split by semantics, rendering strategy, or technology
-│  └─ [entry-name] # can be called `main` if there's just one entry
-│     ├─ public # for the entry point's public assets
-│     ├─ server # `server.ts` or `server/index.ts` exports an instance of Express Router
-│     ├─ types
-│     ├─ ui
-│     │  ├─ [feature-name]
-│     │  │  ├─ Component
-│     │  │  │  ├─ index.css
-│     │  │  │  └─ index.tsx
-│     │  │  ├─ types
-│     │  │  └─ utils
-│     │  ├─ Component
-│     │  │  ├─ index.css
-│     │  │  └─ index.tsx # not `Component/Component.tsx`, exports `Component` and `ComponentProps`
-│     │  └─ index.tsx # CSR entry point, `hydrateRoot()` in React apps
-│     └─ utils
-├─ lib # would-be packages, pre-publishing, and patched external libs
-│  └─ [package-name]
-├─ public # for publicly available files shared by multiple entries
-├─ server
-│  ├─ middleware
-│  ├─ types
-│  ├─ utils
-│  └─ index.ts # plugs in the required entry points' Express Routers
-├─ types # shared types
-│  └─ CustomEntity.ts # exports `type CustomEntity`
-├─ ui # UI components shared by multiple entries
-└─ utils # shared utils
-   └─ getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
+  entries # split by semantics, rendering strategy, or technology
+    <entry-name> # can be called `main` if there's just one entry
+      public # for the entry point's public assets
+      server # `server.ts` or `server/index.ts` exports an instance of Express Router
+      types
+      ui
+        <feature>
+          Component
+            index.css
+            index.tsx
+          types
+          utils
+        Component
+          index.css
+          index.tsx # not `Component/Component.tsx`, exports `Component` and `ComponentProps`
+        index.tsx # CSR entry point, `hydrateRoot()` in React apps
+      utils
+  lib # would-be packages, pre-publishing, and patched external libs
+    <package-name>
+  public # for publicly available assets shared by multiple entries
+  server
+    middleware
+    types
+    utils
+    index.ts # plugs in the required entry points' Express Routers
+  types # shared types
+    CustomEntity.ts # exports `type CustomEntity`
+  ui # UI components shared by multiple entries
+  utils # shared utils
+    getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
 ```
 
 All the code resides in the `src` directory. `src/server` contains the app server code, all other directories in `src` are optional.
