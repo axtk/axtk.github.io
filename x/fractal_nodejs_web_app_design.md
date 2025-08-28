@@ -43,7 +43,7 @@ The fractal web app design roughly boils down to the following file structure:
 ```sh
 src
   entries # split by semantics, rendering strategy, or technology
-    <entry_name> # can be called `main` if there's just one entry
+    <entry-name> # can be called `main` if there's just one entry
       public # for the entry point's public assets
       server # `server.ts` or `server/index.ts` exports an instance of Express Router
       types
