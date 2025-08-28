@@ -74,21 +74,53 @@ src
     getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
 ```
 
-All the code resides in the `src` directory. `src/server` contains the app server code, all other directories in `src` are optional.
+### `/src`
 
-The `src/entries` directory contains the app's entry points. I recommend to start the app code at least with a single entry (called `main`). Creating an entry doesn't add too much complexity to the file structure but it draws an explicit boundary to the app code. Once another entry point is needed adding it will be very easy.
+The application code resides in the `/src` directory. Other directories can serve auxiliary purposes, like `/dist` for the build result. All subdirectories of `/src` except `/src/server` are optional.
 
-Each entry point in `src/entries` exports an Express Router (or a similar self-contained unit, if it's not an Express app) in `server.ts` or `server/index.ts`. With this convention, the tech stack behind the Express Router doesn't matter much to the app. This makes entry points easily pluggable (and unpluggable) in the app server code inside `src/server`.
+### `/src/server`
 
-`src` and `src/server` can contain `utils` for shared utility functions, `types` for shared types (again with a single export per file named exactly as the export), `ui` for UI components. I prefer `ui` over `client` since the latter feels a little less direct and self-explanatory to a reader, but either name can work.
+`/src/server` contains the app's server code. Just like the `/src` directory, `/src/server` can contain `utils` and `types`. It can also contain some server specific directories like `middleware`.
+
+### `/src/entries`
+
+The `/src/entries` directory contains the app's entry points. I recommend to start the app code at least with a single entry (called `main`). Creating an entry doesn't add too much complexity to the file structure but it draws an explicit boundary to the app code. Once another entry point is needed adding it will be easy.
+
+Each entry point in `/src/entries` exports an Express Router (or a similar self-contained unit, if it's not an Express app) in `server.ts` or `server/index.ts`. With this convention, the tech stack behind the Express Router doesn't matter much to the app. This makes entry points easily pluggable (and unpluggable) in the app server code inside `/src/server`.
 
 Each entry point replicates the basic structure of the app (as mentioned in the *Key points* section) and can contain the same set of subdirectories as `src`: `server`, `utils`, `types`, `ui`. The recurrence of the same file structure across different parts of the app helps with both reading the code as well as with decision making while writing the code.
 
-`src/public` contains files directly exposed by the server. Each entry point can again have their own `public` directory exposed through the entry point's Express Router. As long as the public assets are specific to a single entry point they should stay inside the entry point's directory. Otherwise, they can be lifted to `src/public`.
+### `ui` or `client`
 
-`src/lib` is a pre-package antechamber. In real-life, publishing a chunk of code as a standalone package takes time: it might need a number of iterations to take a stable shape in order to meet the current requirements and it might take time to actually publish it. `src/lib` should contain directories acting like standalone packages in regard to exports and imports. `src/lib` can also contain patched versions of existing external libs.
+Each entry point can contain its own `ui` (or `client`) directory for UI components. I prefer `ui` over `client` since the latter feels a little less direct and self-explanatory to a reader, but either name can work. UI components shared by multiple entry points can be located in `/src/ui`.
 
-Components in the `ui` directories should contain UI component directories (in `PascalCase` with React components) and/or feature directories in lower case. Each feature directory can further contain a set of component directories and/or other nested features. Each component directory `X` should contain an `index` file (`index.tsx` with TS + React) exporting a component named `X` (and possibly `type XProps` with React components).
+Each component in a `ui` directory should be represented by a directory named after the component (in PascalCase with React components). Each component directory `X` should contain an `index` file (`index.tsx` with TS + React) exporting a component named `X` (and possibly `type XProps` with React components).
+
+Some UI component directories can in turn be grouped into feature directories inside `ui` (with kebab-cased names). Features nested inside other features (effectively creating a chained namespace) aren't disallowed but should still be added sparingly.
+
+### `utils`
+
+`utils` directories can occur in many places (in `/src`, `/src/server`, `/src/entries/<entry>`, in `ui` directories). Each file in `utils` contains a utility function, with a single export per file named exactly after that export. Some files in `utils` having a certain relation to each other can further be grouped into subdirectories.
+
+### `types`
+
+`types` directories contain TypeScript types. Again, one export per file named after the export: the `CustomEntity.ts` file exports `type CustomEntity`.
+
+### `const` or `constants`
+
+`const` or `constants` directories contain constants shared within the given context.
+
+### `public`
+
+The `public` directories contains files directly exposed by the server. These directories are named `public` (rather than `assets`, for example) to be explicitly clear that the files in these directories are not private.
+
+Each entry point can have their own `public` directory exposed through the entry point's Express Router. As long as the public files are specific to a single entry point they should stay inside the entry point's directory. This makes moving an entry point with all its essential assets to another location easier.
+
+Public files shared by multiple entry points can still be placed into `/src/public`.
+
+### `lib`
+
+The `lib` directories (such as `/src/lib`) are pre-package antechambers. In real-life, publishing a chunk of code as a standalone package takes time: it might need a number of iterations to take a stable shape in order to meet the necessary requirements and it might take time to actually publish it. `lib` should contain directories acting like standalone packages in regard to exports and imports. `lib` can also contain patched versions of existing external libs.
 
 ~
 
