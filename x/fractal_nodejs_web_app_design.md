@@ -13,10 +13,10 @@ tags:
 The design discussed here is the result of my attempt to come up with a simple, self-explanatory, and scalable Node.js web app structure, ultimately comfortable to work with. I've found these qualities with a self-similar structure, hence the name *fractal design*.
 
 By scalability I mean here mostly the following things:
-- the app should be able to evolve seamlessly from a smaller app to a larger one,
+- the app should be able to evolve seamlessly from a smaller app to a larger one;
   - preferably without restructuring the app much as its size changes;
   - preferably without imposing too much complexity ahead of time in anticipation of the app's potential growth;
-- to reflect the reality, the app should preferably be able to maintain multiple entry points implementing different rendering strategies (such as SSR, CSR) or using some legacy tech running on the same server.
+- to reflect the reality, the app should preferably be able to maintain multiple entry points implementing different rendering strategies (such as SSR, CSR) or using some legacy tech running on the same server;
   - entry points should be loosely coupled and self-contained so that connecting and disconnecting an entry point should be nearly effortless.
 
 ## Key points
@@ -26,7 +26,7 @@ For our comfort, the code should be scalable (in the sense outlined above) and e
 - **Single export per file.** Several tightly related type exports alongside the main export (such as a function's parameters type) are allowed. (Single-responsibility principle)
 - **Files are named exactly as their export.** With the same casing. File names should say exactly what they mean to facilitate browsing the codebase.
 - **Entry points replicate the basic file structure of the app.** Entry points can be regarded as smaller self-contained quasi-apps.
-- **Cross-entry-point imports are forbidden.** Files shared by multiple entry points should be lifted to a shared subdirectory in `src`.
+- **Cross-entry-point imports are forbidden.** Files shared by multiple entry points should be lifted to a shared directory.
 
 For the sake of scalability, it makes sense to use `index` files. The effective equivalence of the path locations `dir/x/index.ts` and `dir/x.ts` as `'dir/x'` in imports allows:
 - to scale up from a single file to a collection of files without changing imports throughout the app;
