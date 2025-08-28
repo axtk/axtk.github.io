@@ -61,7 +61,7 @@ src
       utils
   lib # would-be packages, pre-publishing, and patched external libs
     <package-name>
-  public # for publicly available assets shared by multiple entries
+  public # for publicly available files shared by multiple entries
   server
     middleware
     types
