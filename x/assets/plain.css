@@ -75,7 +75,8 @@ h2 {
     padding: 0 0 .2em 0;
     margin: 1.5em 0 .75em 0;
 }
-h2#related {
+h2#related,
+h2#demos {
     font-size: .8rem;
     font-weight: normal;
     font-style: italic;
