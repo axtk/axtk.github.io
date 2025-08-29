@@ -88,7 +88,7 @@ The `/src/entries` directory contains the app's entry points. I recommend to sta
 
 Each entry point in `/src/entries` exports an Express Router (or a similar self-contained unit, if it's not an Express app) in `server.ts` or `server/index.ts`. With this convention, the tech stack behind the Express Router doesn't matter much to the app. This makes entry points easily pluggable (and unpluggable) in the app server code inside `/src/server`.
 
-Each entry point replicates the basic structure of the app (as mentioned in the *Key points* section) and can contain the same set of subdirectories as `src`: `server`, `utils`, `types`, `ui`. The recurrence of the same file structure across different parts of the app helps with both reading the code as well as with decision making while writing the code.
+Each entry point replicates the basic structure of the app (as mentioned in the *Key points* section) and can contain the same set of subdirectories as `/src`: `server`, `utils`, `types`, `ui`. The recurrence of the same file structure across different parts of the app helps with both reading the code as well as with decision making while writing the code.
 
 ### `ui` or `client`
 
