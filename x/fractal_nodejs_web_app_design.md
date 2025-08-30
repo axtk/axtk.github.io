@@ -104,11 +104,11 @@ Some UI component directories can in turn be grouped into feature directories in
 
 ### `types`
 
-`types` directories contain TypeScript types. Again, one export per file named after the export: the `CustomEntity.ts` file exports `type CustomEntity`.
+`types` directories contain TypeScript types. Again, one export per file named after the export: a file named `CustomEntity.ts` exports `type CustomEntity`.
 
 ### `const` or `constants`
 
-`const` or `constants` directories contain constants shared within the given context.
+`const` or `constants` directories contain constants shared within the given context. Once again, one export per file named after the export: a file named `sharedValue.ts` exports `const sharedValue`.
 
 ### `public`
 
