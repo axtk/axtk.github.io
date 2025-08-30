@@ -124,5 +124,5 @@ The `lib` directories (such as `/src/lib`) are pre-package antechambers. In real
 
 ## Demos
 
-- [React app](https://github.com/t8js/webapp-react)
-- [Blank app](https://github.com/t8js/webapp-blank)
+- [React app](https://github.com/t8js/react-app)
+- [Blank app](https://github.com/t8js/blank-app)
