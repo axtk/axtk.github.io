@@ -40,40 +40,76 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 
 The fractal web app design roughly boils down to the following file structure:
 
-<div class="structure">
-```sh
-src
-  entries # split by semantics, rendering strategy, or technology
-    <entry-name> # can be called `main` if there's just one entry
-      public # for the entry point's public assets
-      server # `server.ts` or `server/index.ts` exports an instance of Express Router
-      types
-      ui
-        <feature>
-          Component
-            index.css
-            index.tsx
-          types
-          utils
-        Component
-          index.css
-          index.tsx # not `Component/Component.tsx`, exports `Component` and `ComponentProps`
-        index.tsx # CSR entry point, `hydrateRoot()` in React apps
-      utils
-  lib # would-be packages, pre-publishing, and patched external libs
-    <package-name>
-  public # for publicly available files shared by multiple entries
-  server
-    middleware
-    types
-    utils
-    index.ts # plugs in the required entry points' Express Routers
-  types # shared types
-    CustomEntity.ts # exports `type CustomEntity`
-  ui # UI components shared by multiple entries
-  utils # shared utils
-    getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
-```
+<style>
+.s { font-family: monospace; }
+</style>
+<div class="s">
+<ul>
+<li>src
+  <ul>
+    <li>entries <span class="c"># split by semantics, rendering strategy, or technology</span>
+      <ul>
+        <li>[entry-name] <span class="c"># can be called `main` if there's just one entry</span>
+          <ul>
+            <li>public <span class="c"># for the entry point's public assets</span></li>
+            <li>server <span class="c"># `server.ts` or `server/index.ts` exports an instance of Express Router</span></li>
+            <li>types</li>
+            <li>ui
+              <ul>
+                <li>[feature]
+                  <ul>
+                    <li>Component
+                      <ul>
+                        <li>index.css</li>
+                        <li>index.tsx</li>
+                      </ul>
+                    </li>
+                    <li>types</li>
+                    <li>utils</li>
+                  </ul>
+                </li>
+                <li>Component
+                  <ul>
+                    <li>index.css</li>
+                    <li>index.tsx <span class="c"># not `Component/Component.tsx`, exports `Component` and `ComponentProps`</span></li>
+                  </ul>
+                </li>
+                <li>index.tsx <span class="c"># CSR entry point, `hydrateRoot()` in React apps</span></li>
+              </ul>
+            </li>
+            <li>utils</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>lib <span class="c"># would-be packages, pre-publishing, and patched external libs</span>
+  <ul>
+    <li>[package-name]</li>
+  </ul>
+</li>
+<li>public <span class="c"># for publicly available files shared by multiple entries</span></li>
+<li>server
+  <ul>
+    <li>middleware</li>
+    <li>types</li>
+    <li>utils</li>
+    <li>index.ts <span class="c"># plugs in the required entry points' Express Routers</span></li>
+  </ul>
+</li>
+<li>types # shared types
+  <ul>
+    <li>CustomEntity.ts <span class="c"># exports `type CustomEntity`</span></li>
+  </ul>
+</li>
+<li>ui <span class="c"># UI components shared by multiple entries</span></li>
+<li>utils <span class="c"># shared utils</span>
+  <ul>
+    <li>getValue.ts <span class="c"># exports only `function getValue` (and possibly `type GetValueParams`)</span></li>
+  </ul>
+</li>
+</ul>
 </div>
 
 ### `/src`
