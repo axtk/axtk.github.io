@@ -40,6 +40,7 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 
 The fractal web app design roughly boils down to the following file structure:
 
+<div class="structure">
 ```sh
 src
   entries # split by semantics, rendering strategy, or technology
@@ -73,6 +74,7 @@ src
   utils # shared utils
     getValue.ts # exports only `function getValue` (and possibly `type GetValueParams`)
 ```
+</div>
 
 ### `/src`
 
