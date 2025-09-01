@@ -58,22 +58,25 @@ The fractal web app design essentially boils down to the following file structur
   margin: 0;
 }
 .s li {
-  padding: var(--py) 0 0 var(--px);
+  padding: 0;
   margin: 0;
   position: relative;
   box-sizing: border-box;
 }
-.s li::before {
+.s li li {
+  padding: var(--py) 0 0 var(--px);
+}
+.s li li::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 var(--x);
   border: var(--w) solid var(--c);
 }
-.s li:last-child::before {
+.s li li:last-child::before {
   height: calc(var(--py) + var(--y) - var(--w));
   bottom: auto;
 }
-.s li::after {
+.s li li::after {
   content: "";
   width: calc(var(--px) - var(--x) - .2em);
   position: absolute;
@@ -125,31 +128,31 @@ The fractal web app design essentially boils down to the following file structur
         </li>
       </ul>
     </li>
-  </ul>
-</li>
-<li>lib <span class="c"># would-be packages, pre-publishing, and patched external libs</span>
-  <ul>
-    <li>[package-name]</li>
-  </ul>
-</li>
-<li>public <span class="c"># for publicly available files shared by multiple entries</span></li>
-<li>server
-  <ul>
-    <li>middleware</li>
-    <li>types</li>
-    <li>utils</li>
-    <li>index.ts <span class="c"># plugs in the required entry points' Express Routers</span></li>
-  </ul>
-</li>
-<li>types <span class="c"># shared types</span>
-  <ul>
-    <li>CustomEntity.ts <span class="c"># exports `type CustomEntity`</span></li>
-  </ul>
-</li>
-<li>ui <span class="c"># UI components shared by multiple entries</span></li>
-<li>utils <span class="c"># shared utils</span>
-  <ul>
-    <li>getValue.ts <span class="c"># exports only `function getValue` (and possibly `type GetValueParams`)</span></li>
+    <li>lib <span class="c"># would-be packages, pre-publishing, and patched external libs</span>
+      <ul>
+        <li>[package-name]</li>
+      </ul>
+    </li>
+    <li>public <span class="c"># for publicly available files shared by multiple entries</span></li>
+    <li>server
+      <ul>
+        <li>middleware</li>
+        <li>types</li>
+        <li>utils</li>
+        <li>index.ts <span class="c"># plugs in the required entry points' Express Routers</span></li>
+      </ul>
+    </li>
+    <li>types <span class="c"># shared types</span>
+      <ul>
+        <li>CustomEntity.ts <span class="c"># exports `type CustomEntity`</span></li>
+      </ul>
+    </li>
+    <li>ui <span class="c"># UI components shared by multiple entries</span></li>
+    <li>utils <span class="c"># shared utils</span>
+      <ul>
+        <li>getValue.ts <span class="c"># exports only `function getValue` (and possibly `type GetValueParams`)</span></li>
+      </ul>
+    </li>
   </ul>
 </li>
 </ul>
