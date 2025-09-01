@@ -28,17 +28,17 @@ For our comfort, the code should be scalable (in the sense outlined above) and e
 - **Entry points replicate the basic file structure of the app.** Entry points can be regarded as smaller self-contained quasi-apps.
 - **Cross-entry-point imports are forbidden.** Files shared by multiple entry points should be lifted to a shared directory.
 
-For the sake of scalability, it makes sense to use `index` files. The effective equivalence of the path locations `dir/x/index.ts` and `dir/x.ts` as `'dir/x'` in imports allows:
+For the sake of scalability, it makes sense to use non-barrel `index` files. The effective equivalence of the path locations `dir/x/index.ts` and `dir/x.ts` as `'dir/x'` in imports allows:
 - to scale up from a single file to a collection of files without changing imports throughout the app;
 - to avoid the tautology like `import {Component} from 'ui/Component/Component';`.
 
-`index` files shouldn't be used as long lists of re-exports. They should be used mostly as ordinary files with a single non-type export named exactly as the directory, with the same casing.
+`index` files should be used as ordinary files with a single non-type export named exactly as the directory, with the same casing. They shouldn't be used as barrel files just for re-exports.
 
 ## Structure
 
 This approach to structuring the app is technology-agnostic, but here, for the sake of clarity, we are going with an Express server as the only prerequisite.
 
-The fractal web app design roughly boils down to the following file structure:
+The fractal web app design essentially boils down to the following file structure:
 
 <style>
 .s {
