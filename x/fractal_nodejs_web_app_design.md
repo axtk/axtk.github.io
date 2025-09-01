@@ -120,7 +120,7 @@ The fractal web app design essentially boils down to the following file structur
                     <li>index.tsx <span class="c"># not `Component/Component.tsx`, exports `Component` and `ComponentProps`</span></li>
                   </ul>
                 </li>
-                <li>index.tsx <span class="c"># CSR entry point, `hydrateRoot()` in React apps</span></li>
+                <li>index.tsx <span class="c"># CSR entry point, location of `hydrateRoot()` in React apps</span></li>
               </ul>
             </li>
             <li>utils</li>
@@ -128,7 +128,7 @@ The fractal web app design essentially boils down to the following file structur
         </li>
       </ul>
     </li>
-    <li>lib <span class="c"># would-be packages, pre-publishing, and patched external libs</span>
+    <li>lib <span class="c"># would-be packages, pre-publishing + patched external libs</span>
       <ul>
         <li>[package-name]</li>
       </ul>
@@ -139,7 +139,7 @@ The fractal web app design essentially boils down to the following file structur
         <li>middleware</li>
         <li>types</li>
         <li>utils</li>
-        <li>index.ts <span class="c"># plugs in the required entry points' Express Routers</span></li>
+        <li>index.ts <span class="c"># the runnable app server, plugs in the required entry points' Express Routers</span></li>
       </ul>
     </li>
     <li>types <span class="c"># shared types</span>
