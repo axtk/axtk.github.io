@@ -120,6 +120,8 @@ The fractal web app design essentially boils down to the following file structur
                     <li>index.tsx <span class="c"># not `Component/Component.tsx`, exports `Component` and `ComponentProps`</span></li>
                   </ul>
                 </li>
+                <li>types</li>
+                <li>utils</li>
                 <li>index.tsx <span class="c"># CSR entry point, location of `hydrateRoot()` in React apps</span></li>
               </ul>
             </li>
