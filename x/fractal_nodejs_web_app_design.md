@@ -41,7 +41,50 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 The fractal web app design roughly boils down to the following file structure:
 
 <style>
-.s { font-family: monospace; }
+.s {
+  font-family: monospace;
+  line-height: 1.3;
+  --w: .05em;
+  --x: .25em;
+  --y: .75em;
+  --px: 1.5em;
+  --py: .5em;
+  --c: color(from var(--color) srgb r g b / .25);
+  margin: 1em 0;
+}
+.s ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.s li {
+  padding: var(--py) 0 0 var(--px);
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.s li::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 var(--x);
+  border: var(--w) solid var(--c);
+}
+.s li:last-child::before {
+  height: calc(var(--py) + var(--y) - var(--w));
+  bottom: auto;
+}
+.s li::after {
+  content: "";
+  width: calc(var(--px) - var(--x) - .2em);
+  position: absolute;
+  inset: calc(var(--py) + var(--y)) auto auto var(--x);
+  border-top: var(--w) solid var(--c);
+}
+.s .c {
+  display: block;
+  font-size: .85em;
+  color: color(from var(--color) srgb r g b / .5);
+}
 </style>
 <div class="s">
 <ul>
@@ -98,7 +141,7 @@ The fractal web app design roughly boils down to the following file structure:
     <li>index.ts <span class="c"># plugs in the required entry points' Express Routers</span></li>
   </ul>
 </li>
-<li>types # shared types
+<li>types <span class="c"># shared types</span>
   <ul>
     <li>CustomEntity.ts <span class="c"># exports `type CustomEntity`</span></li>
   </ul>
