@@ -1,5 +1,5 @@
 ---
-title: Exercise of designing minimal shared state in React
+title: Quick exercise of designing minimal shared state in React
 date: 2025-05-25
 updated: 2025-09-08
 tags:
