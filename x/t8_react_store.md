@@ -14,7 +14,7 @@ There are a number of state management libs described as minimal or bare-bones, 
 First, we'll lift the initial value of the local state to a shared location:
 
 ```diff
-  // non-interactive shared initial state
+  // non-interactive initial state
 + let AppContext = createContext(0);
 
   let Counter = () => {
@@ -29,14 +29,13 @@ First, we'll lift the initial value of the local state to a shared location:
 The initial state value can now be seen by other components, but `setCount()` won't affect the shared value yet. To make the shared state interactive we can pack it into a container object, we'll call it a store, exposing a state setter, so we don't have to manually add a value setter to the Context. To unpack the state value from the store and subscribe to its changes inside the component we can add a `useStore()` hook. With the store and the hook, we'll get a full-fledged shared state setup:
 
 ```diff
-  // non-interactive shared initial state
-- let AppContext = createContext(0);
   // full-fledged interactive shared state
 + let AppContext = createContext(new Store(0));
+- let AppContext = createContext(0);
 
   let Counter = () => {
--   let [count, setCount] = useState(useContext(AppContext));
 +   let [count, setCount] = useStore(useContext(AppContext));
+-   let [count, setCount] = useState(useContext(AppContext));
 
     // render
   };
