@@ -81,4 +81,4 @@ The minimal approach discussed above doesn't raise any of these concerns: the da
   };
 ```
 
-Based on this approach and its minimalist spirit, I created [`@t8/react-store`](https://t8.js.org/react-store). It exports such `Store` and `useStore()` completing this exercise. In addition to the discussed, the package description covers its common use cases including a single-store and multistore setups (both being perfectly legit), filtering store state updates, and some live examples.
+Based on this approach and its minimalist spirit, I created [`@t8/react-store`](https://github.com/t8js/react-store#readme). It exports such `Store` and `useStore()` completing this exercise. In addition to the discussed, the package description covers its common use cases including a single-store and multistore setup (both being perfectly legit), filtering store state updates, and some live examples.

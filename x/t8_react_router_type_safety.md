@@ -8,7 +8,7 @@ tags:
     - webdev
 ---
 
-[`@t8/react-router`](https://t8.js.org/react-router) offers type-safe routing as an optional enhancement, allowing for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder, such as the `url()` function below, and by enabling the same routing APIs to accept the values created by the URL builder with regard to the typing.
+[`@t8/react-router`](https://github.com/t8js/react-router#readme) offers type-safe routing as an optional enhancement, allowing for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder, such as the `url()` function below, and by enabling the same routing APIs to accept the values created by the URL builder with regard to the typing.
 
 Here's an example (based on the one discussed in the [T8 React Router overview](/x/t8_react_router#routing-example)):
 

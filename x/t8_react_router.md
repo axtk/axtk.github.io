@@ -9,7 +9,7 @@ tags:
     - webdev
 ---
 
-Here's the story why I bothered to create [`@t8/react-router`](https://t8.js.org/react-router), a React router to my liking.
+Here's the story why I bothered to create [`@t8/react-router`](https://github.com/t8js/react-router#readme), a React router to my liking.
 
 I want simplicity:
 
