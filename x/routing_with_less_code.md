@@ -38,7 +38,7 @@ let App = () => {
         <A href="/sections/2">Section 2</A>
       </nav>
       {withRoute('/', <Intro/>)}
-      {withRoute(/^\/sections\/(?<id>\w+)\/?$/, ({params}) => (
+      {withRoute(/^\/sections\/(?<id>\d+)\/?$/, ({params}) => (
         <Section id={params.id}/>
       ))}
     </>
