@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Fractal web app design</title>
+<style>
+.s {
+  font-family: monospace;
+  line-height: 1.3;
+  --w: 0.05em;
+  --x: 0.25em;
+  --y: 0.75em;
+  --px: 1.5em;
+  --py: 0.5em;
+  --c: color(from currentColor srgb r g b / 0.25);
+  padding: 0 1em 1em;
+  margin: 1em 0;
+}
+.s ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.s li {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.s li li {
+  padding: var(--py) 0 0 var(--px);
+}
+.s li li::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 var(--x);
+  border: var(--w) solid var(--c);
+}
+.s li li:last-child::before {
+  height: calc(var(--py) + var(--y) - var(--w));
+  bottom: auto;
+}
+.s li li::after {
+  content: "";
+  width: calc(var(--px) - var(--x) - 0.2em);
+  position: absolute;
+  inset: calc(var(--py) + var(--y)) auto auto var(--x);
+  border-top: var(--w) solid var(--c);
+}
+.s .c {
+  display: block;
+  font-size: 0.85em;
+  color: color(from currentColor srgb r g b / 0.5);
+}
+</style>
+</head>
+<body>
+
+    <div class="s">
+      <ul>
+        <li>
+          src
+          <ul>
+            <li>
+              entries
+              <span class="c"
+                ># split by semantics, rendering strategy, or technology</span
+              >
+              <ul>
+                <li>
+                  [entry-name]
+                  <span class="c"
+                    ># can be called `main` if there's just one entry</span
+                  >
+                  <ul>
+                    <li>
+                      public
+                      <span class="c"
+                        ># public assets served by entry point's `server`</span
+                      >
+                    </li>
+                    <li>
+                      server
+                      <span class="c"
+                        ># `server.ts` or `server/index.ts` exports an instance
+                        of Express Router</span
+                      >
+                    </li>
+                    <li>types</li>
+                    <li>
+                      ui
+                      <ul>
+                        <li>
+                          const
+                          <ul>
+                            <li>
+                              customValue.ts
+                              <span class="c"
+                                ># exports `const customValue`</span
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          [feature]
+                          <ul>
+                            <li>const</li>
+                            <li>
+                              Component
+                              <ul>
+                                <li>index.css</li>
+                                <li>index.tsx</li>
+                              </ul>
+                            </li>
+                            <li>Component2</li>
+                            <li>...</li>
+                            <li>types</li>
+                            <li>utils</li>
+                          </ul>
+                        </li>
+                        <li>
+                          Component
+                          <ul>
+                            <li>index.css</li>
+                            <li>
+                              index.tsx
+                              <span class="c"
+                                ># not `Component/Component.tsx`, exports
+                                `Component` and `ComponentProps`</span
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>Component2</li>
+                        <li>...</li>
+                        <li>types</li>
+                        <li>utils</li>
+                        <li>
+                          index.tsx
+                          <span class="c"
+                            ># CSR entry point, location of `hydrateRoot()` in
+                            React apps</span
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>utils</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              lib
+              <span class="c"
+                ># would-be packages, pre-publishing + patched external
+                libs</span
+              >
+              <ul>
+                <li>[package-name]</li>
+              </ul>
+            </li>
+            <li>
+              public
+              <span class="c"
+                ># publicly available files shared by multiple entries</span
+              >
+            </li>
+            <li>
+              server
+              <ul>
+                <li>const</li>
+                <li>middleware</li>
+                <li>types</li>
+                <li>utils</li>
+                <li>
+                  index.ts
+                  <span class="c"
+                    ># runnable app server, plugs in the required entry points'
+                    `server` exports (being Express Routers)</span
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              types <span class="c"># shared types</span>
+              <ul>
+                <li>
+                  CustomEntity.ts
+                  <span class="c"># exports `type CustomEntity`</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              ui
+              <span class="c"># UI components shared by multiple entries</span>
+            </li>
+            <li>
+              utils <span class="c"># shared utils</span>
+              <ul>
+                <li>
+                  getValue.ts
+                  <span class="c"
+                    ># exports only `function getValue` (and possibly `type
+                    GetValueParams`)</span
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+<script src="assets/stats.js"></script>
+</body>
+</html>
