@@ -55,7 +55,7 @@ let App = () => {
 };
 ```
 
-The [routing type safety overview](/x/t8_react_router_type_safety) also covers how this approach allows for seamless and gradual adoption of stricter route typing.
+The [routing type safety overview](t8_react_router_type_safety) also covers how this approach allows for seamless and gradual adoption of stricter route typing.
 
 ## Similarity to native APIs
 
@@ -178,5 +178,5 @@ These features make up the point of `@t8/react-router`. It's simple and lightwei
 
 ## Related
 
-- [Type-safe routing with T8 React Router](/x/t8_react_router_type_safety)
-- [Type-safe URL parameters in T8 React Router](/x/t8_react_router_typed_URL_parameters)
+- [Type-safe routing with T8 React Router](t8_react_router_type_safety)
+- [Type-safe URL parameters in T8 React Router](t8_react_router_typed_URL_parameters)

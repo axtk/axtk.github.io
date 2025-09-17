@@ -10,7 +10,7 @@ tags:
 
 URL parameters are commonly used to reflect a piece of the application state. The example below shows how to manipulate the URL state similarly to React's `useState()` in a type-safe manner with the [`@t8/react-router`](https://github.com/t8js/react-router#readme)'s `useRouteState()` hook.
 
-The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](/x/t8_react_router_type_safety).)
+The following example starts with a URL schema definition via `url-shape` and `zod` to set up a reference frame for type-safe routing. (More details on that in the [type-safe routing overview](t8_react_router_type_safety).)
 
 ```ts
 import {A, useRouteState} from '@t8/react-router';
@@ -81,5 +81,5 @@ This example shows how the `useRouteState()` hook follows the familiar pattern o
 
 ## Related
 
-- [Type-safe routing with T8 React Router](/x/t8_react_router_type_safety)
-- [A React router to my liking](/x/t8_react_router)
+- [Type-safe routing with T8 React Router](t8_react_router_type_safety)
+- [A React router to my liking](t8_react_router)

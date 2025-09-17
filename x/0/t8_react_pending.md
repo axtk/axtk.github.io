@@ -19,4 +19,4 @@ In order to address my question, I ended up creating a small package called [`@t
 
 ## Related
 
-- [Comparing loading state with T8 React Pending and TanStack React Query](/x/t8_react_pending_vs_react_query)
+- [Comparing loading state with T8 React Pending and TanStack React Query](t8_react_pending_vs_react_query)

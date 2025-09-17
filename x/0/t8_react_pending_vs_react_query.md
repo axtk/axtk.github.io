@@ -11,7 +11,7 @@ tags:
 
 Let's see what it takes to add the loading state tracking for an async action with TanStack React Query and T8 React Pending.
 
-*[Foreword](/x/t8_react_pending)*
+*[Foreword](t8_react_pending)*
 
 ## Example 1
 

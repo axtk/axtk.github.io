@@ -10,7 +10,7 @@ tags:
 
 [`@t8/react-router`](https://github.com/t8js/react-router#readme) offers type-safe routing as an optional enhancement, allowing for gradual adoption of type-safe routing throughout the app, while keeping the routing simple. It's achieved by entrusting route typing to an external type-safe URL builder, such as the `url()` function below, and by enabling the same routing APIs to accept the values created by the URL builder with regard to the typing.
 
-Here's an example (based on the one discussed in the [T8 React Router overview](/x/t8_react_router#routing-example)):
+Here's an example (based on the one discussed in the [T8 React Router overview](t8_react_router#routing-example)):
 
 ```tsx
 import {A, useRoute} from '@t8/react-router';
@@ -86,5 +86,5 @@ The incremental approach of `@t8/react-router` to type-safe routing, from a part
 
 ## Related
 
-- [Type-safe URL parameters in T8 React Router](/x/t8_react_router_typed_URL_parameters)
-- [A React router to my liking](/x/t8_react_router)
+- [Type-safe URL parameters in T8 React Router](t8_react_router_typed_URL_parameters)
+- [A React router to my liking](t8_react_router)
