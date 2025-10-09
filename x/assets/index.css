@@ -134,13 +134,11 @@ p.tag {
 p.tag + ul {
   margin-top: 0.75em;
 }
-.mark,
-p.tag {
+/* strong {
   display: inline-block;
   position: relative;
 }
-.mark::before,
-p.tag::before {
+strong::before {
   content: "";
   background: var(--mark-color);
   border-radius: 0.1em;
@@ -148,7 +146,7 @@ p.tag::before {
   inset: 0 -0.5em;
   transform: skewX(-15deg);
   z-index: -1;
-}
+} */
 /* .intro2 {
   background: #ebf4f4;
 }
