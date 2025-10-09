@@ -1,0 +1,8 @@
+build.mjs
+_layouts/**/*
+x/**/*
+!**/node_modules/**/*
+!x/assets/0/**/*
+!x/assets/archive/**/*
+!x/assets/stars/v0/**/*
+!x/assets/stats.js
