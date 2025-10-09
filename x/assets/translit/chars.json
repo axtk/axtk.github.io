@@ -1,91 +1,91 @@
 {
-    "č": {
-        "examples": [
-            ["ru|čislo|число", "cz|číslo", "sk|číslo"],
-            ["ru|čas|час", "cz|čas|время", "sk|čas|время"],
-            ["ru|učiteĺ|учитель", "cz|učitel", "sk|učiteľ"],
-            ["ru|čelo|чело", "cz|čelo|лоб", "sk|čelo|лоб"],
-            ["ru|čorný|чёрный", "cz|černý", "-"]
-        ]
-    },
-    "š": {
-        "examples": [
-            ["ru|škola|школа", "cz|škola", "sk|škola"],
-            ["ru|myš|мышь", "cz|myš", "sk|myš"],
-            ["ru|šest́|шесть", "cz|šest", "sk|šesť"],
-            ["ru|šum|шум", "cz|šum", "sk|šum"]
-        ]
-    },
-    "ž": {
-        "examples": [
-            ["ru|žena|жена", "cz|žena", "sk|žena"],
-            ["ru|muž|муж", "cz|muž", "sk|muž"],
-            ["ru|železo|железо", "cz|železo", "sk|železo"],
-            ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý"]
-        ]
-    },
-    "í": {
-        "examples": [
-            ["ru|sosední|соседний", "cz|sousední"],
-            ["ru|doĺní|дольний", "cz|dolní|нижний"]
-        ]
-    },
-    "ý": {
-        "examples": [
-            ["ru|pravý|правый", "cz|pravý", "sk|pravý"],
-            ["ru|voĺný|вольный", "cz|volný", "sk|voľný"],
-            ["ru|celý|целый", "cz|celý", "sk|celý"],
-            ["ru|južný|южный", "sk|južný"],
-            ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý", "-"],
-            ["ru|fíoletový|фиолетовый", "cz|fialový", "-"],
-            ["ru|moločný|молочный", "cz|mléčný", "-"],
-            ["ru|zdorový|здоровый", "cz|zdravý", "sk|zdravý"],
-            ["ru|značiteĺný|значительный", "cz|značný", "-"],
-            ["ru|miortvý|мёртвый", "cz|mrtvý", "-"]
-        ]
-    },
-    "c": {
-        "examples": [
-            ["ru|ulica|улица", "sk|ulica", "pl|ulica"],
-            ["ru|celý|целый", "cz|celý", "sk|celý"],
-            ["ru|kupec|купец", "cz|kupec", "sk|kupec"],
-            ["ru|solnce|солнце", "cz|slunce", "sl|sonce"]
-        ]
-    },
-    "j": {
-        "examples": [
-            ["ru|jakoby|якобы", "cz|jakoby"],
-            ["ru|zajac|заяц", "sk|zajac"],
-            ["ru|jadro|ядро", "sk|jadro", "-"],
-            ["ru|jama|яма", "pl|jama", "-"],
-            ["ru|jezdit́|ездить", "cz|jezdit"],
-            ["ru|jediničný|единичный", "cz|jedinečný"],
-            ["ru|jedinstvenný|единственный", "cz|jediný", "-"],
-            ["ru|južný|южный", "sk|južný"]
-        ]
-    },
-    "y": {
-        "examples": [
-            ["ru|ryba|рыба", "cz|ryba", "sk|ryba"],
-            ["ru|smysl|смысл", "cz|smysl"],
-            ["ru|myš|мышь", "cz|myš", "sk|myš"]
-        ]
-    },
-    "ě": {
-        "examples": [
-            ["ru|svět|свѣтъ", "cz|svět"],
-            ["ru|dělat́|дѣлать", "cz|dělat"],
-            ["ru|vědat́|вѣдать", "cz|vědět|знать"],
-            ["ru|otpověd́|отповѣдь", "cz|odpověd'|ответ"]
-        ]
-    },
-    "\u0301ǵźḱĺḿńṕŕść": {
-        "examples": [
-            ["ru|koń|конь", "pl|koń"],
-            ["ru|loś|лось", "pl|łoś"],
-            ["ru|teśma|тесьма", "pl|taśma"],
-            ["ru|dań|дань", "pl|dań"],
-            ["ru|maź|мазь", "pl|maź"]
-        ]
-    }
+  "č": {
+    "examples": [
+      ["ru|čislo|число", "cz|číslo", "sk|číslo"],
+      ["ru|čas|час", "cz|čas|время", "sk|čas|время"],
+      ["ru|učiteĺ|учитель", "cz|učitel", "sk|učiteľ"],
+      ["ru|čelo|чело", "cz|čelo|лоб", "sk|čelo|лоб"],
+      ["ru|čorný|чёрный", "cz|černý", "-"]
+    ]
+  },
+  "š": {
+    "examples": [
+      ["ru|škola|школа", "cz|škola", "sk|škola"],
+      ["ru|myš|мышь", "cz|myš", "sk|myš"],
+      ["ru|šest́|шесть", "cz|šest", "sk|šesť"],
+      ["ru|šum|шум", "cz|šum", "sk|šum"]
+    ]
+  },
+  "ž": {
+    "examples": [
+      ["ru|žena|жена", "cz|žena", "sk|žena"],
+      ["ru|muž|муж", "cz|muž", "sk|muž"],
+      ["ru|železo|железо", "cz|železo", "sk|železo"],
+      ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý"]
+    ]
+  },
+  "í": {
+    "examples": [
+      ["ru|sosední|соседний", "cz|sousední"],
+      ["ru|doĺní|дольний", "cz|dolní|нижний"]
+    ]
+  },
+  "ý": {
+    "examples": [
+      ["ru|pravý|правый", "cz|pravý", "sk|pravý"],
+      ["ru|voĺný|вольный", "cz|volný", "sk|voľný"],
+      ["ru|celý|целый", "cz|celý", "sk|celý"],
+      ["ru|južný|южный", "sk|južný"],
+      ["ru|žoltý|жёлтый", "cz|žlutý", "sk|žltý", "-"],
+      ["ru|fíoletový|фиолетовый", "cz|fialový", "-"],
+      ["ru|moločný|молочный", "cz|mléčný", "-"],
+      ["ru|zdorový|здоровый", "cz|zdravý", "sk|zdravý"],
+      ["ru|značiteĺný|значительный", "cz|značný", "-"],
+      ["ru|miortvý|мёртвый", "cz|mrtvý", "-"]
+    ]
+  },
+  "c": {
+    "examples": [
+      ["ru|ulica|улица", "sk|ulica", "pl|ulica"],
+      ["ru|celý|целый", "cz|celý", "sk|celý"],
+      ["ru|kupec|купец", "cz|kupec", "sk|kupec"],
+      ["ru|solnce|солнце", "cz|slunce", "sl|sonce"]
+    ]
+  },
+  "j": {
+    "examples": [
+      ["ru|jakoby|якобы", "cz|jakoby"],
+      ["ru|zajac|заяц", "sk|zajac"],
+      ["ru|jadro|ядро", "sk|jadro", "-"],
+      ["ru|jama|яма", "pl|jama", "-"],
+      ["ru|jezdit́|ездить", "cz|jezdit"],
+      ["ru|jediničný|единичный", "cz|jedinečný"],
+      ["ru|jedinstvenný|единственный", "cz|jediný", "-"],
+      ["ru|južný|южный", "sk|južný"]
+    ]
+  },
+  "y": {
+    "examples": [
+      ["ru|ryba|рыба", "cz|ryba", "sk|ryba"],
+      ["ru|smysl|смысл", "cz|smysl"],
+      ["ru|myš|мышь", "cz|myš", "sk|myš"]
+    ]
+  },
+  "ě": {
+    "examples": [
+      ["ru|svět|свѣтъ", "cz|svět"],
+      ["ru|dělat́|дѣлать", "cz|dělat"],
+      ["ru|vědat́|вѣдать", "cz|vědět|знать"],
+      ["ru|otpověd́|отповѣдь", "cz|odpověd'|ответ"]
+    ]
+  },
+  "\u0301ǵźḱĺḿńṕŕść": {
+    "examples": [
+      ["ru|koń|конь", "pl|koń"],
+      ["ru|loś|лось", "pl|łoś"],
+      ["ru|teśma|тесьма", "pl|taśma"],
+      ["ru|dań|дань", "pl|dań"],
+      ["ru|maź|мазь", "pl|maź"]
+    ]
+  }
 }

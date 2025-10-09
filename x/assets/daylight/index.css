@@ -1,205 +1,205 @@
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
 
-    --color: light-dark(black, white);
-    --background: light-dark(white, #1a1a1a);
-    --link-color: color(from var(--color) srgb r g b / .8);
+  --color: light-dark(black, white);
+  --background: light-dark(white, #1a1a1a);
+  --link-color: color(from var(--color) srgb r g b / 0.8);
 }
 html {
-    font: normal 80%/1.2 sans-serif;
-    color: var(--color);
-    background: var(--background);
+  font: normal 80% / 1.2 sans-serif;
+  color: var(--color);
+  background: var(--background);
 }
 html,
 body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 a,
 a:hover,
 a:visited,
 a:active {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 #screen {
-    font-size: .9rem;
-    flex: auto;
-    overflow: hidden;
+  font-size: 0.9rem;
+  flex: auto;
+  overflow: hidden;
 }
 #screen svg {
-    font: inherit;
-    color: inherit;
-    width: 100%;
-    height: 100%;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
 }
 #screen .under {
-    stroke: none;
-    fill: currentColor;
-    fill-opacity: .1;
+  stroke: none;
+  fill: currentColor;
+  fill-opacity: 0.1;
 }
 #screen .above {
-    stroke: none;
-    fill: none;
-    fill-opacity: .1;
+  stroke: none;
+  fill: none;
+  fill-opacity: 0.1;
 }
 @media (prefers-color-scheme: dark) {
-    #screen .under {
-        fill: none;
-    }
-    #screen .above {
-        fill: currentColor;
-    }
+  #screen .under {
+    fill: none;
+  }
+  #screen .above {
+    fill: currentColor;
+  }
 }
 #screen .directions .tick {
-    stroke: currentColor;
-    stroke-width: .5;
-    fill: none;
+  stroke: currentColor;
+  stroke-width: 0.5;
+  fill: none;
 }
 #screen .directions .tick-label {
-    text-anchor: middle;
-    fill: currentColor;
-    fill-opacity: .75;
+  text-anchor: middle;
+  fill: currentColor;
+  fill-opacity: 0.75;
 }
 #screen .directions .leftmost.tick-label {
-    text-anchor: start;
+  text-anchor: start;
 }
 #screen .directions .rightmost.tick-label {
-    text-anchor: end;
+  text-anchor: end;
 }
 #screen .track {
-    stroke: currentColor;
-    stroke-opacity: .5;
-    stroke-width: .5;
-    fill: none;
+  stroke: currentColor;
+  stroke-opacity: 0.5;
+  stroke-width: 0.5;
+  fill: none;
 }
 #screen .tracks .tick {
-    fill: currentColor;
-    stroke: none;
+  fill: currentColor;
+  stroke: none;
 }
 #screen .marker-lines line {
-    stroke: currentColor;
-    stroke-width: .75;
-    stroke-dasharray: 2 4;
-    fill: none;
+  stroke: currentColor;
+  stroke-width: 0.75;
+  stroke-dasharray: 2 4;
+  fill: none;
 }
 #screen .grid line {
-    stroke: currentColor;
-    stroke-width: .5;
-    stroke-dasharray: 1 3;
-    stroke-opacity: .5;
-    fill: none;
+  stroke: currentColor;
+  stroke-width: 0.5;
+  stroke-dasharray: 1 3;
+  stroke-opacity: 0.5;
+  fill: none;
 }
 #screen .grid line[data-alt="0"] {
-    stroke-dasharray: none;
-    stroke-opacity: .75;
+  stroke-dasharray: none;
+  stroke-opacity: 0.75;
 }
 #screen .hidden {
-    display: none;
+  display: none;
 }
 #screen .phase-shadow {
-    fill: black;
-    fill-opacity: .7;
-    stroke: none;
+  fill: black;
+  fill-opacity: 0.7;
+  stroke: none;
 }
 .pos {
-    --x: 0;
-    flex: none;
-    font-size: .9rem;
-    color: color(from var(--color) srgb r g b / .65);
-    height: 2em;
-    position: relative;
+  --x: 0;
+  flex: none;
+  font-size: 0.9rem;
+  color: color(from var(--color) srgb r g b / 0.65);
+  height: 2em;
+  position: relative;
 }
 .pos > span {
-    display: inline-block;
-    white-space: nowrap;
-    padding: .2em 0;
-    position: absolute;
-    left: var(--x);
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0.2em 0;
+  position: absolute;
+  left: var(--x);
 }
 .pos .az,
 .pos .alt,
 .pos .ph,
 .pos .event {
-    margin: 0 .25em;
+  margin: 0 0.25em;
 }
 .pos .value {
-    color: var(--color);
-    font-weight: bold;
+  color: var(--color);
+  font-weight: bold;
 }
 .pos[data-id="sun"] > span {
-    bottom: 0;
+  bottom: 0;
 }
 .pos[data-id="moon"] > span {
-    top: 0;
+  top: 0;
 }
 .pos .icon {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 form {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 4em;
-    padding: .75em 0;
-    box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 4em;
+  padding: 0.75em 0;
+  box-sizing: border-box;
 }
 form > span {
-    margin: 0 .25em;
+  margin: 0 0.25em;
 }
 form > span.field + span.field {
-    margin-left: .75em;
+  margin-left: 0.75em;
 }
 form .field {
-    display: inline-block;
-    width: 14em;
-    max-width: 35%;
-    border-bottom: 1px solid;
+  display: inline-block;
+  width: 14em;
+  max-width: 35%;
+  border-bottom: 1px solid;
 }
 form input {
-    width: 100%;
-    font: inherit;
-    text-align: center;
-    background: none transparent;
-    border: none;
-    padding: .1em;
-    box-sizing: border-box;
+  width: 100%;
+  font: inherit;
+  text-align: center;
+  background: none transparent;
+  border: none;
+  padding: 0.1em;
+  box-sizing: border-box;
 }
 form button {
-    font: inherit;
-    background: none transparent;
-    border: none;
-    cursor: pointer;
+  font: inherit;
+  background: none transparent;
+  border: none;
+  cursor: pointer;
 }
 form button img,
 form button svg {
-    height: 1.2em;
-    transform: translateY(.15em);
+  height: 1.2em;
+  transform: translateY(0.15em);
 }
 html.error .pos,
 html.error #screen {
-    display: none;
+  display: none;
 }
 html.error .error {
-    display: flex;
-    flex: auto;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: center;
 }
 footer {
-    font-weight: bold;
-    border-radius: .5em 0 0 0;
-    position: absolute;
-    padding: .2em .65em .3em .75em;
-    right: 0;
-    bottom: 0;
+  font-weight: bold;
+  border-radius: 0.5em 0 0 0;
+  position: absolute;
+  padding: 0.2em 0.65em 0.3em 0.75em;
+  right: 0;
+  bottom: 0;
 }
 @media (max-width: 500px) {
-    footer {
-        display: none;
-    }
+  footer {
+    display: none;
+  }
 }

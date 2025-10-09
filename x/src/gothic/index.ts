@@ -1,39 +1,38 @@
-import type {Context} from './Context';
-import {renderForm} from './renderForm';
-import {renderResult} from './renderResult';
+import type { Context } from "./Context";
+import { renderForm } from "./renderForm";
+import { renderResult } from "./renderResult";
 
 async function init() {
-    let urlParams = new URLSearchParams(window.location.search);
-    let params = {
-        eg: urlParams.get('eg'),
-        ge: urlParams.get('ge'),
-    };
+  let urlParams = new URLSearchParams(window.location.search);
+  let params = {
+    eg: urlParams.get("eg"),
+    ge: urlParams.get("ge"),
+  };
 
-    let ctx: Context = {
-        q: urlParams.get('q')?.trim() ?? '',
-        eg: params.eg === '1' || (params.eg === null && params.ge === null),
-        ge: params.ge === '1' || (params.eg === null && params.ge === null),
-        data: {},
-    };
+  let ctx: Context = {
+    q: urlParams.get("q")?.trim() ?? "",
+    eg: params.eg === "1" || (params.eg === null && params.ge === null),
+    ge: params.ge === "1" || (params.eg === null && params.ge === null),
+    data: {},
+  };
 
-    if (window.history) {
-        let nextLocation = '';
+  if (window.history) {
+    let nextLocation = "";
 
-        if (window.location.href.endsWith('?'))
-            nextLocation = window.location.pathname;
-        else if (ctx.q && params.eg === '1' && params.ge === '1') {
-            urlParams.delete('eg');
-            urlParams.delete('ge');
+    if (window.location.href.endsWith("?"))
+      nextLocation = window.location.pathname;
+    else if (ctx.q && params.eg === "1" && params.ge === "1") {
+      urlParams.delete("eg");
+      urlParams.delete("ge");
 
-            nextLocation = `?${urlParams.toString()}`;
-        }
-
-        if (nextLocation)
-            window.history.pushState(null, '', nextLocation);
+      nextLocation = `?${urlParams.toString()}`;
     }
 
-    renderForm(ctx);
-    await renderResult(ctx);
+    if (nextLocation) window.history.pushState(null, "", nextLocation);
+  }
+
+  renderForm(ctx);
+  await renderResult(ctx);
 }
 
 init();

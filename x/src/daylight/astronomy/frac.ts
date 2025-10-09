@@ -1,3 +1,3 @@
 export function frac(x: number) {
-    return x - Math.floor(x);
+  return x - Math.floor(x);
 }

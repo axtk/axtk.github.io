@@ -1,11 +1,11 @@
-import type {FormInput} from './getFormInput';
+import type { FormInput } from "./getFormInput";
 
-export function isValidFormInput({location, time}: FormInput) {
-    if (!location || isNaN(location.lat) || isNaN(location.lon))
-        return false;
+export function isValidFormInput({ location, time }: FormInput) {
+  if (!location || Number.isNaN(location.lat) || Number.isNaN(location.lon))
+    return false;
 
-    if (time === undefined || time === '' || typeof time === 'number')
-        return true;
+  if (time === undefined || time === "" || typeof time === "number")
+    return true;
 
-    return !isNaN(new Date(time).getTime());
+  return !Number.isNaN(new Date(time).getTime());
 }

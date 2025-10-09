@@ -1,268 +1,269 @@
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
 
-    --color: light-dark(black, white);
-    --background: light-dark(white, #1a1a1a);
-    --link-color: light-dark(royalblue, deepskyblue);
-    --content-width: 32rem;
+  --color: light-dark(black, white);
+  --background: light-dark(white, #1a1a1a);
+  --link-color: light-dark(royalblue, deepskyblue);
+  --content-width: 32rem;
 }
 html {
-    font: normal 100%/1.3 system-ui, sans-serif;
-    color: var(--color);
-    background: var(--background);
+  font:
+    normal 100% / 1.3 system-ui,
+    sans-serif;
+  color: var(--color);
+  background: var(--background);
 }
 body {
-    padding: 0 1em;
-    margin: 0;
+  padding: 0 1em;
+  margin: 0;
 }
 p,
 table {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 input,
 button,
 table {
-    font: inherit;
+  font: inherit;
 }
 hr {
-    display: none;
+  display: none;
 }
 a,
 a:hover,
 a:visited,
 a:active {
-    color: var(--link-color);
-    text-decoration: none;
+  color: var(--link-color);
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 button,
-a[data-shape=button] {
-    display: inline-block;
-    color: var(--color);
-    background: color(from var(--color) srgb r g b / .1);
-    border: .05em solid;
-    border-color:
-        color(from var(--background) srgb r g b / .5)
-        color(from var(--color) srgb r g b / .3)
-        color(from var(--color) srgb r g b / .3)
-        color(from var(--background) srgb r g b / .5);
-    border-radius: .3em;
-    padding: .25em 1em .3em;
-    cursor: pointer;
+a[data-shape="button"] {
+  display: inline-block;
+  color: var(--color);
+  background: color(from var(--color) srgb r g b / 0.1);
+  border: 0.05em solid;
+  border-color: color(from var(--background) srgb r g b / 0.5)
+    color(from var(--color) srgb r g b / 0.3)
+    color(from var(--color) srgb r g b / 0.3)
+    color(from var(--background) srgb r g b / 0.5);
+  border-radius: 0.3em;
+  padding: 0.25em 1em 0.3em;
+  cursor: pointer;
 }
-a[data-shape=button]:link,
-a[data-shape=button]:visited,
-a[data-shape=button]:focus,
-a[data-shape=button]:active,
-a[data-shape=button]:hover {
-    color: var(--color);
-    text-decoration: none;
+a[data-shape="button"]:link,
+a[data-shape="button"]:visited,
+a[data-shape="button"]:focus,
+a[data-shape="button"]:active,
+a[data-shape="button"]:hover {
+  color: var(--color);
+  text-decoration: none;
 }
 button .icon,
-a[data-shape=button] .icon {
-    margin-inline-end: .25em;
+a[data-shape="button"] .icon {
+  margin-inline-end: 0.25em;
 }
 
 html[data-output="none"] .output,
 html[data-output="none"] .hints,
 html:not([data-output="none"]) nav {
-    display: none;
+  display: none;
 }
 
 main .input,
 main .hints,
 footer {
-    width: 100%;
-    max-width: var(--content-width);
-    box-sizing: border-box;
+  width: 100%;
+  max-width: var(--content-width);
+  box-sizing: border-box;
 }
 main .input,
 footer {
-    margin: 1.5rem auto;
+  margin: 1.5rem auto;
 }
 main .hints {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 main .input,
 main .output,
 footer {
-    text-align: center;
+  text-align: center;
 }
 
 main {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 main .input input {
-    width: 100%;
-    font-size: 1.5em;
-    text-align: center;
-    background: none transparent;
-    border: none;
-    border-bottom: .1rem solid;
-    padding: 0 .2em;
-    box-sizing: border-box;
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  background: none transparent;
+  border: none;
+  border-bottom: 0.1rem solid;
+  padding: 0 0.2em;
+  box-sizing: border-box;
 }
 main .input input:focus {
-    border-color: var(--link-color);
-    outline: none;
+  border-color: var(--link-color);
+  outline: none;
 }
 main .input .hint {
-    font-size: .75em;
+  font-size: 0.75em;
 }
 main .input .hint i {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 main .output p.result {
-    line-height: 1.1;
-    margin: 0;
+  line-height: 1.1;
+  margin: 0;
 }
 main .output .result strong {
-    font-size: 2em;
+  font-size: 2em;
 }
 main .output .result .uppercased {
-    display: inline-block;
-    transform: scaleY(.9);
-    letter-spacing: .03em;
-    margin-top: 1em;
+  display: inline-block;
+  transform: scaleY(0.9);
+  letter-spacing: 0.03em;
+  margin-top: 1em;
 }
 main .output .controls {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 main .output .controls a {
-    margin: .5em;
+  margin: 0.5em;
 }
 html[data-output="unstressed"] main .output .controls .unstress {
-    display: none;
+  display: none;
 }
 
 footer {
-    font-size: .8em;
-    margin-top: 0;
+  font-size: 0.8em;
+  margin-top: 0;
 }
 footer p {
-    margin: .5em 0;
+  margin: 0.5em 0;
 }
 footer .signature span {
-    font-size: .78em;
-    margin-inline-start: .25em;
+  font-size: 0.78em;
+  margin-inline-start: 0.25em;
 }
 
 .hint-box {
-    font-size: .95rem;
-    background-color: color(from var(--color) srgb r g b / .05);
-    padding: .1em 1.25em;
-    margin: 1.25em 0;
+  font-size: 0.95rem;
+  background-color: color(from var(--color) srgb r g b / 0.05);
+  padding: 0.1em 1.25em;
+  margin: 1.25em 0;
 }
 .hint-box em {
-    font-style: normal;
-    border-bottom: .3em solid color(from var(--link-color) srgb r g b / .3);
+  font-style: normal;
+  border-bottom: 0.3em solid color(from var(--link-color) srgb r g b / 0.3);
 }
 
 .chars.hint-box {
-    text-align: center;
+  text-align: center;
 }
 .chars table {
-    border-collapse: collapse;
-    margin: 1em auto 1.5em;
+  border-collapse: collapse;
+  margin: 1em auto 1.5em;
 }
 .chars table tbody {
-    border-top: .075em solid;
+  border-top: 0.075em solid;
 }
 .chars table tbody:last-child {
-    border-bottom: .075em solid;
+  border-bottom: 0.075em solid;
 }
 .chars table th,
 .chars table td {
-    text-align: start;
-    padding: .35rem 1rem;
-    vertical-align: top;
+  text-align: start;
+  padding: 0.35rem 1rem;
+  vertical-align: top;
 }
 .chars table th {
-    font-size: 1.5rem;
-    line-height: 1;
-    text-align: center;
-    padding-top: .75rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-align: center;
+  padding-top: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .chars table td.main-entry {
-    padding-right: .75em;
+  padding-right: 0.75em;
 }
 @media (max-width: 600px) {
-    .chars table th,
-    .chars table td {
-        padding: .35rem .5rem;
-    }
-    .chars table th {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .chars table td.main-entry {
-        padding-right: .5em;
-    }
+  .chars table th,
+  .chars table td {
+    padding: 0.35rem 0.5rem;
+  }
+  .chars table th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .chars table td.main-entry {
+    padding-right: 0.5em;
+  }
 }
 .chars tr:not(:first-child) td {
-    border-top: .05em solid;
+  border-top: 0.05em solid;
 }
 .chars table .main-entry .lang {
-    display: block;
+  display: block;
 }
 .chars table .lang {
-    opacity: .5;
+  opacity: 0.5;
 }
 .chars table .example-entry .secondary {
-    margin: 0 .15em;
+  margin: 0 0.15em;
 }
 .chars table .entry-content + .entry-content {
-    margin-top: .5em;
+  margin-top: 0.5em;
 }
 .chars table .mark {
-    background-color: transparent;
-    border-bottom: .3em solid color(from var(--link-color) srgb r g b / .3);
+  background-color: transparent;
+  border-bottom: 0.3em solid color(from var(--link-color) srgb r g b / 0.3);
 }
 
 nav {
-    font-size: .95rem;
-    border-top: .075em solid;
+  font-size: 0.95rem;
+  border-top: 0.075em solid;
 }
 nav .sep {
-    display: none;
+  display: none;
 }
 nav p > span,
 nav a {
-    display: inline-block;
+  display: inline-block;
 }
 nav p > span {
-    --link-color: var(--color);
+  --link-color: var(--color);
 }
 nav .from,
 nav .to {
-    display: block;
+  display: block;
 }
 nav .arrow {
-    display: none;
+  display: none;
 }
 nav a {
-    background: color(from currentColor srgb r g b / .05);
-    border: .05em solid;
-    border-radius: .3em;
-    padding: .2em .5em .25em;
-    margin: 0 .5em .5em 0;
-    position: relative;
+  background: color(from currentColor srgb r g b / 0.05);
+  border: 0.05em solid;
+  border-radius: 0.3em;
+  padding: 0.2em 0.5em 0.25em;
+  margin: 0 0.5em 0.5em 0;
+  position: relative;
 }
 nav a:hover {
-    text-decoration: none;
-    box-shadow: 0 0 0 1px currentColor;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px currentColor;
 }
 nav .to {
-    font-size: .8em;
-    color: color(from currentColor srgb r g b / .65);
+  font-size: 0.8em;
+  color: color(from currentColor srgb r g b / 0.65);
 }
 /*
 nav [data-tag=geo] {

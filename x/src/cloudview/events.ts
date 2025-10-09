@@ -1,3 +1,3 @@
-import {EventManager} from 'evtm';
+import { EventManager } from "evtm";
 
 export const events = new EventManager();

@@ -1,48 +1,43 @@
-import {ns} from './const';
-import {getScreenPosition} from './getScreenPosition';
-import type {Context} from './Context';
+import type { Context } from "./Context";
+import { ns } from "./const";
+import { getScreenPosition } from "./getScreenPosition";
 
 export function renderHintLines(ctx: Context) {
-    let container = ctx.element.querySelector('g.hint-lines')!;
-    let paths = Array.from(container.querySelectorAll('path'));
-    let fragment: DocumentFragment | null = null;
+  let container = ctx.element.querySelector("g.hint-lines")!;
+  let paths = Array.from(container.querySelectorAll("path"));
+  let fragment: DocumentFragment | null = null;
 
-    let line: [number, number][];
-    let d: string;
-    let element: SVGPathElement;
-    let pos: [number, number, number] | null;
-    let k = 0;
+  let line: [number, number][];
+  let d: string;
+  let element: SVGPathElement;
+  let pos: [number, number, number] | null;
+  let k = 0;
 
-    for (let i = 0; i < ctx.hintLines.length; i++) {
-        line = ctx.hintLines[i];
-        d = '';
+  for (let i = 0; i < ctx.hintLines.length; i++) {
+    line = ctx.hintLines[i];
+    d = "";
 
-        for (let point of line) {
-            pos = getScreenPosition(point[0], point[1], ctx, 1);
+    for (let point of line) {
+      pos = getScreenPosition(point[0], point[1], ctx, 1);
 
-            if (pos !== null)
-                d += `${d ? ' L' : 'M'}${pos[0]},${pos[1]}`;
-        }
-
-        if (!d)
-            continue;
-
-        element = paths[k++];
-
-        if (!element) {
-            if (!fragment)
-                fragment = document.createDocumentFragment();
-
-            element = document.createElementNS(ns, 'path');
-            fragment.appendChild(element);
-        }
-
-        element.setAttribute('d', d);
+      if (pos !== null) d += `${d ? " L" : "M"}${pos[0]},${pos[1]}`;
     }
 
-    if (fragment)
-        container.appendChild(fragment);
+    if (!d) continue;
 
-    for (let i = k; i < paths.length; i++)
-        paths[i].remove();
+    element = paths[k++];
+
+    if (!element) {
+      if (!fragment) fragment = document.createDocumentFragment();
+
+      element = document.createElementNS(ns, "path");
+      fragment.appendChild(element);
+    }
+
+    element.setAttribute("d", d);
+  }
+
+  if (fragment) container.appendChild(fragment);
+
+  for (let i = k; i < paths.length; i++) paths[i].remove();
 }

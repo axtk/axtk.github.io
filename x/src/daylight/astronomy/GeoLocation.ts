@@ -1,4 +1,4 @@
 export type GeoLocation = {
-    lat: number;
-    lon: number;
+  lat: number;
+  lon: number;
 };

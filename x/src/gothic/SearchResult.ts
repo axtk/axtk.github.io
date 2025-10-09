@@ -1,9 +1,9 @@
-import type {MatchedItem} from './MatchedItem';
+import type { MatchedItem } from "./MatchedItem";
 
 export type SearchResult = {
-    expressions: {
-        value: string;
-        captureIndex: number;
-    }[];
-    entries: MatchedItem[];
+  expressions: {
+    value: string;
+    captureIndex: number;
+  }[];
+  entries: MatchedItem[];
 };

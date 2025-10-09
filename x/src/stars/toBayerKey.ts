@@ -1,19 +1,16 @@
-import {bayerDesignationMap, superscriptNumbers} from './const';
+import { bayerDesignationMap, superscriptNumbers } from "./const";
 
 /** 'alp1' to 'α¹' */
 export function toBayerKey(rawBayerKey: string | undefined) {
-    let matches = rawBayerKey?.match(/^([^\d]+)(\d+)?$/);
+  let matches = rawBayerKey?.match(/^([^\d]+)(\d+)?$/);
 
-    if (!matches)
-        return rawBayerKey;
+  if (!matches) return rawBayerKey;
 
-    let [, charKey = '', numKey = ''] = matches;
+  let [, charKey = "", numKey = ""] = matches;
 
-    if (bayerDesignationMap[charKey])
-        charKey = bayerDesignationMap[charKey];
+  if (bayerDesignationMap[charKey]) charKey = bayerDesignationMap[charKey];
 
-    if (numKey)
-        numKey = superscriptNumbers[Number(numKey)] ?? numKey;
+  if (numKey) numKey = superscriptNumbers[Number(numKey)] ?? numKey;
 
-    return `${charKey}${numKey}`;
+  return `${charKey}${numKey}`;
 }

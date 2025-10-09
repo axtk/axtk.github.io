@@ -1,5 +1,5 @@
-import {sdk} from 'yd-sdk';
+import { sdk } from "yd-sdk";
 
 export const ydsdk = sdk();
 
-export const downloadURL = 'https://axtk.me/ydimg';
+export const downloadURL = "https://axtk.me/ydimg";

@@ -1,174 +1,174 @@
 html {
-    --max-main-content-width: 640px;
+  --max-main-content-width: 640px;
 }
 body {
-    padding: 2rem 0 3rem;
+  padding: 2rem 0 3rem;
 }
 main {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 section {
-    margin: 0;
+  margin: 0;
 }
 section + section {
-    margin-top: .5em;
+  margin-top: 0.5em;
 }
 section h2:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 ul {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 li .description {
-    display: block;
-    font-size: var(--smaller-font-size);
+  display: block;
+  font-size: var(--smaller-font-size);
 }
 figure {
-    padding: 0;
-    margin: 1.5rem 0;
+  padding: 0;
+  margin: 1.5rem 0;
 }
 figure + figure {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 p + figure {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 picture {
-    display: block;
-    font-size: 0;
-    min-height: 320px;
-    background: color(from var(--color) srgb r g b / .12);
-    border: .03rem solid color(from var(--color) srgb r g b / .2);
-    border-radius: .5rem;
-    /* border: .03rem solid color(from var(--color) srgb r g b / .2); */
-    padding: .35rem;
-    margin: 1.25rem 0;
+  display: block;
+  font-size: 0;
+  min-height: 320px;
+  background: color(from var(--color) srgb r g b / 0.12);
+  border: 0.03rem solid color(from var(--color) srgb r g b / 0.2);
+  border-radius: 0.5rem;
+  /* border: .03rem solid color(from var(--color) srgb r g b / .2); */
+  padding: 0.35rem;
+  margin: 1.25rem 0;
 }
 picture img {
-    max-width: 100%;
-    height: auto;
-    border: .03rem solid color(from var(--color) srgb r g b / .2);
-    border-radius: .35rem;
-    box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  border: 0.03rem solid color(from var(--color) srgb r g b / 0.2);
+  border-radius: 0.35rem;
+  box-sizing: border-box;
 }
 picture:empty {
-    position: relative;
+  position: relative;
 }
 picture:empty::after {
-    /* content: "¯\\_(ツ)_/¯"; */
-    content: "No preview yet";
-    font-size: 1rem;
-    font-family: monospace;
-    letter-spacing: .05rem;
-    text-transform: uppercase;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scaleY(.8);
-    opacity: .3;
+  /* content: "¯\\_(ツ)_/¯"; */
+  content: "No preview yet";
+  font-size: 1rem;
+  font-family: monospace;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleY(0.8);
+  opacity: 0.3;
 }
 figcaption {
-    padding: 0 2rem;
+  padding: 0 2rem;
 }
 .intro {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 .intro h1 {
-    font-size: 1.5rem;
-    border-bottom: none;
-    padding: 0;
-    margin: 0;
+  font-size: 1.5rem;
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
 }
 main .intro h1:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 .intro p.nickname {
-    margin: .5em 0;
+  margin: 0.5em 0;
 }
 .intro .image {
-    --image-size: 7rem;
+  --image-size: 7rem;
 }
 .intro .image p {
-    margin: .5em 0;
+  margin: 0.5em 0;
 }
 .intro .image span {
-    display: inline-block;
-    width: var(--image-size);
-    height: var(--image-size);
-    font-size: 0;
-    background: color(from var(--color) srgb r g b / .05);
-    border-radius: 50%;
-    overflow: hidden;
+  display: inline-block;
+  width: var(--image-size);
+  height: var(--image-size);
+  font-size: 0;
+  background: color(from var(--color) srgb r g b / 0.05);
+  border-radius: 50%;
+  overflow: hidden;
 }
 .intro .image img {
-    width: var(--image-size);
+  width: var(--image-size);
 }
 .intro ul.contacts {
-    font-family: monospace;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  font-family: monospace;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .intro ul.contacts li {
-    display: block;
-    padding: 0;
-    margin: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 .intro table.contacts {
-    font-size: var(--smaller-font-size);
-    border: none;
-    border-collapse: collapse;
-    margin: .75em 0 0;
+  font-size: var(--smaller-font-size);
+  border: none;
+  border-collapse: collapse;
+  margin: 0.75em 0 0;
 }
 .intro table.contacts tbody {
-    border: none;
+  border: none;
 }
 .intro table.contacts td {
-    border: none;
-    padding: .2em .5em .2em 0;
+  border: none;
+  padding: 0.2em 0.5em 0.2em 0;
 }
 .intro table.contacts td:first-child {
-    text-align: right;
+  text-align: right;
 }
 .intro table.contacts .sep {
-    margin: 0 .15em;
+  margin: 0 0.15em;
 }
 .content p.sep {
-    font-size: 0;
-    margin: 1.25rem 0;
+  font-size: 0;
+  margin: 1.25rem 0;
 }
 @media (max-width: 600px) {
-    html {
-        --smaller-font-size: .9em;
-    }
-    body {
-        padding: 1.5rem 0;
-    }
-    .intro {
-        flex-direction: row-reverse;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .intro .image {
-        --image-size: 3.6rem;
-        flex: auto;
-        text-align: right;
-        margin-top: -.5rem;
-    }
-    :not(li) > ul {
-        padding-inline-start: 1.25em;
-    }
-    picture {
-        min-height: 200px;
-    }
-    figcaption {
-        padding: 0 1rem;
-    }
+  html {
+    --smaller-font-size: 0.9em;
+  }
+  body {
+    padding: 1.5rem 0;
+  }
+  .intro {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .intro .image {
+    --image-size: 3.6rem;
+    flex: auto;
+    text-align: right;
+    margin-top: -0.5rem;
+  }
+  :not(li) > ul {
+    padding-inline-start: 1.25em;
+  }
+  picture {
+    min-height: 200px;
+  }
+  figcaption {
+    padding: 0 1rem;
+  }
 }

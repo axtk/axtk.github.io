@@ -1,116 +1,114 @@
-import {escapeRegExp} from 'stfm';
-import type {Context} from './Context';
-import type {SearchResult} from './SearchResult';
-import type {MatchedItem} from './MatchedItem';
-import {fetchData} from './fetchData';
-import {translit} from './translit';
-import {setHTMLContent} from './setHTMLContent';
+import { escapeRegExp } from "stfm";
+import type { Context } from "./Context";
+import { fetchData } from "./fetchData";
+import type { MatchedItem } from "./MatchedItem";
+import type { SearchResult } from "./SearchResult";
+import { setHTMLContent } from "./setHTMLContent";
+import { translit } from "./translit";
 
 // @date 2020-04-17
 function normalize(s: string | null | undefined) {
-    if (!s) return '';
+  if (!s) return "";
 
-    return s
-        .toLowerCase()
-        .replace(/\s+/g, ' ')
-        .trim()
-        .replace(/þ/gi, 'th')
-        .replace(/á/gi, 'a')
-        .replace(/é/gi, 'e')
-        .replace(/í/gi, 'i')
-        .replace(/ó/gi, 'o')
-        .replace(/ú/gi, 'u');
+  return s
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/þ/gi, "th")
+    .replace(/á/gi, "a")
+    .replace(/é/gi, "e")
+    .replace(/í/gi, "i")
+    .replace(/ó/gi, "o")
+    .replace(/ú/gi, "u");
 }
 
-function byRelevance({relevance: ra = 0}, {relevance: rb = 0}) {
-    return ra === rb ? 0 : (ra > rb ? -1 : 1);
+function byRelevance({ relevance: ra = 0 }, { relevance: rb = 0 }) {
+  return ra === rb ? 0 : ra > rb ? -1 : 1;
 }
 
 export async function search(ctx: Context): Promise<SearchResult | undefined> {
-    let q = normalize(translit(ctx.q));
+  let q = normalize(translit(ctx.q));
 
-    if (!q)
-        return;
-    
-    await fetchData(ctx);
+  if (!q) return;
 
-    let output: SearchResult = {
-        expressions: [
-            {
-                value: `\\b${escapeRegExp(q)}\\b`,
-                captureIndex: 1,
-            },
-            {
-                value: escapeRegExp(q),
-                captureIndex: 1,
-            },
-        ],
-        entries: [],
-    };
+  await fetchData(ctx);
 
-    if (q.length < 4)
-        output.expressions = [
-            {
-                value: `(^|\\pP|\\b)(${escapeRegExp(q)})(\\pP|\\b|$)`,
-                captureIndex: 2,
-            },
-        ];
+  let output: SearchResult = {
+    expressions: [
+      {
+        value: `\\b${escapeRegExp(q)}\\b`,
+        captureIndex: 1,
+      },
+      {
+        value: escapeRegExp(q),
+        captureIndex: 1,
+      },
+    ],
+    entries: [],
+  };
 
-    let {expressions} = output;
-    let en = expressions.length;
+  if (q.length < 4)
+    output.expressions = [
+      {
+        value: `(^|\\pP|\\b)(${escapeRegExp(q)})(\\pP|\\b|$)`,
+        captureIndex: 2,
+      },
+    ];
 
-    let dictionaries = {
-        eg: ctx.data.eg,
-        ge: ctx.data.ge,
-    };
+  let { expressions } = output;
+  let en = expressions.length;
 
-    for (let [key, dict] of Object.entries(dictionaries)) {
-        if (!dict)
-            continue;
+  let dictionaries = {
+    eg: ctx.data.eg,
+    ge: ctx.data.ge,
+  };
 
-        for (let item of dict) {
-            let normalizedTerm = normalize(item.t);
-            let normalizedDef = normalize(item.d);
+  for (let [key, dict] of Object.entries(dictionaries)) {
+    if (!dict) continue;
 
-            let matched = false;
+    for (let item of dict) {
+      let normalizedTerm = normalize(item.t);
+      let normalizedDef = normalize(item.d);
 
-            for (let ei = 0; ei < en && !matched; ei++) {
-                let {value: expression} = expressions[ei];
+      let matched = false;
 
-                let matchesTerm = new RegExp(expression, 'g').test(normalizedTerm);
-                let entryRegExp = new RegExp(expression, 'g');
+      for (let ei = 0; ei < en && !matched; ei++) {
+        let { value: expression } = expressions[ei];
 
-                matched = matchesTerm || entryRegExp.test(normalizedDef);
+        let matchesTerm = new RegExp(expression, "g").test(normalizedTerm);
+        let entryRegExp = new RegExp(expression, "g");
 
-                if (!matched)
-                    continue;
+        matched = matchesTerm || entryRegExp.test(normalizedDef);
 
-                let matchedItem: MatchedItem = {
-                    dictionaryKey: key,
-                    expressionIndex: ei,
-                    term: item.t,
-                    def: item.dx,
-                };
+        if (!matched) continue;
 
-                let r0 = 20*(en - ei - 1);
+        let matchedItem: MatchedItem = {
+          dictionaryKey: key,
+          expressionIndex: ei,
+          term: item.t,
+          def: item.dx,
+        };
 
-                if (matchesTerm) {
-                    if (normalizedTerm === q)
-                        matchedItem.relevance = r0 + 20;
-                    else {
-                        let ql = q.length, tl = normalizedTerm.length;
-                        matchedItem.relevance = r0 + 10 + 10*(ql < tl ? ql/tl : tl/ql)
-                    }
-                }
-                else if (normalizedDef.length !== 0)
-                    matchedItem.relevance = r0 + 10*(1 - entryRegExp.lastIndex/normalizedDef.length);
+        let r0 = 20 * (en - ei - 1);
 
-                output.entries.push(setHTMLContent(matchedItem, output, ctx));
-            }
-        }
+        if (matchesTerm) {
+          if (normalizedTerm === q) matchedItem.relevance = r0 + 20;
+          else {
+            let ql = q.length,
+              tl = normalizedTerm.length;
+            matchedItem.relevance =
+              r0 + 10 + 10 * (ql < tl ? ql / tl : tl / ql);
+          }
+        } else if (normalizedDef.length !== 0)
+          matchedItem.relevance =
+            r0 + 10 * (1 - entryRegExp.lastIndex / normalizedDef.length);
+
+        output.entries.push(setHTMLContent(matchedItem, output, ctx));
+      }
     }
+  }
 
-    output.entries.sort(byRelevance);
+  output.entries.sort(byRelevance);
 
-    return output;
+  return output;
 }

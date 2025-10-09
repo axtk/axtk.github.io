@@ -1,185 +1,185 @@
 html {
-    --color: black;
-    --background: white;
-    --link-color: royalblue;
+  --color: black;
+  --background: white;
+  --link-color: royalblue;
 
-    font: normal 80%/1.2 sans-serif;
-    color: var(--color);
-    background: var(--background);
-    overscroll-behavior: contain;
+  font: normal 80% / 1.2 sans-serif;
+  color: var(--color);
+  background: var(--background);
+  overscroll-behavior: contain;
 }
 html[data-mode="dark"],
 html[data-mode="fantasy"] {
-    --color: white;
-    --background: #0d0c15;
-    --link-color: deepskyblue;
+  --color: white;
+  --background: #0d0c15;
+  --link-color: deepskyblue;
 }
 html,
 body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 a,
 a:hover,
 a:visited,
 a:active {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 #screen {
-    flex: auto;
-    overflow: hidden;
-    position: relative;
+  flex: auto;
+  overflow: hidden;
+  position: relative;
 }
 #screen svg {
-    font: inherit;
-    color: inherit;
-    width: 100%;
-    height: 100%;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
 }
 #screen svg text {
-    cursor: default;
-    user-select: none;
+  cursor: default;
+  user-select: none;
 }
 #screen .stars {
-    fill: currentColor;
-    stroke: none;
-    stroke-width: .75;
+  fill: currentColor;
+  stroke: none;
+  stroke-width: 0.75;
 }
 #screen .p {
-    fill: none;
-    stroke-linecap: round;
+  fill: none;
+  stroke-linecap: round;
 }
 #screen .grid {
-    stroke: currentColor;
-    stroke-width: .55;
-    stroke-opacity: .09;
-    fill: none;
+  stroke: currentColor;
+  stroke-width: 0.55;
+  stroke-opacity: 0.09;
+  fill: none;
 }
 #screen .star-labels {
-    font-family: serif;
-    fill: currentColor;
-    fill-opacity: .5;
+  font-family: serif;
+  fill: currentColor;
+  fill-opacity: 0.5;
 }
 #screen .constellation-labels {
-    font-size: 1em;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: .2em;
-    text-anchor: middle;
-    text-transform: uppercase;
-    fill: currentColor;
-    fill-opacity: .12;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  text-anchor: middle;
+  text-transform: uppercase;
+  fill: currentColor;
+  fill-opacity: 0.12;
 }
 #screen .hint-lines {
-    stroke: currentColor;
-    stroke-width: .5;
-    stroke-dasharray: 3 2;
-    stroke-opacity: .3;
-    fill: none;
+  stroke: currentColor;
+  stroke-width: 0.5;
+  stroke-dasharray: 3 2;
+  stroke-opacity: 0.3;
+  fill: none;
 }
 #screen .hidden {
-    display: none;
+  display: none;
 }
 #screen form {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    inset: 1em auto auto 1em;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  inset: 1em auto auto 1em;
 }
 #screen form label {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 #screen form label input {
-    position: absolute;
-    left: -10rem;
+  position: absolute;
+  left: -10rem;
 }
 #screen form label span {
-    display: inline-block;
-    color: color(from var(--color) srgb r g b / .85);
-    background: color(from var(--color) srgb r g b / .15);
-    border: .05em solid color(from var(--color) srgb r g b / .3);
-    padding: .35em 1.5em;
+  display: inline-block;
+  color: color(from var(--color) srgb r g b / 0.85);
+  background: color(from var(--color) srgb r g b / 0.15);
+  border: 0.05em solid color(from var(--color) srgb r g b / 0.3);
+  padding: 0.35em 1.5em;
 }
 #screen form label input:checked + span {
-    color: color(from var(--link-color) srgb r g b / .95);
-    background: color(from var(--link-color) srgb r g b / .25);
+  color: color(from var(--link-color) srgb r g b / 0.95);
+  background: color(from var(--link-color) srgb r g b / 0.25);
 }
 footer {
-    --link-color: color(from var(--color) srgb r g b / .8);
+  --link-color: color(from var(--color) srgb r g b / 0.8);
 
-    font-weight: bold;
-    border-radius: .5em 0 0 0;
-    position: absolute;
-    padding: .2em .65em .3em .75em;
-    right: 0;
-    bottom: 0;
+  font-weight: bold;
+  border-radius: 0.5em 0 0 0;
+  position: absolute;
+  padding: 0.2em 0.65em 0.3em 0.75em;
+  right: 0;
+  bottom: 0;
 }
 
 #screenmenu {
-    --x: 0px;
-    --y: 0px;
+  --x: 0px;
+  --y: 0px;
 
-    color: color(from var(--background) srgb r g b / .85);
-    background: color(from var(--link-color) srgb r g b / .95);
-    position: absolute;
-    z-index: 100;
-    left: var(--x);
-    top: var(--y);
+  color: color(from var(--background) srgb r g b / 0.85);
+  background: color(from var(--link-color) srgb r g b / 0.95);
+  position: absolute;
+  z-index: 100;
+  left: var(--x);
+  top: var(--y);
 }
 #screenmenu ul {
-    display: inline-block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 #screenmenu table {
-    border-collapse: collapse;
-    border: none;
-    margin: 0;
+  border-collapse: collapse;
+  border: none;
+  margin: 0;
 }
 #screenmenu td {
-    padding: .3em .5em .2em;
+  padding: 0.3em 0.5em 0.2em;
 }
 #screenmenu td:not(:first-child) {
-    border-left: .05em solid color(from var(--background) srgb r g b / .25);
+  border-left: 0.05em solid color(from var(--background) srgb r g b / 0.25);
 }
 #screenmenu li,
 #screenmenu td {
-    white-space: nowrap;
-    border-bottom: .05em solid color(from var(--background) srgb r g b / .85);
+  white-space: nowrap;
+  border-bottom: 0.05em solid color(from var(--background) srgb r g b / 0.85);
 }
 #screenmenu.wide li,
 #screenmenu.wide td {
-    white-space: normal;
+  white-space: normal;
 }
 #screenmenu button {
-    display: block;
-    width: 100%;
-    color: inherit;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 #screenmenu li,
 #screenmenu button {
-    padding: .3em .5em .2em;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0.3em 0.5em 0.2em;
+  margin: 0;
+  box-sizing: border-box;
 }
 #screenmenu .b {
-    text-align: right;
+  text-align: right;
 }
 #screenmenu .x {
-    text-align: center;
-    padding-left: 1em;
-    padding-right: 1em;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
 }
