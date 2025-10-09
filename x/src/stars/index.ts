@@ -19,8 +19,8 @@ async function init() {
   let element = document.querySelector<SVGElement>("#screen svg")!;
   let data = await fetchData();
   let mode =
-    state.read<Context["mode"]>("mode") ??
-    (document.documentElement.dataset.mode as Context["mode"]);
+    (document.documentElement.dataset.mode as Context["mode"]) ||
+    state.read<Context["mode"]>("mode");
 
   let ctx: Context = {
     ...data,

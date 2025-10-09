@@ -6,7 +6,7 @@
   <title>Star sky map</title>
   <link rel="stylesheet" href="assets/stars/index.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script>try{let mode=localStorage.getItem("stars.mode");mode=mode&&JSON.parse(mode);if(mode)document.documentElement.dataset.mode=mode;}catch{}</script>
+  <script>{let mode=new URLSearchParams(window.location.search).get("mode");if(!["dark","light","fantasy"].includes(mode))mode=null;if(!mode){try{mode=JSON.parse(localStorage.getItem("stars.mode"));}catch{}}if(mode)document.documentElement.dataset.mode=mode;}</script>
 </head>
 <body>
 

@@ -21,7 +21,7 @@ export function initClicks(ctx: Context) {
     let y = event.offsetY - top;
 
     let pos = fromScreenPosition(x, y, ctx);
-    console.log("click", pos);
+    // console.log("click", pos);
 
     if (pos === null) return;
 
@@ -42,7 +42,7 @@ export function initClicks(ctx: Context) {
     matches.sort(byMagnitude);
 
     for (let star of matches) {
-      console.log(`#${star.id}; ${star.name}`, star.magnitude);
+      // console.log(`#${star.id}; ${star.name}`, star.magnitude);
       window.sendEvent?.(["click star", star.name ?? `#${star.id}`]);
     }
 
