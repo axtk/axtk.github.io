@@ -1,78 +1,111 @@
-import {exec as defaultExec} from 'node:child_process';
-import {access, cp, lstat, readdir, rename, rm} from 'node:fs/promises';
+import {exec as originalExec, spawn as originalSpawn} from 'node:child_process';
+import {access, lstat, readdir, rm} from 'node:fs/promises';
+import {platform} from 'node:os';
 import {promisify} from 'node:util';
 
 const sourceDir = 'x/src';
 const targetDir = 'x/assets/0';
 
-const exec = promisify(defaultExec);
+const exec = promisify(originalExec);
 const targets = process.argv.slice(2);
 
-async function customBuild(dir) {
-    let path = `${sourceDir}/${dir}/build.mjs`;
+function spawn(command, args, options) {
+    return new Promise((resolve, reject) => {
+        let p = originalSpawn(command, args, options);
+        let stdout = '';
+        let stderr = '';
 
-    try {
-        await access(path);
-        console.log('  Running custom build');
-        await exec(`node ${path}`);
-    }
-    catch {}
+        p.stdout?.on('data', (data) => {
+            stdout += data.toString();
+        });
+
+        p.stderr?.on('data', (data) => {
+            stderr += data.toString();
+        });
+
+        p.on('close', (code) => {
+            if (code === 0) {
+                resolve({ stdout, stderr, code });
+            } else {
+                let error = new Error(`Command failed with exit code ${code}`);
+                error.code = code;
+                error.stdout = stdout;
+                error.stderr = stderr;
+                reject(error);
+            }
+        });
+
+        p.on('error', (err) => {
+            reject(err);
+        });
+    });
+}
+
+function exists(path) {
+    return access(path).then(() => true, () => false);
+}
+
+function missing(path) {
+    return access(path).then(() => false, () => true);
+}
+
+async function customBuild(dir) {
+    let dirPath = `${sourceDir}/${dir}`;
+    let path = `${dirPath}/build.mjs`;
+
+    if (await missing(path))
+        return;
+
+    console.log(`[${dirPath}] running custom build`);
+    await exec(`node ${path}`);
 }
 
 async function checkDependencies(dir) {
+    let dirPath = `${sourceDir}/${dir}`;
+
+    if ((await missing(`${dirPath}/package.json`)) || (await exists(`${dirPath}/node_modules`)))
+        return;
+
+    console.log(`[${dirPath}] installing dependencies`);
+
+    let npmCmd = platform().startsWith('win') ? 'npm.cmd' : 'npm';
+
     try {
-        await access(`${sourceDir}/${dir}/package.json`);
-
-        try {
-            await access(`${sourceDir}/${dir}/node_modules`);
-        }
-        catch {
-            console.log('  Installing dependencies');
-            await cp(`${sourceDir}/${dir}/package.json`, 'package.json');
-
-            try {
-                await access(`${sourceDir}/${dir}/package-lock.json`);
-                await cp(`${sourceDir}/${dir}/package-lock.json`, 'package-lock.json');
-            }
-            catch {}
-
-            await exec('npm i');
-            await rename('node_modules', `${sourceDir}/${dir}/node_modules`);
-            await rm('package.json');
-
-            try {
-                await access('package-lock.json');
-                await cp('package-lock.json', `${sourceDir}/${dir}/package-lock.json`);
-                await rm('package-lock.json');
-            }
-            catch {}
-        }
+        await spawn(npmCmd, ['i'], {
+            env: process.env,
+            cwd: dirPath,
+            stdio: 'inherit',
+            shell: true,
+        });
     }
-    catch {}
+    catch (error) {
+        console.error(error);
+    }
 }
 
 async function compile(dir) {
-    let path = `${sourceDir}/${dir}/index.ts`;
+    let dirPath = `${sourceDir}/${dir}`;
+    let path = `${dirPath}/index.ts`;
 
-    try {
-        await access(path);
-        console.log('  Compiling');
-        await exec(`npx esbuild ${path} --outdir=${targetDir}/${dir} --platform=browser --bundle --minify`);
-    }
-    catch {}
+    if (await missing(path))
+        return;
+
+    console.log(`[${dirPath}] compiling`);
+    await exec(`npx esbuild ${path} --outdir=${targetDir}/${dir} --platform=browser --bundle --minify`);
 }
 
 async function build(dir) {
-    try {
-        await access(`${sourceDir}/${dir}`);
-        console.log(`Building "${sourceDir}/${dir}"`);
-        await checkDependencies(dir);
-        await Promise.all([
-            customBuild(dir),
-            compile(dir),
-        ]);
-    }
-    catch {}
+    let dirPath = `${sourceDir}/${dir}`;
+
+    if (await missing(dirPath))
+        return;
+
+    console.log(`[${dirPath}] building`);
+    await checkDependencies(dir);
+    await Promise.all([
+        customBuild(dir),
+        compile(dir),
+    ]);
 }
 
 (async () => {
@@ -85,18 +118,16 @@ async function build(dir) {
     else {
         await rm(targetDir, {recursive: true, force: true});
 
-        try {
-            await access(sourceDir);
+        if (await missing(sourceDir))
+            return;
 
-            let dirs = await readdir(sourceDir);
+        let dirs = await readdir(sourceDir);
 
-            for (let dir of dirs) {
-                if (!(await lstat(`${sourceDir}/${dir}`)).isDirectory())
-                    continue;
+        for (let dir of dirs) {
+            if (!(await lstat(`${sourceDir}/${dir}`)).isDirectory())
+                continue;
 
-                await build(dir);
-            }
+            await build(dir);
         }
-        catch {}
     }
 })();
