@@ -1,174 +1,203 @@
+:root {
+  color-scheme: light dark;
+
+  --color: light-dark(black, white);
+  --background: light-dark(white, #1a1a1a);
+  --link-color: light-dark(royalblue, deepskyblue);
+  --mark-color: light-dark(#d5fbb0, #3d2b5e);
+  --box-size: 24rem;
+  --box-padding-x: 1.75rem;
+  --box-padding-y: 2rem;
+  --gap: 0;
+
+  --light-color: color(from var(--color) srgb r g b / 0.05);
+}
 html {
-  --max-main-content-width: 640px;
+  font: normal 80% / 1.5 sans-serif;
+  color: color(from var(--color) srgb r g b / 0.9);
+  background: var(--background);
 }
 body {
-  padding: 2rem 0 3rem;
-}
-main {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-}
-section {
+  padding: 0;
   margin: 0;
 }
-section + section {
-  margin-top: 0.5em;
+a,
+a:hover,
+a:visited,
+a:active {
+  color: var(--link-color);
+  text-decoration: none;
 }
-section h2:first-child {
-  margin-top: 0;
+a:hover {
+  text-decoration: underline;
+}
+p,
+ul {
+  margin: 1em 0;
 }
 ul {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  padding-inline-start: 1em;
 }
-li .description {
-  display: block;
-  font-size: var(--smaller-font-size);
-}
-figure {
-  padding: 0;
-  margin: 1.5rem 0;
-}
-figure + figure {
-  margin-top: 3rem;
-}
-p + figure {
-  margin-top: 2rem;
-}
-picture {
-  display: block;
-  font-size: 0;
-  min-height: 320px;
-  background: color(from var(--color) srgb r g b / 0.12);
-  border: 0.03rem solid color(from var(--color) srgb r g b / 0.2);
-  border-radius: 0.5rem;
-  /* border: .03rem solid color(from var(--color) srgb r g b / .2); */
-  padding: 0.35rem;
-  margin: 1.25rem 0;
-}
-picture img {
-  max-width: 100%;
-  height: auto;
-  border: 0.03rem solid color(from var(--color) srgb r g b / 0.2);
-  border-radius: 0.35rem;
-  box-sizing: border-box;
-}
-picture:empty {
-  position: relative;
-}
-picture:empty::after {
-  /* content: "¯\\_(ツ)_/¯"; */
-  content: "No preview yet";
-  font-size: 1rem;
-  font-family: monospace;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scaleY(0.8);
-  opacity: 0.3;
-}
-figcaption {
-  padding: 0 2rem;
-}
-.intro {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-.intro h1 {
-  font-size: 1.5rem;
-  border-bottom: none;
-  padding: 0;
+li {
   margin: 0;
 }
-main .intro h1:first-child {
-  margin-top: 0;
+li + li {
+  margin-top: 0.5em;
 }
-.intro p.nickname {
-  margin: 0.5em 0;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: var(--gap) 0 1rem var(--gap);
+}
+.box {
+  width: var(--box-size);
+  max-width: 100%;
+  /* background: color(from var(--color) srgb r g b / .05); */
+  padding: var(--box-padding-y) var(--box-padding-x);
+  margin: 0 var(--gap) var(--gap) 0;
+  box-sizing: border-box;
+}
+.box[data-size="2"] {
+  width: calc(2 * var(--box-size) + var(--gap));
+}
+.box[data-size="2"] picture ~ picture {
+  margin-left: calc(2 * var(--box-padding-x));
+}
+figure {
+  margin: 0;
+}
+figure img {
+  max-width: calc(var(--box-size) - 2 * var(--box-padding-x));
+  outline: 0.5rem solid var(--light-color);
+  height: auto;
+}
+figure + p {
+  margin-top: 0.65em;
+}
+figcaption {
+  padding: 0 0.25em;
+  margin: 0.65em 0 0;
+}
+.intro {
+  /* background: #e9f2d5; */
+  /* background: linear-gradient(to bottom right, #fff, #f0ece3) 50% 50%/cover no-repeat; */
+  background:
+    linear-gradient(to bottom right, var(--background), var(--light-color)) 50%
+    50% / cover no-repeat;
+  text-align: right;
+}
+.intro h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
 }
 .intro .image {
-  --image-size: 7rem;
-}
-.intro .image p {
-  margin: 0.5em 0;
-}
-.intro .image span {
+  --size: 6.4rem;
+
   display: inline-block;
-  width: var(--image-size);
-  height: var(--image-size);
+  width: var(--size);
+  min-height: var(--size);
   font-size: 0;
-  background: color(from var(--color) srgb r g b / 0.05);
-  border-radius: 50%;
+  margin-bottom: 0.5rem;
   overflow: hidden;
 }
 .intro .image img {
-  width: var(--image-size);
+  width: var(--size);
+  height: auto;
 }
-.intro ul.contacts {
-  font-family: monospace;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.intro .content {
+  display: flex;
+  flex-direction: column;
 }
-.intro ul.contacts li {
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-.intro table.contacts {
-  font-size: var(--smaller-font-size);
+.contacts {
   border: none;
   border-collapse: collapse;
-  margin: 0.75em 0 0;
+  margin: 1rem 0 0;
 }
-.intro table.contacts tbody {
+.contacts td {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
   border: none;
 }
-.intro table.contacts td {
-  border: none;
-  padding: 0.2em 0.5em 0.2em 0;
+.contacts td + td {
+  padding-left: 0.35em;
 }
-.intro table.contacts td:first-child {
+.contacts td:first-child {
   text-align: right;
 }
-.intro table.contacts .sep {
-  margin: 0 0.15em;
+p.tag {
+  margin: 0;
 }
-.content p.sep {
-  font-size: 0;
-  margin: 1.25rem 0;
+p.tag + ul {
+  margin-top: 0.75em;
 }
-@media (max-width: 600px) {
-  html {
-    --smaller-font-size: 0.9em;
+.mark,
+p.tag {
+  display: inline-block;
+  position: relative;
+}
+.mark::before,
+p.tag::before {
+  content: "";
+  background: var(--mark-color);
+  border-radius: 0.1em;
+  position: absolute;
+  inset: 0 -0.5em;
+  transform: skewX(-15deg);
+  z-index: -1;
+}
+/* .intro2 {
+  background: #ebf4f4;
+}
+.app {
+  background: #fbf6f1;
+} */
+@media (max-width: 640px) {
+  :root {
+    --box-size: 100%;
+
+    font-size: 100%;
   }
-  body {
-    padding: 1.5rem 0;
+  .box:not(.intro) + .box {
+    border-top: 1rem solid var(--light-color);
+  }
+  .box[data-size="2"] picture ~ picture {
+    margin-left: 0;
+    margin-top: 1.25em;
   }
   .intro {
-    flex-direction: row-reverse;
-    align-items: flex-start;
-    gap: 1rem;
+    text-align: left;
+    /* background: color(from var(--color) srgb r g b / .05); */
+    /* background: #ebf0e1; */
+    background: var(--light-color);
+  }
+  .intro h1 {
+    font-size: 1.75rem;
   }
   .intro .image {
-    --image-size: 3.6rem;
-    flex: auto;
-    text-align: right;
-    margin-top: -0.5rem;
+    float: right;
+    border-radius: 50%;
   }
-  :not(li) > ul {
-    padding-inline-start: 1.25em;
+  .contacts {
+    font-size: 0.85rem;
+    margin: 1rem 0 0;
+  }
+  .contacts td {
+    display: table-cell;
+  }
+  .contacts td:first-child {
+    width: 3em;
+  }
+  figure img {
+    max-width: 100%;
+  }
+  figure + p {
+    margin-top: 1em;
   }
   picture {
-    min-height: 200px;
-  }
-  figcaption {
-    padding: 0 1rem;
+    display: block;
   }
 }
