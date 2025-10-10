@@ -184,6 +184,8 @@ strong::before {
     font-size: 1.75rem;
   }
   .intro .image {
+    --size: 5rem;
+
     float: right;
     border-radius: 50%;
   }
