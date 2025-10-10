@@ -1,0 +1,14 @@
+{
+  "name": "axtk-website",
+  "description": "Personal website",
+  "homepage": "https://axtk.github.io",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "shape": "npx codeshape"
+  },
+  "type": "module",
+  "license": "ISC",
+  "author": "axtk",
+  "private": true
+}
