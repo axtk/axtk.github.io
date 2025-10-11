@@ -50,6 +50,7 @@ export function initRotation(ctx: Context) {
 
   function end(x: number, y: number) {
     busy = false;
+    ctx.moving = false;
 
     if (x0 !== null && y0 !== null) move(ctx, x - x0, y - y0);
 
@@ -61,6 +62,8 @@ export function initRotation(ctx: Context) {
     let t = Date.now();
 
     if (x0 === null || y0 === null || t - t0 < 20) return;
+
+    if (!ctx.moving) ctx.moving = true;
 
     move(ctx, x - x0, y - y0);
     x0 = x;

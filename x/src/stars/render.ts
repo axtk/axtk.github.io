@@ -8,6 +8,8 @@ import { renderStarPatterns } from "./renderStarPatterns";
 import { renderStars } from "./renderStars";
 
 export function render(ctx: Context) {
+  ctx.element.dataset.moving = String(ctx.moving ?? "");
+
   renderGrid(ctx);
   renderStarColors(ctx);
   renderStars(ctx);

@@ -8,4 +8,5 @@ export type Context = {
   hintLines: [number, number][][];
   tilt: [number, number];
   mode: "dark" | "light" | "fantasy";
+  moving?: boolean;
 };

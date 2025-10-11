@@ -14,12 +14,17 @@ export function renderStars(ctx: Context) {
   let element: SVGCircleElement;
   let pos: [number, number, number] | null;
   let k = 0;
+  let minRadius = ctx.moving ? .5 : .1;
 
   for (let i = 0; i < ctx.stars.length; i++) {
     star = ctx.stars[i];
     pos = getScreenPosition(star.ra, star.dec, ctx);
 
     if (pos === null) continue;
+
+    let r = getStarRadius(star, ctx);
+
+    if (r < minRadius) continue;
 
     element = starElements[k++];
 
@@ -32,7 +37,7 @@ export function renderStars(ctx: Context) {
 
     element.setAttribute("cx", pos[0].toFixed(3));
     element.setAttribute("cy", pos[1].toFixed(3));
-    element.setAttribute("r", getStarRadius(star, ctx).toFixed(2));
+    element.setAttribute("r", r.toFixed(2));
     element.setAttribute("fill-opacity", getStarOpacity(star, ctx).toFixed(2));
     element.setAttribute("data-spcl", star.spectralClass ?? "");
   }
