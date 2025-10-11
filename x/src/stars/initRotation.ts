@@ -51,8 +51,7 @@ export function initRotation(ctx: Context) {
   function end(x: number, y: number) {
     busy = false;
 
-    if (x0 !== null && y0 !== null)
-      move(ctx, x - x0, y - y0);
+    if (x0 !== null && y0 !== null) move(ctx, x - x0, y - y0);
 
     x0 = null;
     y0 = null;
@@ -61,8 +60,7 @@ export function initRotation(ctx: Context) {
   function go(x: number, y: number) {
     let t = Date.now();
 
-    if (x0 === null || y0 === null || t - t0 < 20)
-      return;
+    if (x0 === null || y0 === null || t - t0 < 20) return;
 
     move(ctx, x - x0, y - y0);
     x0 = x;
@@ -84,7 +82,7 @@ export function initRotation(ctx: Context) {
     }
   });
 
-  element.addEventListener("mouseup", event => {
+  element.addEventListener("mouseup", (event) => {
     end(event.offsetX, event.offsetY);
 
     if (mouseHandler) {
@@ -104,7 +102,7 @@ export function initRotation(ctx: Context) {
     }
   });
 
-  element.addEventListener("touchend", event => {
+  element.addEventListener("touchend", (event) => {
     end(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
 
     if (touchHandler) {
