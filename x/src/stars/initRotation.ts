@@ -79,6 +79,7 @@ export function initRotation(ctx: Context) {
 
     if (!mouseHandler && !touchHandler) {
       mouseHandler = (event) => {
+        event.preventDefault();
         go(event.offsetX, event.offsetY);
       };
       element.addEventListener("mousemove", mouseHandler);
@@ -99,6 +100,7 @@ export function initRotation(ctx: Context) {
 
     if (!touchHandler && !mouseHandler) {
       touchHandler = (event) => {
+        event.preventDefault();
         go(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
       };
       element.addEventListener("touchmove", touchHandler);
