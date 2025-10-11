@@ -10,6 +10,10 @@ const { PI, asin } = Math;
 let busy = false;
 
 function move(ctx: Context, dx: number, dy: number) {
+  if (busy) return;
+
+  busy = true;
+
   let { tilt } = ctx;
   let { r } = getDimensions(ctx);
 
@@ -23,76 +27,89 @@ function move(ctx: Context, dx: number, dy: number) {
 
   if (nextTheta >= -PI / 2 && nextTheta <= PI / 2) tilt[1] = nextTheta;
 
-  if (!busy) {
-    requestAnimationFrame(() => {
-      render(ctx);
-      state.write("tilt", tilt);
-      busy = false;
-    });
-    busy = true;
-  }
-}
-
-function setMouseMoves(ctx: Context) {
-  let { element } = ctx;
-
-  let x: number | null = null;
-  let y: number | null = null;
-
-  element.addEventListener("mousedown", (event) => {
-    x = event.offsetX;
-    y = event.offsetY;
+  requestAnimationFrame(() => {
+    render(ctx);
+    state.write("tilt", tilt);
     busy = false;
-  });
-
-  element.addEventListener("mouseup", () => {
-    x = null;
-    y = null;
-    busy = false;
-  });
-
-  element.addEventListener("mousemove", (event) => {
-    if (x !== null && y !== null) {
-      move(ctx, event.offsetX - x, event.offsetY - y);
-      x = event.offsetX;
-      y = event.offsetY;
-    }
-  });
-}
-
-function setTouches(ctx: Context) {
-  let { element } = ctx;
-
-  let x: number | null = null;
-  let y: number | null = null;
-
-  element.addEventListener("touchstart", (event) => {
-    x = event.changedTouches[0].pageX;
-    y = event.changedTouches[0].pageY;
-    busy = false;
-    hideMenu();
-  });
-
-  element.addEventListener("touchend", () => {
-    x = null;
-    y = null;
-    busy = false;
-  });
-
-  element.addEventListener("touchmove", (event) => {
-    if (x !== null && y !== null) {
-      move(
-        ctx,
-        event.changedTouches[0].pageX - x,
-        event.changedTouches[0].pageY - y,
-      );
-      x = event.changedTouches[0].pageX;
-      y = event.changedTouches[0].pageY;
-    }
   });
 }
 
 export function initRotation(ctx: Context) {
-  setMouseMoves(ctx);
-  setTouches(ctx);
+  let { element } = ctx;
+
+  let x0: number | null = null;
+  let y0: number | null = null;
+  let t0 = Date.now();
+
+  function start(x: number, y: number) {
+    hideMenu();
+    x0 = x;
+    y0 = y;
+    busy = false;
+  }
+
+  function end(x: number, y: number) {
+    busy = false;
+
+    if (x0 !== null && y0 !== null)
+      move(ctx, x - x0, y - y0);
+
+    x0 = null;
+    y0 = null;
+  }
+
+  function go(x: number, y: number) {
+    let t = Date.now();
+
+    if (x0 === null || y0 === null || t - t0 < 20)
+      return;
+
+    move(ctx, x - x0, y - y0);
+    x0 = x;
+    y0 = y;
+    t0 = t;
+  }
+
+  let mouseHandler: ((event: MouseEvent) => void) | null = null;
+  let touchHandler: ((event: TouchEvent) => void) | null = null;
+
+  element.addEventListener("mousedown", (event) => {
+    start(event.offsetX, event.offsetY);
+
+    if (!mouseHandler && !touchHandler) {
+      mouseHandler = (event) => {
+        go(event.offsetX, event.offsetY);
+      };
+      element.addEventListener("mousemove", mouseHandler);
+    }
+  });
+
+  element.addEventListener("mouseup", event => {
+    end(event.offsetX, event.offsetY);
+
+    if (mouseHandler) {
+      element.removeEventListener("mousemove", mouseHandler);
+      mouseHandler = null;
+    }
+  });
+
+  element.addEventListener("touchstart", (event) => {
+    start(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+
+    if (!touchHandler && !mouseHandler) {
+      touchHandler = (event) => {
+        go(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+      };
+      element.addEventListener("touchmove", touchHandler);
+    }
+  });
+
+  element.addEventListener("touchend", event => {
+    end(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+
+    if (touchHandler) {
+      element.removeEventListener("touchmove", touchHandler);
+      touchHandler = null;
+    }
+  });
 }
