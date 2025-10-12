@@ -14,7 +14,7 @@ export function renderStars(ctx: Context) {
   let element: SVGCircleElement;
   let pos: [number, number, number] | null;
   let k = 0;
-  let minRadius = ctx.moving ? .5 : .1;
+  let minRadius = ctx.moving ? 0.5 : 0.1;
 
   for (let i = 0; i < ctx.stars.length; i++) {
     star = ctx.stars[i];

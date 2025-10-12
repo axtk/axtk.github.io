@@ -1,10 +1,10 @@
+import { CollisionMap } from "./CollisionMap";
 import type { Context } from "./Context";
 import { ns } from "./const";
 import { getDimensions } from "./getDimensions";
 import { getScreenPosition } from "./getScreenPosition";
 import { getStarRadius } from "./getStarRadius";
 import type { Star } from "./Star";
-import { CollisionMap } from "./CollisionMap";
 
 export function renderStarLabels(ctx: Context) {
   let { r } = getDimensions(ctx);
