@@ -4,7 +4,7 @@ export class CollisionMap {
   grid: Record<string, number[]> = {};
   cellSizeX: number;
   cellSizeY: number;
-  constructor(cellSizeX = 50, cellSizeY?: number) {
+  constructor(cellSizeX = 30, cellSizeY?: number) {
     this.cellSizeX = cellSizeX;
     this.cellSizeY = cellSizeY ?? cellSizeX;
   }
