@@ -29,7 +29,7 @@ export class CollisionMap {
 
     return indices;
   }
-  resolve(labels: Element[]) {
+  resolve(elements: Element[]) {
     let conflictingIndices = new Set<number>();
 
     for (let cellIndex of Object.keys(this.grid)) {
@@ -43,19 +43,19 @@ export class CollisionMap {
             i === j ||
             conflictingIndices.has(i) ||
             conflictingIndices.has(j) ||
-            !labels[i] ||
-            !labels[j]
+            !elements[i] ||
+            !elements[j]
           )
             continue;
 
-          let li = labels[i].getBoundingClientRect();
-          let lj = labels[j].getBoundingClientRect();
+          let ei = elements[i].getBoundingClientRect();
+          let ej = elements[j].getBoundingClientRect();
 
           if (
-            li.left < lj.right &&
-            li.right > lj.left &&
-            li.top < lj.bottom &&
-            li.bottom > lj.top
+            ei.left < ej.right &&
+            ei.right > ej.left &&
+            ei.top < ej.bottom &&
+            ei.bottom > ej.top
           )
             conflictingIndices.add(max(i, j));
         }
