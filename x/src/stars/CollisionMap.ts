@@ -1,20 +1,15 @@
-import type { Context } from "./Context";
-import { getDimensions } from "./getDimensions";
-
-const { ceil, floor, max } = Math;
+const { floor, max } = Math;
 
 export class CollisionMap {
   grid: Record<string, number[]> = {};
-  cellSize: number;
-  rowLength: number;
-  constructor(ctx: Context, cellSize = 50) {
-    let { width } = getDimensions(ctx);
-
-    this.cellSize = cellSize;
-    this.rowLength = ceil(width/cellSize);
+  cellSizeX: number;
+  cellSizeY: number;
+  constructor(cellSizeX = 50, cellSizeY?: number) {
+    this.cellSizeX = cellSizeX;
+    this.cellSizeY = cellSizeY ?? cellSizeX;
   }
   push(index: number, x: number, y: number) {
-    let cellIndex = floor(y/this.cellSize)*this.rowLength + floor(x/this.cellSize);
+    let cellIndex = `${floor(x/this.cellSizeX)},${floor(y/this.cellSizeY)}`;
 
     if (!this.grid[cellIndex])
       this.grid[cellIndex] = [];
@@ -22,11 +17,12 @@ export class CollisionMap {
     this.grid[cellIndex].push(index);
   }
   _getNeightborCellIndices(cellIndex: string) {
+    let [cellX, cellY] = cellIndex.split(",").map(Number);
     let indices: number[] = [];
 
     for (let i = -1; i <= 1; i++) {
       for (let j = -1; j <= 1; j++) {
-        let cellIndices = this.grid[String(Number(cellIndex) + i*this.rowLength + j)];
+        let cellIndices = this.grid[`${cellX + i},${cellY + j}`];
 
         if (cellIndices) indices.push(...cellIndices);
       }

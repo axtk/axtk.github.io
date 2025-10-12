@@ -19,7 +19,7 @@ export function renderStarLabels(ctx: Context) {
   let pos: [number, number, number] | null;
   let k = 0;
 
-  let collisionMap = new CollisionMap(ctx);
+  let collisionMap = new CollisionMap();
 
   for (let i = 0; i < ctx.stars.length; i++) {
     star = ctx.stars[i];
