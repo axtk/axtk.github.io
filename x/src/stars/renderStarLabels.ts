@@ -21,7 +21,8 @@ export function renderStarLabels(ctx: Context) {
   for (let i = 0; i < ctx.stars.length; i++) {
     star = ctx.stars[i];
 
-    if (!star.bayerKey || star.magnitude > maxMagnitude) continue;
+    if (!star.bayerKey) continue;
+    if (star.magnitude > maxMagnitude) break;
 
     pos = getScreenPosition(star.ra, star.dec, ctx);
 

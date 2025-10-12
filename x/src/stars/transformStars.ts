@@ -1,6 +1,10 @@
 import { Star } from "./Star";
 import { stripQuotes } from "./stripQuotes";
 
+function byMagnitude(s1: Star, s2: Star) {
+  return s1.magnitude - s2.magnitude;
+}
+
 export function transformStars(data: string) {
   return data
     .trim()
@@ -19,5 +23,6 @@ export function transformStars(data: string) {
         bayerName: stripQuotes(bayerName),
         properName: stripQuotes(properName),
       });
-    });
+    })
+    .sort(byMagnitude);
 }
