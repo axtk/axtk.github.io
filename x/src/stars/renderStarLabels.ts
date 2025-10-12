@@ -8,7 +8,7 @@ import type { Star } from "./Star";
 
 export function renderStarLabels(ctx: Context) {
   let { r } = getDimensions(ctx);
-  let maxMagnitude = r < 640 ? 3 : 4;
+  let maxMagnitude = r < 640 ? 3.5 : 4;
 
   let container = ctx.element.querySelector("g.star-labels")!;
   let labels = Array.from(container.querySelectorAll("text"));
