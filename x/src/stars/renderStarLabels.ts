@@ -4,6 +4,7 @@ import { getDimensions } from "./getDimensions";
 import { getScreenPosition } from "./getScreenPosition";
 import { getStarRadius } from "./getStarRadius";
 import type { Star } from "./Star";
+import { CollisionMap } from "./CollisionMap";
 
 export function renderStarLabels(ctx: Context) {
   let { r } = getDimensions(ctx);
@@ -18,6 +19,8 @@ export function renderStarLabels(ctx: Context) {
   let pos: [number, number, number] | null;
   let k = 0;
 
+  let collisionMap = new CollisionMap(ctx);
+
   for (let i = 0; i < ctx.stars.length; i++) {
     star = ctx.stars[i];
 
@@ -28,23 +31,33 @@ export function renderStarLabels(ctx: Context) {
 
     if (pos === null) continue;
 
-    element = labels[k++];
+    element = labels[k];
 
     if (!element) {
       if (!fragment) fragment = document.createDocumentFragment();
 
       element = document.createElementNS(ns, "text");
       fragment.appendChild(element);
+      labels.push(element);
     }
 
     let r = getStarRadius(star, ctx);
+    let x = pos[0] + r + 2;
+    let y = pos[1] + 2;
 
-    element.setAttribute("x", (pos[0] + r + 2).toFixed(3));
-    element.setAttribute("y", (pos[1] + 2).toFixed(3));
+    collisionMap.push(k, x, y);
+
+    element.setAttribute("x", x.toFixed(3));
+    element.setAttribute("y", y.toFixed(3));
     element.textContent = star.bayerKey;
+    k++;
   }
 
   if (fragment) container.appendChild(fragment);
 
+  let conflictingIndices = collisionMap.resolve(labels);
+
   for (let i = k; i < labels.length; i++) labels[i].remove();
+
+  for (let i of conflictingIndices) labels[i]?.remove();
 }
