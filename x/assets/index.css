@@ -2,15 +2,14 @@
   color-scheme: light dark;
 
   --color: light-dark(black, white);
-  --background: light-dark(white, #1a1a1a);
+  --background: light-dark(#f2f2f2, #1a1a1a);
   --link-color: light-dark(royalblue, deepskyblue);
   --mark-color: light-dark(#d5fbb0, #3d2b5e);
   --box-size: 24rem;
   --box-padding-x: 1.75rem;
   --box-padding-y: 2rem;
-  --gap: 0;
 
-  --light-color: color(from var(--color) srgb r g b / 0.05);
+  --light-color: color(from var(--color) srgb r g b / 0.03);
 }
 html {
   font: normal 80% / 1.5 sans-serif;
@@ -45,36 +44,28 @@ li + li {
   margin-top: 0.5em;
 }
 main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: var(--gap) 0 1rem var(--gap);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--box-size), 1fr));
 }
-.box {
-  width: var(--box-size);
-  max-width: 100%;
-  /* background: color(from var(--color) srgb r g b / .05); */
+section {
   padding: var(--box-padding-y) var(--box-padding-x);
-  margin: 0 var(--gap) var(--gap) 0;
+  margin: 0;
   box-sizing: border-box;
 }
-.box[data-size="2"] {
-  width: calc(2 * var(--box-size) + var(--gap));
-}
-.box[data-size="2"] picture ~ picture {
-  margin-left: calc(2 * var(--box-padding-x));
-}
 figure {
+  width: 100%;
+  padding: 0;
   margin: 0;
 }
 picture {
   display: inline-block;
-  width: calc(var(--box-size) - 2 * var(--box-padding-x));
+  width: 100%;
   min-height: 10rem;
   font-size: 0;
   text-align: center;
   background: var(--light-color);
-  outline: 0.5rem solid var(--light-color);
+  border: 0.5rem solid var(--light-color);
+  box-sizing: border-box;
 }
 picture img {
   max-width: 100%;
@@ -84,21 +75,19 @@ figcaption {
   padding: 0 0.25em;
   margin: 1em 0 0;
 }
-.intro {
+section[data-tags~="intro"] {
   /* background: #e9f2d5; */
   /* background: linear-gradient(to bottom right, #fff, #f0ece3) 50% 50%/cover no-repeat; */
-  background:
-    linear-gradient(to bottom right, var(--background), var(--light-color)) 50%
-    50% / cover no-repeat;
+  background: color(from var(--color) srgb r g b / .075);
   text-align: right;
 }
-.intro h1 {
+section[data-tags~="intro"] h1 {
   font-size: 2rem;
   font-weight: 900;
   line-height: 1;
   margin: 0;
 }
-.intro .image {
+section[data-tags~="intro"] .image {
   --size: 6.4rem;
 
   display: inline-block;
@@ -108,11 +97,11 @@ figcaption {
   margin-bottom: 0.5rem;
   overflow: hidden;
 }
-.intro .image img {
+section[data-tags~="intro"] .image img {
   width: var(--size);
   height: auto;
 }
-.intro .content {
+section[data-tags~="intro"] .content {
   display: flex;
   flex-direction: column;
 }
@@ -164,23 +153,19 @@ strong::before {
 
     font-size: 100%;
   }
-  .box:not(.intro) + .box {
+  section:not([data-tags~="intro"]) + section {
     border-top: 1rem solid var(--light-color);
   }
-  .box[data-size="2"] picture ~ picture {
-    margin-left: 0;
-    margin-top: 1.5rem;
-  }
-  .intro {
+  section[data-tags~="intro"] {
     text-align: left;
     /* background: color(from var(--color) srgb r g b / .05); */
     /* background: #ebf0e1; */
     background: var(--light-color);
   }
-  .intro h1 {
+  section[data-tags~="intro"] h1 {
     font-size: 1.75rem;
   }
-  .intro .image {
+  section[data-tags~="intro"] .image {
     --size: 5rem;
 
     float: right;
