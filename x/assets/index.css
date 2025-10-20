@@ -78,7 +78,7 @@ figcaption {
 section[data-tags~="intro"] {
   /* background: #e9f2d5; */
   /* background: linear-gradient(to bottom right, #fff, #f0ece3) 50% 50%/cover no-repeat; */
-  background: color(from var(--color) srgb r g b / .075);
+  background: color(from var(--color) srgb r g b / .05);
   text-align: right;
 }
 section[data-tags~="intro"] h1 {
