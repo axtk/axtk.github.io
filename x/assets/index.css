@@ -79,25 +79,27 @@ figcaption {
   margin: 1em 0 0;
 }
 section[data-tags~="intro"] {
+  --b: color(from currentColor srgb r g b / .05);
   /* background: #e9f2d5; */
-  /* background: linear-gradient(to bottom right, #fff, #f0ece3) 50% 50%/cover no-repeat; */
-  background: color(from var(--color) srgb r g b / .05);
+  /* background: linear-gradient(to bottom, var(--b), var(--background)) 50% 50%/cover no-repeat; */
+  background: var(--b);
   text-align: right;
 }
 section[data-tags~="intro"] h1 {
+  max-width: 9em;
   font-size: 2rem;
   font-weight: 900;
   line-height: 1;
   margin: 0;
 }
 section[data-tags~="intro"] .image {
-  --size: 6.4rem;
+  --size: 8.5rem;
 
   display: inline-block;
   width: var(--size);
   min-height: var(--size);
   font-size: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   overflow: hidden;
 }
 section[data-tags~="intro"] .image img {
@@ -107,6 +109,7 @@ section[data-tags~="intro"] .image img {
 section[data-tags~="intro"] .content {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 .contacts {
   border: none;
@@ -166,7 +169,6 @@ strong::before {
     background: var(--light-color);
   }
   section[data-tags~="intro"] h1 {
-    max-width: 9em;
     font-size: 1.75rem;
   }
   section[data-tags~="intro"] .image {
@@ -175,6 +177,9 @@ strong::before {
     float: right;
     border-radius: 50%;
     margin-left: 1.5rem;
+  }
+  section[data-tags~="intro"] .content {
+    align-items: flex-start;
   }
   .contacts {
     font-size: 0.85rem;
