@@ -2,8 +2,8 @@ import { Store } from "@t8/store";
 import type { Context } from "./Context";
 import { getInitialState } from "./getInitialState";
 import { renderBoard } from "./renderBoard";
-import { renderForm } from "./renderForm";
 import { renderControls } from "./renderControls";
+import { renderForm } from "./renderForm";
 import { renderStatus } from "./renderStatus";
 import type { State } from "./State";
 
