@@ -1,4 +1,4 @@
-import { Context } from "./Context";
+import type { Context } from "./Context";
 
 function setSelectValue(element: HTMLSelectElement, value: unknown) {
   let stringValue = String(value);
@@ -9,8 +9,7 @@ function setSelectValue(element: HTMLSelectElement, value: unknown) {
     if (option.value === stringValue || option.textContent === stringValue) {
       option.setAttribute("selected", "selected");
       selected = true;
-    }
-    else option.removeAttribute("selected");
+    } else option.removeAttribute("selected");
   }
 
   if (!selected) {
@@ -28,7 +27,8 @@ export function renderForm(ctx: Context) {
 
   let state = ctx.store.getState();
   let form = ctx.container.querySelector(".controlbar form")!;
-  let select = (name: string): HTMLSelectElement => form.querySelector(`select[name="${name}"]`)!;
+  let select = (name: string): HTMLSelectElement =>
+    form.querySelector(`select[name="${name}"]`)!;
 
   setSelectValue(select("x"), state.cellValues[0]);
   setSelectValue(select("o"), state.cellValues[1]);

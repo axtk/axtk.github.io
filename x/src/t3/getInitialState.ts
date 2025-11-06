@@ -1,4 +1,4 @@
-import { State } from "./State";
+import type { State } from "./State";
 
 function charAt(s: string | null, index = 0) {
   return s ? [...s][index] : "";

@@ -1,5 +1,5 @@
+import type { Context } from "./Context";
 import { getStatus } from "./getStatus";
-import { Context } from "./Context";
 
 let clickHandler: ((event: Event) => void) | null = null;
 
@@ -12,12 +12,14 @@ export function renderBoard(ctx: Context) {
   let state = store.getState();
 
   board.toggleAttribute("disabled", status.value !== "playing");
-  board.setAttribute("style", `--rows: ${state.rows}; --columns: ${state.columns};`);
+  board.setAttribute(
+    "style",
+    `--rows: ${state.rows}; --columns: ${state.columns};`,
+  );
 
   let boardSize = state.rows * state.columns;
 
-  if (cells.length === 0)
-    board.innerHTML = "";
+  if (cells.length === 0) board.innerHTML = "";
 
   while (cells.length < boardSize) {
     let cell = document.createElement("button");
@@ -26,18 +28,17 @@ export function renderBoard(ctx: Context) {
     cells.push(cell);
   }
 
-  while (cells.length > boardSize)
-    cells.pop()!.remove();
+  while (cells.length > boardSize) cells.pop()!.remove();
 
   if (clickHandler === null) {
     clickHandler = (event: Event) => {
       let target = event.target;
-      let index = target instanceof HTMLButtonElement ? cells.indexOf(target) : -1;
+      let index =
+        target instanceof HTMLButtonElement ? cells.indexOf(target) : -1;
 
-      if (index === -1)
-        return;
+      if (index === -1) return;
 
-      store.setState(state => ({
+      store.setState((state) => ({
         ...state,
         moves: [...state.moves.slice(0, state.lastMoveIndex + 1), index],
         lastMoveIndex: state.lastMoveIndex + 1,

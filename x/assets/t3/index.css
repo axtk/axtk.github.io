@@ -2,7 +2,7 @@
   --board-padding: 1rem;
   --controlbar-height: 2.5rem;
 
-  font: normal 100%/1.3 sans-serif;
+  font: normal 100% / 1.3 sans-serif;
   color: black;
   background: white;
 }
@@ -13,7 +13,7 @@ body {
 button {
   color: #484848;
   background: #e8e8e8;
-  border: .08em solid;
+  border: 0.08em solid;
   border-color: #f3f3f3 #ccc #ccc #f3f3f3;
   border-radius: 0;
   padding: 0 1em;
@@ -22,13 +22,15 @@ button {
 }
 select {
   color: #484848;
-  background: #e8e8e8 url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2092%20100%22%3E%3Cpath%20d%3D%22M21%2C40%20L46%2C70%20L71%2C40%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") 95% 50%/auto 1em no-repeat;
+  background:
+    #e8e8e8
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2092%20100%22%3E%3Cpath%20d%3D%22M21%2C40%20L46%2C70%20L71%2C40%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E")
+    95% 50% / auto 1em no-repeat;
   appearance: none;
-  border: none;
-  border: .08em solid;
+  border: 0.08em solid;
   border-color: #f3f3f3 #ccc #ccc #f3f3f3;
   box-shadow: none;
-  padding: 0 1.75em 0 .75em;
+  padding: 0 1.75em 0 0.75em;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -48,18 +50,21 @@ select {
 }
 select[name="x"],
 select[name="o"] {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 .board {
   --rows: 3;
   --columns: 3;
-  --cell-size: calc((100vmin - var(--controlbar-height) - 2*var(--board-padding)) / max(var(--rows), var(--columns)));
+  --cell-size: calc(
+    (100vmin - var(--controlbar-height) - 2 * var(--board-padding)) /
+    max(var(--rows), var(--columns))
+  );
 
   display: grid;
-  font: normal 2rem/1 sans-serif;
-  font-size: calc(.5*var(--cell-size));
-  width: calc(var(--columns)*var(--cell-size));
-  height: calc(var(--rows)*var(--cell-size));
+  font: normal 2rem / 1 sans-serif;
+  font-size: calc(0.5 * var(--cell-size));
+  width: calc(var(--columns) * var(--cell-size));
+  height: calc(var(--rows) * var(--cell-size));
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
   border: 0.1rem solid;
@@ -106,10 +111,10 @@ select[name="o"] {
   width: 100%;
   height: var(--controlbar-height);
   align-items: center;
-  font-size: .9em;
+  font-size: 0.9em;
   color: #484848;
   background: #f5f5f5;
-  border-top: .08em solid #ddd;
+  border-top: 0.08em solid #ddd;
   padding: 0 var(--board-padding);
   box-sizing: border-box;
 }
@@ -119,41 +124,30 @@ select[name="o"] {
 }
 .controlbar label {
   display: inline-block;
-  margin-inline-start: .5em;
+  margin-inline-start: 0.5em;
 }
 .controlbar button {
-  margin-inline-start: .5em;
+  margin-inline-start: 0.5em;
 }
 .controlbar .board-size {
-  margin-inline-start: .5em;
+  margin-inline-start: 0.5em;
 }
 .game-controls {
   flex: auto;
-}
-.game-controls .status {
-  display: inline-block;
-  min-width: 8em;
-  text-align: center;
-  background: gainsboro;
-  border-radius: 1em;
-  padding: .25em 1em;
-  margin-right: 1em;
-  box-sizing: border-box;
-  display: none;
 }
 .game-controls button {
   margin-inline-start: 0;
 }
 @media (max-width: 600px) {
   :root {
-    --board-padding: .5rem;
+    --board-padding: 0.5rem;
   }
   button {
-    padding-left: .5em;
-    padding-right: .5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
   select {
-    padding-left: .5em;
+    padding-left: 0.5em;
     padding-right: 1.35em;
   }
   [data-size="n"] {

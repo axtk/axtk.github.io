@@ -61,13 +61,13 @@ picture {
   --border-width: 0.5rem;
 
   display: inline-block;
-  width: calc(100% + 2*var(--border-width));
+  width: calc(100% + 2 * var(--border-width));
   min-height: 10rem;
   font-size: 0;
   text-align: center;
   background: var(--light-color);
   border: var(--border-width) solid var(--light-color);
-  margin: 0 calc(-1*var(--border-width));
+  margin: 0 calc(-1 * var(--border-width));
   box-sizing: border-box;
 }
 picture img {
@@ -79,7 +79,7 @@ figcaption {
   margin: 1em 0 0;
 }
 section[data-tags~="intro"] {
-  --b: color(from currentColor srgb r g b / .05);
+  --b: color(from currentColor srgb r g b / 0.05);
   /* background: #e9f2d5; */
   /* background: linear-gradient(to bottom, var(--b), var(--background)) 50% 50%/cover no-repeat; */
   background: var(--b);
