@@ -2,7 +2,7 @@ import type { Context } from "./Context";
 
 let inited = false;
 
-export function renderGameControls(ctx: Context) {
+export function renderControls(ctx: Context) {
   if (inited) return;
 
   let bar = ctx.container.querySelector(".game-controls")!;

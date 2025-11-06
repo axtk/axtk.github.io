@@ -3,14 +3,14 @@ import type { Context } from "./Context";
 import { getInitialState } from "./getInitialState";
 import { renderBoard } from "./renderBoard";
 import { renderForm } from "./renderForm";
-import { renderGameControls } from "./renderGameControls";
+import { renderControls } from "./renderControls";
 import { renderStatus } from "./renderStatus";
 import type { State } from "./State";
 
 function render(ctx: Context) {
   renderBoard(ctx);
   renderStatus(ctx);
-  renderGameControls(ctx);
+  renderControls(ctx);
   renderForm(ctx);
 }
 
