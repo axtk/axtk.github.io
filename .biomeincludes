@@ -1,8 +1,10 @@
+!**/node_modules/**/*
 build.mjs
 _layouts/**/*
+!_layouts/*.html
 x/**/*
-!**/node_modules/**/*
 !x/assets/0/**/*
 !x/assets/archive/**/*
 !x/assets/stars/v0/**/*
 !x/assets/stats.js
+!x/*.html
