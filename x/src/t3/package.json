@@ -1,0 +1,11 @@
+{
+  "name": "t3",
+  "version": "1.0.0",
+  "description": "Customizable tic-tac-toe",
+  "license": "ISC",
+  "author": "axtk",
+  "type": "module",
+  "dependencies": {
+    "@t8/store": "^1.1.6"
+  }
+}
