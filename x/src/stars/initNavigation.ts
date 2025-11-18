@@ -7,12 +7,10 @@ import { toBounds } from "./toBounds";
 
 const { PI, asin } = Math;
 
-let busy = false;
+let nextMove: number | null = null;
 
 function move(ctx: Context, dx: number, dy: number) {
-  if (busy) return;
-
-  busy = true;
+  if (nextMove !== null) cancelAnimationFrame(nextMove);
 
   let { tilt } = ctx;
   let { r } = getDimensions(ctx);
@@ -27,41 +25,53 @@ function move(ctx: Context, dx: number, dy: number) {
 
   if (nextTheta >= -PI / 2 && nextTheta <= PI / 2) tilt[1] = nextTheta;
 
-  requestAnimationFrame(() => {
+  nextMove = requestAnimationFrame(() => {
     render(ctx);
-    state.write("tilt", tilt);
-    busy = false;
   });
 }
 
 export function initNavigation(ctx: Context) {
-  let { element } = ctx;
+  let { element: container } = ctx;
 
   let x0: number | null = null;
   let y0: number | null = null;
   let t0 = Date.now();
 
-  function start(x: number, y: number) {
+  function start(x: number | undefined, y: number | undefined) {
+    if (x === undefined || y === undefined) return;
+
     hideMenu();
     x0 = x;
     y0 = y;
-    busy = false;
+    t0 = Date.now();
   }
 
-  function end(x: number, y: number) {
-    busy = false;
-    ctx.moving = false;
-
+  function stop(x: number | undefined, y: number | undefined) {
+    if (x === undefined || y === undefined) return;
     if (x0 !== null && y0 !== null) move(ctx, x - x0, y - y0);
+
+    end();
+  }
+
+  function end() {
+    ctx.moving = false;
 
     x0 = null;
     y0 = null;
+
+    requestAnimationFrame(() => {
+      state.write("tilt", ctx.tilt);
+      // render with `ctx.moving = false`
+      render(ctx);
+    });
   }
 
-  function go(x: number, y: number) {
+  function go(x: number | undefined, y: number | undefined) {
+    if (x === undefined || y === undefined) return;
+
     let t = Date.now();
 
-    if (x0 === null || y0 === null || t - t0 < 20) return;
+    if (x0 === null || y0 === null || t - t0 < 100) return;
 
     if (!ctx.moving) ctx.moving = true;
 
@@ -74,45 +84,71 @@ export function initNavigation(ctx: Context) {
   let mouseHandler: ((event: MouseEvent) => void) | null = null;
   let touchHandler: ((event: TouchEvent) => void) | null = null;
 
-  element.addEventListener("mousedown", (event) => {
+  container.addEventListener("mousedown", (event) => {
     start(event.offsetX, event.offsetY);
 
-    if (!mouseHandler && !touchHandler) {
+    if (!mouseHandler) {
       mouseHandler = (event) => {
         event.preventDefault();
         go(event.offsetX, event.offsetY);
       };
-      element.addEventListener("mousemove", mouseHandler);
+      container.addEventListener("mousemove", mouseHandler);
     }
   });
 
-  element.addEventListener("mouseup", (event) => {
-    end(event.offsetX, event.offsetY);
+  container.addEventListener("mouseup", (event) => {
+    if (!mouseHandler) return;
 
-    if (mouseHandler) {
-      element.removeEventListener("mousemove", mouseHandler);
-      mouseHandler = null;
-    }
+    stop(event.offsetX, event.offsetY);
+    container.removeEventListener("mousemove", mouseHandler);
+    mouseHandler = null;
   });
 
-  element.addEventListener("touchstart", (event) => {
-    start(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+  container.addEventListener("touchstart", (event) => {
+    start(event.touches[0]?.pageX, event.touches[0]?.pageY);
 
-    if (!touchHandler && !mouseHandler) {
+    if (!touchHandler) {
       touchHandler = (event) => {
         event.preventDefault();
-        go(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+        go(event.touches[0]?.pageX, event.touches[0]?.pageY);
       };
-      element.addEventListener("touchmove", touchHandler);
+      container.addEventListener("touchmove", touchHandler);
     }
   });
 
-  element.addEventListener("touchend", (event) => {
-    end(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+  container.addEventListener("touchend", (event) => {
+    if (!touchHandler) return;
 
-    if (touchHandler) {
-      element.removeEventListener("touchmove", touchHandler);
-      touchHandler = null;
+    stop(event.touches[0]?.pageX, event.touches[0]?.pageY);
+    container.removeEventListener("touchmove", touchHandler);
+    touchHandler = null;
+  });
+
+  container.addEventListener("touchcancel", (event) => {
+    if (!touchHandler) return;
+
+    stop(event.touches[0]?.pageX, event.touches[0]?.pageY);
+    container.removeEventListener("touchmove", touchHandler);
+    touchHandler = null;
+  });
+
+  let wheelTimeout: number | null = null;
+
+  container.addEventListener("wheel", (event) => {
+    event.preventDefault();
+
+    if (!ctx.moving) {
+      ctx.moving = true;
+      hideMenu();
     }
+
+    if (wheelTimeout) clearTimeout(wheelTimeout);
+
+    move(ctx, -event.deltaX, -event.deltaY);
+
+    wheelTimeout = setTimeout(() => {
+      wheelTimeout = null;
+      end();
+    }, 250);
   });
 }
