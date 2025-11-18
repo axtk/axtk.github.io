@@ -34,7 +34,7 @@ function move(ctx: Context, dx: number, dy: number) {
   });
 }
 
-export function initRotation(ctx: Context) {
+export function initNavigation(ctx: Context) {
   let { element } = ctx;
 
   let x0: number | null = null;

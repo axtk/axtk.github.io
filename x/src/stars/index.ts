@@ -2,7 +2,7 @@ import type { Context } from "./Context";
 import { fetchData } from "./fetchData";
 import { hideMenu } from "./hideMenu";
 import { initClicks } from "./initClicks";
-import { initRotation } from "./initRotation";
+import { initNavigation } from "./initNavigation";
 import { render } from "./render";
 import { renderForm } from "./renderForm";
 import { setDimensions } from "./setDimensions";
@@ -47,7 +47,7 @@ async function init() {
   setDimensions(ctx);
   renderForm(ctx);
   render(ctx);
-  initRotation(ctx);
+  initNavigation(ctx);
   initClicks(ctx);
 
   window.sendEvent?.(["load mode", mode]);
