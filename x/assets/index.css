@@ -1,19 +1,22 @@
 :root {
   color-scheme: light dark;
 
-  --color: light-dark(black, white);
-  --background: light-dark(#f2f2f2, #1a1a1a);
+  --color: light-dark(#000d, #fffa);
+  --background: light-dark(#eee, #1a1a1a);
   --link-color: light-dark(royalblue, deepskyblue);
   --mark-color: light-dark(#d5fbb0, #3d2b5e);
   --box-size: 24rem;
   --box-padding-x: 1.75rem;
   --box-padding-y: 2rem;
 
-  --light-color: color(from var(--color) srgb r g b / 0.03);
+  --light-color: light-dark(#00000008, #ffffff08);
+  --border-color: light-dark(#e8e8e8, #262626);
+  --shadow-color: light-dark(#bbb, #595959);
+  --intro-background: light-dark(#0001, #fff1);
 }
 html {
   font: normal 80% / 1.5 sans-serif;
-  color: color(from var(--color) srgb r g b / 0.9);
+  color: var(--color);
   background: var(--background);
 }
 body {
@@ -58,7 +61,7 @@ figure {
   margin: 0;
 }
 picture {
-  --border-width: 0.5rem;
+  --border-width: 0.42rem;
 
   display: inline-block;
   width: calc(100% + 2 * var(--border-width));
@@ -66,9 +69,12 @@ picture {
   font-size: 0;
   text-align: center;
   background: var(--light-color);
-  border: var(--border-width) solid var(--light-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: .75rem;
+  box-shadow: 0 0 .75rem 0 var(--shadow-color);
   margin: 0 calc(-1 * var(--border-width));
   box-sizing: border-box;
+  overflow: hidden;
 }
 picture img {
   max-width: 100%;
@@ -79,10 +85,7 @@ figcaption {
   margin: 1em 0 0;
 }
 section[data-tags~="intro"] {
-  --b: color(from currentColor srgb r g b / 0.05);
-  /* background: #e9f2d5; */
-  /* background: linear-gradient(to bottom, var(--b), var(--background)) 50% 50%/cover no-repeat; */
-  background: var(--b);
+  /* background: var(--intro-background); */
   text-align: right;
 }
 section[data-tags~="intro"] h1 {
@@ -99,6 +102,8 @@ section[data-tags~="intro"] .image {
   width: var(--size);
   min-height: var(--size);
   font-size: 0;
+  background: var(--light-color);
+  border-radius: 50%;
   margin-bottom: 0.75rem;
   overflow: hidden;
 }
@@ -164,8 +169,6 @@ strong::before {
   }
   section[data-tags~="intro"] {
     text-align: left;
-    /* background: color(from var(--color) srgb r g b / .05); */
-    /* background: #ebf0e1; */
     background: var(--light-color);
   }
   section[data-tags~="intro"] h1 {
