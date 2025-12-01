@@ -12,6 +12,7 @@
   --box-size: 24rem;
   --box-padding-x: 1.75rem;
   --box-padding-y: 2rem;
+  --shadow: 0 0 0.75rem 0 var(--shadow-color);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -24,6 +25,8 @@
     --border-color: #262626;
     --shadow-color: #595959;
     --intro-background: #fff1;
+
+    --shadow: 0 0 0.2rem 0 var(--shadow-color);
   }
 }
 html {
@@ -83,7 +86,7 @@ picture {
   background: var(--light-color);
   border: var(--border-width) solid var(--border-color);
   border-radius: 0.75rem;
-  box-shadow: 0 0 0.75rem 0 var(--shadow-color);
+  box-shadow: var(--shadow);
   margin: 0 calc(-1 * var(--border-width));
   box-sizing: border-box;
   overflow: hidden;
