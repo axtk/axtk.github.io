@@ -14,6 +14,7 @@
   --box-padding-x: 1.75rem;
   --box-padding-y: 2rem;
   --shadow: 0 0 0.75rem 0 var(--shadow-color);
+  --border-width: 0.42rem;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -66,6 +67,7 @@ li + li {
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--box-size), 1fr));
+  padding: 0 calc(var(--box-padding-x) - var(--border-width));
 }
 section {
   padding: var(--box-padding-y) var(--box-padding-x);
@@ -78,8 +80,6 @@ figure {
   margin: 0;
 }
 picture {
-  --border-width: 0.42rem;
-
   display: inline-block;
   width: calc(100% + 2 * var(--border-width));
   min-height: 10rem;
@@ -181,6 +181,9 @@ strong::before {
     --box-size: 100%;
 
     font-size: 100%;
+  }
+  main {
+    padding: 0;
   }
   section:not([data-tags~="intro"]) + section {
     border-top: 1rem solid var(--light-color);
