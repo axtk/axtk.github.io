@@ -1,18 +1,30 @@
 :root {
-  color-scheme: light dark;
+  --color: #000d;
+  --background: #eee;
+  --link-color: royalblue;
+  --mark-color: #d5fbb0;
 
-  --color: light-dark(#000d, #fffa);
-  --background: light-dark(#eee, #1a1a1a);
-  --link-color: light-dark(royalblue, deepskyblue);
-  --mark-color: light-dark(#d5fbb0, #3d2b5e);
+  --light-color: #00000008;
+  --border-color: #e8e8e8;
+  --shadow-color: #bbb;
+  --intro-background: #0001;
+
   --box-size: 24rem;
   --box-padding-x: 1.75rem;
   --box-padding-y: 2rem;
-
-  --light-color: light-dark(#00000008, #ffffff08);
-  --border-color: light-dark(#e8e8e8, #262626);
-  --shadow-color: light-dark(#bbb, #595959);
-  --intro-background: light-dark(#0001, #fff1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #fffa;
+    --background: #1a1a1a;
+    --link-color: deepskyblue;
+    --mark-color: #3d2b5e;
+  
+    --light-color: #ffffff08;
+    --border-color: #262626;
+    --shadow-color: #595959;
+    --intro-background: #fff1;
+  }
 }
 html {
   font: normal 80% / 1.5 sans-serif;

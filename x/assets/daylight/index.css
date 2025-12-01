@@ -1,9 +1,14 @@
 :root {
-  color-scheme: light dark;
-
-  --color: light-dark(black, white);
-  --background: light-dark(white, #1a1a1a);
-  --link-color: color(from var(--color) srgb r g b / 0.8);
+  --color: black;
+  --background: white;
+  --link-color: #000c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white;
+    --background: #1a1a1a;
+    --link-color: #fffc;
+  }
 }
 html {
   font: normal 80% / 1.2 sans-serif;

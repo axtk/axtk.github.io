@@ -41,6 +41,20 @@ This approach to structuring the app is technology-agnostic, but here, for the s
 The fractal web app design essentially boils down to the following file structure:
 
 <style>
+:root {
+  --line-color: #0004;
+  --comment-color: #0008;
+  color: black;
+  background: white;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --line-color: #fff3;
+    --comment-color: #fff6;
+    color: #fffc;
+    background: #1a1a1a;
+  }
+}
 .s {
   font-family: monospace;
   line-height: 1.3;
@@ -49,7 +63,6 @@ The fractal web app design essentially boils down to the following file structur
   --y: .75em;
   --px: 1.5em;
   --py: .5em;
-  --c: color(from var(--color) srgb r g b / .25);
   margin: 1em 0;
 }
 .s ul {
@@ -70,7 +83,7 @@ The fractal web app design essentially boils down to the following file structur
   content: "";
   position: absolute;
   inset: 0 auto 0 var(--x);
-  border: var(--w) solid var(--c);
+  border: var(--w) solid var(--line-color);
 }
 .s li li:last-child::before {
   height: calc(var(--py) + var(--y) - var(--w));
@@ -81,12 +94,12 @@ The fractal web app design essentially boils down to the following file structur
   width: calc(var(--px) - var(--x) - .2em);
   position: absolute;
   inset: calc(var(--py) + var(--y)) auto auto var(--x);
-  border-top: var(--w) solid var(--c);
+  border-top: var(--w) solid var(--line-color);
 }
 .s .c {
   display: block;
   font-size: .85em;
-  color: color(from var(--color) srgb r g b / .5);
+  color: var(--comment-color);
 }
 </style>
 <div class="s">

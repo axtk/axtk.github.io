@@ -1,12 +1,20 @@
 :root {
-  color-scheme: light dark;
-
-  --color: light-dark(black, white);
-  --background: light-dark(white, #222);
-  --highlight: light-dark(#b23, #e63e51);
+  --color: black;
+  --background: white;
+  --highlight: #b23;
   --link-color: var(--highlight);
+  --mark-background: color(from var(--highlight) srgb r g b / 0.15);
+
   --content-width: 42rem;
   --form-width: 24rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white;
+    --background: #222;
+    --highlight: #e63e51;
+    --mark-background: color(from var(--highlight) srgb r g b / 0.5);
+  }
 }
 html {
   height: 100%;
@@ -202,10 +210,7 @@ dl mark {
   font-weight: inherit;
   font-style: inherit;
   color: inherit;
-  background: light-dark(
-    color(from var(--highlight) srgb r g b / 0.15),
-    color(from var(--highlight) srgb r g b / 0.5)
-  );
+  background: var(--mark-background);
   border-bottom: 0.15em solid var(--highlight);
 }
 dd > span + span::before {

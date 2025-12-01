@@ -1,15 +1,21 @@
 :root {
-  color-scheme: light dark;
+  --color: black;
+  --background: #d9d9d9;
+  --link-color: royalblue;
 
-  --color: light-dark(black, white);
-  --background: light-dark(#d9d9d9, #1a1a1a);
-  --link-color: light-dark(royalblue, deepskyblue);
   --hovered-link-decoration: underline;
   --hovered-link-background: transparent;
   --main-padding: 2rem;
   --tile-content-size: 500px;
   --tile-padding: 1em;
   --aspect-ratio: 1;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white;
+    --background: #1a1a1a;
+    --link-color: deepskyblue;
+  }
 }
 html {
   font: normal 100% / 1.3 sans-serif;

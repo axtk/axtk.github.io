@@ -1,14 +1,12 @@
 :root {
-  color-scheme: light dark;
+  --color: black;
+  --background: white;
+  --link-color: royalblue;
+  --visited-link-color: blueviolet;
+  --mark-background: greenyellow;
+  --danger-color: darkred;
+  --abstract-background: color(from var(--color) srgb r g b / 0.07);
 
-  --color: light-dark(black, white);
-  --background: light-dark(white, #1a1a1a);
-  --link-color: light-dark(royalblue, deepskyblue);
-  --visited-link-color: light-dark(blueviolet, mediumorchid);
-  --mark-background: light-dark(greenyellow, limegreen); /* #fff88a */
-  --danger-color: light-dark(darkred, #df4242);
-}
-html {
   --max-main-content-width: 680px;
   --smaller-font-size: 0.85em;
   --layout-padding-x: 1.1rem;
@@ -16,7 +14,19 @@ html {
   --abstract-padding: var(--layout-padding-x);
   --block-margin-y: 1em;
   --block-border-radius: 1em;
-
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white;
+    --background: #1a1a1a;
+    --link-color: deepskyblue;
+    --visited-link-color: mediumorchid;
+    --mark-background: limegreen;
+    --danger-color: #df4242;
+    --abstract-background: color(from var(--color) srgb r g b / 0.12);
+  }
+}
+html {
   font: normal 100% / 1.5 sans-serif;
   color: color(from var(--color) srgb r g b / 0.9);
   background: var(--background);
@@ -105,10 +115,7 @@ h4 {
 .abstract,
 [role="doc-abstract"] {
   font-style: italic;
-  background: light-dark(
-    color(from var(--color) srgb r g b / 0.07),
-    color(from var(--color) srgb r g b / 0.12)
-  );
+  background: var(--abstract-background);
   padding: var(--abstract-padding);
   margin: 1.25em calc(-1 * var(--abstract-padding)) 1.75em;
 }
