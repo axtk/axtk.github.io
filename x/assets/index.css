@@ -8,6 +8,7 @@
   --border-color: #e8e8e8;
   --shadow-color: #bbb;
   --intro-background: #0001;
+  --title-color: #000d;
 
   --box-size: 24rem;
   --box-padding-x: 1.75rem;
@@ -25,6 +26,7 @@
     --border-color: #262626;
     --shadow-color: #595959;
     --intro-background: #fff1;
+    --title-color: #fffc;
 
     --shadow: 0 0 0.2rem 0 var(--shadow-color);
   }
@@ -108,6 +110,7 @@ section[data-tags~="intro"] h1 {
   font-size: 2rem;
   font-weight: 900;
   line-height: 1;
+  color: var(--title-color);
   margin: 0;
 }
 section[data-tags~="intro"] .image {
