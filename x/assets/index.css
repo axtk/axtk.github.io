@@ -19,7 +19,7 @@
     --background: #1a1a1a;
     --link-color: deepskyblue;
     --mark-color: #3d2b5e;
-  
+
     --light-color: #ffffff08;
     --border-color: #262626;
     --shadow-color: #595959;
@@ -82,8 +82,8 @@ picture {
   text-align: center;
   background: var(--light-color);
   border: var(--border-width) solid var(--border-color);
-  border-radius: .75rem;
-  box-shadow: 0 0 .75rem 0 var(--shadow-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0.75rem 0 var(--shadow-color);
   margin: 0 calc(-1 * var(--border-width));
   box-sizing: border-box;
   overflow: hidden;
