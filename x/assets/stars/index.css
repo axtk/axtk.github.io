@@ -60,6 +60,9 @@ a:active {
   stroke-opacity: 0.09;
   fill: none;
 }
+html[data-mode="light"] #screen .grid {
+  stroke-opacity: 0.12;
+}
 #screen .star-labels {
   font-family: serif;
   fill: currentColor;
@@ -81,6 +84,9 @@ a:active {
   stroke-dasharray: 3 2;
   stroke-opacity: 0.3;
   fill: none;
+}
+html[data-mode="light"] #screen .hint-lines {
+  stroke-opacity: 0.5;
 }
 #screen .hidden {
   display: none;
@@ -113,6 +119,7 @@ a:active {
   color: color(from var(--link-color) srgb r g b / 0.95);
   background: color(from var(--link-color) srgb r g b / 0.25);
 }
+
 footer {
   --link-color: color(from var(--color) srgb r g b / 0.8);
 
