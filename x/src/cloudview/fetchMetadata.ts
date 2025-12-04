@@ -20,7 +20,7 @@ export async function fetchMetadata(ctx: Context): Promise<void> {
 
     if (config) {
       for (let k of configProps) {
-        // @ts-ignore
+        // @ts-expect-error
         if (config[k] !== undefined) ctx[k] = config[k];
       }
     }
