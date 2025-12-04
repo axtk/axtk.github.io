@@ -129,9 +129,12 @@ async function build(dir) {
     let dirs = await readdir(sourceDir);
 
     for (let dir of dirs) {
-      if (!(await lstat(`${sourceDir}/${dir}`)).isDirectory()) continue;
-
-      await build(dir);
+      if (
+        !dir.startsWith(".") &&
+        !dir.startsWith("_") &&
+        (await lstat(`${sourceDir}/${dir}`)).isDirectory()
+      )
+        await build(dir);
     }
   }
 })();
