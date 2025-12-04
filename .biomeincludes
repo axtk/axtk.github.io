@@ -1,5 +1,5 @@
 !**/node_modules/**/*
-build.mjs
+build.ts
 _layouts/**/*
 !_layouts/*.html
 x/**/*
