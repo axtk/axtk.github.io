@@ -1,5 +1,5 @@
-import { escapeRegExp } from "../_utils/escapeRegExp";
-import { characterMap } from "./characterMap";
+import { escapeRegExp } from "../_utils/escapeRegExp.ts";
+import { characterMap } from "./characterMap.ts";
 
 export function translit(x: string) {
   let s = x;

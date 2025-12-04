@@ -1,17 +1,17 @@
-import type { Context } from "./Context";
-import { type FormInput, getFormInput } from "./getFormInput";
-import { getTracks } from "./getTracks";
-import { isValidFormInput } from "./isValidFormInput";
-import { renderDirections } from "./renderDirections";
-import { renderForm } from "./renderForm";
-import { renderGrid } from "./renderGrid";
-import { renderHorizon } from "./renderHorizon";
-import { renderMarkerLines } from "./renderMarkerLines";
-import { renderMarkers } from "./renderMarkers";
-import { renderMoonPhase } from "./renderMoonPhase";
-import { renderPositionLabels } from "./renderPositionLabels";
-import { renderTracks } from "./renderTracks";
-import { setDimensions } from "./setDimensions";
+import type { Context } from "./Context.ts";
+import { type FormInput, getFormInput } from "./getFormInput.ts";
+import { getTracks } from "./getTracks.ts";
+import { isValidFormInput } from "./isValidFormInput.ts";
+import { renderDirections } from "./renderDirections.ts";
+import { renderForm } from "./renderForm.ts";
+import { renderGrid } from "./renderGrid.ts";
+import { renderHorizon } from "./renderHorizon.ts";
+import { renderMarkerLines } from "./renderMarkerLines.ts";
+import { renderMarkers } from "./renderMarkers.ts";
+import { renderMoonPhase } from "./renderMoonPhase.ts";
+import { renderPositionLabels } from "./renderPositionLabels.ts";
+import { renderTracks } from "./renderTracks.ts";
+import { setDimensions } from "./setDimensions.ts";
 
 type Timeout = ReturnType<typeof setTimeout>;
 

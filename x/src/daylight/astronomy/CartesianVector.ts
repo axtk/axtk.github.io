@@ -1,4 +1,4 @@
-import { PolarVector } from "./PolarVector";
+import { PolarVector } from "./PolarVector.ts";
 
 const { PI, sqrt, atan2, sin, cos } = Math;
 

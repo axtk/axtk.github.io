@@ -1,8 +1,8 @@
-import type { Context } from "../Context";
-import { downloadURL } from "../const";
-import { getDefaultQuery } from "../getDefaultQuery";
-import { i18n } from "../i18n";
-import type { ViewItem } from "../ViewItem";
+import type { Context } from "../Context.ts";
+import { downloadURL } from "../const.ts";
+import { getDefaultQuery } from "../getDefaultQuery.ts";
+import { i18n } from "../i18n.ts";
+import type { ViewItem } from "../ViewItem.ts";
 
 function getImageURL(item: ViewItem) {
   return `${downloadURL}/${item.name}?u=${encodeURIComponent(item.url ?? "")}`;

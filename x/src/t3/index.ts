@@ -1,11 +1,11 @@
 import { Store } from "@t8/store";
-import type { Context } from "./Context";
-import { getInitialState } from "./getInitialState";
-import { renderBoard } from "./renderBoard";
-import { renderControls } from "./renderControls";
-import { renderForm } from "./renderForm";
-import { renderStatus } from "./renderStatus";
-import type { State } from "./State";
+import type { Context } from "./Context.ts";
+import { getInitialState } from "./getInitialState.ts";
+import { renderBoard } from "./renderBoard.ts";
+import { renderControls } from "./renderControls.ts";
+import { renderForm } from "./renderForm.ts";
+import { renderStatus } from "./renderStatus.ts";
+import type { State } from "./State.ts";
 
 function render(ctx: Context) {
   renderBoard(ctx);

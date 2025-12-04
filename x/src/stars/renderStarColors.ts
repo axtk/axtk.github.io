@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { starColors } from "./const";
+import type { Context } from "./Context.ts";
+import { starColors } from "./const.ts";
 
 let inited = false;
 let starSelector = 'html[data-mode="dark"] #screen .stars circle';

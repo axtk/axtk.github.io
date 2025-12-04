@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { fetchText } from "./fetchText";
+import type { Context } from "./Context.ts";
+import { fetchText } from "./fetchText.ts";
 
 export async function fetchIndex(ctx: Context): Promise<void> {
   let { index, url, path } = ctx;

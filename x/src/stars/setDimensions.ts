@@ -1,4 +1,4 @@
-import type { Context } from "./Context";
+import type { Context } from "./Context.ts";
 
 export function setDimensions({ element }: Context) {
   let container = element.parentElement;

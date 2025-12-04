@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { markerSize, ns } from "./const";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { markerSize, ns } from "./const.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 const d = markerSize.moon ?? markerSize.default;
 const r = d / 2;

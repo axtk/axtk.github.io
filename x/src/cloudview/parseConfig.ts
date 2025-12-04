@@ -1,6 +1,6 @@
-import type { ConfigContext } from "./Context";
-import { split } from "./split";
-import { stripQuotes } from "./stripQuotes";
+import type { ConfigContext } from "./Context.ts";
+import { split } from "./split.ts";
+import { stripQuotes } from "./stripQuotes.ts";
 
 function toCamelCase(s: string) {
   return s.replace(/(\w)_(\w)/g, (_s, a, b) => `${a}${b.toUpperCase()}`);

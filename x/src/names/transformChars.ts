@@ -1,4 +1,4 @@
-import type { Chars, RawChars } from "./Chars";
+import type { Chars, RawChars } from "./Chars.ts";
 
 const accents = new Set(["\u0301"]);
 

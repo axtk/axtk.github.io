@@ -1,6 +1,6 @@
-import type { Context } from "../Context";
-import { getDefaultQuery } from "../getDefaultQuery";
-import { i18n } from "../i18n";
+import type { Context } from "../Context.ts";
+import { getDefaultQuery } from "../getDefaultQuery.ts";
+import { i18n } from "../i18n.ts";
 
 let container: Element | null = null;
 

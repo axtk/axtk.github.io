@@ -1,16 +1,16 @@
 import type { Sort } from "yd-sdk";
-import type { Context, InputContext } from "./Context";
-import { getDescription } from "./defaults/getDescription";
-import { getDisplayedDate } from "./defaults/getDisplayedDate";
-import { renderItems } from "./defaults/renderItems";
-import { renderNav } from "./defaults/renderNav";
-import { events } from "./events";
-import { fetchIndex } from "./fetchIndex";
-import { fetchItems } from "./fetchItems";
-import { fetchMetadata } from "./fetchMetadata";
-import { i18n, lang } from "./i18n";
-import { setHotkeys } from "./setHotkeys";
-import { updateURL } from "./updateURL";
+import type { Context, InputContext } from "./Context.ts";
+import { getDescription } from "./defaults/getDescription.ts";
+import { getDisplayedDate } from "./defaults/getDisplayedDate.ts";
+import { renderItems } from "./defaults/renderItems.ts";
+import { renderNav } from "./defaults/renderNav.ts";
+import { events } from "./events.ts";
+import { fetchIndex } from "./fetchIndex.ts";
+import { fetchItems } from "./fetchItems.ts";
+import { fetchMetadata } from "./fetchMetadata.ts";
+import { i18n, lang } from "./i18n.ts";
+import { setHotkeys } from "./setHotkeys.ts";
+import { updateURL } from "./updateURL.ts";
 
 export async function render(options: InputContext) {
   updateURL();

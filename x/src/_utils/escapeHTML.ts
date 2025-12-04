@@ -1,4 +1,4 @@
-import { escapeRegExp } from "./escapeRegExp";
+import { escapeRegExp } from "./escapeRegExp.ts";
 
 const htmlEntityMap: [string, string][] = [
   ["&", "&amp;"],

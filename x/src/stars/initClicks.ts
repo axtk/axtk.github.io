@@ -1,9 +1,9 @@
-import type { Context } from "./Context";
-import { fromScreenPosition } from "./fromScreenPosition";
-import { getScreenPosition } from "./getScreenPosition";
-import { getSelectionContent } from "./getSelectionContent";
-import type { Star } from "./Star";
-import { setMenu } from "./setMenu";
+import type { Context } from "./Context.ts";
+import { fromScreenPosition } from "./fromScreenPosition.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
+import { getSelectionContent } from "./getSelectionContent.ts";
+import type { Star } from "./Star.ts";
+import { setMenu } from "./setMenu.ts";
 
 const { abs } = Math;
 const clickRadius = 5;

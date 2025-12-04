@@ -1,5 +1,5 @@
-import { Star } from "./Star";
-import { stripQuotes } from "./stripQuotes";
+import { Star } from "./Star.ts";
+import { stripQuotes } from "./stripQuotes.ts";
 
 function byMagnitude(s1: Star, s2: Star) {
   return s1.magnitude - s2.magnitude;

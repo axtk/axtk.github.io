@@ -1,5 +1,5 @@
-import type { Context } from "../Context";
-import { split } from "../split";
+import type { Context } from "../Context.ts";
+import { split } from "../split.ts";
 
 type IndexEntry = {
   description?: string;

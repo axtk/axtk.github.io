@@ -1,4 +1,4 @@
-import type { Context } from "./Context";
+import type { Context } from "./Context.ts";
 
 export function renderForm({ q, eg, ge }: Context) {
   let form = document.querySelector("form.input")!;

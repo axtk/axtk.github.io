@@ -1,5 +1,5 @@
-import { getEclipticalCoordinates as getSunEclipticalCoordinates } from "../sun/getEclipticalCoordinates";
-import { getEclipticalCoordinates } from "./getEclipticalCoordinates";
+import { getEclipticalCoordinates as getSunEclipticalCoordinates } from "../sun/getEclipticalCoordinates.ts";
+import { getEclipticalCoordinates } from "./getEclipticalCoordinates.ts";
 
 const pi2 = 2 * Math.PI;
 const dT = -8.32 / (1440 * 36525);

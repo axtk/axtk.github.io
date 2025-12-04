@@ -1,4 +1,4 @@
-import { bayerDesignationMap, superscriptNumbers } from "./const";
+import { bayerDesignationMap, superscriptNumbers } from "./const.ts";
 
 /** 'alp1' to 'α¹' */
 export function toBayerKey(rawBayerKey: string | undefined) {

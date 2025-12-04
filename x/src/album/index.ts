@@ -1,4 +1,4 @@
-import { render } from "../cloudview";
+import { render } from "../cloudview/index.ts";
 
 render({
   container: "main",

@@ -1,9 +1,9 @@
-import type { Context } from "./Context";
-import { getDimensions } from "./getDimensions";
-import { hideMenu } from "./hideMenu";
-import { render } from "./render";
-import { state } from "./state";
-import { toBounds } from "./toBounds";
+import type { Context } from "./Context.ts";
+import { getDimensions } from "./getDimensions.ts";
+import { hideMenu } from "./hideMenu.ts";
+import { render } from "./render.ts";
+import { state } from "./state.ts";
+import { toBounds } from "./toBounds.ts";
 
 const { PI, asin } = Math;
 
@@ -132,7 +132,7 @@ export function initNavigation(ctx: Context) {
     touchHandler = null;
   });
 
-  let wheelTimeout: number | null = null;
+  let wheelTimeout: ReturnType<typeof setTimeout> | null = null;
 
   container.addEventListener("wheel", (event) => {
     event.preventDefault();

@@ -1,5 +1,5 @@
-import { RAD } from "./astronomy/const";
-import type { GeoLocation } from "./astronomy/GeoLocation";
+import { RAD } from "./astronomy/const.ts";
+import type { GeoLocation } from "./astronomy/GeoLocation.ts";
 
 function getLocation(): GeoLocation {
   let input =

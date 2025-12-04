@@ -1,7 +1,7 @@
-import type { Context } from "./Context";
-import { horizonOffset, ns } from "./const";
-import { getDimensions } from "./getDimensions";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { horizonOffset, ns } from "./const.ts";
+import { getDimensions } from "./getDimensions.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 export function renderHorizon(ctx: Context) {
   let container = ctx.element.querySelector(".horizon")!;

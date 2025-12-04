@@ -1,4 +1,4 @@
-import { toDecimal } from "./toDecimal";
+import { toDecimal } from "./toDecimal.ts";
 
 const { floor } = Math;
 

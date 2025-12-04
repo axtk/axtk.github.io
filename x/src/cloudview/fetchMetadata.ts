@@ -1,6 +1,6 @@
-import type { ConfigContext, Context } from "./Context";
-import { fetchText } from "./fetchText";
-import { parseConfig } from "./parseConfig";
+import type { ConfigContext, Context } from "./Context.ts";
+import { fetchText } from "./fetchText.ts";
+import { parseConfig } from "./parseConfig.ts";
 
 const configProps: (keyof ConfigContext)[] = [
   "index",
@@ -20,7 +20,7 @@ export async function fetchMetadata(ctx: Context): Promise<void> {
 
     if (config) {
       for (let k of configProps) {
-        // @ts-expect-error
+        // @ts-ignore
         if (config[k] !== undefined) ctx[k] = config[k];
       }
     }

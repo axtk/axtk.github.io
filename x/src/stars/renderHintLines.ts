@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { ns } from "./const";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { ns } from "./const.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 export function renderHintLines(ctx: Context) {
   let container = ctx.element.querySelector("g.hint-lines")!;

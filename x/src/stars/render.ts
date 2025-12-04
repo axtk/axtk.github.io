@@ -1,11 +1,11 @@
-import type { Context } from "./Context";
-import { renderConstellationLabels } from "./renderConstellationLabels";
-import { renderGrid } from "./renderGrid";
-import { renderHintLines } from "./renderHintLines";
-import { renderStarColors } from "./renderStarColors";
-import { renderStarLabels } from "./renderStarLabels";
-import { renderStarPatterns } from "./renderStarPatterns";
-import { renderStars } from "./renderStars";
+import type { Context } from "./Context.ts";
+import { renderConstellationLabels } from "./renderConstellationLabels.ts";
+import { renderGrid } from "./renderGrid.ts";
+import { renderHintLines } from "./renderHintLines.ts";
+import { renderStarColors } from "./renderStarColors.ts";
+import { renderStarLabels } from "./renderStarLabels.ts";
+import { renderStarPatterns } from "./renderStarPatterns.ts";
+import { renderStars } from "./renderStars.ts";
 
 export function render(ctx: Context) {
   ctx.element.dataset.moving = String(ctx.moving ?? "");

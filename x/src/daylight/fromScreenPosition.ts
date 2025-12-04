@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { latThreshold, yOffset } from "./const";
-import { getDimensions } from "./getDimensions";
+import type { Context } from "./Context.ts";
+import { latThreshold, yOffset } from "./const.ts";
+import { getDimensions } from "./getDimensions.ts";
 
 export function fromScreenPosition([x, y]: [number, number], ctx: Context) {
   let { width, height } = getDimensions(ctx);

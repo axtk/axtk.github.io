@@ -1,9 +1,9 @@
-import { DEG } from "./astronomy/const";
-import type { GeoLocation } from "./astronomy/GeoLocation";
-import { getHorizontalCoordinates as getMoonPosition } from "./astronomy/moon/getHorizontalCoordinates";
-import { getPhase } from "./astronomy/moon/getPhase";
-import type { PolarVector } from "./astronomy/PolarVector";
-import { getHorizontalCoordinates as getSunPosition } from "./astronomy/sun/getHorizontalCoordinates";
+import { DEG } from "./astronomy/const.ts";
+import type { GeoLocation } from "./astronomy/GeoLocation.ts";
+import { getHorizontalCoordinates as getMoonPosition } from "./astronomy/moon/getHorizontalCoordinates.ts";
+import { getPhase } from "./astronomy/moon/getPhase.ts";
+import type { PolarVector } from "./astronomy/PolarVector.ts";
+import { getHorizontalCoordinates as getSunPosition } from "./astronomy/sun/getHorizontalCoordinates.ts";
 
 const pi2 = 2 * Math.PI;
 

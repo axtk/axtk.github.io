@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { getDimensions } from "./getDimensions";
-import { toBounds } from "./toBounds";
+import type { Context } from "./Context.ts";
+import { getDimensions } from "./getDimensions.ts";
+import { toBounds } from "./toBounds.ts";
 
 const { sin, cos, asin, atan2, sqrt, PI } = Math;
 

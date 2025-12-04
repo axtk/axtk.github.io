@@ -1,4 +1,4 @@
-import { toMJD } from "./toMJD";
+import { toMJD } from "./toMJD.ts";
 
 const { PI, floor } = Math;
 

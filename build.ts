@@ -1,6 +1,7 @@
 import {
   exec as originalExec,
   spawn as originalSpawn,
+  SpawnOptions,
 } from "node:child_process";
 import { access, lstat, readdir, rm } from "node:fs/promises";
 import { platform } from "node:os";
@@ -12,7 +13,7 @@ const targetDir = "x/assets/0";
 const exec = promisify(originalExec);
 const targets = process.argv.slice(2);
 
-function spawn(command, args, options) {
+function spawn(command: string, args: string[], options: SpawnOptions) {
   return new Promise((resolve, reject) => {
     let p = originalSpawn(command, args, options);
     let stdout = "";
@@ -31,9 +32,9 @@ function spawn(command, args, options) {
         resolve({ stdout, stderr, code });
       } else {
         let error = new Error(`Command failed with exit code ${code}`);
-        error.code = code;
-        error.stdout = stdout;
-        error.stderr = stderr;
+        // error.code = code;
+        // error.stdout = stdout;
+        // error.stderr = stderr;
         reject(error);
       }
     });
@@ -44,21 +45,21 @@ function spawn(command, args, options) {
   });
 }
 
-function exists(path) {
+function exists(path: string) {
   return access(path).then(
     () => true,
     () => false,
   );
 }
 
-function missing(path) {
+function missing(path: string) {
   return access(path).then(
     () => false,
     () => true,
   );
 }
 
-async function customBuild(dir) {
+async function customBuild(dir: string) {
   let dirPath = `${sourceDir}/${dir}`;
   let path = `${dirPath}/build.mjs`;
 
@@ -68,7 +69,7 @@ async function customBuild(dir) {
   await exec(`node ${path}`);
 }
 
-async function checkDependencies(dir) {
+async function checkDependencies(dir: string) {
   let dirPath = `${sourceDir}/${dir}`;
 
   if (
@@ -93,7 +94,7 @@ async function checkDependencies(dir) {
   }
 }
 
-async function compile(dir) {
+async function compile(dir: string) {
   let dirPath = `${sourceDir}/${dir}`;
   let path = `${dirPath}/index.ts`;
 
@@ -105,7 +106,7 @@ async function compile(dir) {
   );
 }
 
-async function build(dir) {
+async function build(dir: string) {
   let dirPath = `${sourceDir}/${dir}`;
 
   if (await missing(dirPath)) return;

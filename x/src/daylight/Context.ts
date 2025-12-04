@@ -1,5 +1,5 @@
-import type { GeoLocation } from "./astronomy/GeoLocation";
-import type { getTracks } from "./getTracks";
+import type { GeoLocation } from "./astronomy/GeoLocation.ts";
+import type { getTracks } from "./getTracks.ts";
 
 export type Context = {
   element: SVGElement;

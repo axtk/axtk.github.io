@@ -1,9 +1,9 @@
-import type { Context } from "./Context";
-import { ns } from "./const";
-import { getScreenPosition } from "./getScreenPosition";
-import { getStarOpacity } from "./getStarOpacity";
-import { getStarRadius } from "./getStarRadius";
-import type { Star } from "./Star";
+import type { Context } from "./Context.ts";
+import { ns } from "./const.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
+import { getStarOpacity } from "./getStarOpacity.ts";
+import { getStarRadius } from "./getStarRadius.ts";
+import type { Star } from "./Star.ts";
 
 export function renderStars(ctx: Context) {
   let container = ctx.element.querySelector("g.stars")!;

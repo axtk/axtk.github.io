@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { getDimensions } from "./getDimensions";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { getDimensions } from "./getDimensions.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 const phaseName: Record<string, string> = {
   "0": "New",

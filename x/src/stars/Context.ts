@@ -1,5 +1,5 @@
-import type { Constellation } from "./Constellation";
-import type { Star } from "./Star";
+import type { Constellation } from "./Constellation.ts";
+import type { Star } from "./Star.ts";
 
 export type Context = {
   element: SVGElement;

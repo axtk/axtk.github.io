@@ -1,5 +1,5 @@
-import type { AbbrEntry } from "./AbbrEntry";
-import type { Dictionary } from "./Dictionary";
+import type { AbbrEntry } from "./AbbrEntry.ts";
+import type { Dictionary } from "./Dictionary.ts";
 
 export type Context = {
   q: string;

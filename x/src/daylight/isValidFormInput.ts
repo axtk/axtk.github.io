@@ -1,4 +1,4 @@
-import type { FormInput } from "./getFormInput";
+import type { FormInput } from "./getFormInput.ts";
 
 export function isValidFormInput({ location, time }: FormInput) {
   if (!location || Number.isNaN(location.lat) || Number.isNaN(location.lon))

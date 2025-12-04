@@ -1,7 +1,7 @@
-import { urlMap } from "./const";
-import { transformConstellations } from "./transformConstellations";
-import { transformHintLines } from "./transformHintLines";
-import { transformStars } from "./transformStars";
+import { urlMap } from "./const.ts";
+import { transformConstellations } from "./transformConstellations.ts";
+import { transformHintLines } from "./transformHintLines.ts";
+import { transformStars } from "./transformStars.ts";
 
 async function fetchText(url: string) {
   return fetch(url).then((res) => res.text());

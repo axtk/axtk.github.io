@@ -1,7 +1,7 @@
-import { escapeHTML } from "../_utils/escapeHTML";
-import { escapeRegExp } from "../_utils/escapeRegExp";
-import type { Context } from "./Context";
-import { pickRandom } from "./pickRandom";
+import { escapeHTML } from "../_utils/escapeHTML.ts";
+import { escapeRegExp } from "../_utils/escapeRegExp.ts";
+import type { Context } from "./Context.ts";
+import { pickRandom } from "./pickRandom.ts";
 
 const maxExamples = 3;
 

@@ -1,4 +1,4 @@
-import type { State } from "./State";
+import type { State } from "./State.ts";
 
 function charAt(s: string | null, index = 0) {
   return s ? [...s][index] : "";

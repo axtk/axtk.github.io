@@ -1,7 +1,7 @@
-import type { Constellation } from "./Constellation";
-import type { Context } from "./Context";
-import { ns } from "./const";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Constellation } from "./Constellation.ts";
+import type { Context } from "./Context.ts";
+import { ns } from "./const.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 export function renderConstellationLabels(ctx: Context) {
   let container = ctx.element.querySelector("g.constellation-labels")!;

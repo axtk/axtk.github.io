@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import type { Star } from "./Star";
+import type { Context } from "./Context.ts";
+import type { Star } from "./Star.ts";
 
 export function getStarOpacity(star: Star, ctx: Context) {
   if (ctx.mode === "fantasy")

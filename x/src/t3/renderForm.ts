@@ -1,4 +1,4 @@
-import type { Context } from "./Context";
+import type { Context } from "./Context.ts";
 
 function setSelectValue(element: HTMLSelectElement, value: unknown) {
   let stringValue = String(value);

@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { getDimensions } from "./getDimensions";
+import type { Context } from "./Context.ts";
+import { getDimensions } from "./getDimensions.ts";
 
 const maxWidth = 240;
 

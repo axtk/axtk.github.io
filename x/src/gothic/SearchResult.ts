@@ -1,4 +1,4 @@
-import type { MatchedItem } from "./MatchedItem";
+import type { MatchedItem } from "./MatchedItem.ts";
 
 export type SearchResult = {
   expressions: {

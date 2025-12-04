@@ -1,6 +1,6 @@
-import type { Context } from "../Context";
-import type { ViewItem } from "../ViewItem";
-import { getIndexMaps } from "./getIndexMaps";
+import type { Context } from "../Context.ts";
+import type { ViewItem } from "../ViewItem.ts";
+import { getIndexMaps } from "./getIndexMaps.ts";
 
 export function getDescription(
   { name }: ViewItem,

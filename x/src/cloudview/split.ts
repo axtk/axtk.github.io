@@ -1,4 +1,4 @@
-import { stripQuotes } from "./stripQuotes";
+import { stripQuotes } from "./stripQuotes.ts";
 
 export function split(s: string, splitChar = ",") {
   let items: string[] = [];

@@ -1,5 +1,5 @@
-import { Constellation } from "./Constellation";
-import { stripQuotes } from "./stripQuotes";
+import { Constellation } from "./Constellation.ts";
+import { stripQuotes } from "./stripQuotes.ts";
 
 export function transformConstellations(data: string) {
   return data

@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { markerSize } from "./const";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { markerSize } from "./const.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 function updateMarker(position: [number, number], id: string, ctx: Context) {
   let marker = ctx.element.querySelector(`.markers [data-id="${id}"]`)!;

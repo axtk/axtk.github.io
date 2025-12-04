@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { urlMap } from "./const";
+import type { Context } from "./Context.ts";
+import { urlMap } from "./const.ts";
 
 export async function fetchData(ctx: Context) {
   let [abbrs, ge, eg] = (await Promise.all(

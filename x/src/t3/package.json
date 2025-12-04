@@ -6,6 +6,6 @@
   "author": "axtk",
   "type": "module",
   "dependencies": {
-    "@t8/store": "^1.1.6"
+    "@t8/store": "^1.1.10"
   }
 }

@@ -4,11 +4,14 @@
   "homepage": "https://axtk.github.io",
   "version": "0.0.0",
   "scripts": {
-    "build": "node build.mjs",
+    "build": "node build.ts",
     "shape": "npx codeshape --typecheck"
   },
   "type": "module",
   "license": "ISC",
   "author": "axtk",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
 }

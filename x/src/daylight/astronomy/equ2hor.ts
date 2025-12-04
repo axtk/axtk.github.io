@@ -1,7 +1,7 @@
-import type { GeoLocation } from "./GeoLocation";
-import { PolarVector } from "./PolarVector";
-import { Ry } from "./RotationMatrix";
-import { toGMST } from "./toGMST";
+import type { GeoLocation } from "./GeoLocation.ts";
+import { PolarVector } from "./PolarVector.ts";
+import { Ry } from "./RotationMatrix.ts";
+import { toGMST } from "./toGMST.ts";
 
 /** Az: phi, h: theta */
 export function equ2hor(

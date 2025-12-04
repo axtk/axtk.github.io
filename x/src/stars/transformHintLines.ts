@@ -1,6 +1,6 @@
-import type { Star } from "./Star";
-import { stripQuotes } from "./stripQuotes";
-import { toBayerKey } from "./toBayerKey";
+import type { Star } from "./Star.ts";
+import { stripQuotes } from "./stripQuotes.ts";
+import { toBayerKey } from "./toBayerKey.ts";
 
 function getStarMap(stars: Star[]) {
   let map: Record<string, Star> = {};

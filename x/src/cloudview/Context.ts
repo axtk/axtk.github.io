@@ -1,5 +1,5 @@
 import type { Sort } from "yd-sdk";
-import type { ViewItem } from "./ViewItem";
+import type { ViewItem } from "./ViewItem.ts";
 
 export type RenderingContext = {
   container?: string | Element;

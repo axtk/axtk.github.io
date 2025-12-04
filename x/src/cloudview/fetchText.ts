@@ -1,5 +1,5 @@
-import { downloadURL, ydsdk } from "./const";
-import { toPath } from "./toPath";
+import { downloadURL, ydsdk } from "./const.ts";
+import { toPath } from "./toPath.ts";
 
 export async function fetchText(
   url: string | undefined,

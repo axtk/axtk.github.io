@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import type { Status } from "./Status";
+import type { Context } from "./Context.ts";
+import type { Status } from "./Status.ts";
 
 export function getStatus({ store }: Context): Status {
   let { moves, lastMoveIndex, winLength, rows, columns } = store.getState();

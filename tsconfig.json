@@ -1,10 +1,12 @@
 {
-  "include": ["./x/src", "./x/assets/stats.d.ts"],
+  "include": ["./build.ts", "./x/src", "./x/assets/stats.d.ts"],
   "compilerOptions": {
+    "noEmit": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "target": "ESNext",
-    "outDir": "dist",
-    "moduleResolution": "node",
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true

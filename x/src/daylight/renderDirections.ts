@@ -1,7 +1,7 @@
-import type { Context } from "./Context";
-import { ns } from "./const";
-import { fromScreenPosition } from "./fromScreenPosition";
-import { getDimensions } from "./getDimensions";
+import type { Context } from "./Context.ts";
+import { ns } from "./const.ts";
+import { fromScreenPosition } from "./fromScreenPosition.ts";
+import { getDimensions } from "./getDimensions.ts";
 
 const tickLength = 5;
 const tickCaptions = ["N", "E", "S", "W"];

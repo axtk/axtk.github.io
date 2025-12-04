@@ -1,5 +1,5 @@
-import { CartesianVector } from "./CartesianVector";
-import { PolarVector } from "./PolarVector";
+import { CartesianVector } from "./CartesianVector.ts";
+import { PolarVector } from "./PolarVector.ts";
 
 function getScalarProduct(v1: number[], v2: number[]) {
   let p = 0;

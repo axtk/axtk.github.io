@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { renderCharHint } from "./renderCharHint";
-import { transformInput } from "./transformInput";
+import type { Context } from "./Context.ts";
+import { renderCharHint } from "./renderCharHint.ts";
+import { transformInput } from "./transformInput.ts";
 
 export function renderResult(ctx: Context) {
   let { q, config } = ctx;

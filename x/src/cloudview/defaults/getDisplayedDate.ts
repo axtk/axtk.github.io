@@ -1,5 +1,5 @@
-import type { Context } from "../Context";
-import type { ViewItem } from "../ViewItem";
+import type { Context } from "../Context.ts";
+import type { ViewItem } from "../ViewItem.ts";
 
 export function getDisplayedDate({ name }: ViewItem, ctx: Context) {
   if (!name) return;

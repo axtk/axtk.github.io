@@ -1,4 +1,4 @@
-import { toBayerKey } from "./toBayerKey";
+import { toBayerKey } from "./toBayerKey.ts";
 
 export type StarProps = Pick<
   Star,

@@ -1,4 +1,4 @@
-import type { Star } from "./Star";
+import type { Star } from "./Star.ts";
 
 function createCell(className: string, content: string | undefined) {
   let cell = document.createElement("td");

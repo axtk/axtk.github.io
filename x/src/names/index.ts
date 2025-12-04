@@ -1,7 +1,7 @@
-import type { Context } from "./Context";
-import { fetchData } from "./fetchData";
-import { renderForm } from "./renderForm";
-import { renderResult } from "./renderResult";
+import type { Context } from "./Context.ts";
+import { fetchData } from "./fetchData.ts";
+import { renderForm } from "./renderForm.ts";
+import { renderResult } from "./renderResult.ts";
 
 async function init() {
   if (window.history) {

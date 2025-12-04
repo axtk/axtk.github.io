@@ -1,7 +1,7 @@
-import { MJD_J2000 } from "../const";
-import { frac } from "../frac";
-import { PolarVector } from "../PolarVector";
-import { toMJD } from "../toMJD";
+import { MJD_J2000 } from "../const.ts";
+import { frac } from "../frac.ts";
+import { PolarVector } from "../PolarVector.ts";
+import { toMJD } from "../toMJD.ts";
 
 const { sin } = Math;
 const pi2 = 2 * Math.PI;

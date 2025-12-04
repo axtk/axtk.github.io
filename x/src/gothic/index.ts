@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { renderForm } from "./renderForm";
-import { renderResult } from "./renderResult";
+import type { Context } from "./Context.ts";
+import { renderForm } from "./renderForm.ts";
+import { renderResult } from "./renderResult.ts";
 
 async function init() {
   let urlParams = new URLSearchParams(window.location.search);

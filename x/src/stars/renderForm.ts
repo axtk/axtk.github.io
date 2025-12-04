@@ -1,6 +1,6 @@
-import type { Context } from "./Context";
-import { render } from "./render";
-import { state } from "./state";
+import type { Context } from "./Context.ts";
+import { render } from "./render.ts";
+import { state } from "./state.ts";
 
 export function renderForm(ctx: Context) {
   let form = document.querySelector("#screen form")!;

@@ -1,8 +1,8 @@
 import type { YDIn } from "yd-sdk";
-import type { Context } from "./Context";
-import { ydsdk } from "./const";
-import { toPath } from "./toPath";
-import type { ViewItem } from "./ViewItem";
+import type { Context } from "./Context.ts";
+import { ydsdk } from "./const.ts";
+import { toPath } from "./toPath.ts";
+import type { ViewItem } from "./ViewItem.ts";
 
 const specialFiles = new Set(["_index.csv", "_config.yml"]);
 

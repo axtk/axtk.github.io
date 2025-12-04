@@ -1,4 +1,4 @@
-import type { Context } from "./Context";
+import type { Context } from "./Context.ts";
 
 export function getAbbrHTML(key: string, { data: { abbrs } }: Context) {
   if (!abbrs || !(key in abbrs)) return `<abbr>${key}</abbr>`;

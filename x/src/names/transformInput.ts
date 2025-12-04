@@ -1,5 +1,5 @@
 import { type Config, transform } from "glyphmap";
-import { escapeHTML } from "../_utils/escapeHTML";
+import { escapeHTML } from "../_utils/escapeHTML.ts";
 
 const STRESS_MARK = "\u0301";
 

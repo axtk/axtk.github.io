@@ -1,7 +1,7 @@
 import type { Config } from "glyphmap";
-import type { RawChars } from "./Chars";
-import { urlMap } from "./const";
-import { transformChars } from "./transformChars";
+import type { RawChars } from "./Chars.ts";
+import { urlMap } from "./const.ts";
+import { transformChars } from "./transformChars.ts";
 
 export async function fetchData() {
   let [config, rawChars] = (await Promise.all(

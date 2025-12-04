@@ -1,6 +1,6 @@
-import { equ2hor } from "../equ2hor";
-import type { GeoLocation } from "../GeoLocation";
-import { getEquatorialCoordinates } from "./getEquatorialCoordinates";
+import { equ2hor } from "../equ2hor.ts";
+import type { GeoLocation } from "../GeoLocation.ts";
+import { getEquatorialCoordinates } from "./getEquatorialCoordinates.ts";
 
 export function getHorizontalCoordinates(
   date: Date | number | string,

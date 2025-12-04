@@ -1,4 +1,4 @@
-import type { GeoLocation } from "./astronomy/GeoLocation";
+import type { GeoLocation } from "./astronomy/GeoLocation.ts";
 
 function getCurrentLocation(): Promise<GeoLocation> {
   return new Promise((resolve, reject) => {

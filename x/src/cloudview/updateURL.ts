@@ -1,4 +1,4 @@
-import { events } from "./events";
+import { events } from "./events.ts";
 
 function removeEmptySegments() {
   let { href, pathname, hash } = window.location;

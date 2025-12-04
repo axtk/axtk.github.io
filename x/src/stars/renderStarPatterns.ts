@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { ns } from "./const";
+import type { Context } from "./Context.ts";
+import { ns } from "./const.ts";
 
 const { floor, random, sin, cos, PI } = Math;
 

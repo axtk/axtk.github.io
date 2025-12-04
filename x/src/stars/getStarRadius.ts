@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import type { Star } from "./Star";
+import type { Context } from "./Context.ts";
+import type { Star } from "./Star.ts";
 
 export function getStarRadius(star: Star, ctx: Context) {
   if (ctx.mode === "fantasy") return 2 * (6.75 - star.magnitude);

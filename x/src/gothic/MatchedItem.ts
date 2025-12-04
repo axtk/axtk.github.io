@@ -1,4 +1,4 @@
-import type { DictionaryKey } from "./DictionaryKey";
+import type { DictionaryKey } from "./DictionaryKey.ts";
 
 export type MatchedItem = {
   term: string;

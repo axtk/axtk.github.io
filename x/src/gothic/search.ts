@@ -1,12 +1,12 @@
-import { escapeRegExp } from "../_utils/escapeRegExp";
-import type { Context } from "./Context";
-import type { Dictionary } from "./Dictionary";
-import type { DictionaryKey } from "./DictionaryKey";
-import { fetchData } from "./fetchData";
-import type { MatchedItem } from "./MatchedItem";
-import type { SearchResult } from "./SearchResult";
-import { setHTMLContent } from "./setHTMLContent";
-import { translit } from "./translit";
+import { escapeRegExp } from "../_utils/escapeRegExp.ts";
+import type { Context } from "./Context.ts";
+import type { Dictionary } from "./Dictionary.ts";
+import type { DictionaryKey } from "./DictionaryKey.ts";
+import { fetchData } from "./fetchData.ts";
+import type { MatchedItem } from "./MatchedItem.ts";
+import type { SearchResult } from "./SearchResult.ts";
+import { setHTMLContent } from "./setHTMLContent.ts";
+import { translit } from "./translit.ts";
 
 // @date 2020-04-17
 function normalize(s: string | null | undefined) {

@@ -1,5 +1,5 @@
-import type { Context } from "./Context";
-import { getStatus } from "./getStatus";
+import type { Context } from "./Context.ts";
+import { getStatus } from "./getStatus.ts";
 
 let clickHandler: ((event: Event) => void) | null = null;
 

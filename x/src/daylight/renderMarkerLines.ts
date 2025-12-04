@@ -1,7 +1,7 @@
-import type { Context } from "./Context";
-import { markerSize, ns } from "./const";
-import { getDimensions } from "./getDimensions";
-import { getScreenPosition } from "./getScreenPosition";
+import type { Context } from "./Context.ts";
+import { markerSize, ns } from "./const.ts";
+import { getDimensions } from "./getDimensions.ts";
+import { getScreenPosition } from "./getScreenPosition.ts";
 
 function setMarkerLines(position: [number, number], id: string, ctx: Context) {
   let { width, height } = getDimensions(ctx);

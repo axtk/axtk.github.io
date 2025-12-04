@@ -1,12 +1,12 @@
-import type { Context } from "./Context";
-import { fetchData } from "./fetchData";
-import { hideMenu } from "./hideMenu";
-import { initClicks } from "./initClicks";
-import { initNavigation } from "./initNavigation";
-import { render } from "./render";
-import { renderForm } from "./renderForm";
-import { setDimensions } from "./setDimensions";
-import { state } from "./state";
+import type { Context } from "./Context.ts";
+import { fetchData } from "./fetchData.ts";
+import { hideMenu } from "./hideMenu.ts";
+import { initClicks } from "./initClicks.ts";
+import { initNavigation } from "./initNavigation.ts";
+import { render } from "./render.ts";
+import { renderForm } from "./renderForm.ts";
+import { setDimensions } from "./setDimensions.ts";
+import { state } from "./state.ts";
 
 const defaultTilt: [number, number] = [
   // -.12, 0 // r .52 Ori
