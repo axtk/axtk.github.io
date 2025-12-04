@@ -13,9 +13,9 @@ const targetDir = "x/assets/0";
 const exec = promisify(originalExec);
 const targets = process.argv.slice(2);
 
-function spawn(command: string, args: string[], options: SpawnOptions) {
+function spawn(command: string, options: SpawnOptions) {
   return new Promise((resolve, reject) => {
-    let p = originalSpawn(command, args, options);
+    let p = originalSpawn(command, options);
     let stdout = "";
     let stderr = "";
 
@@ -83,8 +83,7 @@ async function checkDependencies(dir: string) {
   let npmCmd = platform().startsWith("win") ? "npm.cmd" : "npm";
 
   try {
-    await spawn(npmCmd, ["i"], {
-      env: process.env,
+    await spawn(`${npmCmd} i`, {
       cwd: dirPath,
       stdio: "inherit",
       shell: true,
