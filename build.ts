@@ -1,7 +1,7 @@
 import {
   exec as originalExec,
   spawn as originalSpawn,
-  SpawnOptions,
+  type SpawnOptions,
 } from "node:child_process";
 import { access, lstat, readdir, rm } from "node:fs/promises";
 import { platform } from "node:os";
