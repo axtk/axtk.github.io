@@ -4,8 +4,5 @@
   "description": "",
   "license": "ISC",
   "author": "axtk",
-  "type": "module",
-  "dependencies": {
-    "stfm": "^0.1.0"
-  }
+  "type": "module"
 }

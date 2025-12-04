@@ -1,4 +1,4 @@
-import { escapeRegExp } from "stfm";
+import { escapeRegExp } from "../_utils/escapeRegExp";
 import type { Context } from "./Context";
 import { fetchData } from "./fetchData";
 import type { MatchedItem } from "./MatchedItem";

@@ -1,4 +1,4 @@
-import { escapeRegExp } from "stfm";
+import { escapeRegExp } from "../_utils/escapeRegExp";
 import { characterMap } from "./characterMap";
 
 export function translit(x: string) {

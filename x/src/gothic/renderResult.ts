@@ -1,4 +1,4 @@
-import { escapeHTML } from "stfm";
+import { escapeHTML } from "../_utils/escapeHTML";
 import type { Context } from "./Context";
 import { search } from "./search";
 

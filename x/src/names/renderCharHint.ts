@@ -1,4 +1,5 @@
-import { escapeHTML, escapeRegExp } from "stfm";
+import { escapeHTML } from "../_utils/escapeHTML";
+import { escapeRegExp } from "../_utils/escapeRegExp";
 import type { Context } from "./Context";
 import { pickRandom } from "./pickRandom";
 
