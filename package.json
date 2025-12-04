@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "node build.mjs",
-    "shape": "npx codeshape"
+    "shape": "npx codeshape --typecheck"
   },
   "type": "module",
   "license": "ISC",

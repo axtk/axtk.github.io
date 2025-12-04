@@ -55,10 +55,10 @@ export class Matrix {
     );
   }
 
-  static fromVector(v: CartesianVector | PolarVector) {
-    if (v instanceof CartesianVector) return new Matrix([[v.x], [v.y], [v.z]]);
-
+  static fromVector(v: CartesianVector | PolarVector): Matrix {
     if (v instanceof PolarVector)
       return Matrix.fromVector(CartesianVector.fromPolar(v));
+
+    return new Matrix([[v.x], [v.y], [v.z]]);
   }
 }

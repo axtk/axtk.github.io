@@ -1,5 +1,5 @@
 {
-  "include": ["./**/*", "../assets/stats.d.ts"],
+  "include": ["./x/src", "./x/assets/stats.d.ts"],
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",

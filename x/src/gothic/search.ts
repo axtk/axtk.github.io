@@ -1,5 +1,7 @@
 import { escapeRegExp } from "../_utils/escapeRegExp";
 import type { Context } from "./Context";
+import type { Dictionary } from "./Dictionary";
+import type { DictionaryKey } from "./DictionaryKey";
 import { fetchData } from "./fetchData";
 import type { MatchedItem } from "./MatchedItem";
 import type { SearchResult } from "./SearchResult";
@@ -58,7 +60,7 @@ export async function search(ctx: Context): Promise<SearchResult | undefined> {
   let { expressions } = output;
   let en = expressions.length;
 
-  let dictionaries = {
+  let dictionaries: Record<DictionaryKey, Dictionary | null | undefined> = {
     eg: ctx.data.eg,
     ge: ctx.data.ge,
   };
@@ -83,7 +85,7 @@ export async function search(ctx: Context): Promise<SearchResult | undefined> {
         if (!matched) continue;
 
         let matchedItem: MatchedItem = {
-          dictionaryKey: key,
+          dictionaryKey: key as DictionaryKey,
           expressionIndex: ei,
           term: item.t,
           def: item.dx,
