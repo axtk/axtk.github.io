@@ -78,5 +78,5 @@ export async function render(options: InputContext) {
   ctx.renderItems?.(ctx);
   ctx.renderNav?.(ctx);
 
-  events.dispatch("render");
+  events.emit("render");
 }

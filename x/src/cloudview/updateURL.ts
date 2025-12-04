@@ -21,7 +21,7 @@ function discardHash() {
 }
 
 function setNameParam() {
-  events.addListener("render", () => {
+  events.on("render", () => {
     if (!document.documentElement.classList.contains("standalone")) return;
 
     let name =

@@ -1,3 +1,3 @@
-import { EventManager } from "evtm";
+import { EventEmitter } from "@t8/events";
 
-export const events = new EventManager();
+export const events = new EventEmitter();
