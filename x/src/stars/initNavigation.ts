@@ -144,7 +144,8 @@ export function initNavigation(ctx: Context) {
 
     if (wheelTimeout) clearTimeout(wheelTimeout);
 
-    move(ctx, -event.deltaX, -event.deltaY);
+    if (event.shiftKey) move(ctx, -event.deltaY, -event.deltaX);
+    else move(ctx, -event.deltaX, -event.deltaY);
 
     wheelTimeout = setTimeout(() => {
       wheelTimeout = null;
