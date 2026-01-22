@@ -66,8 +66,10 @@ li + li {
 }
 main {
   display: grid;
+  max-width: calc(4.5 * var(--box-size));
   grid-template-columns: repeat(auto-fit, minmax(var(--box-size), 1fr));
   padding: 0 calc(var(--box-padding-x) - var(--border-width));
+  margin: 0 auto;
 }
 section {
   padding: var(--box-padding-y) var(--box-padding-x);
