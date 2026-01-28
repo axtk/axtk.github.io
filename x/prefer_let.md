@@ -20,6 +20,6 @@ To fix this, `let` should be preferred over `const` by default, with `const` res
 
 ~
 
-🔹 One way to achieve this is using [`eslint-plugin-prefer-let`](https://www.npmjs.com/package/eslint-plugin-prefer-let).
+⬥ One way to achieve this is using [`eslint-plugin-prefer-let`](https://www.npmjs.com/package/eslint-plugin-prefer-let).
 
-🔹 Another way is to support the related [rule suggestion](https://github.com/biomejs/biome/discussions/5873) to Biome.
+⬥ Another way is to support the related [rule suggestion](https://github.com/biomejs/biome/discussions/5873) to Biome.
