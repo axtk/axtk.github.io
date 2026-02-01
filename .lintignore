@@ -1,0 +1,7 @@
+**/node_modules/**/*
+_layouts/*.html
+x/assets/0/**/*
+x/assets/archive/**/*
+x/assets/stars/v0/**/*
+x/assets/stats.js
+x/*.html
