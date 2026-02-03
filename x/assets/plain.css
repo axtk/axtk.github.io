@@ -175,10 +175,11 @@ footer hr {
 }
 footer,
 footer small {
-  font-size: 0.6rem;
+  font-size: 0.85rem;
 }
 footer {
-  opacity: 0.5;
+  border-top: 0.05em solid;
+  margin-top: 3.5em;
 }
 table {
   border: none;
