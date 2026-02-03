@@ -1,6 +1,7 @@
 ---
 title: Routing with less code in React
 date: 2025-09-09
+update: 2025-12-21
 tags:
     - react
     - webdev
@@ -8,51 +9,47 @@ tags:
     - javascript
 ---
 
-I was playing around with routing and found out that we can make the routing code more concise and more semantically clear than with many routers, if we carefully bring the idea that route-based rendering is a variety of conditional rendering into practice.
-
-Here's an example:
+The React routers I see here and there leave me wondering: can we actually bring into practice the idea that route-based rendering is a variety of conditional rendering, similar to this:
 
 ```jsx
-let Intro = () => (
-  <main>
-    <h1>Intro</h1>
-  </main>
-);
+{atRoute ? x : y}
+{atRoute && x}
+```
 
-let Section = ({id}) => (
-  <main>
-    <h1>Section {id}</h1>
-  </main>
-);
+It would work the same way with components and prop values, and it would make the routing code more concise and semantically clear compared to what routers tend to offer. After playing around with this idea, I still believe it's a way to go.
 
+Here's an example of what I came up with:
+
+```jsx
 let App = () => {
-  let {withRoute} = useRoute();
+  let { at } = useRoute();
 
-  // `withRoute(routePattern, x, y)` acts similarly to
-  // `matchesRoutePattern ? x : y`
   return (
     <>
-      <nav className={withRoute('/', 'full', 'compact')}>
-        <A href="/">Intro</A>{' '}
-        <A href="/sections/1">Section 1</A>{' '}
+      <nav className={at("/", "full", "compact")}>
+        <A href="/">Intro</A>{" "}
+        <A href="/sections/1">Section 1</A>{" "}
         <A href="/sections/2">Section 2</A>
       </nav>
-      {withRoute('/', <Intro/>)}
-      {withRoute(/^\/sections\/(?<id>\d+)\/?$/, ({params}) => (
+      {at("/", <Intro/>)}
+      {at(/^\/sections\/(?<id>\d+)\/?$/, ({ params }) => (
         <Section id={params.id}/>
       ))}
     </>
   );
 };
 
-hydrateRoot(document.querySelector('#app'), <App/>);
+createRoot(document.querySelector("#app")).render(<App/>);
 ```
+
+I'm using a ternary routing function `at(route, x, y)` as a close semantic equivalent to the ternary conditional operator `atRoute ? x : y`. The function allows to omit the fallback parameter `y` when it's effectively `undefined` (as in `at("/", <Intro/>)` in the example above) and to pass route parameters to dynamic values (like with `<Section id={params.id}/>`).
 
 Even without going into detail, this code seems pretty easy to follow. And to write, too.
 
 As a quick comparison, it's worth noting how much more code is required to get a very similar output with TanStack Router (and how more elaborate it is), according to its [docs](https://tanstack.com/router/latest/docs/framework/react/quick-start#using-code-based-route-configuration).
 
-<!-- collapsible *View the TanStack Router code example from the TanStack docs* -->
+<details>
+<summary>View the TanStack Router code example from the TanStack docs</summary>
 
 ```tsx
 import { StrictMode } from 'react'
@@ -126,12 +123,10 @@ if (!rootElement.innerHTML) {
 }
 ```
 
-<!-- endcollapsible -->
+</details>
 
-Let's have a closer look at our first code snippet.
+As seen from our first code snippet, the route-matching function `at(route, x, y)` also works the same way with both components and prop values (like with `<Intro/>` and the `<nav>`'s `className`). By contrast, the file-based, component-based, and config-based approaches are focused on component rendering while prop values have to be handled differently.
 
-As the comment in the code reads, `withRoute(routePattern, x, y)` is semantically similar to `matchesRoutePattern ? x : y`, following the conditional rendering pattern common with React code. It's concise and consistent with both components and prop values (like with `<Intro/>` and `className` in the example above). The file-based, component-based, and config-based approaches are focused on component rendering while prop values have to be handled differently, requiring another import and a bunch of extra lines of code.
+Since `at(route, x, y)` is an ordinary stateless function, `at()` calls aren't coupled together, they don't have to maintain a certain order, they don't have to be grouped in a single component (and they also can be, as in our small example above), pretty much like any other conditional rendering. This makes the routing function `at()` very flexible and fit for arbitrary route-based logic (more so than other approaches to routing).
 
-Since `withRoute(routePattern, x, y)` is an ordinary stateless function, `withRoute()` calls aren't coupled together, they don't have to maintain a certain order, they don't have to be grouped in a single component (and they also can be, as in our small example above), like other conditional rendering. As straightforward as it is, the routing function `withRoute()` is also very flexible and fit for arbitrary route-based logic (more so than other approaches to routing).
-
-Based on this approach, I created [`@t8/react-router`](https://github.com/t8js/react-router#readme). In fact, it explores the ways to make the routing code closer to common patterns and more intuitive in other aspects, too: with regard to the route link API, navigation API, SSR, lazy routes, URL parameters state, type safety. These topics are covered in more detail on [GitHub](https://github.com/t8js/react-router#readme).
+Based on this approach, I created [`@t8/react-router`](https://github.com/t8js/react-router#readme). With all its minimalism and straightforwardness, it brings the routing code closer to common patterns and makes it more intuitive in other aspects, too: with regard to the route link API, navigation API, SSR, lazy routes, URL parameters state, type safety. These topics are covered in more detail in the [package overview](https://github.com/t8js/react-router#readme).
