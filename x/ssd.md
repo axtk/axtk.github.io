@@ -69,9 +69,11 @@ The runnable application server is located in `📄 src/server/index.ts`, which 
 
 Subdirectories of `📁 entries` contain the app's entry points. A few typical use cases for different entry points include: an older and newer tech stack in the same app, an older and newer UI within a single app, a main app with a lighter marketing landing page or a user onboarding app, or multiple self-contained portions of a single app in general. An entry point can also serve an API to the rest of the app. Each entry point doesn't have to map to a single route, but it's convenient to have one parent route for an entry point.
 
-As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For that same reason, **cross-entry-point imports are strongly discouraged**.
+As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For this same reason, **cross-entry-point imports are strongly discouraged**.
 
-Each level of the app can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`. To facilitate navigation through the codebase, we should make file names very straightforward and transparent. So the common convention is to have a **single export per file** (although collocating a tightly related type export, such as a function's parameters type, in the same file is a good practice) and **files are named exactly as their export** (with the same casing; for index files, the parent directory's name should follow this rule).
+Each level of the app can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`. To facilitate navigation through the codebase, we should make file names very straightforward and transparent.
+
+The common file naming convention boils down to the following rules: (1) **Single export per file.** This rule still allows to collocate the main export with a tightly related type export, such as a function's parameters type, in the same file, which is a good practice. (2) **Files are named exactly as their export.** With the same casing. For index files, the parent directory's name should follow this rule.
 
 ```diff
 📁 const
