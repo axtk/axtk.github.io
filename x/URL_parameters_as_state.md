@@ -1,5 +1,5 @@
 ---
-title: Managing URL parameters as state in React
+title: Managing URL parameters as state in&nbsp;React
 date: 2025-09-17
 update: 2025-09-28
 tags:

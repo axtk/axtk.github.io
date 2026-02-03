@@ -1,5 +1,5 @@
 ---
-title: Lightweight pending state handling in React
+title: Lightweight pending state handling in&nbsp;React
 date: 2025-09-09
 update: 2025-10-15
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Type-safe routing with less code in React
+title: Type-safe routing with less code in&nbsp;React
 date: 2025-09-12
 update: 2026-02-02
 tags:
