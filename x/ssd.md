@@ -1,5 +1,5 @@
 ---
-title: Self-similar design (SSD) for scalable web&nbsp;apps
+title: Self-similar design for scalable web&nbsp;apps
 date: 2025-08-28
 update: 2026-02-03
 tags:
