@@ -18,28 +18,33 @@ To address this task I created a small package called [`@t8/react-pending`](http
 ```diff
 + import { usePendingState } from "@t8/react-pending";
 
-  const ItemList = () => {
-    const [items, setItems] = useState([]);
-+   const [state, withState] = usePendingState("item-list");
+  export let ItemList = () => {
+    let [items, setItems] = useState([]);
++   let { initial, pending, error, track } = usePendingState("fetch-items");
 
     useEffect(() => {
 -     fetchItems().then(setItems);
-+     withState(fetchItems()).then(setItems);
-    }, [fetchItems, withState]);
++     track(fetchItems()).then(setItems);
+    }, [fetchItems, track]);
 
-+   if (!state.complete)
-+     return <p>Loading...</p>;
-
-+   if (state.error)
-+     return <p>An error occurred</p>;
++   if (initial || pending) return <p>Loading...</p>;
++   if (error) return <p>An error occurred</p>;
 
     return <ul>{items.map(/* ... */)}</ul>;
   };
+```
 
-  const Status = () => {
-+   const [state] = usePendingState("item-list");
-+
-+   return state.complete ? "Done" : "Busy";
+```diff
++ import { usePendingState } from "@t8/react-pending";
+
+  export let Status = () => {
++   let { initial, pending, error } = usePendingState("fetch-items");
+
+    if (initial) return null;
+    if (pending) return <>Busy</>;
+    if (error) return <>Error</>;
+
+    return <>OK</>;
   };
 ```
 
