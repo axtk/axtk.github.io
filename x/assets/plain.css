@@ -325,3 +325,6 @@ a.star-button:hover {
   text-decoration: none;
   box-shadow: 0 0 0.5em 0 color(from var(--color) srgb r g b / 0.2);
 }
+summary {
+  font-style: italic;
+}
