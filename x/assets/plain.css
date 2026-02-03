@@ -95,13 +95,10 @@ main p.sep {
   margin: 0.5em 0;
 }
 h1 {
-  font-family: "Arial Black", Gadget, sans-serif;
   font-weight: 900;
-  font-size: 1.75em;
+  font-size: 2em;
   line-height: 1.1;
-  border-bottom: 0.02em solid;
-  padding: 0 0 0.15em;
-  margin: 1.5em 0 0.85em 0;
+  margin: 1.5em 0 1em 0;
 }
 h2 {
   font-size: 1.3em;
@@ -149,7 +146,7 @@ h4 {
   margin-bottom: 0;
 }
 main h1:first-child {
-  margin-top: 0.65em;
+  margin-top: 0.5em;
 }
 a,
 a:hover,
