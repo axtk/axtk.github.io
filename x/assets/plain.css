@@ -157,6 +157,8 @@ a:visited,
 a:active {
   --color: var(--link-color);
   color: var(--color);
+  text-decoration: none;
+  border-bottom: 0.05em solid;
 }
 /*
 a:visited {
