@@ -1,11 +1,21 @@
 :root {
-  --color: black;
+  --base-color: black;
   --background: white;
   --link-color: royalblue;
   --visited-link-color: blueviolet;
   --mark-background: greenyellow;
   --danger-color: darkred;
-  --abstract-background: color(from var(--color) srgb r g b / 0.07);
+
+  --color: #000d;
+  --border-color: #0003;
+  --secondary-color: #0008;
+
+  --abstract-background: #0001;
+  --inline-code-background: #0001;
+  --image-background: #0001;
+  
+  --code-block-color: var(--color);
+  --code-block-background: #f2f2f2;
 
   --max-main-content-width: 680px;
   --smaller-font-size: 0.85em;
@@ -17,18 +27,28 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: white;
+    --base-color: white;
     --background: #1a1a1a;
     --link-color: deepskyblue;
     --visited-link-color: mediumorchid;
     --mark-background: limegreen;
     --danger-color: #df4242;
-    --abstract-background: color(from var(--color) srgb r g b / 0.12);
+
+    --color: #fffd;
+    --border-color: #fff4;
+    --secondary-color: #fff8;
+
+    --abstract-background: #fff2;
+    --inline-code-background: #fff2;
+    --image-background: #fff2;
+
+    --code-block-color: var(--color);
+    --code-block-background: #1d2331;
   }
 }
 html {
   font: normal 100% / 1.5 sans-serif;
-  color: color(from var(--color) srgb r g b / 0.9);
+  color: var(--color);
   background: var(--background);
 }
 table,
@@ -85,7 +105,7 @@ h1 {
 h2 {
   font-size: 1.3em;
   line-height: 1.1;
-  border-bottom: 0.04em solid color(from var(--color) srgb r g b / 0.2);
+  border-bottom: 0.04em solid var(--border-color);
   padding: 0 0 0.2em 0;
   margin: 1.5em 0 0.75em 0;
 }
@@ -96,7 +116,7 @@ h2#demos {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: color(from var(--color) srgb r g b / 0.5);
+  color: var(--secondary-color);
   margin-top: 2rem;
 }
 h3 {
@@ -134,7 +154,8 @@ a,
 a:hover,
 a:visited,
 a:active {
-  color: var(--link-color);
+  --color: var(--link-color);
+  color: var(--color);
   text-decoration: none;
 }
 a:hover {
@@ -210,7 +231,7 @@ mark {
   color: var(--danger-color);
 }
 blockquote {
-  border-inline-start: 0.25em solid color(from var(--color) srgb r g b / 0.2);
+  border-inline-start: 0.25em solid var(--border-color);
   padding: 0;
   padding-inline-start: 0.75em;
   margin: var(--block-margin-y) 0;
@@ -220,7 +241,7 @@ blockquote {
   border-radius: var(--block-border-radius);
 }
 code {
-  background: color(from currentColor srgb r g b / 0.08);
+  background: var(--inline-code-background);
   border-radius: 0.35em;
   padding: 0.15em 0.35em;
 }
@@ -250,7 +271,7 @@ header .image span {
   width: var(--image-size);
   height: var(--image-size);
   font-size: 0;
-  background: color(from var(--color) srgb r g b / 0.07);
+  background: var(--image-background);
   border-radius: 50%;
   overflow: hidden;
 }
@@ -286,7 +307,7 @@ h1 + p.tags {
 }
 a.star-button {
   display: inline-block;
-  background: color(from currentColor srgb r g b / 0.12);
+  background: color(from var(--color) srgb r g b / 0.12);
   border: 0.05em solid;
   border-radius: 0.35em;
   padding: 0.3em 1em;
@@ -303,5 +324,5 @@ p:last-child a.star-button {
 }
 a.star-button:hover {
   text-decoration: none;
-  box-shadow: 0 0 0.5em 0 color(from currentColor srgb r g b / 0.2);
+  box-shadow: 0 0 0.5em 0 color(from var(--color) srgb r g b / 0.2);
 }
