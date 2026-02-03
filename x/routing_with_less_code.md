@@ -48,7 +48,7 @@ Even without going into detail, this code seems pretty easy to follow. And to wr
 
 As a quick comparison, it's worth noting how much more code is required to get a very similar output with TanStack Router (and how more elaborate it is), according to its [docs](https://tanstack.com/router/latest/docs/framework/react/quick-start#using-code-based-route-configuration).
 
-<details>
+<!-- collapsible -->
 <summary>View the TanStack Router code example from the TanStack docs</summary>
 
 ```tsx
@@ -123,7 +123,7 @@ if (!rootElement.innerHTML) {
 }
 ```
 
-</details>
+<!-- endcollapsible -->
 
 As seen from our first code snippet, the route-matching function `at(route, x, y)` also works the same way with both components and prop values (like with `<Intro/>` and the `<nav>`'s `className`). By contrast, the file-based, component-based, and config-based approaches are focused on component rendering while prop values have to be handled differently.
 

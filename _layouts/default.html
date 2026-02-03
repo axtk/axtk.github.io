@@ -55,7 +55,7 @@
 </div>
 
 {% endif %}
-{{content | replace: '<a href="http', '<a target="_blank" href="http' | replace: '<p>~</p>', '<p class="sep">~</p>'}}
+{{content | replace: '<a href="http', '<a target="_blank" href="http' | replace: '<p>~</p>', '<p class="sep">~</p>' | replace: '<!-- collapsible -->', '<details>' | replace: '<!-- endcollapsible -->', '</details>'}}
 </main>
 
 <script src="/x/assets/stats.js"></script>
