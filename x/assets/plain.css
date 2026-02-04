@@ -329,3 +329,15 @@ a.star-button:hover {
 summary {
   font-style: italic;
 }
+@media print {
+  :root {
+    --max-main-content-width: 100%;
+    --abstract-background: transparent;
+  }
+  .abstract,
+  [role="doc-abstract"] {
+    border: 0.35em solid var(--abstract-background);
+    border-left: none;
+    border-right: none;
+  }
+}
