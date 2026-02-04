@@ -71,9 +71,9 @@ Subdirectories of `📁 entries` contain the app's entry points. A few typical u
 
 As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For this same reason, **cross-entry-point imports are strongly discouraged**.
 
-Each level of the app can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`. To facilitate navigation through the codebase, we should make file names very straightforward and transparent.
+Each level of the app can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`. To facilitate navigation through the codebase, we should make file names very straightforward and transparent about their contents.
 
-The common file naming convention boils down to the following rules: (1) **Single export per file.** This rule still allows to collocate the main export with a tightly related type export, such as a function's parameters type, in the same file, which is a good practice. (2) **Files are named exactly as their export.** With the same casing. For index files, the parent directory's name should follow this rule.
+The common file managing convention boils down to the following rules: (1) **Single export per file.** This rule still allows to collocate the main export with a tightly related type export, such as a function's parameters type, in the same file, which is a good practice. (2) **Files are named exactly as their export.** With the same casing. For index files, this rule applies to the parent directory's name.
 
 ```diff
 📁 const
@@ -92,4 +92,4 @@ Note that public assets can be split across entry points and served independentl
 
 ~
 
-While the self-similar design is a metapattern, a pattern of patterns, coupled with a set of specific conventions, it becomes a solid basis for a scalable and maintainable web application.
+While the self-similar design is a metapattern, a pattern of patterns, when coupled with a set of specific conventions, it becomes a solid basis for a scalable and maintainable web application.
