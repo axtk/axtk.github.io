@@ -152,8 +152,8 @@ a:visited,
 a:active {
   --color: var(--link-color);
   color: var(--color);
-  text-decoration: none;
-  border-bottom: 0.05em solid;
+  text-decoration-thickness: 0.02rem;
+  text-underline-offset: 0.18em;
 }
 /*
 a:visited {
@@ -307,6 +307,7 @@ h1 + p.tags {
 }
 a.star-button {
   display: inline-block;
+  text-decoration: none;
   background: color(from var(--color) srgb r g b / 0.12);
   border: 0.05em solid;
   border-radius: 0.35em;

@@ -47,8 +47,8 @@ a:hover,
 a:visited,
 a:active {
   color: var(--link-color);
-  text-decoration: none;
-  border-bottom: 0.05em solid;
+  text-decoration-thickness: 0.02rem;
+  text-underline-offset: 0.18em;
 }
 p,
 ul {
