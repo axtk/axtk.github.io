@@ -17,7 +17,7 @@ The design discussed here is the result of an attempt to come up with a self-exp
 
 The first component to the scalability I'm referring to is pretty basic: the app should be able to evolve from a smaller app to a larger one seamlessly. Which means it should evolve preferably without restructuring the app much as its size changes and yet preferably without imposing too much complexity ahead of time in anticipation of the app's potential growth.
 
-The second part is trickier. It's often missed out, but to reflect the reality (before it crashes in), the app should preferably be able to maintain multiple largely independent **entry points implementing different rendering strategies** (such as SSR, CSR) within a single codebase or **using a legacy tech stack while allowing for painless incremental adoption of a newer one** running on the same server. This requires that the application's entry points should be loosely coupled, self-contained and clearly separated from each other, which would also make connecting and disconnecting an entry point nearly effortless.
+The second part is trickier. It's often missed out, but to reflect the reality (before it crashes in), the app should preferably be able to maintain multiple largely independent entry points, so that the **entry points can implement different rendering strategies** (such as SSR, CSR) within a single codebase or **painlessly and incrementally adopt a newer tech stack while still having older legacy code alongside** running on the same server. This requires that the application's entry points should be loosely coupled, self-contained and clearly separated from each other, which would also make connecting and disconnecting an entry point nearly effortless.
 
 So we'll have to take a few steps upfront to ensure the app doesn't get messy as it scales.
 
@@ -41,7 +41,7 @@ First off, we'll put all our app's code in the `📁 src` directory to draw a cl
         📄 index.ts // runnable app server combining entry points
     📁 ui // components shared across multiple entries
     📁 entries
-        📁 [entry-name] // start with "main", if you like
+        📁 [entry-name] // can be "main" for a start
             📁 const
             📁 utils
             📁 types
@@ -53,7 +53,7 @@ First off, we'll put all our app's code in the `📁 src` directory to draw a cl
                 📁 middleware
                 📄 index.ts // exports Express Router (or similar)
             📁 ui
-                📁 [feature-name] // start with "app" or skip in the beginning
+                📁 [feature-name] // can be "app" or skipped in the beginning
                     📁 const
                     📁 utils
                     📁 types
@@ -71,9 +71,9 @@ Subdirectories of `📁 entries` contain the app's entry points. A few typical u
 
 As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For this same reason, **cross-entry-point imports are strongly discouraged**.
 
-Each level of the app can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`. To facilitate navigation through the codebase, we should make file names very straightforward and transparent about their contents.
+Each level of the app, inside and outside the `📁 entries` directory, can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`.
 
-The common file managing convention boils down to the following rules: (1) **Single export per file.** This rule still allows to collocate the main export with a tightly related type export, such as a function's parameters type, in the same file, which is a good practice. (2) **Files are named exactly as their export.** With the same casing. For index files, this rule applies to the parent directory's name.
+To facilitate navigation through the codebase, we should make file names very straightforward and transparent about their contents. The common file managing convention boils down to the following rules: (1) **Single export per file.** This rule still allows to collocate the main export with a tightly related type export, such as a function's parameters type, in the same file, which is a good practice. (2) **Files are named exactly as their export.** With the same casing. For index files, this rule applies to the parent directory's name.
 
 ```diff
 📁 const
