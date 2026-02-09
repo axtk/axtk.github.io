@@ -26,7 +26,7 @@ To address this task I created a small package called [`@t8/react-pending`](http
 -     fetchItems().then(setItems);
 +     track(fetchItems()).then(setItems);
     }, [fetchItems, track]);
-
++
 +   if (initial || pending) return <p>Loading...</p>;
 +   if (error) return <p>An error occurred</p>;
 
