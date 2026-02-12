@@ -10,6 +10,10 @@ import { promisify } from "node:util";
 const sourceDir = "x/src";
 const targetDir = "x/assets/0";
 
+const internalDeps: Record<string, string[]> = {
+  album: ["cloudview"],
+};
+
 const exec = promisify(originalExec);
 const targets = process.argv.slice(2);
 
@@ -115,6 +119,18 @@ async function build(dir: string) {
   await Promise.all([customBuild(dir), compile(dir)]);
 }
 
+function checkInternalDependencies(dirs: string[]) {
+  let deps: string[] = [];
+
+  for (let dir of dirs) {
+    let dirDeps = internalDeps[dir];
+
+    if (dirDeps?.length) deps.unshift(...dirDeps);
+  }
+
+  return Array.from(new Set([...deps, ...dirs]));
+}
+
 (async () => {
   if (targets.length) {
     for (let target of targets) {
@@ -126,7 +142,7 @@ async function build(dir: string) {
 
     if (await missing(sourceDir)) return;
 
-    let dirs = await readdir(sourceDir);
+    let dirs = checkInternalDependencies(await readdir(sourceDir));
 
     for (let dir of dirs) {
       if (
