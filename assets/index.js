@@ -9,7 +9,12 @@ for (let caption of document.querySelectorAll("figcaption")) {
       if (!picture.firstElementChild || picture.querySelector("a") !== null)
         continue;
 
-      picture.innerHTML = `<a href="${href}">${picture.innerHTML}</a>`;
+      let attrs = [`href="${href}"`];
+
+      if (!window.location.hostname.includes(".github.io"))
+        attrs.push('target="_blank"');
+
+      picture.innerHTML = `<a ${attrs.join(" ")}>${picture.innerHTML}</a>`;
     }
   }
 }
