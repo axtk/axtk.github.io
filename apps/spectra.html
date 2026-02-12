@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta name="description" content="An infrared (FTIR) absorption spectrum analysis utility. Primarily for processing FTIR transmittance spectra of thin silicon films."/>
+  <title>FTIR spectrum analysis utility</title>
+  <link rel="stylesheet" href="assets/archive/lib/app.css"/>
+  <link rel="stylesheet" href="assets/archive/lib/plots.css"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+</head>
+<body>
+
+<div class="page">
+
+<div class="navigation layer">
+  <!--
+  <p>
+    <a href="/" class="main">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14" height="10">
+        <path d="M2,12 L12,2 L22,12" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </a>
+  </p>
+  -->
+  <h1>FTIR spectrum analysis utility</h1>
+</div>
+<div class="body layer">
+
+<details>
+  <summary>
+    <span class="closed">Show intro</span>
+    <span class="separator">/</span>
+    <span class="open">Hide intro</span>
+  </summary>
+
+  <p>In <a href="https://en.wikipedia.org/wiki/Fourier-transform_infrared_spectroscopy">FTIR</a> spectroscopy, a typical spectrometer output is a <em>transmittance</em> spectrum (<i>k</i>,&nbsp;<i>T</i>). In order to match the spectrum data against a table of <em>absorbance</em> peaks, the original data set is converted to an absorption spectrum (<i>k</i>,&nbsp;<i>&alpha;</i>):</p>
+
+  <!--p class="formula">$$\alpha(k) = - \frac{1}{2 w \sqrt{2}} \log\left(\frac{T(k)}{1 - r^2}\right).$$</p-->
+  <p class="formula">
+    <img src="assets/archive/spectra/absorbance.svg" alt="$$\alpha(k) = - \frac{1}{2 w \sqrt{2}} \log\left(\frac{T(k)}{1 - r^2}\right).$$">
+  </p>
+
+  <p>The width of the sample film <i>w</i> is a result of direct measurement, i.e. microscopy. The reflectance <i>r</i> is deduced from the mean maximum transmittance level <i>Tₒ</i> (dashed line) disregarding signal oscillations as <i>r&nbsp;= 1&nbsp;&minus; Tₒ</i>. Much of this data processing can be entrusted to a machine.</p>
+
+  <p>The default demo spectrum was taken from a porous 53-micron thin silicon film previously exposed to electrochemical etching in a fluoric acid solution.</p>
+
+  <hr/>
+</details>
+
+<p><span class="list-counter">1.</span> <a href="#" data-id="initial.edit">Edit</a> and <a href="#" data-id="initial.submit">apply</a> a transmittance spectrum (<i>k</i>,&nbsp;<i>T</i>) or an absorption spectrum (<i>k</i>,&nbsp;<i>&alpha;</i>) data set. Units: wavenumber, <i>k</i> in cm⁻¹, transmittance, <i>T</i> in %.</p>
+
+<textarea class="hidden plot-placeholder data" data-id="initial.data"></textarea>
+<div class="plot" data-id="initial.plot"></div>
+
+<p>For a <em>transmittance</em> spectrum (<i>k</i>,&nbsp;<i>T</i>), take the following steps to convert it
+to an absorbance spectrum (<i>k</i>,&nbsp;<i>&alpha;</i>) first.
+In case of an <em>absorption</em> spectrum (<i>k</i>,&nbsp;<i>&alpha;</i>), skip the following conversion and
+proceed directly to the <a href="#detection">peak detection</a>.</p>
+
+<p>Thickness of the film,&nbsp;&mu;m:<br/>
+  <input type="text" class="numeric" value="53" data-id="thickness"/></p>
+
+<p>Reflectance of the film (<a href="#" data-id="analyze">autodetect</a>, check the dashed line on the plot above):<br/>
+  <input type="text" class="numeric" data-id="reflectance"/></p>
+
+<p><span class="list-counter">2.</span> <a href="#" data-id="convert">Convert (<i>k</i>,&nbsp;<i>T</i>) to (<i>k</i>,&nbsp;<i>&alpha;</i>)</a>.</p>
+<textarea class="hidden data" data-id="converted.data"></textarea>
+
+<p>This app comes with a default built-in reference data set of absorption peaks for silicon films.
+  If it is applicable, proceed directly to the peak identification.
+  Otherwise, <a href="#" data-id="peaks.edit">enter</a> a different reference data set.</p>
+
+<textarea class="hidden intact data" data-id="peaks.data"></textarea>
+
+<p id="detection"><span class="list-counter">3.</span> <a href="#" data-id="peaks.identify">Identify absorbance peaks</a>.</p>
+
+<div class="hidden plot" data-id="absorbance.plot"></div>
+<textarea class="hidden data" data-id="absorbance.data"></textarea>
+
+</div>
+<div class="footer layer">
+  <br/><hr/>
+  <p><a href="/">axtk</a> MMVII • MMXVII</p>
+</div>
+
+</div>
+  
+<script src="assets/archive/lib/jquery.min.js"></script>
+<script src="assets/archive/lib/jquery.flot.js"></script>
+<script src="assets/archive/lib/jquery.flot.dashes.js"></script>
+
+<script src="assets/archive/lib/regression.js"></script>
+<script src="assets/archive/lib/tabular.js"></script>
+<script src="assets/archive/lib/layout.js"></script>
+<script src="assets/archive/spectra/ftir.js"></script>
+<script src="assets/archive/spectra/main.js"></script>
+<script src="../assets/stats.js"></script>
+
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script-->
+
+</body>
+</html>

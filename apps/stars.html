@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Star sky map</title>
+  <link rel="stylesheet" href="assets/stars/index.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script>{let mode=new URLSearchParams(window.location.search).get("mode");if(!["dark","light","fantasy"].includes(mode))mode=null;if(!mode){try{mode=JSON.parse(localStorage.getItem("stars.mode"));}catch{}}if(mode)document.documentElement.dataset.mode=mode;}</script>
+</head>
+<body>
+
+<div id="screen">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+    <defs>
+      <radialGradient id="spcl">
+        <stop offset="30%" stop-color="currentColor" stop-opacity="1"/>
+        <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g class="grid"></g>
+    <g class="hint-lines"></g>
+    <g class="constellation-labels"></g>
+    <g class="star-labels"></g>
+    <g class="stars"></g>
+  </svg>
+  <form>
+    <label>
+      <input type="radio" name="mode" value="dark" checked>
+      <span>Dark</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="light">
+      <span>Light</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="fantasy">
+      <span>Fantasy</span>
+    </label>
+  </form>
+</div>
+<footer>
+  <a href="https://axtk.github.io">axtk</a>
+</footer>
+
+<script src="assets/0/stars/index.js"></script>
+<script src="../assets/stats.js"></script>
+</body>
+</html>

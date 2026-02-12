@@ -7,8 +7,8 @@ import { access, lstat, readdir, rm } from "node:fs/promises";
 import { platform } from "node:os";
 import { promisify } from "node:util";
 
-const sourceDir = "x/src";
-const targetDir = "x/assets/0";
+const sourceDir = "apps/src";
+const targetDir = "apps/assets/0";
 
 const internalDeps: Record<string, string[]> = {
   album: ["cloudview"],

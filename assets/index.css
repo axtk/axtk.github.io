@@ -1,0 +1,240 @@
+:root {
+  --color: #000d;
+  --background: #eee;
+  --link-color: #1643c8;
+  --mark-color: #d5fbb0;
+
+  --light-color: #00000008;
+  --border-color: #e8e8e8;
+  --shadow-color: #bbb;
+  --intro-background: #0001;
+  --title-color: #000d;
+
+  --box-size: 300px;
+  --box-padding-x: 1.75rem;
+  --box-padding-y: 1.25rem;
+  --shadow: 0 0 0.75rem 0 var(--shadow-color);
+  --border-width: 0.42rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #fffa;
+    --background: #1a1a1a;
+    --link-color: deepskyblue;
+    --mark-color: #3d2b5e;
+
+    --light-color: #ffffff08;
+    --border-color: #262626;
+    --shadow-color: #595959;
+    --intro-background: #fff1;
+    --title-color: #fffc;
+
+    --shadow: 0 0 0.2rem 0 var(--shadow-color);
+  }
+}
+html {
+  font: normal 90% / 1.4 sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: var(--color);
+  background: var(--background);
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+  color: var(--link-color);
+  text-decoration-thickness: 0.02rem;
+  text-underline-offset: 0.18em;
+}
+p,
+ul {
+  margin: 1em 0;
+}
+ul {
+  padding-inline-start: 1em;
+}
+li {
+  margin: 0;
+}
+li + li {
+  margin-top: 0.5em;
+}
+main {
+  display: grid;
+  max-width: calc(4.5 * var(--box-size));
+  grid-template-columns: repeat(auto-fit, minmax(var(--box-size), 1fr));
+  padding: 0.75rem calc(var(--box-padding-x) - var(--border-width));
+  margin: 0 auto;
+}
+section {
+  padding: var(--box-padding-y) var(--box-padding-x);
+  margin: 0;
+  box-sizing: border-box;
+}
+section ul {
+  margin-top: 1.35em;
+}
+section.double {
+  grid-column: span 2;
+}
+figure {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+picture {
+  display: inline-block;
+  width: calc(100% + 2 * var(--border-width));
+  min-height: 120px;
+  font-size: 0;
+  text-align: center;
+  background: var(--light-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  margin: 0 calc(-1 * var(--border-width));
+  box-sizing: border-box;
+  overflow: hidden;
+}
+picture img {
+  max-width: 100%;
+  height: auto;
+}
+figcaption {
+  padding: 0 0.25em;
+  margin: 0.75em 0 0;
+}
+section p {
+  margin: 0.75em 0;
+}
+section[data-tags~="intro"] {
+  /* background: var(--intro-background); */
+  text-align: right;
+}
+section[data-tags~="intro"] h1 {
+  max-width: 9em;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--title-color);
+  margin: 0;
+}
+section[data-tags~="intro"] .image {
+  --size: 8.5rem;
+
+  display: inline-block;
+  width: var(--size);
+  min-height: var(--size);
+  font-size: 0;
+  background: var(--light-color);
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+section[data-tags~="intro"] .image img {
+  width: var(--size);
+  height: auto;
+}
+section[data-tags~="intro"] .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contacts {
+  border: none;
+  border-collapse: collapse;
+  margin: 1rem 0 0;
+}
+.contacts td {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  border: none;
+}
+.contacts td + td {
+  padding-left: 0.35em;
+}
+.contacts td:first-child {
+  text-align: right;
+}
+p.tag {
+  margin: 0;
+}
+p.tag + ul {
+  margin-top: 1em;
+}
+/* strong {
+  display: inline-block;
+  position: relative;
+}
+strong::before {
+  content: "";
+  background: var(--mark-color);
+  border-radius: 0.1em;
+  position: absolute;
+  inset: 0 -0.5em;
+  transform: skewX(-15deg);
+  z-index: -1;
+} */
+/* .intro2 {
+  background: #ebf4f4;
+}
+.app {
+  background: #fbf6f1;
+} */
+@media (max-width: 640px) {
+  :root {
+    --box-size: 100%;
+    --box-padding-y: 1.75rem;
+
+    font-size: 100%;
+  }
+  main {
+    padding: 0;
+  }
+  section.double {
+    grid-column: span 1;
+  }
+  section:not([data-tags~="intro"]) + section {
+    border-top: 1rem solid var(--light-color);
+  }
+  section[data-tags~="intro"] {
+    text-align: left;
+    background: var(--light-color);
+  }
+  section[data-tags~="intro"] h1 {
+    font-size: 1.75rem;
+  }
+  section[data-tags~="intro"] .image {
+    --size: 5rem;
+
+    float: right;
+    border-radius: 50%;
+    margin-left: 1.5rem;
+  }
+  section[data-tags~="intro"] .content {
+    align-items: flex-start;
+  }
+  .contacts {
+    font-size: 0.85rem;
+    margin: 1rem 0 0;
+  }
+  .contacts td {
+    display: table-cell;
+  }
+  .contacts td:first-child {
+    width: 3em;
+  }
+  figure + p {
+    margin-top: 1em;
+  }
+  picture {
+    display: block;
+  }
+}

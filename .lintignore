@@ -1,7 +1,7 @@
 **/node_modules/**/*
 _layouts/*.html
-x/assets/0/**/*
-x/assets/archive/**/*
-x/assets/stars/v0/**/*
-x/assets/stats.js
-x/*.html
+assets/stats.js
+apps/assets/0/**/*
+apps/assets/archive/**/*
+apps/assets/stars/v0/**/*
+posts/*.html
