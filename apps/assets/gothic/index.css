@@ -1,6 +1,7 @@
 :root {
   --color: black;
-  --background: white;
+  --background: #f2f2f2;
+  --output-background: white;
   --highlight: #b23;
   --link-color: var(--highlight);
   --mark-background: color(from var(--highlight) srgb r g b / 0.15);
@@ -11,7 +12,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color: white;
-    --background: #222;
+    --background: #181818;
+    --output-background: #282828;
     --highlight: #e63e51;
     --mark-background: color(from var(--highlight) srgb r g b / 0.5);
   }
@@ -22,7 +24,7 @@ html {
     normal 100% / 1.6 system-ui,
     sans-serif;
   color: var(--color);
-  background: color(from var(--color) srgb r g b / 0.05);
+  background: var(--background);
 }
 body {
   padding: 0 1em;
@@ -43,6 +45,7 @@ input,
 button,
 table {
   font: inherit;
+  color: inherit;
 }
 hr {
   display: none;
@@ -160,7 +163,7 @@ form.input .controls input:checked + span::before {
   opacity: 1;
 }
 .output {
-  background: var(--background);
+  background: var(--output-background);
   padding: 2.75em 3em;
 }
 @media (max-width: 500px) {
