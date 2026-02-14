@@ -9,6 +9,7 @@
   --color: #000d;
   --border-color: #0003;
   --secondary-color: #0008;
+  --emphatic-color: #000e;
 
   --abstract-background: #0001;
   --image-background: #0001;
@@ -36,6 +37,7 @@
     --color: #fffd;
     --border-color: #fff4;
     --secondary-color: #fff8;
+    --emphatic-color: #fffffff8;
 
     --abstract-background: #fff2;
     --image-background: #fff2;
@@ -129,6 +131,9 @@ h4 {
   line-height: 1.1;
   padding: 0;
   margin: 1.5em 0 1em;
+}
+strong, h1, h2, h3, h4 {
+  color: var(--emphatic-color);
 }
 .abstract,
 [role="doc-abstract"] {
