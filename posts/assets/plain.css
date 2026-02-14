@@ -346,6 +346,15 @@ a.star-button:hover {
 summary {
   font-style: italic;
 }
+@media (max-width: 640px) {
+  footer {
+    display: block;
+    text-align: center;
+  }
+  footer p:last-child {
+    margin-top: 2.5em;
+  }
+}
 @media print {
   :root {
     --max-main-content-width: 100%;
@@ -356,5 +365,8 @@ summary {
     border: 0.35em solid var(--abstract-background);
     border-left: none;
     border-right: none;
+  }
+  footer {
+    display: none;
   }
 }
