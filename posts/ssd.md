@@ -11,15 +11,18 @@ tags:
 
 ## Motivation
 
-The design discussed here is the result of an attempt to come up with a self-explanatory and scalable web app structure, ultimately comfortable to work with for both long-tenured developers and newcomers. I've found these qualities with a self-similar structure.
+The design discussed here is the result of an attempt to come up with a self-explanatory and scalable web app structure, ultimately comfortable to work with for both long-tenured developers and newcomers.
 
-## Scalability
+This design seeks to address the following real-life issues, from the pretty basic to trickier ones:
 
-The first component to the scalability I'm referring to is pretty basic: the app should be able to evolve from a smaller app to a larger one seamlessly. Which means it should evolve preferably without restructuring the app much as its size changes and yet preferably without imposing too much complexity ahead of time in anticipation of the app's potential growth.
+- How to structure an app so that it evolves from a smaller to a larger one seamlessly?
+- How to avoid imposing complexity ahead of time in anticipation of the app's potential growth?
+- How **to maintain different rendering strategies** (such as SSR, CSR) within a single app?
+- How **to painlessly and incrementally adopt a newer tech stack while still having older legacy code alongside** running on the same server?
 
-The second part is trickier. It's often missed out, but to reflect the reality (before it crashes in), the app should preferably be able to maintain multiple largely independent entry points, so that the **entry points can implement different rendering strategies** (such as SSR, CSR) within a single codebase or **painlessly and incrementally adopt a newer tech stack while still having older legacy code alongside** running on the same server. This requires that the application's entry points should be loosely coupled, self-contained and clearly separated from each other, which would also make connecting and disconnecting an entry point nearly effortless.
+This is what a scalable app should be able to handle. In a broader sense, scalability can also encompass the hardware and network infrastructure performance, but since it's a largely independent dimension to scalability we'll be only looking into the higher-level issues outlined above.
 
-So we'll have to take a few steps upfront to ensure the app doesn't get messy as it scales.
+Below I'm discussing how the scalability and overall maintainability of a code repo can be achieved with the commonly discussed (but probably less commonly implemented) pattern of arranging an app as loosely coupled, self-contained and clearly separated entry points combined with a self-similar directory structure.
 
 ## Structure
 
@@ -69,7 +72,7 @@ The runnable application server is located in `📄 src/server/index.ts`, which 
 
 Subdirectories of `📁 entries` contain the app's entry points. A few typical use cases for different entry points include: an older and newer tech stack in the same app, an older and newer UI within a single app, a main app with a lighter marketing landing page or a user onboarding app, or multiple self-contained portions of a single app in general. An entry point can also serve an API to the rest of the app. Each entry point doesn't have to map to a single route, but it's convenient to have one parent route for an entry point.
 
-As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For this same reason, **cross-entry-point imports are strongly discouraged**.
+As shown above, the app's **entry points replicate the basic app structure**, too. They can be regarded as self-contained quasi-apps that can act largely independently from each other. For this same reason, **cross-entry-point imports are strongly discouraged**. Besides reducing the cognitive load of managing intertwined parts, this precaution also makes connecting and disconnecting an entry point nearly effortless.
 
 Each level of the app, inside and outside the `📁 entries` directory, can contain auxiliary files arranged into the directories `📁 const`, `📁 utils`, `📁 types`, and optionally other domain-specific ones like `📁 middleware`.
 
