@@ -132,7 +132,11 @@ h4 {
   padding: 0;
   margin: 1.5em 0 1em;
 }
-strong, h1, h2, h3, h4 {
+strong,
+h1,
+h2,
+h3,
+h4 {
   color: var(--emphatic-color);
 }
 .abstract,
