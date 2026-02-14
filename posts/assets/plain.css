@@ -180,8 +180,13 @@ footer small {
   font-size: 0.85rem;
 }
 footer {
+  display: flex;
+  gap: 1.5em;
   border-top: 0.05em solid;
   margin-top: 3.5em;
+}
+footer p:first-child {
+  flex: auto;
 }
 table {
   border: none;
