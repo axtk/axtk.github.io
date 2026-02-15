@@ -9,6 +9,7 @@ abstract: <p>Unified transliteration system of the Cyrillic script for all Slavi
 <style>
 .ch td.cyr, .ch td.lat, .ch td.ipa { white-space: nowrap; }
 .ch sup { margin-left: .15em; }
+.ssf { font-family: sans-serif; }
 </style>
 
 <h2 id="features">Features</h2>
@@ -747,3 +748,10 @@ abstract: <p>Unified transliteration system of the Cyrillic script for all Slavi
   <li>fits for most writing systems, including consonantal abjads (like Arabic and Hebrew);</li>
   <li>and, being part of the markup, doesn't introduce an extra character into the&nbsp;text.</li>
 </ul>
+
+<script>
+  for (let e of document.querySelectorAll("strong, i")) {
+    if (e.textContent.toLowerCase() === "ѣ")
+      (e.querySelector("i") ?? e).classList.add("ssf");
+  }
+</script>
