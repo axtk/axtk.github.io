@@ -10,11 +10,31 @@ body {
   padding: 0;
   margin: 0;
 }
+h1 {
+  min-width: 18em;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
 .layout {
   position: absolute;
   inset: 0;
   overflow-x: auto;
   overflow-y: hidden;
+}
+#title {
+  text-align: center;
+  background: #fffc;
+  padding: 0.35rem 0.75rem;
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 500;
+}
+#title h1 > span {
+  display: block;
+  font-size: 0.75em;
+  color: #0009;
 }
 #map {
   width: 155.953vh;
