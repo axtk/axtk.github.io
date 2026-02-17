@@ -72,6 +72,22 @@ main {
   margin: 0 auto;
   box-sizing: border-box;
 }
+/* main :target {
+  background: #eafad7;
+} */
+main :target h2 {
+  display: inline-block;
+  position: relative;
+}
+main :target h2::before {
+  content: "";
+  background: var(--mark-color);
+  border-radius: 0.1em;
+  position: absolute;
+  inset: 0 -0.5em;
+  transform: skewX(-15deg);
+  z-index: -1;
+}
 h1 {
   max-width: 9em;
   font-size: 1.8rem;
@@ -82,7 +98,7 @@ h1 {
 }
 h2 {
   font-size: 1.2rem;
-  margin: 0 0 0.5em;
+  margin: 0;
 }
 .board {
   display: grid;
