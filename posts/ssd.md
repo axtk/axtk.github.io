@@ -1,7 +1,10 @@
 ---
-title: Self-similar design for scalable web&nbsp;apps
+title: Multi-entry-point folder structure and file conventions for scalable apps
 date: 2025-08-28
-update: 2026-02-03
+update:
+    - 2026-02-03
+    - 2026-02-14
+    - 2026-02-17
 tags:
     - webdev
     - nodejs
@@ -9,24 +12,14 @@ tags:
     - javascript
 ---
 
-## Motivation
+The design aspects discussed here seek to address the following real-life issues:
 
-The design discussed here is the result of an attempt to come up with a self-explanatory and scalable web app structure, ultimately comfortable to work with for both long-tenured developers and newcomers.
-
-This design seeks to address the following real-life issues, from the pretty basic to trickier ones:
-
-- How to structure an app so that it evolves from a smaller to a larger one seamlessly?
-- How to avoid imposing complexity ahead of time in anticipation of the app's potential growth?
+- How to structure a codebase repo so that the app evolves from a smaller to a larger one seamlessly, without imposing complexity ahead of time?
 - How **to maintain different rendering strategies** (such as SSR, CSR) within a single app?
 - How **to painlessly and incrementally adopt a newer tech stack while still having older legacy code alongside** running on the same server?
+- How to make a codebase easier to navigate?
 
-This is what a scalable app should be able to handle. In a broader sense, scalability can also encompass the hardware and network infrastructure performance, but since it's a largely independent dimension to scalability we'll be only looking into the higher-level issues outlined above.
-
-Below I'm discussing how the scalability and overall maintainability of a code repo can be achieved with the commonly discussed (but probably less commonly implemented) pattern of arranging an app as loosely coupled, self-contained and clearly separated entry points combined with a self-similar directory structure.
-
-## Structure
-
-Here's how the code of an application can be arranged to maintain scalability in the sense outlined above and to keep it clean and easy to navigate.
+Here's how the code of an application can be arranged to address the scalability issues outlined above and to keep it clean and easy to navigate.
 
 First off, we'll put all our app's code in the `📁 src` directory to draw a clear boundary between the application's own human-readable (and often human-made) code and various auxiliaries, like `📁 node_modules`, tool configs, a `📁 dist` directory with build artifacts, that will mostly stay outside `📁 src`.
 
@@ -95,4 +88,4 @@ Note that public assets can be split across entry points and served independentl
 
 ~
 
-While the self-similar design is a metapattern, a pattern of patterns, when coupled with a set of specific conventions, it becomes a solid basis for a scalable and maintainable web application.
+Adding these elements to the app's codebase should make it more flexible regarding the common scalability issues and more comfortable to work with.
