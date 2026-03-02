@@ -196,23 +196,6 @@ figcaption {
 .post {
   flex: auto;
 }
-.contacts {
-  border: none;
-  border-collapse: collapse;
-  margin: 1rem 0 0;
-}
-.contacts td {
-  display: inline-block;
-  text-align: left;
-  padding: 0;
-  border: none;
-}
-.contacts td + td {
-  padding-left: 0.35em;
-}
-.contacts td:first-child {
-  text-align: right;
-}
 p.tag {
   margin: 0;
 }
@@ -292,15 +275,17 @@ strong::before {
     border-radius: 50%;
     margin-left: 1.5rem;
   }
-  .contacts {
-    font-size: 0.85rem;
-    margin: 1rem 0 0;
+  footer {
+    border-top: 1rem solid var(--light-color);
+    padding: 1em;
+    margin: 0 auto;
   }
-  .contacts td {
-    display: table-cell;
+  footer .sep {
+    display: none;
   }
-  .contacts td:first-child {
-    width: 3em;
+  footer .contacts {
+    display: block;
+    margin-top: 0.5em;
   }
   .posts {
     border: 1rem solid var(--light-color);
