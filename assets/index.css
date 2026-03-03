@@ -67,6 +67,10 @@ li + li {
   margin-top: 0.5em;
 }
 .layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: calc(4.5 * var(--box-size));
   margin: 0 auto;
   box-sizing: border-box;
@@ -248,6 +252,9 @@ strong::before {
     --box-padding-y: 1.75rem;
 
     font-size: 100%;
+  }
+  .layout {
+    display: block;
   }
   main {
     padding: 0;
