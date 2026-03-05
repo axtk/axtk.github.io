@@ -170,6 +170,7 @@ form .field {
 form input {
   width: 100%;
   font: inherit;
+  color: inherit;
   text-align: center;
   background: none transparent;
   border: none;
@@ -178,6 +179,7 @@ form input {
 }
 form button {
   font: inherit;
+  color: inherit;
   background: none transparent;
   border: none;
   cursor: pointer;
