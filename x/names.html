@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Транслитерация имён, фамилий, топонимов, названий</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script>window._q = new URLSearchParams(window.location.search).get("q")?.trim() ?? "";</script>
+  <script>if (window._q) document.title = `${window._q} латиницей / ${document.title}`;</script>
   <script>window.location.href = `/apps/names${window.location.search}`;</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
 <p>Теперь на <a href="/apps/names"><code>/apps/names</code></a>.</p>
