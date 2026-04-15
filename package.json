@@ -12,6 +12,6 @@
   "author": "axtk",
   "private": true,
   "devDependencies": {
-    "@types/node": "^24.10.1"
+    "@types/node": "^25.6.0"
   }
 }
